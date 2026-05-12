@@ -748,3 +748,38 @@ p:last-child { margin-bottom: 0; }
 .nav {
   overflow: visible;
 }
+/* ==========================================================
+   AJUSTE FINAL HERO HOME
+   ========================================================== */
+
+@media (min-width: 769px) {
+  .hero-banner-image {
+    height: clamp(390px, 40vw, 590px) !important;
+    background: #120607;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .hero-banner-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 47% !important;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner-image {
+    height: auto !important;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .hero-banner-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+}
