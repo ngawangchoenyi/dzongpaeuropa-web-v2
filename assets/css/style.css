@@ -740,7 +740,7 @@ p:last-child { margin-bottom: 0; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center center;
+    object-position: center 44%;;
     display: block;
   }
 }
