@@ -728,3 +728,32 @@ p:last-child { margin-bottom: 0; }
   }
 }
 
+/* Ajuste compacto del banner principal */
+@media (min-width: 769px) {
+  .hero-banner-image {
+    height: clamp(360px, 38vw, 560px);
+    background: #120607;
+    overflow: hidden;
+  }
+
+  .hero-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+}
+
+/* En móvil mantenemos la imagen completa */
+@media (max-width: 768px) {
+  .hero-banner-image {
+    height: auto;
+  }
+
+  .hero-banner-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
