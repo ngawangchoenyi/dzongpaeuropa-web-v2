@@ -727,4 +727,24 @@ p:last-child { margin-bottom: 0; }
     justify-content: center;
   }
 }
+/* Ajuste del logo en la cabecera */
+.nav__brand-mark {
+  width: 72px !important;
+  height: 72px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
 
+.nav__brand {
+  align-items: center;
+  gap: 14px;
+}
+
+.header,
+.site-header,
+.nav {
+  overflow: visible;
+}
