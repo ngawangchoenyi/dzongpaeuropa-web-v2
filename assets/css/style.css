@@ -764,7 +764,7 @@ p:last-child { margin-bottom: 0; }
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center 47% !important;
+    object-position: center 45% !important;
     display: block;
   }
 }
