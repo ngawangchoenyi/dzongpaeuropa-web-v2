@@ -782,4 +782,63 @@ p:last-child { margin-bottom: 0; }
     object-fit: contain !important;
     display: block;
   }
+}/* ==========================================================
+   BOTONERA FLOTANTE BAJO EL HERO
+   ========================================================== */
+
+.home-quick-actions {
+  position: relative;
+  z-index: 5;
+  margin-top: -42px;
+  padding: 0 20px 36px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 42px,
+    var(--c-fondo, #f7efe2) 42px,
+    var(--c-fondo, #f7efe2) 100%
+  );
+}
+
+.home-quick-actions__inner {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: rgba(255, 250, 240, 0.94);
+  border: 1px solid rgba(139, 26, 26, 0.16);
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(40, 10, 10, 0.16);
+  backdrop-filter: blur(6px);
+}
+
+.home-quick-actions .btn {
+  min-width: 180px;
+  justify-content: center;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .home-quick-actions {
+    margin-top: 0;
+    padding: 18px 18px 28px;
+    background: var(--c-fondo, #f7efe2);
+  }
+
+  .home-quick-actions__inner {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .home-quick-actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
 }
