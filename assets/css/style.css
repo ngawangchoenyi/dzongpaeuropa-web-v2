@@ -841,4 +841,55 @@ p:last-child { margin-bottom: 0; }
     width: 100%;
     min-width: 0;
   }
+}/* ==========================================================
+   AJUSTE FINAL BOTONERA HOME - SIN SUPERPOSICIÓN
+   ========================================================== */
+
+.home-quick-actions {
+  position: relative !important;
+  z-index: 2 !important;
+  margin-top: 0 !important;
+  padding: 24px 20px 30px !important;
+  background: var(--c-fondo, #f7efe2) !important;
+  border-top: 1px solid rgba(139, 26, 26, 0.10) !important;
+  border-bottom: 1px solid rgba(139, 26, 26, 0.10) !important;
+}
+
+.home-quick-actions__inner {
+  width: auto !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.home-quick-actions .btn {
+  min-width: 190px !important;
+  justify-content: center !important;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .home-quick-actions {
+    padding: 18px 18px 26px !important;
+  }
+
+  .home-quick-actions__inner {
+    max-width: 420px !important;
+    gap: 10px !important;
+  }
+
+  .home-quick-actions .btn {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
 }
