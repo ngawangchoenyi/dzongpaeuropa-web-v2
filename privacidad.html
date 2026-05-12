@@ -65,7 +65,7 @@
     <section class="section">
       <div class="container-prose prose">
         <h2>Responsable del tratamiento</h2>
-        <p><strong>Asociación Cultural Dzongpa</strong>, inscrita en el Registro de Asociaciones de la Comunitat Valenciana con número CV-01-062727-V, Sección Primera. CIF <strong>G67651869</strong>, con domicilio en C/ Pintor Navarro Llorens, 3-4, 46018 Valencia y correo de contacto <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a>.</p>
+        <p><strong>Asociación Cultural Dzongpa</strong>, inscrita en el Registro de Asociaciones de la Comunitat Valenciana con número CV-01-062727-V, Sección Primera. CIF <strong>G67651869</strong>, con domicilio en C/ Pintor Navarro Llorens, 3-4, 46018 Valencia y correo de contacto <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>.</p>
 
         <h2>Datos que recogemos</h2>
         <p>A través del formulario de contacto, el formulario de alta de socio, la suscripción al boletín y los procesos de donación, podemos recoger: nombre, apellidos, correo electrónico, teléfono, dirección postal, NIF (en caso de socios o donantes que soliciten certificado fiscal) y datos bancarios o de pago.</p>
@@ -83,7 +83,7 @@
         <p>No cederemos tus datos a terceros, salvo que sea necesario para la prestación del servicio (entidad bancaria, plataforma de pago, plataforma de envío de boletines) o por obligación legal.</p>
 
         <h2>Derechos</h2>
-        <p>Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a>. También puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).</p>
+        <p>Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>. También puedes presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).</p>
       </div>
     </section>
   </main>
@@ -111,9 +111,7 @@
         </div>
         <div>
           <h4>Contacto</h4>
-          <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a>
-          <a href="mailto:socios@dzongpaeuropa.org">socios@dzongpaeuropa.org</a>
-          <a href="mailto:donaciones@dzongpaeuropa.org">donaciones@dzongpaeuropa.org</a>
+          <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -127,6 +125,25 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js" defer></script>
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+      if(!toggle || !menu) return;
+      toggle.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      });
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 940){
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

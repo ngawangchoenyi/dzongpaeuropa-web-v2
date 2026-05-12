@@ -68,7 +68,7 @@
         <p><strong>Asociación Cultural Dzongpa</strong>, entidad sin ánimo de lucro inscrita en el Registro de Asociaciones de la Comunitat Valenciana con número <strong>CV-01-062727-V</strong>, Sección Primera, mediante resolución de 14 de enero de 2022 (expediente CV-01-062727-V).</p>
         <p>CIF: <strong>G67651869</strong><br>
         Domicilio social: C/ Pintor Navarro Llorens, 3-4, 46018 Valencia<br>
-        Correo de contacto: <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a></p>
+        Correo de contacto: <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></p>
 
         <h2>Objeto del sitio web</h2>
         <p>Esta página web tiene por objeto presentar las actividades de la Asociación Cultural Dzongpa y del proyecto Dzongpa Europa, así como facilitar la información sobre el linaje Sakya Dzongpa, las enseñanzas de Su Eminencia el VI Gongkar Dorje Denpa Rinpoche y las vías para colaborar con la asociación.</p>
@@ -105,9 +105,7 @@
         </div>
         <div>
           <h4>Contacto</h4>
-          <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a>
-          <a href="mailto:socios@dzongpaeuropa.org">socios@dzongpaeuropa.org</a>
-          <a href="mailto:donaciones@dzongpaeuropa.org">donaciones@dzongpaeuropa.org</a>
+          <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -121,6 +119,25 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js" defer></script>
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+      if(!toggle || !menu) return;
+      toggle.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      });
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 940){
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

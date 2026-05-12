@@ -69,20 +69,16 @@
 
       <div class="container">
         <ul class="contact-list">
-          <li><strong>Información general</strong><a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a></li>
-          <li><strong>Socios</strong><a href="mailto:socios@dzongpaeuropa.org">socios@dzongpaeuropa.org</a></li>
-          <li><strong>Donaciones</strong><a href="mailto:donaciones@dzongpaeuropa.org">donaciones@dzongpaeuropa.org</a></li>
-          <li><strong>Actividades y retiros</strong><a href="mailto:actividades@dzongpaeuropa.org">actividades@dzongpaeuropa.org</a></li>
-          <li><strong>Secretaría y prensa</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
+          <li><strong>Email institucional</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
         </ul>
       </div>
 
       <div class="container-prose">
         <h2 class="text-center" style="margin-top: 32px;">Escríbenos</h2>
         <div class="golden-box" style="margin: 0 auto 32px; max-width: 580px;">
-          <p style="margin: 0; font-size: 0.95rem;">¿Prefieres escribirnos directamente? Mándanos un correo a <a href="mailto:info@dzongpaeuropa.org"><strong>info@dzongpaeuropa.org</strong></a> y te responderemos lo antes posible.</p>
+          <p style="margin: 0; font-size: 0.95rem;">¿Prefieres escribirnos directamente? Mándanos un correo a <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a> y te responderemos lo antes posible.</p>
         </div>
-        <form class="form" action="mailto:info@dzongpaeuropa.org" method="POST" enctype="text/plain">
+        <form class="form" action="mailto:secretaria@dzongpaeuropa.org" method="POST" enctype="text/plain">
           <div class="form__row">
             <label for="f-nombre">Nombre y apellidos *</label>
             <input id="f-nombre" name="nombre" type="text" required placeholder="Ej. María García Pérez">
@@ -154,10 +150,39 @@
         </div>
         <div>
           <h4>Contacto</h4>
-          <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a>
-          <a href="mailto:socios@dzongpaeuropa.org">socios@dzongpaeuropa.org</a>
-          <a href="mailto:donaciones@dzongpaeuropa.org">donaciones@dzongpaeuropa.org</a>
+          <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
         </div>
       </div>
       <div class="footer__bottom">
-        <div>© 2026 Aso
+        <div>© 2026 Asociación Cultural Dzongpa</div>
+        <div class="footer__bottom-links">
+          <a href="/aviso-legal.html">Aviso legal</a>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/creditos.html">Créditos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+      if(!toggle || !menu) return;
+      toggle.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      });
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 940){
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

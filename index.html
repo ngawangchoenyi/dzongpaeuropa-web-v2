@@ -65,7 +65,7 @@
   <main id="main">
 
     <!-- Hero -->
-    <section class="hero" style="background-image: linear-gradient(180deg, rgba(31, 58, 95, 0.55) 0%, rgba(139, 26, 26, 0.65) 100%), url('/assets/img/rinpoche/rin-02-rinpoche-sonriendo-altar-thangkas.jpg');">
+    <section class="hero" style="background-image: linear-gradient(180deg, rgba(31, 58, 95, 0.45) 0%, rgba(139, 26, 26, 0.55) 100%), url('/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg'); background-position: center top;">
       <div class="container">
         <h1>Dzongpa Europa</h1>
         <p class="hero__lede">Budismo tibetano, cultura y meditación bajo la guía de<br>Su Eminencia el VI Gongkar Dorje Denpa Rinpoche.</p>
@@ -209,9 +209,7 @@
         </div>
         <div>
           <h4>Contacto</h4>
-          <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a>
-          <a href="mailto:socios@dzongpaeuropa.org">socios@dzongpaeuropa.org</a>
-          <a href="mailto:donaciones@dzongpaeuropa.org">donaciones@dzongpaeuropa.org</a>
+          <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -225,4 +223,25 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js" defer></s
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+      if(!toggle || !menu) return;
+      toggle.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      });
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 940){
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

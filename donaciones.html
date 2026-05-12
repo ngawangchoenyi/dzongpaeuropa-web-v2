@@ -122,7 +122,7 @@
 
       <div class="container-prose prose" style="margin-top: 60px;">
         <h2>Donaciones patrimoniales</h2>
-        <p>La asociación también puede recibir donaciones no monetarias o patrimoniales —bienes muebles, inmuebles, biblioteca, objetos de práctica— siempre que estén alineadas con sus fines culturales y espirituales y sean aceptadas conforme a la normativa aplicable y a los acuerdos internos de la entidad. Si deseas realizar una aportación de este tipo, escríbenos a <a href="mailto:donaciones@dzongpaeuropa.org">donaciones@dzongpaeuropa.org</a> y te acompañaremos en el proceso.</p>
+        <p>La asociación también puede recibir donaciones no monetarias o patrimoniales —bienes muebles, inmuebles, biblioteca, objetos de práctica— siempre que estén alineadas con sus fines culturales y espirituales y sean aceptadas conforme a la normativa aplicable y a los acuerdos internos de la entidad. Si deseas realizar una aportación de este tipo, escríbenos a <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a> y te acompañaremos en el proceso.</p>
 
         <h2>Aspectos fiscales</h2>
         <p>La Asociación Cultural Dzongpa está inscrita en el Registro de Asociaciones de la Comunitat Valenciana con el número <strong>CV-01-062727-V</strong> (Sección Primera). Como entidad sin ánimo de lucro, emitimos un certificado anual de aportaciones que permite, en su caso, beneficiarte de las deducciones fiscales aplicables a donaciones a entidades sin ánimo de lucro. Para ello, necesitamos tu nombre completo, NIF y dirección postal.</p>
@@ -153,9 +153,7 @@
         </div>
         <div>
           <h4>Contacto</h4>
-          <a href="mailto:info@dzongpaeuropa.org">info@dzongpaeuropa.org</a>
-          <a href="mailto:socios@dzongpaeuropa.org">socios@dzongpaeuropa.org</a>
-          <a href="mailto:donaciones@dzongpaeuropa.org">donaciones@dzongpaeuropa.org</a>
+          <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -169,6 +167,25 @@
     </div>
   </footer>
 
-  <script src="/assets/js/main.js" defer></script>
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+      if(!toggle || !menu) return;
+      toggle.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      });
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 940){
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
