@@ -660,6 +660,75 @@ p:last-child { margin-bottom: 0; }
 /* -- Tipografía Google Fonts ---------------------- */
 /* Importar al inicio del HTML como link, no aquí, para mejor rendimiento */
 
+/* -- Grid visual de centros del linaje ----------- */
+.centros-foto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+  list-style: none;
+  padding: 0;
+}
+.centros-foto-grid li {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 4 / 3;
+  background: var(--c-azul);
+}
+.centros-foto-grid li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.centros-foto-grid li:hover img { transform: scale(1.04); }
+.centros-foto-grid__caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 14px 18px;
+  background: linear-gradient(transparent, rgba(18, 30, 52, 0.88));
+  color: #fff;
+}
+.centros-foto-grid__caption strong {
+  display: block;
+  font-family: var(--f-serif);
+  font-size: 1.05rem;
+  color: var(--c-dorado-soft);
+}
+.centros-foto-grid__caption span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* -- Galería de fotos (grid masonry-like) -------- */
+.foto-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.foto-galeria img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--t), transform var(--t);
+}
+.foto-galeria img:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .foto-galeria { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .foto-galeria img { height: 160px; }
+  .centros-foto-grid { grid-template-columns: 1fr 1fr; }
+  .centros-foto-grid li { aspect-ratio: 3 / 2; }
+}
+
 /* ==========================================================
    Portada con imagen principal completa
    ----------------------------------------------------------
