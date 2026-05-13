@@ -721,7 +721,44 @@ p:last-child { margin-bottom: 0; }
 .foto-galeria img:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
+  cursor: zoom-in;
 }
+
+/* -- Lightbox ----------------------------------------------- */
+.lb-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+.lb-overlay.is-open { display: flex; }
+.lb-overlay img {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: 8px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.6);
+  object-fit: contain;
+  cursor: default;
+}
+.lb-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity .2s;
+}
+.lb-close:hover { opacity: 1; }
 @media (max-width: 600px) {
   .foto-galeria { grid-template-columns: 1fr 1fr; gap: 10px; }
   .foto-galeria img { height: 160px; }
