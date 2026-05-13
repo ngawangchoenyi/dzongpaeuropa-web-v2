@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+{% set page = {
+  "title": 'Página no encontrada · Dzongpa Europa',
+  "description": 'La página que buscas no existe.',
+  "slug": '404',
+  "active": ''
+} %}
+{% block extra_head %}
+
+{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>Página no encontrada</h1>
+      </div>
+    </section>
+
+    <section class="section text-center">
+      <div class="container-prose prose">
+        <p style="font-size: 4rem; font-family: var(--f-serif); color: var(--c-granate); margin: 0;">404</p>
+        <h2>La página que buscas no existe</h2>
+        <p>Es posible que el enlace esté roto o que la página haya sido movida.</p>
+        <p style="margin-top: 32px;"><a href="/" class="btn btn--primary">Volver al inicio</a></p>
+      </div>
+    </section>
+{% endblock %}

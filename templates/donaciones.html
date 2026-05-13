@@ -1,0 +1,83 @@
+{% extends "_base.html" %}
+{% set page = {
+  "title": 'Donaciones · Dzongpa Europa',
+  "description": 'Apoya con tu donación las actividades de Dzongpa Europa y la preservación del linaje Sakya Dzongpa. Bizum, transferencia y pago seguro online.',
+  "slug": 'donaciones',
+  "active": ''
+} %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>Donaciones</h1>
+        <p class="page-header__lede">Una contribución para que las enseñanzas florezcan</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">Las donaciones ayudan a sostener las actividades de Dzongpa Europa y a crear las condiciones necesarias para preservar y compartir las enseñanzas del linaje Dzongpa.</p>
+        <p>Las aportaciones pueden destinarse a la organización de enseñanzas y retiros, las visitas de maestros, la traducción de textos, el alquiler de espacios, el mantenimiento de la página web, la comunicación, los materiales de práctica y la creación de un fondo estable para la asociación.</p>
+
+        <h2>Destino de las donaciones</h2>
+        <ul>
+          <li>Invitación de maestros del linaje y organización de retiros.</li>
+          <li>Enseñanzas presenciales y online.</li>
+          <li>Traducción de textos del Dharma al español, inglés y chino.</li>
+          <li>Alquiler de espacios para retiros y enseñanzas.</li>
+          <li>Materiales de práctica y biblioteca.</li>
+          <li>Página web, comunicación y boletín.</li>
+          <li>Fondo estable de la asociación.</li>
+          <li>Apoyo a otros proyectos culturales y espirituales del linaje.</li>
+        </ul>
+      </div>
+
+      <div class="golden-box" style="margin-top: 32px;">
+        <h3>Donar con tarjeta</h3>
+        <p style="color: var(--c-texto-suave); margin-bottom: 20px;">Pago puntual o recurrente con tarjeta de crédito o débito. Plataforma segura Stripe.</p>
+        <div class="hero__cta-row" style="margin-top: 0; flex-wrap: wrap; gap: 10px;">
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=10" target="_blank" rel="noopener" class="btn btn--outline">10 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=25" target="_blank" rel="noopener" class="btn btn--outline">25 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=50" target="_blank" rel="noopener" class="btn btn--outline">50 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=108" target="_blank" rel="noopener" class="btn btn--primary">108 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00" target="_blank" rel="noopener" class="btn btn--outline">Otro importe</a>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--c-texto-suave); margin-top: 14px; margin-bottom: 0;">
+          Serás redirigido a la pasarela segura de Stripe. Aceptamos Visa, Mastercard y American Express.
+        </p>
+      </div>
+
+      <div class="container" style="margin-top: 48px;">
+        <h2 class="text-center">Otras formas de donar</h2>
+        <ul class="centros-list" style="max-width: 900px; margin: 32px auto;">
+          <li>
+            <strong>Bizum solidario (donativo ONG)</strong>
+            <p style="margin: 0 0 8px;">Importante: nuestra asociación recibe Bizum a través de la opción solidaria, no del envío convencional. Sigue estos pasos:</p>
+            <ol style="margin: 0; padding-left: 20px; font-size: 0.95rem; color: var(--c-texto-suave);">
+              <li>Abre tu app bancaria y entra en Bizum.</li>
+              <li>Busca la opción <strong>«Donar / Donativo ONG»</strong> (no el envío convencional).</li>
+              <li>Introduce el código <strong>06845</strong>.</li>
+              <li>Aparecerá <strong>«Asociación Cultural Dzongpa»</strong>. Selecciónala e indica el importe.</li>
+            </ol>
+          </li>
+          <li>
+            <strong>Transferencia bancaria</strong>
+            <p style="margin: 0; font-size: 0.95rem;">
+              <strong>Asociación Cultural Dzongpa</strong><br>
+              Banco: Caixa Popular<br>
+              IBAN: <code style="background: var(--c-crema); padding: 2px 6px; border-radius: 4px;">ES69 3159 0049 8128 4488 3229</code><br>
+              Concepto: «Donación + tu nombre»
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>Donaciones patrimoniales</h2>
+        <p>La asociación también puede recibir donaciones no monetarias o patrimoniales —bienes muebles, inmuebles, biblioteca, objetos de práctica— siempre que estén alineadas con sus fines culturales y espirituales y sean aceptadas conforme a la normativa aplicable y a los acuerdos internos de la entidad. Si deseas realizar una aportación de este tipo, escríbenos a <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a> y te acompañaremos en el proceso.</p>
+
+        <h2>Aspectos fiscales</h2>
+        <p>La Asociación Cultural Dzongpa está inscrita en el Registro de Asociaciones de la Comunitat Valenciana con el número <strong>CV-01-062727-V</strong> (Sección Primera). Como entidad sin ánimo de lucro, emitimos un certificado anual de aportaciones que permite, en su caso, beneficiarte de las deducciones fiscales aplicables a donaciones a entidades sin ánimo de lucro. Para ello, necesitamos tu nombre completo, NIF y dirección postal.</p>
+      </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "_base.html" %}
+{% set page = {
+  "title": 'Actividades · Dzongpa Europa',
+  "description": 'Meditación, estudio del Dharma, retiros y enseñanzas del linaje Sakya Dzongpa en Valencia y Europa. Calendario y formas de participar.',
+  "slug": 'actividades',
+  "active": 'actividades'
+} %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>Actividades</h1>
+        <p class="page-header__lede">Meditación, estudio, retiros y vida en comunidad</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">Dzongpa Europa organiza un programa regular de actividades pensadas para acercar las enseñanzas del Dharma y la cultura tibetana a personas de todos los ámbitos. Combinamos prácticas abiertas para quienes se acercan por primera vez con espacios más profundos para practicantes habituales y socios.</p>
+
+        <h2>Tipos de actividades</h2>
+        <h3>Meditación guiada</h3>
+        <p>Encuentros regulares de meditación orientados a cultivar calma mental, atención plena, compasión y claridad interior. Abiertos a personas con o sin experiencia previa.</p>
+
+        <h3>Estudio del Dharma</h3>
+        <p>Sesiones de introducción y estudio sobre el budismo tibetano, los textos tradicionales, las enseñanzas de los maestros del linaje y los principios fundamentales del camino budista.</p>
+
+        <h3>Charlas culturales</h3>
+        <p>Actividades abiertas sobre la cultura tibetana, la historia del budismo, el arte sagrado, la iconografía, los rituales, la lengua y las tradiciones espirituales del Himalaya.</p>
+
+        <h3>Retiros y enseñanzas</h3>
+        <p>Organización de retiros, cursos y enseñanzas con maestros cualificados, tanto en Valencia como en otros lugares de Europa, con la posibilidad de visitas de Rinpoche.</p>
+
+        <h3>Comunidad y voluntariado</h3>
+        <p>Espacios de encuentro para socios, practicantes y simpatizantes, así como oportunidades de colaboración en organización, comunicación, traducción, logística y apoyo a actividades.</p>
+      </div>
+
+      <div class="golden-box">
+        <h3>Próximas actividades</h3>
+        <p>Estamos preparando el calendario regular de actividades, meditaciones, encuentros y enseñanzas. Si deseas recibir información sobre próximos eventos, suscríbete a nuestro boletín o escríbenos directamente.</p>
+        <p style="margin-top: 16px;">
+          <a href="/contacto" class="btn btn--primary">Escríbenos</a>
+        </p>
+      </div>
+
+      <div class="container" style="margin-top: 60px;">
+        <img src="/assets/img/espana/esp-04-ensenanzas-valencia-2026.jpg"
+             alt="Enseñanzas de Tulku Dorje Dhenpa Rinpoche en Valencia, 2026"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 1000px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">Ciclo de enseñanzas en Valencia, 2026.</p>
+      </div>
+    </section>
+{% endblock %}

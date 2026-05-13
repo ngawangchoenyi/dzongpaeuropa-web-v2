@@ -1,0 +1,60 @@
+{% extends "_base.html" %}
+{% set page = {
+  "title": 'Quiénes somos · Dzongpa Europa',
+  "description": 'Conoce la Asociación Cultural Dzongpa, su misión y el proyecto Dzongpa Europa, dedicado a preservar el linaje Sakya Dzongpa en Europa.',
+  "slug": 'quienes-somos',
+  "active": 'quienes-somos'
+} %}
+{% block extra_head %}
+
+{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>Quiénes somos</h1>
+        <p class="page-header__lede">Una asociación cultural dedicada a la preservación del linaje Sakya Dzongpa</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <h2>La asociación</h2>
+        <p>La Asociación Cultural Dzongpa es una entidad sin ánimo de lucro dedicada a la promoción de la cultura tibetana, el estudio del budismo tibetano, la práctica de la meditación y la preservación de las enseñanzas del linaje Dzongpa.</p>
+        <p>Nació con el propósito de crear un espacio abierto, respetuoso y estable donde las personas interesadas puedan acercarse al Dharma, participar en actividades culturales, recibir enseñanzas, practicar meditación y colaborar en proyectos beneficiosos para la comunidad.</p>
+
+        <h2>Dzongpa Europa</h2>
+        <p>Dzongpa Europa es la proyección europea del trabajo de la asociación. Bajo la guía de Su Eminencia el VI Gongkar Dorje Denpa Rinpoche, este proyecto busca tender puentes entre la tradición tibetana del linaje Dzongpa y las personas interesadas en Europa, formando parte de una red internacional que cuenta con centros en India, Taiwán, Reino Unido, España, Australia y Hong Kong, además del monasterio raíz, Gongkar Choede.</p>
+
+        <h2>Nuestro propósito</h2>
+        <p>Contribuir a que las enseñanzas budistas del linaje Dzongpa puedan mantenerse vivas y accesibles, creando las condiciones adecuadas para invitar maestros, organizar retiros, traducir textos, sostener actividades regulares y formar una comunidad sólida de practicantes y simpatizantes en Europa.</p>
+
+        <h2>Valores</h2>
+        <ul>
+          <li><strong>Autenticidad.</strong> Fidelidad al linaje y a las enseñanzas transmitidas por Rinpoche y por los maestros cualificados de la tradición Sakya Dzongpa.</li>
+          <li><strong>Apertura.</strong> Acogida inclusiva a personas de cualquier procedencia, edad, cultura o nivel de práctica.</li>
+          <li><strong>Servicio.</strong> Dedicación al beneficio de los seres y a la comunidad local.</li>
+          <li><strong>Transparencia.</strong> Gestión económica clara, rendición de cuentas y comunicación abierta.</li>
+          <li><strong>Sostenibilidad.</strong> Equilibrio entre el crecimiento del proyecto y la preservación de su identidad espiritual.</li>
+        </ul>
+
+        <p style="margin-top: 32px;">Dzongpa Europa se sostiene gracias al compromiso de sus socios y donantes. Cada persona que se suma contribuye a que las enseñanzas del Dharma y la cultura tibetana puedan estar disponibles para más personas, hoy y en el futuro.</p>
+
+        <p class="text-center" style="margin-top: 40px;">
+          <a href="/historia" class="btn btn--outline">Leer la historia de Dzongpa en España →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="foto-galeria" style="grid-template-columns: repeat(3, 1fr);">
+          <img src="/assets/img/espana-2026/esp26-060-foto-grupo-valencia-ensenanzas-iniciacion.jpg"
+               alt="Foto de grupo en las enseñanzas e iniciación en Valencia, 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-061-foto-grupal-primer-dia-ensenanzas-febrero-2026.jpg"
+               alt="Foto grupal del primer día de enseñanzas en Valencia, febrero 2026" loading="lazy">
+          <img src="/assets/img/espana/esp-05-grupo-valencia-2022.jpg"
+               alt="Comunidad reunida en Valencia, 2022" loading="lazy">
+        </div>
+      </div>
+    </section>
+{% endblock %}

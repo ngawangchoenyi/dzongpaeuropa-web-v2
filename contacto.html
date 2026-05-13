@@ -34,6 +34,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/style.css">
+  
 </head>
 <body>
 
@@ -53,19 +54,20 @@
           <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
         </button>
         <ul class="nav__menu" id="nav-menu">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/quienes-somos.html">Quiénes somos</a></li>
-          <li><a href="/rinpoche.html">Rinpoche</a></li>
-          <li><a href="/linaje.html">Linaje</a></li>
-          <li><a href="/actividades.html">Actividades</a></li>
-          <li><a href="/contacto.html" class="is-active">Contacto</a></li>
-          <li><a href="/hazte-socio.html" class="nav__cta">Hazte socio</a></li>
+          <li><a href="/" >Inicio</a></li>
+          <li><a href="/quienes-somos" >Quiénes somos</a></li>
+          <li><a href="/rinpoche" >Rinpoche</a></li>
+          <li><a href="/linaje" >Linaje</a></li>
+          <li><a href="/actividades" >Actividades</a></li>
+          <li><a href="/contacto" aria-current="page">Contacto</a></li>
+          <li><a href="/hazte-socio" class="nav__cta" >Hazte socio</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
+    
     <section class="page-header">
       <div class="container">
         <h1>Contacto</h1>
@@ -90,29 +92,21 @@
           <p style="margin: 0; font-size: 0.95rem;">¿Prefieres escribirnos directamente? Mándanos un correo a <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a> y te responderemos lo antes posible.</p>
         </div>
 
-        <!-- Mensaje de éxito (oculto por defecto) -->
         <div id="form-ok" style="display:none; max-width:580px; margin:0 auto 32px; padding:32px 28px; background:var(--c-crema); border:1px solid var(--c-dorado); border-radius:12px; text-align:center;">
           <div style="font-size:2rem; color:var(--c-dorado); margin-bottom:12px;">✦</div>
           <h3 style="margin-bottom:8px;">Mensaje enviado</h3>
           <p style="margin:0; color:var(--c-texto-suave);">Gracias por escribirnos. Te responderemos en un plazo de 3 a 5 días laborables.</p>
         </div>
 
-        <!-- Mensaje de error (oculto por defecto) -->
         <div id="form-err" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
           Ha ocurrido un error al enviar el mensaje. Por favor inténtalo de nuevo o escríbenos directamente a <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b; font-weight:600;">secretaria@dzongpaeuropa.org</a>.
         </div>
 
         <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
-
-          <!-- Web3Forms: clave de acceso -->
           <input type="hidden" name="access_key" value="53ebea9c-e5d3-4448-b166-741447c4d22f">
-          <!-- Asunto del correo que recibirás -->
           <input type="hidden" name="subject" value="Nuevo mensaje de contacto · Dzongpa Europa">
-          <!-- Nombre del remitente en el correo -->
           <input type="hidden" name="from_name" value="Web Dzongpa Europa">
-          <!-- Evita redirección externa -->
           <input type="hidden" name="redirect" value="false">
-          <!-- Botón honeypot anti-spam -->
           <input type="checkbox" name="botcheck" style="display:none;">
 
           <div class="form__row">
@@ -154,41 +148,14 @@
           </div>
           <div class="form__row form__row--check">
             <input id="f-priv" name="privacidad" type="checkbox" required>
-            <label for="f-priv">He leído y acepto la <a href="/privacidad.html">política de privacidad</a>.</label>
+            <label for="f-priv">He leído y acepto la <a href="/privacidad">política de privacidad</a>.</label>
           </div>
           <button type="submit" id="submit-btn" class="btn btn--primary">Enviar mensaje</button>
         </form>
         <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">Respondemos a las consultas en un plazo medio de 3 a 5 días laborables. Para consultas urgentes relacionadas con actividades inminentes, indícalo en el asunto del mensaje.</p>
-
-        <script>
-          document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var btn = document.getElementById('submit-btn');
-            btn.textContent = 'Enviando…';
-            btn.disabled = true;
-
-            var data = new FormData(this);
-            fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-              .then(function(res) { return res.json(); })
-              .then(function(json) {
-                if (json.success) {
-                  document.getElementById('contact-form').style.display = 'none';
-                  document.getElementById('form-ok').style.display = 'block';
-                } else {
-                  document.getElementById('form-err').style.display = 'block';
-                  btn.textContent = 'Enviar mensaje';
-                  btn.disabled = false;
-                }
-              })
-              .catch(function() {
-                document.getElementById('form-err').style.display = 'block';
-                btn.textContent = 'Enviar mensaje';
-                btn.disabled = false;
-              });
-          });
-        </script>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -201,16 +168,16 @@
         </div>
         <div>
           <h4>Explorar</h4>
-          <a href="/quienes-somos.html">Quiénes somos</a>
-          <a href="/rinpoche.html">Rinpoche</a>
-          <a href="/linaje.html">Linaje</a>
-          <a href="/actividades.html">Actividades</a>
+          <a href="/quienes-somos">Quiénes somos</a>
+          <a href="/rinpoche">Rinpoche</a>
+          <a href="/linaje">Linaje</a>
+          <a href="/actividades">Actividades</a>
         </div>
         <div>
           <h4>Participar</h4>
-          <a href="/hazte-socio.html">Hazte socio</a>
-          <a href="/donaciones.html">Donaciones</a>
-          <a href="/contacto.html">Contacto</a>
+          <a href="/hazte-socio">Hazte socio</a>
+          <a href="/donaciones">Donaciones</a>
+          <a href="/contacto">Contacto</a>
         </div>
         <div>
           <h4>Contacto</h4>
@@ -227,9 +194,9 @@
       <div class="footer__bottom">
         <div>© 2026 Asociación Cultural Dzongpa</div>
         <div class="footer__bottom-links">
-          <a href="/aviso-legal.html">Aviso legal</a>
-          <a href="/privacidad.html">Privacidad</a>
-          <a href="/creditos.html">Créditos</a>
+          <a href="/aviso-legal">Aviso legal</a>
+          <a href="/privacidad">Privacidad</a>
+          <a href="/creditos">Créditos</a>
         </div>
       </div>
     </div>
@@ -256,5 +223,6 @@
     })();
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
+  
 </body>
 </html>

@@ -1,11 +1,20 @@
 #!/bin/bash
-# deploy.sh — sube los cambios de la web a GitHub (Vercel lo despliega automáticamente)
+# deploy.sh — construye la web desde plantillas y sube a GitHub (Vercel despliega solo)
 # Uso: ./deploy.sh "descripción del cambio"
 #      ./deploy.sh           (usa mensaje genérico)
 
 MSG="${1:-Actualización web}"
 
+if command -v python3 &>/dev/null; then
+  echo "▶ Generando HTML desde plantillas..."
+  python3 build.py || { echo "✗ Error en build.py"; exit 1; }
+else
+  echo "ℹ python3 no encontrado — usando HTML ya generado"
+fi
+
 git add \
+  templates/ \
+  build.py \
   index.html \
   quienes-somos.html \
   historia.html \
