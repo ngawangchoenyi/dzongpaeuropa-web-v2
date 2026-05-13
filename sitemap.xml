@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://dzongpaeuropa.org/</loc><priority>1.0</priority></url>
-  <url><loc>https://dzongpaeuropa.org/quienes-somos.html</loc><priority>0.9</priority></url>
-  <url><loc>https://dzongpaeuropa.org/historia.html</loc><priority>0.8</priority></url>
-  <url><loc>https://dzongpaeuropa.org/rinpoche.html</loc><priority>0.9</priority></url>
-  <url><loc>https://dzongpaeuropa.org/linaje.html</loc><priority>0.9</priority></url>
-  <url><loc>https://dzongpaeuropa.org/actividades.html</loc><priority>0.8</priority></url>
-  <url><loc>https://dzongpaeuropa.org/hazte-socio.html</loc><priority>0.9</priority></url>
-  <url><loc>https://dzongpaeuropa.org/donaciones.html</loc><priority>0.8</priority></url>
-  <url><loc>https://dzongpaeuropa.org/contacto.html</loc><priority>0.8</priority></url>
-  <url><loc>https://dzongpaeuropa.org/aviso-legal.html</loc><priority>0.3</priority></url>
-  <url><loc>https://dzongpaeuropa.org/privacidad.html</loc><priority>0.3</priority></url>
-  <url><loc>https://dzongpaeuropa.org/creditos.html</loc><priority>0.3</priority></url>
+  <url><loc>https://dzongpaeuropa.org/quienes-somos</loc><priority>0.9</priority></url>
+  <url><loc>https://dzongpaeuropa.org/historia</loc><priority>0.8</priority></url>
+  <url><loc>https://dzongpaeuropa.org/rinpoche</loc><priority>0.9</priority></url>
+  <url><loc>https://dzongpaeuropa.org/linaje</loc><priority>0.9</priority></url>
+  <url><loc>https://dzongpaeuropa.org/actividades</loc><priority>0.8</priority></url>
+  <url><loc>https://dzongpaeuropa.org/hazte-socio</loc><priority>0.9</priority></url>
+  <url><loc>https://dzongpaeuropa.org/donaciones</loc><priority>0.8</priority></url>
+  <url><loc>https://dzongpaeuropa.org/contacto</loc><priority>0.8</priority></url>
+  <url><loc>https://dzongpaeuropa.org/aviso-legal</loc><priority>0.3</priority></url>
+  <url><loc>https://dzongpaeuropa.org/privacidad</loc><priority>0.3</priority></url>
+  <url><loc>https://dzongpaeuropa.org/creditos</loc><priority>0.3</priority></url>
 </urlset>

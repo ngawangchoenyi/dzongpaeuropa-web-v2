@@ -608,11 +608,15 @@ p:last-child { margin-bottom: 0; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.5fr 1fr 1fr 0.8fr 0.8fr;
+  gap: 36px;
+}
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; gap: 28px; }
+  .footer-grid > div:nth-child(n+4) { grid-column: auto; }
 }
 @media (max-width: 800px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .footer-grid > div:first-child { grid-column: 1 / -1; }
 }
 
