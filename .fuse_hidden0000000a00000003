@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donaciones · Dzongpa Europa</title>
+  <meta name="description" content="Apoya con tu donación las actividades de Dzongpa Europa y la preservación del linaje Sakya Dzongpa. Bizum, transferencia y pago seguro online.">
+  <meta name="author" content="Asociación Cultural Dzongpa">
+
+  <!-- Open Graph / Vista previa al compartir -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Donaciones · Dzongpa Europa">
+  <meta property="og:description" content="Apoya con tu donación las actividades de Dzongpa Europa y la preservación del linaje Sakya Dzongpa. Bizum, transferencia y pago seguro online.">
+  <meta property="og:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
+  <meta property="og:image:secure_url" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://www.dzongpaeuropa.org/donaciones.html">
+  <meta property="og:site_name" content="Dzongpa Europa">
+  <meta property="og:locale" content="es_ES">
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Donaciones · Dzongpa Europa">
+  <meta name="twitter:description" content="Apoya con tu donación las actividades de Dzongpa Europa y la preservación del linaje Sakya Dzongpa. Bizum, transferencia y pago seguro online.">
+  <meta name="twitter:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
+
+  <link rel="icon" href="/assets/img/logo/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/logo-03-dzongpa-europa-icon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/logo-03-dzongpa-europa-icon-180x180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="/" class="nav__brand" aria-label="Inicio · Dzongpa Europa">
+          <img src="/assets/img/logo/logo-03-dzongpa-europa-simbolo-avatar.png" alt="" width="44" height="44" class="nav__brand-mark" style="background:transparent;border-radius:0;">
+          <span class="nav__brand-text">
+            <span class="nav__brand-name">Dzongpa Europa</span>
+            <span class="nav__brand-sub">Asociación Cultural Dzongpa</span>
+          </span>
+        </a>
+        <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+        </button>
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="/rinpoche.html">Rinpoche</a></li>
+          <li><a href="/linaje.html">Linaje</a></li>
+          <li><a href="/actividades.html">Actividades</a></li>
+          <li><a href="/contacto.html">Contacto</a></li>
+          <li><a href="/hazte-socio.html" class="nav__cta">Hazte socio</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <h1>Donaciones</h1>
+        <p class="page-header__lede">Una contribución para que las enseñanzas florezcan</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">Las donaciones ayudan a sostener las actividades de Dzongpa Europa y a crear las condiciones necesarias para preservar y compartir las enseñanzas del linaje Dzongpa.</p>
+        <p>Las aportaciones pueden destinarse a la organización de enseñanzas y retiros, las visitas de maestros, la traducción de textos, el alquiler de espacios, el mantenimiento de la página web, la comunicación, los materiales de práctica y la creación de un fondo estable para la asociación.</p>
+
+        <h2>Destino de las donaciones</h2>
+        <ul>
+          <li>Invitación de maestros del linaje y organización de retiros.</li>
+          <li>Enseñanzas presenciales y online.</li>
+          <li>Traducción de textos del Dharma al español, inglés y chino.</li>
+          <li>Alquiler de espacios para retiros y enseñanzas.</li>
+          <li>Materiales de práctica y biblioteca.</li>
+          <li>Página web, comunicación y boletín.</li>
+          <li>Fondo estable de la asociación.</li>
+          <li>Apoyo a otros proyectos culturales y espirituales del linaje.</li>
+        </ul>
+      </div>
+
+      <!-- Bloque principal: pago con tarjeta -->
+      <div class="golden-box" style="margin-top: 32px;">
+        <h3>Donar con tarjeta</h3>
+        <p style="color: var(--c-texto-suave); margin-bottom: 20px;">Pago puntual o recurrente con tarjeta de crédito o débito. Plataforma segura Stripe.</p>
+        <div class="hero__cta-row" style="margin-top: 0; flex-wrap: wrap; gap: 10px;">
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=10" target="_blank" rel="noopener" class="btn btn--outline">10 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=25" target="_blank" rel="noopener" class="btn btn--outline">25 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=50" target="_blank" rel="noopener" class="btn btn--outline">50 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=108" target="_blank" rel="noopener" class="btn btn--primary">108 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00" target="_blank" rel="noopener" class="btn btn--outline">Otro importe</a>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--c-texto-suave); margin-top: 14px; margin-bottom: 0;">
+          Serás redirigido a la pasarela segura de Stripe. Aceptamos Visa, Mastercard y American Express.
+        </p>
+      </div>
+
+      <div class="container" style="margin-top: 48px;">
+        <h2 class="text-center">Otras formas de donar</h2>
+        <ul class="centros-list" style="max-width: 900px; margin: 32px auto;">
+          <li>
+            <strong>Bizum solidario (donativo ONG)</strong>
+            <p style="margin: 0 0 8px;">Importante: nuestra asociación recibe Bizum a través de la opción solidaria, no del envío convencional. Sigue estos pasos:</p>
+            <ol style="margin: 0; padding-left: 20px; font-size: 0.95rem; color: var(--c-texto-suave);">
+              <li>Abre tu app bancaria y entra en Bizum.</li>
+              <li>Busca la opción <strong>«Donar / Donativo ONG»</strong> (no el envío convencional).</li>
+              <li>Introduce el código <strong>06845</strong>.</li>
+              <li>Aparecerá <strong>«Asociación Cultural Dzongpa»</strong>. Selecciónala e indica el importe.</li>
+            </ol>
+          </li>
+          <li>
+            <strong>Transferencia bancaria</strong>
+            <p style="margin: 0; font-size: 0.95rem;">
+              <strong>Asociación Cultural Dzongpa</strong><br>
+              Banco: Caixa Popular<br>
+              IBAN: <code style="background: var(--c-crema); padding: 2px 6px; border-radius: 4px;">ES69 3159 0049 8128 4488 3229</code><br>
+              Concepto: «Donación + tu nombre»
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>Donaciones patrimoniales</h2>
+        <p>La asociación también puede recibir donaciones no monetarias o patrimoniales —bienes muebles, inmuebles, biblioteca, objetos de práctica— siempre que estén alineadas con sus fines culturales y espirituales y sean aceptadas conforme a la normativa aplicable y a los acuerdos internos de la entidad. Si deseas realizar una aportación de este tipo, escríbenos a <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+          <a href="https://www.facebook.com/profile.php?id=100081268205797" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            Facebook
+          </a> y te acompañaremos en el proceso.</p>
+
+        <h2>Aspectos fiscales</h2>
+        <p>La Asociación Cultural Dzongpa está inscrita en el Registro de Asociaciones de la Comunitat Valenciana con el número <strong>CV-01-062727-V</strong> (Sección Primera). Como entidad sin ánimo de lucro, emitimos un certificado anual de aportaciones que permite, en su caso, beneficiarte de las deducciones fiscales aplicables a donaciones a entidades sin ánimo de lucro. Para ello, necesitamos tu nombre completo, NIF y dirección postal.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer__brand">Dzongpa Europa</div>
+          <p class="footer__sub">Proyecto impulsado por la Asociación Cultural Dzongpa, bajo la guía espiritual de Su Eminencia el VI Gongkar Dorje Denpa Rinpoche.</p>
+          <p class="footer__sub" style="margin:0;">— Que esta labor beneficie a todos los seres.</p>
+        </div>
+        <div>
+          <h4>Explorar</h4>
+          <a href="/quienes-somos.html">Quiénes somos</a>
+          <a href="/rinpoche.html">Rinpoche</a>
+          <a href="/linaje.html">Linaje</a>
+          <a href="/actividades.html">Actividades</a>
+        </div>
+        <div>
+          <h4>Participar</h4>
+          <a href="/hazte-socio.html">Hazte socio</a>
+          <a href="/donaciones.html">Donaciones</a>
+          <a href="/contacto.html">Contacto</a>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+          <a href="https://www.facebook.com/profile.php?id=100081268205797" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 Asociación Cultural Dzongpa</div>
+        <div class="footer__bottom-links">
+          <a href="/aviso-legal.html">Aviso legal</a>
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/creditos.html">Créditos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+      if(!t
