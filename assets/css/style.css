@@ -767,27 +767,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ==========================================================
-   Portada con imagen principal completa
-   ----------------------------------------------------------
-   Sustituye el hero anterior por un banner de imagen 16:9.
-   La imagen ya incluye el texto principal, por lo que no se
-   superpone texto encima.
-   ========================================================== */
-
-
-
-.nav__brand {
-  align-items: center;
-  gap: 14px;
-}
-
-.header,
-.site-header,
-.nav {
-  overflow: visible;
-}
-/* ==========================================================
-   AJUSTE FINAL HERO HOME
+   HERO HOME – banner con imagen
    ========================================================== */
 
 @media (min-width: 769px) {
