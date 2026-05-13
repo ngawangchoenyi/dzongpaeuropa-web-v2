@@ -138,11 +138,7 @@
           <li>Reconocimiento opcional como sostenedores del proyecto.</li>
           <li>Invitación al encuentro anual con la dirección de la asociación.</li>
         </ul>
-        <p style="margin-top: 32px;">Las aportaciones pueden modificarse o cancelarse en cualquier momento escribiendo a <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
-          <a href="https://www.facebook.com/profile.php?id=100081268205797" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.27h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-            Facebook
-          </a>. Cada socio puede además realizar aportaciones extraordinarias puntuales en cualquier momento.</p>
+        <p style="margin-top: 32px;">Las aportaciones pueden modificarse o cancelarse en cualquier momento escribiendo a <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>. Cada socio puede además realizar aportaciones extraordinarias puntuales en cualquier momento.</p>
       </div>
     </section>
   </main>
@@ -181,4 +177,33 @@
         <div>© 2026 Asociación Cultural Dzongpa</div>
         <div class="footer__bottom-links">
           <a href="/aviso-legal.html">Aviso legal</a>
-          <a href="/pri
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/creditos.html">Créditos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav__toggle');
+      var menu = document.getElementById('nav-menu');
+      if(!toggle || !menu) return;
+      toggle.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+      });
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          if(window.innerWidth <= 940){
+            menu.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+  </script>
+  <script src="/assets/js/lightbox.js" defer></script>
+</body>
+</html>
