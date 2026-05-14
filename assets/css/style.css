@@ -741,6 +741,9 @@ p:last-child { margin-bottom: 0; }
   gap: 16px;
   margin-top: 32px;
 }
+/* Lightbox: cursor pointer en todas las imágenes de contenido */
+.section img:not(.nav__brand-mark) { cursor: zoom-in; }
+
 .foto-galeria img {
   width: 100%;
   height: 220px;

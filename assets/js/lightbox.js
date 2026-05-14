@@ -37,10 +37,7 @@
   // Activar en todas las imágenes de galerías
   document.addEventListener('click', function (e) {
     var t = e.target;
-    if (t.tagName === 'IMG' && (
-      t.closest('.foto-galeria') ||
-      t.closest('.centros-foto-grid')
-    )) {
+    if (t.tagName === 'IMG' && !t.closest('.nav') && !t.closest('.site-footer') && !t.closest('.lb-overlay')) {
       open(t.src, t.alt);
     }
   });
