@@ -5,7 +5,45 @@
   "slug": 'actividades',
   "active": 'actividades'
 } %}
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+<style>
+  /* Integración visual del formulario MailerLite */
+  .ml-embedded .ml-form-embedWrapper {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  .ml-embedded .ml-form-embedContent h4,
+  .ml-embedded .ml-form-embedContent p {
+    display: none !important;
+  }
+  .ml-embedded .ml-form-fieldRow input[type="email"] {
+    font-family: inherit !important;
+    font-size: 1rem !important;
+    border: 1px solid #d4c5a0 !important;
+    border-radius: 6px !important;
+    padding: 10px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .ml-embedded .ml-form-embedSubmit button {
+    background-color: #8B1A1A !important;
+    font-family: inherit !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 6px !important;
+    padding: 12px 28px !important;
+    cursor: pointer !important;
+  }
+  .ml-embedded .ml-form-embedSubmit button:hover {
+    background-color: #6d1414 !important;
+  }
+  .ml-embedded .ml-form-successBody {
+    font-family: inherit !important;
+  }
+</style>
+{% endblock %}
 {% block content %}
     <section class="page-header">
       <div class="container">
