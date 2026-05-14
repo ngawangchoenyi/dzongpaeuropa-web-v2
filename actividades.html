@@ -35,44 +35,6 @@
 
   <link rel="stylesheet" href="/assets/css/style.css">
   
-<style>
-  /* Integración visual del formulario MailerLite */
-  .ml-embedded .ml-form-embedWrapper {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-  }
-  .ml-embedded .ml-form-embedContent h4,
-  .ml-embedded .ml-form-embedContent p {
-    display: none !important;
-  }
-  .ml-embedded .ml-form-fieldRow input[type="email"] {
-    font-family: inherit !important;
-    font-size: 1rem !important;
-    border: 1px solid #d4c5a0 !important;
-    border-radius: 6px !important;
-    padding: 10px 14px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .ml-embedded .ml-form-embedSubmit button {
-    background-color: #8B1A1A !important;
-    font-family: inherit !important;
-    font-size: 0.95rem !important;
-    letter-spacing: 0.05em !important;
-    border-radius: 6px !important;
-    padding: 12px 28px !important;
-    cursor: pointer !important;
-  }
-  .ml-embedded .ml-form-embedSubmit button:hover {
-    background-color: #6d1414 !important;
-  }
-  .ml-embedded .ml-form-successBody {
-    font-family: inherit !important;
-  }
-</style>
-
 </head>
 <body>
 
@@ -145,7 +107,7 @@
       <div class="container-prose" style="margin-top: 60px; text-align: center;">
         <h2>Boletín de Dzongpa Europa</h2>
         <p style="color: var(--c-texto-suave); margin-bottom: 28px;">Recibe información sobre actividades, enseñanzas y noticias de la asociación.</p>
-        <div class="ml-embedded" data-form="Y2nyWO"></div>
+        <div class="ml-embedded" data-form="Y2nyWO" id="ml-form-boletin"></div>
       </div>
 
       <div class="container" style="margin-top: 60px;">
@@ -225,6 +187,33 @@
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
   
+<script>
+  (function() {
+    function styleMLForm() {
+      var wrapper = document.querySelector('#ml-form-boletin .ml-form-embedWrapper');
+      var header  = document.querySelector('#ml-form-boletin .ml-form-embedContent');
+      var input   = document.querySelector('#ml-form-boletin input[type="email"]');
+      var btn     = document.querySelector('#ml-form-boletin .ml-form-embedSubmit button');
+      if (!wrapper) return false;
+      wrapper.style.cssText = 'background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;';
+      if (header) header.style.display = 'none';
+      if (input) {
+        input.style.cssText = 'font-family:inherit!important;font-size:1rem!important;border:1px solid #d4c5a0!important;border-radius:6px!important;padding:10px 14px!important;';
+        input.placeholder = 'tu@correo.com';
+      }
+      if (btn) {
+        btn.style.cssText = 'background-color:#8B1A1A!important;font-family:inherit!important;font-size:0.95rem!important;border-radius:6px!important;padding:12px 32px!important;cursor:pointer!important;';
+        if (btn.textContent.trim() === 'Subscribe') btn.textContent = 'Suscribirme';
+      }
+      return true;
+    }
+    var tries = 0;
+    var iv = setInterval(function() {
+      if (styleMLForm() || ++tries > 30) clearInterval(iv);
+    }, 300);
+  })();
+</script>
+
 
   <!-- MailerLite Universal -->
   <script>
