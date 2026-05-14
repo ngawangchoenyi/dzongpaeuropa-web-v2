@@ -358,7 +358,7 @@ p:last-child { margin-bottom: 0; }
   color: var(--c-dorado);
   margin-bottom: 12px;
 }
-.pillar h3 { color: var(--c-granate); margin-bottom: 12px; font-size: 1.3rem; }
+.pillar h3 { color: var(--c-granate); margin-bottom: 12px; font-size: 1.6rem; }
 .pillar p { color: var(--c-texto-suave); font-size: 0.95rem; line-height: 1.6; }
 
 /* -- Texto de prosa ------------------------------ */
