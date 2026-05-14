@@ -359,7 +359,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 12px;
 }
 .pillar h3 { color: var(--c-granate); margin-bottom: 12px; font-size: 1.6rem; }
-.pillar p { color: var(--c-texto-suave); font-size: 0.95rem; line-height: 1.6; }
+.pillar p { color: var(--c-texto-suave); font-size: 0.95rem; line-height: 1.7; text-align: left; margin-top: 8px; }
 
 /* -- Texto de prosa ------------------------------ */
 .prose p { margin-bottom: 1.2em; }
