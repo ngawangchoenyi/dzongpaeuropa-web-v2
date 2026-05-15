@@ -66,7 +66,7 @@
           <li><a href="/hazte-socio" class="nav__cta" {% if page.active == 'hazte-socio' %}aria-current="page"{% endif %}>Hazte socio</a></li>
         </ul>
         <div class="lang-switcher" id="lang-switcher">
-          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES ▾</button>
+          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES &#9662;</button>
           <div class="lang-switcher__menu">
             <span>ES</span>
             <a href="/en/{{ page.en_slug | default('') }}">EN</a>
@@ -150,9 +150,9 @@
   <script>
     function toggleLang(btn) {
       var sw = btn.closest('.lang-switcher');
-      var open = sw.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(open));
-      if(open) {
+      var isOpen = sw.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      if(isOpen) {
         var close = function(e){ if(!sw.contains(e.target)){ sw.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); document.removeEventListener('click',close); } };
         setTimeout(function(){ document.addEventListener('click',close); }, 0);
       }

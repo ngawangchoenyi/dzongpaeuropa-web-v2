@@ -66,7 +66,7 @@
           <li><a href="/hazte-socio" class="nav__cta" >Hazte socio</a></li>
         </ul>
         <div class="lang-switcher" id="lang-switcher">
-          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES ▾</button>
+          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES &#9662;</button>
           <div class="lang-switcher__menu">
             <span>ES</span>
             <a href="/en/lineage">EN</a>
@@ -293,4 +293,25 @@
   <script>
     function toggleLang(btn) {
       var sw = btn.closest('.lang-switcher');
-      var op
+      var isOpen = sw.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      if(isOpen) {
+        var close = function(e){ if(!sw.contains(e.target)){ sw.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); document.removeEventListener('click',close); } };
+        setTimeout(function(){ document.addEventListener('click',close); }, 0);
+      }
+    }
+  </script>
+  <script src="/assets/js/lightbox.js" defer></script>
+  
+
+  <!-- MailerLite Universal -->
+  <script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2347774');
+  </script>
+  <!-- End MailerLite Universal -->
+</body>
+</html>

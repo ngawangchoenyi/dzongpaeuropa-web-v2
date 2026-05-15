@@ -66,7 +66,7 @@
           <li><a href="/hazte-socio" class="nav__cta" >Hazte socio</a></li>
         </ul>
         <div class="lang-switcher" id="lang-switcher">
-          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES ▾</button>
+          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES &#9662;</button>
           <div class="lang-switcher__menu">
             <span>ES</span>
             <a href="/en/activities">EN</a>
@@ -210,4 +210,52 @@
   <script>
     function toggleLang(btn) {
       var sw = btn.closest('.lang-switcher');
-      var op
+      var isOpen = sw.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+      if(isOpen) {
+        var close = function(e){ if(!sw.contains(e.target)){ sw.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); document.removeEventListener('click',close); } };
+        setTimeout(function(){ document.addEventListener('click',close); }, 0);
+      }
+    }
+  </script>
+  <script src="/assets/js/lightbox.js" defer></script>
+  
+<script>
+  (function() {
+    function styleMLForm() {
+      var wrapper = document.querySelector('#ml-form-boletin .ml-form-embedWrapper');
+      var header  = document.querySelector('#ml-form-boletin .ml-form-embedContent');
+      var input   = document.querySelector('#ml-form-boletin input[type="email"]');
+      var btn     = document.querySelector('#ml-form-boletin .ml-form-embedSubmit button');
+      if (!wrapper) return false;
+      wrapper.style.cssText = 'background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;';
+      if (header) header.style.display = 'none';
+      if (input) {
+        input.style.cssText = 'font-family:inherit!important;font-size:1rem!important;border:1px solid #d4c5a0!important;border-radius:6px!important;padding:10px 14px!important;';
+        input.placeholder = 'tu@correo.com';
+      }
+      if (btn) {
+        btn.style.cssText = 'background-color:#8B1A1A!important;font-family:inherit!important;font-size:0.95rem!important;border-radius:6px!important;padding:12px 32px!important;cursor:pointer!important;';
+        if (btn.textContent.trim() === 'Subscribe') btn.textContent = 'Suscribirme';
+      }
+      return true;
+    }
+    var tries = 0;
+    var iv = setInterval(function() {
+      if (styleMLForm() || ++tries > 30) clearInterval(iv);
+    }, 300);
+  })();
+</script>
+
+
+  <!-- MailerLite Universal -->
+  <script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '2347774');
+  </script>
+  <!-- End MailerLite Universal -->
+</body>
+</html>
