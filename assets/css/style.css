@@ -125,17 +125,17 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  height: 72px;
+  gap: 16px;
+  height: 80px;
 }
 
 .nav__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-family: var(--f-serif);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--c-granate);
   text-decoration: none;
   flex-shrink: 0;
@@ -143,8 +143,8 @@ p:last-child { margin-bottom: 0; }
 .nav__brand:hover { color: var(--c-granate-dark); text-decoration: none; }
 
 .nav__brand-mark {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   background: transparent;
   border-radius: 0;
   display: flex;
@@ -157,9 +157,9 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0;
 }
 
-.nav__brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.nav__brand-name { font-size: 1.05rem; }
-.nav__brand-sub { font-size: 0.64rem; color: var(--c-texto-suave); font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; }
+.nav__brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.nav__brand-name { font-size: 1.15rem; }
+.nav__brand-sub { font-size: 0.66rem; color: var(--c-texto-suave); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
 
 .nav__menu {
   display: flex;
@@ -174,10 +174,10 @@ p:last-child { margin-bottom: 0; }
 
 .nav__menu a {
   color: var(--c-texto);
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
-  padding: 6px 9px;
+  padding: 6px 12px;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
   transition: color var(--t), border-color var(--t);
@@ -192,7 +192,7 @@ p:last-child { margin-bottom: 0; }
 .nav__cta {
   background: var(--c-granate);
   color: #fff !important;
-  padding: 8px 14px !important;
+  padding: 10px 18px !important;
   border-radius: var(--radius);
   border: none !important;
   font-weight: 600 !important;
