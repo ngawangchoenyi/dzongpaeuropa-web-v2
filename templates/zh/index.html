@@ -1,0 +1,103 @@
+{% extends "_base_zh.html" %}
+{% set page = {
+  "title": 'Dzongpa Europa · 萨迦宗巴传承的藏传佛教',
+  "description": 'Dzongpa Europa：在尊贵的第六世贡噶多杰丹巴仁波切指引下的藏传佛教、文化与禅修。',
+  "slug": '',
+  "es_slug": '',
+  "active": 'home'
+} %}
+{% block extra_head %}
+  <style>
+    @media (max-width: 800px) { .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; } }
+  </style>
+{% endblock %}
+{% block content %}
+    <section class="hero-banner-image" aria-label="Dzongpa Europa">
+      <img src="/assets/img/hero/hero-dzongpa-europa-chino.png" alt="Dzongpa Europa - Dzongpa 文化协会">
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose text-center">
+        <h2>一个致力于在欧洲保存萨迦宗巴传承的团体</h2>
+        <p class="lead">Dzongpa Europa 是一个文化与精神项目，致力于保存并分享宗巴传承的教法。宗巴传承是藏传佛教萨迦派中的一个支系传统。</p>
+        <p>通过 Dzongpa 文化协会，我们希望为佛法学习、禅修实践、教学活动的组织、邀请上师来访，以及藏族文化与宗巴传承在欧洲的鲜活传承创造条件。</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center"><h2>三大支柱</h2><p class="lead">支撑我们工作的基础</p></div>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">☸</div>
+            <h3>鲜活的传统</h3>
+            <p>萨迦宗巴传承的真实传承，由具格上师护持，并植根于五百多年寺院修学传统之中。</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">✦</div>
+            <h3>易于接近的修持</h3>
+            <p>引导禅修、佛法学习和公开教学，向不同背景的人开放，无论其是否为佛教修行者。</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">⚭</div>
+            <h3>社区与服务</h3>
+            <p>一个相遇、志愿服务与合作的空间，让我们共同护持传承的保存，并利益众生。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: center;" class="rin-block">
+          <div>
+            <img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg"
+                 alt="尊贵的第六世贡噶多杰丹巴仁波切" loading="lazy"
+                 style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;">
+          </div>
+          <div class="prose">
+            <h2>在尊贵的多杰丹巴仁波切<br>指导下</h2>
+            <p>尊贵的第六世贡噶多杰丹巴仁波切，丹增蒋巴隆托南嘉，是藏传佛教萨迦传统中宗巴传承的最高持有者。仁波切于1988年由尊胜的第十四世达赖喇嘛认证，在印度德拉敦的萨迦学院接受训练，并由第四十一任萨迦赤钦举行升座仪式。</p>
+            <p><a href="/zh/rinpoche" class="btn btn--outline" style="margin-top:8px;">了解仁波切的传记 →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center"><h2>从德拉敦到瓦伦西亚</h2><p class="lead">一段比表面看来更悠久的历史</p></div>
+        <div class="container-prose prose" style="margin-top: 32px;">
+          <p>萨迦宗巴传承在西班牙的出现，源于土库多杰丹巴仁波切与 Kunga Tsondru ——José Manuel Sánchez—— 在印度德拉敦贡噶确德寺的一次相遇。2012年，仁波切在阿利坎特省佩德雷格尔的萨迦基金会首次给予教法。</p>
+          <p>那些教法种下了种子，后来逐渐发展成为 Dzongpa 文化协会，并在今天形成 Dzongpa Europa 项目。</p>
+          <p class="text-center" style="margin-top:24px;"><a href="/zh/history" class="btn btn--outline">阅读完整历史 →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-center">
+        <h2>一个遍布四大洲的传统</h2>
+        <p class="lead">萨迦宗巴传承，从根本道场到新的团体</p>
+        <ul class="centros-foto-grid">
+          <li><img src="/assets/img/linaje-gongkar/lin-03-gongkar-choede-lhokha-tibet-exterior-hero.jpg" alt="西藏贡噶确德寺" loading="lazy"><div class="centros-foto-grid__caption"><strong>西藏</strong><span>贡噶确德寺，创建于1464年</span></div></li>
+          <li><img src="/assets/img/comunidad-centros/com-01-sangha-gongkar-choede-dehradun-shrine-room.jpg" alt="印度德拉敦贡噶确德寺" loading="lazy"><div class="centros-foto-grid__caption"><strong>印度</strong><span>德拉敦贡噶确德寺 · 2003年重建</span></div></li>
+          <li><img src="/assets/img/comunidad-centros/com-03-taiwan-sakya-dzongpa-vajrayana-community-ritual.jpg" alt="台湾萨迦宗巴金刚乘中心" loading="lazy"><div class="centros-foto-grid__caption"><strong>台湾</strong><span>台北萨迦宗巴金刚乘中心</span></div></li>
+          <li><img src="/assets/img/londres/lon-04-gompa-londres.jpg" alt="伦敦萨迦宗巴金刚乘中心" loading="lazy"><div class="centros-foto-grid__caption"><strong>英国</strong><span>伦敦萨迦宗巴金刚乘中心</span></div></li>
+          <li><img src="/assets/img/espana-2026/esp26-036-ensenanzas-sala.jpg" alt="西班牙Dzongpa Europa" loading="lazy"><div class="centros-foto-grid__caption"><strong>西班牙</strong><span>Dzongpa 文化协会 · Dzongpa Europa</span></div></li>
+          <li><img src="/assets/img/australia/aus-02-ensenanzas-gompa-australia.jpg" alt="澳大利亚宗巴团体" loading="lazy"><div class="centros-foto-grid__caption"><strong>澳大利亚</strong><span>澳大利亚宗巴团体</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container-prose text-center">
+        <h2>支持这个项目</h2>
+        <p class="lead" style="color: rgba(255,255,255,.85);">每一份供养，无论大小，都有助于创造条件，使藏族文化与佛法教义能够在欧洲开花结果。</p>
+        <div class="hero__cta-row" style="margin-top: 28px;">
+          <a href="/zh/join" class="btn btn--gold">成为会员</a>
+          <a href="/zh/donate" class="btn btn--ghost">立即捐款</a>
+        </div>
+      </div>
+    </section>
+{% endblock %}

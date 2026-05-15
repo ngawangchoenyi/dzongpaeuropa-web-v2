@@ -1,0 +1,32 @@
+{% extends "_base_de.html" %}
+{% set page = {
+  "title": 'Rinpoche · Dzongpa Europa',
+  "description": 'Biografie Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche.',
+  "slug": 'rinpoche',
+  "es_slug": 'rinpoche',
+  "active": 'rinpoche'
+} %}
+{% block extra_head %}
+  <style>
+    @media (max-width: 800px) { .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; } }
+  </style>
+{% endblock %}
+{% block content %}
+    <section class="page-hero section section--dark"><div class="container-prose text-center"><h1>Seine Eminenz der VI. Gongkar Dorje Denpa Rinpoche</h1><p class="lead">Tenzin Jampal Lungtok Namgyal · Oberstes Oberhaupt der Dzongpa-Linie</p></div></section>
+    <section class="section"><div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start;" class="rin-block">
+        <div><img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg" alt="S.E. der VI. Gongkar Dorje Denpa Rinpoche" loading="lazy" style="border-radius:12px; box-shadow:0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;"></div>
+        <div class="prose">
+          <p>Seine Eminenz der VI. Gongkar Dorje Denpa Rinpoche, Tenzin Jampal Lungtok Namgyal, ist das oberste Oberhaupt der Dzongpa-Linie der Sakya-Tradition des tibetischen Buddhismus. Geboren 1977 in Arunachal Pradesh, Nordostindien.</p>
+          <h2>Anerkennung als Tulku</h2>
+          <p>1988 wurde Rinpoche in Arunachal Pradesh gefunden und von Seiner Heiligkeit dem Dalai Lama anerkannt, der ihm den Namen Tenzin Jampal Lungtok Namgyal gab.</p>
+          <h2>Ausbildung</h2>
+          <p>Er trat als jüngster Schüler in das Sakya College in Dehradun ein und schloss sein Studium 1999 mit Auszeichnung ab. Er empfing das vollständige Lamdré und zahlreiche tantrische Übertragungen von Seiner Heiligkeit dem 41. Sakya Trichen.</p>
+          <h2>Wiedererrichtung von Gongkar Choede</h2>
+          <p>2003 errichtete Rinpoche das Kloster Gongkar Choede in Dehradun wieder. Das Kloster wurde von Seiner Heiligkeit dem Dalai Lama eingeweiht und Rinpoche vom 41. Sakya Trichen als Linienoberhaupt inthronisiert.</p>
+          <h2>Internationale Tätigkeit</h2>
+          <p>Seit 2005 reist Rinpoche international, um buddhistische Unterweisungen anzubieten. Er hat die Sakya Dzongpa Vajrayana Community in Taipeh gegründet, und Gemeinschaften haben sich in Indien, Taiwan, dem Vereinigten Königreich, Spanien, Australien und Hongkong gebildet.</p>
+        </div>
+      </div>
+    </div></section>
+{% endblock %}

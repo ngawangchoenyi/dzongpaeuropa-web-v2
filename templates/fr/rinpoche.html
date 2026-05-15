@@ -1,0 +1,50 @@
+{% extends "_base_fr.html" %}
+{% set page = {
+  "title": 'Rinpoché · Dzongpa Europa',
+  "description": 'Biographie de Son Éminence le VIe Gongkar Dorje Denpa Rinpoché.',
+  "slug": 'rinpoche',
+  "es_slug": 'rinpoche',
+  "active": 'rinpoche'
+} %}
+{% block extra_head %}
+  <style>
+    @media (max-width: 800px) {
+      .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; }
+    }
+  </style>
+{% endblock %}
+{% block content %}
+    <section class="page-hero section section--dark">
+      <div class="container-prose text-center">
+        <h1>Son Éminence le VIe Gongkar Dorje Denpa Rinpoché</h1>
+        <p class="lead">Tenzin Jampal Lungtok Namgyal · Chef suprême de la lignée Dzongpa de la tradition Sakya</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start;" class="rin-block">
+          <div>
+            <img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg"
+                 alt="S.É. le VIe Gongkar Dorje Denpa Rinpoché" loading="lazy"
+                 style="border-radius:12px; box-shadow:0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;">
+          </div>
+          <div class="prose">
+            <p>Son Éminence le VIe Gongkar Dorje Denpa Rinpoché, Tenzin Jampal Lungtok Namgyal, est le Chef suprême de la lignée Dzongpa de la tradition Sakya du bouddhisme tibétain. Né en 1977 dans l'Arunachal Pradesh, au nord-est de l'Inde, sa vie et son enseignement sont consacrés à la préservation de la tradition Dzongpa et au bien des êtres.</p>
+
+            <h2>Reconnaissance comme tulkou</h2>
+            <p>En 1988, Rinpoché fut trouvé en Arunachal Pradesh et reconnu par Sa Sainteté le Dalaï-Lama, qui lui conféra la cérémonie de coupe des cheveux et lui donna le nom de Tenzin Jampal Lungtok Namgyal.</p>
+
+            <h2>Formation</h2>
+            <p>Il entra comme le plus jeune élève au Sakya College de Dehradun, où il obtint son diplôme avec distinction en 1999. Outre la maîtrise des treize grands shastras, Rinpoché reçut le Lamdré complet et de nombreuses transmissions tantriques de Sa Sainteté le 41e Sakya Trichen.</p>
+
+            <h2>Rétablissement de Gongkar Choede</h2>
+            <p>En 2003, Rinpoché rétablit le monastère de Gongkar Choede à Dehradun, en Inde. Le monastère fut inauguré par Sa Sainteté le Dalaï-Lama et, lors de cette même cérémonie, Rinpoché fut intronisé comme Lama Chef de la lignée par Sa Sainteté le 41e Sakya Trichen.</p>
+
+            <h2>Activité internationale</h2>
+            <p>Depuis 2005, Rinpoché voyage à l'international pour offrir des enseignements bouddhistes. Il a établi la Sakya Dzongpa Vajrayana Community à Taipei, et des communautés se sont formées en Inde, à Taïwan, au Royaume-Uni, en Espagne, en Australie et à Hong Kong.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

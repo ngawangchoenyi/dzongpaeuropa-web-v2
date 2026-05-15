@@ -77,9 +77,15 @@
           <li><a href="/contacto" >Contacto</a></li>
           <li><a href="/hazte-socio" class="nav__cta" >Hazte socio</a></li>
         </ul>
-        <div class="lang-switcher">
-          <span>ES</span>
-          <a href="/en/history">EN</a>
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES ▾</button>
+          <div class="lang-switcher__menu">
+            <span>ES</span>
+            <a href="/en/history">EN</a>
+            <a href="/fr/history">FR</a>
+            <a href="/de/history">DE</a>
+            <a href="/zh/history">ZH</a>
+          </div>
         </div>
       </nav>
     </div>
@@ -423,9 +429,7 @@
       });
     })();
   </script>
-  <script src="/assets/js/lightbox.js" defer></script>
-  
-
-  <!-- MailerLite Universal -->
   <script>
-  (function(w,d,e,u,f,l,n){
+    function toggleLang(btn) {
+      var sw = btn.closest('.lang-switcher');
+      var op

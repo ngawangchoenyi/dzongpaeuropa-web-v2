@@ -1,0 +1,41 @@
+{% extends "_base_fr.html" %}
+{% set page = {
+  "title": 'Dons · Dzongpa Europa',
+  "description": 'Soutenez les activités de Dzongpa Europa.',
+  "slug": 'donate',
+  "es_slug": 'donaciones',
+  "active": 'donate'
+} %}
+{% block content %}
+    <section class="page-hero section section--dark">
+      <div class="container-prose text-center">
+        <h1>Dons</h1>
+        <p class="lead">Une contribution pour que les enseignements s'épanouissent</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p>Les dons aident à soutenir les activités de Dzongpa Europa et à créer les conditions nécessaires pour préserver et partager les enseignements de la lignée Dzongpa.</p>
+
+        <h2>Destination des dons</h2>
+        <ul>
+          <li>Invitation de maîtres de la lignée et organisation de retraites.</li>
+          <li>Enseignements en présentiel et en ligne.</li>
+          <li>Traduction de textes du Dharma.</li>
+          <li>Location d'espaces pour retraites et enseignements.</li>
+          <li>Site web, communication et bulletin.</li>
+          <li>Fonds stable de l'association.</li>
+        </ul>
+
+        <h2>Virement bancaire</h2>
+        <div style="background:var(--c-crema-soft);border:1px solid var(--c-borde);border-radius:8px;padding:24px;margin:24px 0;">
+          <p><strong>Association Culturelle Dzongpa</strong><br>
+          Banque : Caixa Popular<br>
+          IBAN : ES69 3159 0049 8128 4488 3229<br>
+          Référence : « Don + votre nom »</p>
+        </div>
+        <p>Pour toute question : <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></p>
+      </div>
+    </section>
+{% endblock %}

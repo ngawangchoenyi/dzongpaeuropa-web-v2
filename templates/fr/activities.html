@@ -1,0 +1,40 @@
+{% extends "_base_fr.html" %}
+{% set page = {
+  "title": 'Activités · Dzongpa Europa',
+  "description": 'Méditation, étude, retraites et vie communautaire.',
+  "slug": 'activities',
+  "es_slug": 'actividades',
+  "active": 'activities'
+} %}
+{% block content %}
+    <section class="page-hero section section--dark">
+      <div class="container-prose text-center">
+        <h1>Activités</h1>
+        <p class="lead">Méditation, étude, retraites et vie communautaire</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p>Dzongpa Europa organise un programme régulier d'activités destinées à rapprocher les enseignements du Dharma et la culture tibétaine de personnes de tous horizons.</p>
+        <div class="pillars" style="margin-top:40px;">
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">☸</div>
+            <h3>Méditation guidée</h3>
+            <p>Rencontres régulières de méditation visant à cultiver le calme mental, la pleine attention, la compassion et la clarté intérieure.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">✦</div>
+            <h3>Étude du Dharma</h3>
+            <p>Sessions d'introduction et d'étude sur le bouddhisme tibétain, les textes traditionnels et les principes fondamentaux du chemin bouddhiste.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">⚭</div>
+            <h3>Retraites et enseignements</h3>
+            <p>Organisation de retraites, de cours et d'enseignements avec des maîtres qualifiés, à Valence et dans d'autres lieux d'Europe.</p>
+          </article>
+        </div>
+        <p class="text-center" style="margin-top:40px;"><a href="/fr/contact" class="btn btn--outline">Des questions ? Écrivez-nous</a></p>
+      </div>
+    </section>
+{% endblock %}

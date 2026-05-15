@@ -1,0 +1,24 @@
+{% extends "_base_fr.html" %}
+{% set page = {
+  "title": 'Contact · Dzongpa Europa',
+  "description": "Contactez l'Association Culturelle Dzongpa.",
+  "slug": 'contact',
+  "es_slug": 'contacto',
+  "active": 'contact'
+} %}
+{% block content %}
+    <section class="page-hero section section--dark">
+      <div class="container-prose text-center">
+        <h1>Contact</h1>
+        <p class="lead">Nous sommes là pour vous aider</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose text-center">
+        <p>Si vous souhaitez recevoir des informations, participer aux activités, devenir membre, collaborer comme bénévole ou soutenir le projet, écrivez-nous. Nous répondons aux demandes en espagnol, anglais et chinois.</p>
+        <p style="margin-top:32px;"><a href="mailto:secretaria@dzongpaeuropa.org" class="btn btn--gold" style="font-size:1.05rem;">secretaria@dzongpaeuropa.org</a></p>
+        <p style="margin-top:16px;color:var(--c-texto-suave);">Nous répondons dans un délai moyen de 3 à 5 jours ouvrables.</p>
+      </div>
+    </section>
+{% endblock %}

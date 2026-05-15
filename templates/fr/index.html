@@ -1,0 +1,130 @@
+{% extends "_base_fr.html" %}
+{% set page = {
+  "title": 'Dzongpa Europa · Bouddhisme tibétain de la lignée Sakya Dzongpa',
+  "description": 'Dzongpa Europa : bouddhisme tibétain, culture et méditation sous la guidance de S.É. le VIe Gongkar Dorje Denpa Rinpoché.',
+  "slug": '',
+  "es_slug": '',
+  "active": 'home'
+} %}
+{% block extra_head %}
+  <style>
+    @media (max-width: 800px) {
+      .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; }
+    }
+  </style>
+{% endblock %}
+{% block content %}
+    <section class="hero-banner-image" aria-label="Dzongpa Europa">
+      <img src="/assets/img/hero/hero-dzongpa-europa-frances.png" alt="Dzongpa Europa - Association Culturelle Dzongpa">
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose text-center">
+        <h2>Une communauté pour préserver la lignée Sakya Dzongpa en Europe</h2>
+        <p class="lead">Dzongpa Europa est un projet culturel et spirituel consacré à la préservation et au partage des enseignements de la lignée Dzongpa, une sous-tradition de l'école Sakya du bouddhisme tibétain.</p>
+        <p>À travers l'Association Culturelle Dzongpa, nous cherchons à créer les conditions favorables à l'étude du Dharma, à la pratique de la méditation, à l'organisation d'enseignements, à l'invitation de maîtres et à la transmission vivante de la culture tibétaine et de la lignée Dzongpa en Europe.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center">
+          <h2>Trois piliers</h2>
+          <p class="lead">Ce qui soutient notre travail</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">☸</div>
+            <h3>Tradition vivante</h3>
+            <p>Une transmission authentique de la lignée Sakya Dzongpa, portée par des maîtres qualifiés et enracinée dans plus de cinq siècles de pratique monastique.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">✦</div>
+            <h3>Pratique accessible</h3>
+            <p>Méditation guidée, étude du Dharma et enseignements ouverts aux personnes de toute origine, qu'elles soient ou non pratiquantes bouddhistes.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">⚭</div>
+            <h3>Communauté et service</h3>
+            <p>Un espace de rencontre, de bénévolat et de collaboration pour soutenir ensemble la préservation de la lignée et le bien des êtres.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: center;" class="rin-block">
+          <div>
+            <img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg"
+                 alt="S.É. le VIe Gongkar Dorje Denpa Rinpoché sur le trône cérémoniel"
+                 loading="lazy"
+                 style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;">
+          </div>
+          <div class="prose">
+            <h2>Sous la guidance de<br>Son Éminence Dorje Denpa Rinpoché</h2>
+            <p>Son Éminence le VIe Gongkar Dorje Denpa Rinpoché, Tenzin Jampal Lungtok Namgyal, est le Chef suprême de la lignée Dzongpa de la tradition Sakya du bouddhisme tibétain. Reconnu en 1988 par Sa Sainteté le XIVe Dalaï-Lama, formé au Sakya College de Dehradun et intronisé par le 41e Sakya Trichen, il consacre sa vie à la préservation de la lignée et au bien des êtres.</p>
+            <p><a href="/fr/rinpoche" class="btn btn--outline" style="margin-top:8px;">Découvrir sa biographie →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center">
+          <h2>De Dehradun à Valence</h2>
+          <p class="lead">Une histoire plus longue qu'il n'y paraît</p>
+        </div>
+        <div class="container-prose prose" style="margin-top: 32px;">
+          <p>La présence de la lignée Sakya Dzongpa en Espagne est née de la rencontre entre Rinpoché et Kunga Tsondru —José Manuel Sánchez— au Sakya College de Dehradun, en Inde. En 2012, Rinpoché offrit les premiers enseignements à la Fondation Sakya de Pedreguer (Alicante), accompagné du Vénérable Khenpo Rinchen et du Vénérable Khyentse-la, sous la présence spirituelle de Sa Sainteté le 41e Sakya Trichen.</p>
+          <p>Ces enseignements semèrent les graines de ce qui deviendrait l'Association Culturelle Dzongpa et, aujourd'hui, le projet Dzongpa Europa.</p>
+          <p class="text-center" style="margin-top:24px;"><a href="/fr/history" class="btn btn--outline">Lire l'histoire complète →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-center">
+        <h2>Une tradition présente sur quatre continents</h2>
+        <p class="lead">La lignée Sakya Dzongpa, du monastère racine aux nouvelles communautés</p>
+        <ul class="centros-foto-grid">
+          <li>
+            <img src="/assets/img/linaje-gongkar/lin-03-gongkar-choede-lhokha-tibet-exterior-hero.jpg" alt="Monastère de Gongkar Choede au Tibet" loading="lazy">
+            <div class="centros-foto-grid__caption"><strong>Tibet</strong><span>Gongkar Choede, fondé en 1464</span></div>
+          </li>
+          <li>
+            <img src="/assets/img/comunidad-centros/com-01-sangha-gongkar-choede-dehradun-shrine-room.jpg" alt="Gongkar Choede à Dehradun, Inde" loading="lazy">
+            <div class="centros-foto-grid__caption"><strong>Inde</strong><span>Gongkar Choede, Dehradun · rétabli en 2003</span></div>
+          </li>
+          <li>
+            <img src="/assets/img/comunidad-centros/com-03-taiwan-sakya-dzongpa-vajrayana-community-ritual.jpg" alt="Sakya Dzongpa Vajrayana Community à Taïwan" loading="lazy">
+            <div class="centros-foto-grid__caption"><strong>Taïwan</strong><span>Sakya Dzongpa Vajrayana Community, Taipei</span></div>
+          </li>
+          <li>
+            <img src="/assets/img/londres/lon-04-gompa-londres.jpg" alt="London Sakya Dzongpa Vajrayana Centre" loading="lazy">
+            <div class="centros-foto-grid__caption"><strong>Royaume-Uni</strong><span>London Sakya Dzongpa Vajrayana Centre</span></div>
+          </li>
+          <li>
+            <img src="/assets/img/espana-2026/esp26-036-ensenanzas-sala.jpg" alt="Dzongpa Europa en Espagne" loading="lazy">
+            <div class="centros-foto-grid__caption"><strong>Espagne</strong><span>Association Culturelle Dzongpa · Dzongpa Europa</span></div>
+          </li>
+          <li>
+            <img src="/assets/img/australia/aus-02-ensenanzas-gompa-australia.jpg" alt="Communauté Dzongpa en Australie" loading="lazy">
+            <div class="centros-foto-grid__caption"><strong>Australie</strong><span>Communauté Dzongpa en Australie</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container-prose text-center">
+        <h2>Soutenir le projet</h2>
+        <p class="lead" style="color: rgba(255,255,255,.85);">Chaque contribution, grande ou petite, aide à créer les conditions permettant à la culture tibétaine et aux enseignements du Dharma de s'épanouir en Europe.</p>
+        <div class="hero__cta-row" style="margin-top: 28px;">
+          <a href="/fr/join" class="btn btn--gold">Adhérer</a>
+          <a href="/fr/donate" class="btn btn--ghost">Faire un don</a>
+        </div>
+      </div>
+    </section>
+{% endblock %}

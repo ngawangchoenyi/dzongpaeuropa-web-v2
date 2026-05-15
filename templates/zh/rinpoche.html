@@ -1,0 +1,32 @@
+{% extends "_base_zh.html" %}
+{% set page = {
+  "title": '仁波切 · Dzongpa Europa',
+  "description": '尊贵的第六世贡噶多杰丹巴仁波切传记。',
+  "slug": 'rinpoche',
+  "es_slug": 'rinpoche',
+  "active": 'rinpoche'
+} %}
+{% block extra_head %}
+  <style>
+    @media (max-width: 800px) { .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; } }
+  </style>
+{% endblock %}
+{% block content %}
+    <section class="page-hero section section--dark"><div class="container-prose text-center"><h1>尊贵的第六世贡噶多杰丹巴仁波切</h1><p class="lead">丹增蒋巴隆托南嘉 · 宗巴传承的最高持有者</p></div></section>
+    <section class="section"><div class="container">
+      <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start;" class="rin-block">
+        <div><img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg" alt="尊贵的第六世贡噶多杰丹巴仁波切" loading="lazy" style="border-radius:12px; box-shadow:0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;"></div>
+        <div class="prose">
+          <p>尊贵的第六世贡噶多杰丹巴仁波切，丹增蒋巴隆托南嘉，是藏传佛教萨迦传统中宗巴传承的最高持有者。仁波切1977年生于印度东北部阿鲁纳恰尔邦，毗邻西藏边境。</p>
+          <h2>认证为祖古</h2>
+          <p>1988年，仁波切在阿鲁纳恰尔邦被找到，并由尊胜的达赖喇嘛认证，赐名丹增蒋巴隆托南嘉。</p>
+          <h2>教育</h2>
+          <p>仁波切作为年龄最小的学生进入德拉敦萨迦学院，于1999年以优异成绩毕业。他从第四十一任萨迦赤钦处领受了完整的道果法及众多密续传授。</p>
+          <h2>重建贡噶确德寺</h2>
+          <p>2003年，仁波切在印度德拉敦重建了贡噶确德寺。该寺由达赖喇嘛开光，仁波切同时由第四十一任萨迦赤钦升座为传承法主。</p>
+          <h2>国际弘法</h2>
+          <p>自2005年起，仁波切在国际间旅行弘法。他在台北建立了萨迦宗巴金刚乘中心，并在印度、台湾、英国、西班牙、澳大利亚和香港形成了修行团体。</p>
+        </div>
+      </div>
+    </div></section>
+{% endblock %}

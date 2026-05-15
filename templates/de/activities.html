@@ -1,0 +1,20 @@
+{% extends "_base_de.html" %}
+{% set page = {
+  "title": 'Aktivitäten · Dzongpa Europa',
+  "description": 'Meditation, Studium, Retreats und Gemeinschaftsleben.',
+  "slug": 'activities',
+  "es_slug": 'actividades',
+  "active": 'activities'
+} %}
+{% block content %}
+    <section class="page-hero section section--dark"><div class="container-prose text-center"><h1>Aktivitäten</h1><p class="lead">Meditation, Studium, Retreats und Gemeinschaftsleben</p></div></section>
+    <section class="section"><div class="container-prose prose">
+        <p>Dzongpa Europa organisiert ein regelmäßiges Programm von Aktivitäten, die die Lehren des Dharma und die tibetische Kultur Menschen aller Hintergründe näherbringen sollen.</p>
+        <div class="pillars" style="margin-top:40px;">
+          <article class="pillar"><div class="pillar__symbol" aria-hidden="true">☸</div><h3>Geführte Meditation</h3><p>Regelmäßige Meditationstreffen zur Kultivierung von geistigem Frieden, Achtsamkeit und Mitgefühl.</p></article>
+          <article class="pillar"><div class="pillar__symbol" aria-hidden="true">✦</div><h3>Dharma-Studium</h3><p>Einführungs- und Studiensitzungen über tibetischen Buddhismus und traditionelle Texte.</p></article>
+          <article class="pillar"><div class="pillar__symbol" aria-hidden="true">⚭</div><h3>Retreats und Unterweisungen</h3><p>Organisation von Retreats und Unterweisungen mit qualifizierten Meistern in Valencia und ganz Europa.</p></article>
+        </div>
+        <p class="text-center" style="margin-top:40px;"><a href="/de/contact" class="btn btn--outline">Fragen? Schreiben Sie uns</a></p>
+    </div></section>
+{% endblock %}

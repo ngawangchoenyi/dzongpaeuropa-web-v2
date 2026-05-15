@@ -63,9 +63,15 @@
           <li><a href="/en/contact" >Contact</a></li>
           <li><a href="/en/join" class="nav__cta" >Join us</a></li>
         </ul>
-        <div class="lang-switcher">
-          <a href="/donaciones">ES</a>
-          <span>EN</span>
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">EN ▾</button>
+          <div class="lang-switcher__menu">
+            <a href="/donaciones">ES</a>
+            <span>EN</span>
+            <a href="/fr/donate">FR</a>
+            <a href="/de/donate">DE</a>
+            <a href="/zh/donate">ZH</a>
+          </div>
         </div>
       </nav>
     </div>
@@ -202,6 +208,17 @@
         });
       });
     })();
+  </script>
+  <script>
+    function toggleLang(btn) {
+      var sw = btn.closest('.lang-switcher');
+      var open = sw.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      if(open) {
+        var close = function(e){ if(!sw.contains(e.target)){ sw.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); document.removeEventListener('click',close); } };
+        setTimeout(function(){ document.addEventListener('click',close); }, 0);
+      }
+    }
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
   

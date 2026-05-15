@@ -1,0 +1,103 @@
+{% extends "_base_de.html" %}
+{% set page = {
+  "title": 'Dzongpa Europa · Tibetischer Buddhismus der Sakya-Dzongpa-Linie',
+  "description": 'Dzongpa Europa: tibetischer Buddhismus, Kultur und Meditation unter der Führung S.E. des VI. Gongkar Dorje Denpa Rinpoche.',
+  "slug": '',
+  "es_slug": '',
+  "active": 'home'
+} %}
+{% block extra_head %}
+  <style>
+    @media (max-width: 800px) { .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; } }
+  </style>
+{% endblock %}
+{% block content %}
+    <section class="hero-banner-image" aria-label="Dzongpa Europa">
+      <img src="/assets/img/hero/hero-dzongpa-europa-aleman.png" alt="Dzongpa Europa - Kulturverein Dzongpa">
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose text-center">
+        <h2>Eine Gemeinschaft zur Bewahrung der Sakya-Dzongpa-Linie in Europa</h2>
+        <p class="lead">Dzongpa Europa ist ein kulturelles und spirituelles Projekt, das der Bewahrung und Weitergabe der Lehren der Dzongpa-Linie gewidmet ist, einer Untertradition der Sakya-Schule des tibetischen Buddhismus.</p>
+        <p>Durch den Kulturverein Dzongpa möchten wir die Bedingungen schaffen für das Studium des Dharma, die Praxis der Meditation, die Organisation von Unterweisungen, die Einladung von Meistern sowie die lebendige Weitergabe der tibetischen Kultur und der Dzongpa-Linie in Europa.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center"><h2>Drei Säulen</h2><p class="lead">Was unsere Arbeit trägt</p></div>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">☸</div>
+            <h3>Lebendige Tradition</h3>
+            <p>Eine authentische Übertragung der Sakya-Dzongpa-Linie, getragen von qualifizierten Meistern und verwurzelt in mehr als fünf Jahrhunderten monastischer Praxis.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">✦</div>
+            <h3>Zugängliche Praxis</h3>
+            <p>Geführte Meditation, Dharma-Studium und Unterweisungen, die Menschen jeder Herkunft offenstehen, ob sie buddhistische Praktizierende sind oder nicht.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">⚭</div>
+            <h3>Gemeinschaft und Dienst</h3>
+            <p>Ein Raum der Begegnung, des ehrenamtlichen Engagements und der Zusammenarbeit, um gemeinsam die Bewahrung der Linie und das Wohl der Wesen zu unterstützen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: center;" class="rin-block">
+          <div>
+            <img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg"
+                 alt="S.E. der VI. Gongkar Dorje Denpa Rinpoche" loading="lazy"
+                 style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;">
+          </div>
+          <div class="prose">
+            <h2>Unter der Führung von<br>Seiner Eminenz Dorje Denpa Rinpoche</h2>
+            <p>Seine Eminenz der VI. Gongkar Dorje Denpa Rinpoche, Tenzin Jampal Lungtok Namgyal, ist das oberste Oberhaupt der Dzongpa-Linie der Sakya-Tradition des tibetischen Buddhismus. Er wurde 1988 von Seiner Heiligkeit dem XIV. Dalai Lama anerkannt, am Sakya College in Dehradun ausgebildet und vom 41. Sakya Trichen inthronisiert.</p>
+            <p><a href="/de/rinpoche" class="btn btn--outline" style="margin-top:8px;">Mehr über seine Biografie erfahren →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center"><h2>Von Dehradun nach Valencia</h2><p class="lead">Eine längere Geschichte, als es zunächst scheint</p></div>
+        <div class="container-prose prose" style="margin-top: 32px;">
+          <p>Die Präsenz der Sakya-Dzongpa-Linie in Spanien entstand aus der Begegnung zwischen Rinpoche und Kunga Tsondru — José Manuel Sánchez — am Sakya College in Dehradun, Indien. Im Jahr 2012 gab Rinpoche die ersten Unterweisungen in der Sakya-Stiftung in Pedreguer (Alicante), unter der spirituellen Präsenz Seiner Heiligkeit des 41. Sakya Trichen.</p>
+          <p>Diese Unterweisungen pflanzten die Samen dessen, was Jahre später zum Kulturverein Dzongpa und heute zum Projekt Dzongpa Europa werden sollte.</p>
+          <p class="text-center" style="margin-top:24px;"><a href="/de/history" class="btn btn--outline">Die vollständige Geschichte lesen →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-center">
+        <h2>Eine Tradition auf vier Kontinenten</h2>
+        <p class="lead">Die Sakya-Dzongpa-Linie, vom Wurzelkloster bis zu neuen Gemeinschaften</p>
+        <ul class="centros-foto-grid">
+          <li><img src="/assets/img/linaje-gongkar/lin-03-gongkar-choede-lhokha-tibet-exterior-hero.jpg" alt="Kloster Gongkar Choede in Tibet" loading="lazy"><div class="centros-foto-grid__caption"><strong>Tibet</strong><span>Gongkar Choede, gegründet 1464</span></div></li>
+          <li><img src="/assets/img/comunidad-centros/com-01-sangha-gongkar-choede-dehradun-shrine-room.jpg" alt="Gongkar Choede in Dehradun, Indien" loading="lazy"><div class="centros-foto-grid__caption"><strong>Indien</strong><span>Gongkar Choede, Dehradun · 2003 wiedererrichtet</span></div></li>
+          <li><img src="/assets/img/comunidad-centros/com-03-taiwan-sakya-dzongpa-vajrayana-community-ritual.jpg" alt="Sakya Dzongpa Vajrayana Community in Taiwan" loading="lazy"><div class="centros-foto-grid__caption"><strong>Taiwan</strong><span>Sakya Dzongpa Vajrayana Community, Taipeh</span></div></li>
+          <li><img src="/assets/img/londres/lon-04-gompa-londres.jpg" alt="London Sakya Dzongpa Vajrayana Centre" loading="lazy"><div class="centros-foto-grid__caption"><strong>Vereinigtes Königreich</strong><span>London Sakya Dzongpa Vajrayana Centre</span></div></li>
+          <li><img src="/assets/img/espana-2026/esp26-036-ensenanzas-sala.jpg" alt="Dzongpa Europa in Spanien" loading="lazy"><div class="centros-foto-grid__caption"><strong>Spanien</strong><span>Kulturverein Dzongpa · Dzongpa Europa</span></div></li>
+          <li><img src="/assets/img/australia/aus-02-ensenanzas-gompa-australia.jpg" alt="Dzongpa-Gemeinschaft in Australien" loading="lazy"><div class="centros-foto-grid__caption"><strong>Australien</strong><span>Dzongpa-Gemeinschaft in Australien</span></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container-prose text-center">
+        <h2>Das Projekt unterstützen</h2>
+        <p class="lead" style="color: rgba(255,255,255,.85);">Jeder Beitrag, ob groß oder klein, hilft dabei, die Bedingungen zu schaffen, damit die tibetische Kultur und die Lehren des Dharma in Europa erblühen können.</p>
+        <div class="hero__cta-row" style="margin-top: 28px;">
+          <a href="/de/join" class="btn btn--gold">Mitglied werden</a>
+          <a href="/de/donate" class="btn btn--ghost">Jetzt spenden</a>
+        </div>
+      </div>
+    </section>
+{% endblock %}
