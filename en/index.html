@@ -39,6 +39,66 @@
     @media (max-width: 800px) {
       .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; }
     }
+    .hero-en {
+      position: relative;
+      overflow: hidden;
+      background: #120607;
+      height: clamp(390px, 40vw, 590px);
+      line-height: 0;
+    }
+    .hero-en img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 47%;
+      display: block;
+    }
+    .hero-en__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(10,2,2,0.72) 0%, rgba(10,2,2,0.45) 45%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-en__text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: clamp(24px, 4vw, 60px) clamp(24px, 5vw, 72px);
+      line-height: 1;
+    }
+    .hero-en__title {
+      font-family: var(--f-serif);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+      text-shadow: 0 2px 12px rgba(0,0,0,.5);
+    }
+    .hero-en__sub {
+      font-family: var(--f-sans);
+      font-size: clamp(0.75rem, 1.4vw, 1rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    .hero-en__lede {
+      font-family: var(--f-sans);
+      font-size: clamp(0.8rem, 1.3vw, 0.97rem);
+      color: rgba(255,255,255,0.78);
+      max-width: 420px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .hero-en { height: auto; }
+      .hero-en img { height: auto; object-fit: contain; }
+      .hero-en__text { padding: 20px 20px 24px; }
+      .hero-en__lede { display: none; }
+    }
   </style>
 
 </head>
@@ -79,15 +139,19 @@
 
   <main id="main">
     
-    <!-- Hero -->
-    <section class="hero-banner-image" aria-label="Dzongpa Europa">
+    <section class="hero-en" aria-label="Dzongpa Europa">
       <img
-        src="/assets/img/hero/hero-dzongpa-europa-opcion-1.png"
+        src="/assets/img/hero/hero-dzongpa-europa-en.png"
         alt="Dzongpa Europa - Dzongpa Cultural Association"
       >
+      <div class="hero-en__overlay"></div>
+      <div class="hero-en__text">
+        <p class="hero-en__sub">Dzongpa Cultural Association</p>
+        <h1 class="hero-en__title">Dzongpa Europa</h1>
+        <p class="hero-en__lede">Preserving the Sakya Dzongpa lineage<br>and the Dharma teachings in Europe</p>
+      </div>
     </section>
 
-    <!-- Welcome -->
     <section class="section">
       <div class="container-prose prose text-center">
         <h2>A community dedicated to preserving the Sakya Dzongpa lineage in Europe</h2>
@@ -96,7 +160,6 @@
       </div>
     </section>
 
-    <!-- Three pillars -->
     <section class="section section--alt">
       <div class="container">
         <div class="text-center">
@@ -123,7 +186,6 @@
       </div>
     </section>
 
-    <!-- Under Rinpoche's guidance -->
     <section class="section">
       <div class="container">
         <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap: 60px; align-items: center;" class="rin-block">
@@ -142,7 +204,6 @@
       </div>
     </section>
 
-    <!-- History / Origin -->
     <section class="section section--alt">
       <div class="container">
         <div class="text-center">
@@ -150,14 +211,13 @@
           <p class="lead">A longer history than it may seem</p>
         </div>
         <div class="container-prose prose" style="margin-top: 32px;">
-          <p>The presence of the Sakya Dzongpa lineage in Spain arose from the encounter between Rinpoche and Kunga Tsondru —José Manuel Sánchex— at Sakya College in Dehradun, India. In 2012, Rinpoche gave the first teachings at the Sakya Foundation in Pedreguer, Alicante, accompanied by Venerable Khenpo Rinchen and Venerable Khyentse-la, under the spiritual presence of His Holiness the 41st Sakya Trichen.</p>
+          <p>The presence of the Sakya Dzongpa lineage in Spain arose from the encounter between Rinpoche and Kunga Tsondru —José Manuel Sánchez— at Sakya College in Dehradun, India. In 2012, Rinpoche gave the first teachings at the Sakya Foundation in Pedreguer, Alicante, accompanied by Venerable Khenpo Rinchen and Venerable Khyentse-la, under the spiritual presence of His Holiness the 41st Sakya Trichen.</p>
           <p>Those teachings planted the seeds of what would later become the Dzongpa Cultural Association, and today, the Dzongpa Europa project.</p>
           <p class="text-center" style="margin-top:24px;"><a href="/en/history" class="btn btn--outline">Read the full history →</a></p>
         </div>
       </div>
     </section>
 
-    <!-- Lineage centres -->
     <section class="section">
       <div class="container text-center">
         <h2>A tradition present on four continents</h2>
@@ -215,7 +275,6 @@
       </div>
     </section>
 
-    <!-- Final call -->
     <section class="section section--dark">
       <div class="container-prose text-center">
         <h2>Support the project</h2>
