@@ -52,4 +52,15 @@ def build():
 
     for page in PAGES + EN_PAGES:
         template = env.get_template(page)
-        ht
+        html = template.render()
+        out_path = os.path.join(ROOT, page)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        with open(out_path, 'w', encoding='utf-8') as f:
+            f.write(html)
+        print(f'  ✓ {page}')
+        ok += 1
+
+    print(f'\n✓ Build completo: {ok} páginas generadas.')
+
+if __name__ == '__main__':
+    build()
