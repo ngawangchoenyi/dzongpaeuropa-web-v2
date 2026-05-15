@@ -40,64 +40,21 @@
       .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; }
     }
     .hero-en {
-      position: relative;
-      overflow: hidden;
       background: #120607;
       height: clamp(390px, 40vw, 590px);
+      overflow: hidden;
       line-height: 0;
     }
     .hero-en img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 47%;
+      object-position: center 50%;
       display: block;
-    }
-    .hero-en__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(10,2,2,0.72) 0%, rgba(10,2,2,0.45) 45%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-en__text {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      padding: clamp(24px, 4vw, 60px) clamp(24px, 5vw, 72px);
-      line-height: 1;
-    }
-    .hero-en__title {
-      font-family: var(--f-serif);
-      font-size: clamp(2rem, 5vw, 4rem);
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      margin: 0 0 10px;
-      text-shadow: 0 2px 12px rgba(0,0,0,.5);
-    }
-    .hero-en__sub {
-      font-family: var(--f-sans);
-      font-size: clamp(0.75rem, 1.4vw, 1rem);
-      font-weight: 400;
-      color: rgba(255,255,255,0.82);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-    }
-    .hero-en__lede {
-      font-family: var(--f-sans);
-      font-size: clamp(0.8rem, 1.3vw, 0.97rem);
-      color: rgba(255,255,255,0.78);
-      max-width: 420px;
-      line-height: 1.6;
-      margin: 0;
     }
     @media (max-width: 768px) {
       .hero-en { height: auto; }
       .hero-en img { height: auto; object-fit: contain; }
-      .hero-en__text { padding: 20px 20px 24px; }
-      .hero-en__lede { display: none; }
     }
   </style>
 
@@ -141,15 +98,9 @@
     
     <section class="hero-en" aria-label="Dzongpa Europa">
       <img
-        src="/assets/img/hero/hero-dzongpa-europa-en.png"
+        src="/assets/img/hero/hero-dzongpa-europe-english.png"
         alt="Dzongpa Europa - Dzongpa Cultural Association"
       >
-      <div class="hero-en__overlay"></div>
-      <div class="hero-en__text">
-        <p class="hero-en__sub">Dzongpa Cultural Association</p>
-        <h1 class="hero-en__title">Dzongpa Europa</h1>
-        <p class="hero-en__lede">Preserving the Sakya Dzongpa lineage<br>and the Dharma teachings in Europe</p>
-      </div>
     </section>
 
     <section class="section">
