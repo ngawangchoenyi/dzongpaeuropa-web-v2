@@ -49,7 +49,7 @@ img/
 
 ### Rinpoche con SS el Dalái Lama (DAL)
 - `dal-01-dalai-lama-caminando.jpg` → Caminando junto al Dalái Lama (color)
-- `dal-02-dalai-lama-mano.jpg` → Joven sosteniendo la mano del Dalái Lama (1988)
+- `dal-02-dalai-lama-mano.jpg` → Joven sosteniendo la mano del Dalái Lama (1989)
 - `dal-03-dalai-lama-sakya-trichen.jpg` → Con Dalái Lama Y 41º Sakya Trichen
 - `dal-04-dalai-lama-medio.jpg` → Plano medio frontal con el Dalái Lama
 
@@ -88,7 +88,7 @@ img/
 
 ### Actividad en España (ESP)
 - `esp-01-pedreguer-grupo-2012.jpg` → ★ Foto de grupo Fundación Sakya Pedreguer 2012
-- `esp-02-pedreguer-tres-monjes-2012.jpg` → ★ Enseñanza con Khenpo Rinchen y Khyentse la, 2012
+- `esp-02-pedreguer-tres-monjes-2012.jpg` → ★ Enseñanza con Khyentse la, 2012
 - `esp-03-pedreguer-rinpoche-2012.jpg` → ★ Rinpoche enseñando, foto Sakya Trichen al fondo, 2012
 - `esp-04-valencia-ensenanza.jpg` → ★ Enseñanza reciente Valencia (columna ladrillo)
 - `esp-05-valencia-grupo.jpg` → Foto de grupo reciente con practicantes españoles
