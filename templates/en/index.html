@@ -11,27 +11,10 @@
     @media (max-width: 800px) {
       .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; }
     }
-    .hero-en {
-      background: #120607;
-      height: clamp(390px, 40vw, 590px);
-      overflow: hidden;
-      line-height: 0;
-    }
-    .hero-en img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 50%;
-      display: block;
-    }
-    @media (max-width: 768px) {
-      .hero-en { height: auto; }
-      .hero-en img { height: auto; object-fit: contain; }
-    }
   </style>
 {% endblock %}
 {% block content %}
-    <section class="hero-en" aria-label="Dzongpa Europa">
+    <section class="hero-banner-image" aria-label="Dzongpa Europa">
       <img
         src="/assets/img/hero/hero-dzongpa-europe-english.png"
         alt="Dzongpa Europa - Dzongpa Cultural Association"
