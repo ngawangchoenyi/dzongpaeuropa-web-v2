@@ -1,0 +1,74 @@
+{% extends "_base_en.html" %}
+{% set page = {
+  "title": 'Donations · Dzongpa Europa',
+  "description": 'Support Dzongpa Europa with your donation and help preserve the Sakya Dzongpa lineage. Card payment, transfer, and other ways to give.',
+  "slug": 'donate',
+  "es_slug": 'donaciones',
+  "active": ''
+} %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>Donations</h1>
+        <p class="page-header__lede">A contribution so that the teachings may flourish</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">Donations help sustain the activities of Dzongpa Europa and create the necessary conditions to preserve and share the teachings of the Dzongpa lineage.</p>
+        <p>Contributions may be used for the organization of teachings and retreats, visits by masters, translation of texts, rental of spaces, website maintenance, communication, practice materials, and the creation of a stable fund for the association.</p>
+
+        <h2>Purpose of donations</h2>
+        <ul>
+          <li>Inviting lineage masters and organizing retreats.</li>
+          <li>In-person and online teachings.</li>
+          <li>Translation of Dharma texts into Spanish, English, and Chinese.</li>
+          <li>Rental of spaces for retreats and teachings.</li>
+          <li>Practice materials and library.</li>
+          <li>Website, communication, and newsletter.</li>
+          <li>Stable fund for the association.</li>
+          <li>Support for other cultural and spiritual projects of the lineage.</li>
+        </ul>
+      </div>
+
+      <div class="golden-box" style="margin-top: 32px;">
+        <h3>Donate by card</h3>
+        <p style="color: var(--c-texto-suave); margin-bottom: 20px;">One-time or recurring payment by credit or debit card. Secure Stripe platform.</p>
+        <div class="hero__cta-row" style="margin-top: 0; flex-wrap: wrap; gap: 10px;">
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=10" target="_blank" rel="noopener" class="btn btn--outline">10 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=25" target="_blank" rel="noopener" class="btn btn--outline">25 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=50" target="_blank" rel="noopener" class="btn btn--outline">50 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=108" target="_blank" rel="noopener" class="btn btn--primary">108 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00" target="_blank" rel="noopener" class="btn btn--outline">Other amount</a>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--c-texto-suave); margin-top: 14px; margin-bottom: 0;">
+          You will be redirected to Stripe's secure payment gateway. We accept Visa, Mastercard, and American Express.
+        </p>
+      </div>
+
+      <div class="container" style="margin-top: 48px;">
+        <h2 class="text-center">Other ways to donate</h2>
+        <ul class="centros-list" style="max-width: 900px; margin: 32px auto;">
+          <li>
+            <strong>Bank transfer</strong>
+            <p style="margin: 0; font-size: 0.95rem;">
+              <strong>Asociación Cultural Dzongpa</strong><br>
+              Bank: Caixa Popular<br>
+              IBAN: <code style="background: var(--c-crema); padding: 2px 6px; border-radius: 4px;">ES69 3159 0049 8128 4488 3229</code><br>
+              Reference: "Donation + your name"
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>Non-monetary and asset donations</h2>
+        <p>The association may also receive non-monetary or asset donations — movable goods, real estate, libraries, practice objects — provided that they are aligned with its cultural and spiritual aims and are accepted in accordance with the applicable regulations and the entity's internal agreements. If you wish to make a contribution of this kind, write to us at <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a> and we will guide you through the process.</p>
+
+        <h2>Tax aspects</h2>
+        <p>The Dzongpa Cultural Association is registered in the Register of Associations of the Valencian Community under number <strong>CV-01-062727-V</strong> (First Section). As a non-profit organization, we issue an annual certificate of contributions which may, where applicable, allow you to benefit from the tax deductions available for donations to non-profit entities. For this purpose, we need your full name, tax identification number, and postal address.</p>
+      </div>
+    </section>
+{% endblock %}

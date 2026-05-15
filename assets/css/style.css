@@ -835,3 +835,29 @@ p:last-child { margin-bottom: 0; }
     display: block;
   }
 }
+
+/* ── Language switcher ───────────────────────────────────── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+.lang-switcher a,
+.lang-switcher span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--c-texto);
+  line-height: 1;
+}
+.lang-switcher span {
+  background: var(--c-granate);
+  color: #fff;
+}
+.lang-switcher a:hover { background: var(--c-crema-soft); }
+@media (max-width: 940px) { .lang-switcher { margin-left: 8px; } }

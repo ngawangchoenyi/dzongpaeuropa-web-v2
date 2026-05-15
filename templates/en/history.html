@@ -1,0 +1,289 @@
+{% extends "_base_en.html" %}
+{% set page = {
+  "title": 'History of Dzongpa in Spain · Dzongpa Europa',
+  "description": 'From Dehradun to Valencia, from Valencia to Europe: the origin and journey of the Sakya Dzongpa lineage in Spain, from the first teachings in 2012 to the founding of the association and the blessings of the Sakya Trizins.',
+  "slug": 'history',
+  "es_slug": 'historia',
+  "active": 'history'
+} %}
+{% block extra_head %}
+<style>
+  .historia-foto { border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width: 100%; height: auto; display: block; margin: 0 auto; }
+  .historia-foto-caption { text-align: center; font-style: italic; color: var(--c-texto-suave); margin-top: 10px; font-size: 0.9rem; }
+  .historia-doble { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin: 40px 0; }
+  @media (max-width: 700px) { .historia-doble { grid-template-columns: 1fr; } }
+  .timeline-v2 { list-style: none; padding: 0; margin: 40px 0 0; border-left: 3px solid var(--c-granate); padding-left: 28px; }
+  .timeline-v2 li { position: relative; margin-bottom: 36px; }
+  .timeline-v2 li::before { content: ''; position: absolute; left: -37px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--c-granate); border: 3px solid var(--c-fondo-alt); }
+  .timeline-v2 li strong { display: block; font-family: var(--f-sans); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-granate); margin-bottom: 6px; }
+</style>
+{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>The history of Dzongpa in Spain</h1>
+        <p class="page-header__lede">From Dehradun to Valencia, from Valencia to Europe</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <img src="/assets/img/juventud-rinpoche/juv-05-rinpoche-retrato-v-dorjedenpa-tulku.jpg"
+             alt="H.E. Gongkar Dorje Dhenpa Rinpoche holding an image of the previous Dorje Dhenpa, Jampal Lungthok"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto 12px; display: block;">
+        <p class="historia-foto-caption" style="margin-bottom: 40px;">H.E. Gongkar Dorje Dhenpa Rinpoche holding an image of the previous Dorje Dhenpa, Jampal Lungthok.</p>
+      </div>
+
+      <div class="container-prose prose">
+        <p class="lead">The presence of the Sakya Dzongpa lineage in Spain has a history that is longer than its current legal form might suggest. Its roots go back to an encounter in Dehradun, India, from which, over time, a practice community, an association, and today the Dzongpa Europa project would emerge.</p>
+
+        <h2>The origin: Dehradun and the encounter with Kunga Tsondru</h2>
+        <p>The origins of Dzongpa in Spain go back to the encounter between H.E. Gongkar Dorje Dhenpa Rinpoche and Kunga Tsondru — José Manuel Sánchex — during one of the latter's stays at Sakya College in Dehradun, India. From that meeting arose a friendship and spiritual bond which, in time, led to the first invitation for Rinpoche to teach in Spain.</p>
+      </div>
+
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble">
+          <div>
+            <img src="/assets/img/india/ind-01-rinpoche-sakya-college-dehradun.jpg"
+                 alt="Rinpoche at Sakya College in Dehradun, India"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">H.E. Gongkar Dorje Dhenpa Rinpoche at Sakya College, Dehradun. 2000.</p>
+          </div>
+          <div>
+            <img src="/assets/img/india/ind-02-sakya-college-con-monjes-dehradun.jpg"
+                 alt="Rinpoche with monks at Sakya College, Dehradun"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">H.E. Gongkar Dorje Dhenpa Rinpoche with monks at Sakya College, Dehradun.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>First teachings in Spain · 2012</h2>
+        <p>In 2012, H.E. Gongkar Dorje Dhenpa Rinpoche gave teachings at the Sakya Foundation in Pedreguer, Alicante, accompanied by Venerable Khenpo Rinchen and Venerable Khyentse-la, and under the spiritual presence of His Holiness the 41st Sakya Trizin. Those teachings, received by a group of Spanish practitioners, planted the seeds of what would later become a stable community.</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <div class="historia-doble">
+          <div>
+            <img src="/assets/img/espana/esp-02-ensenanzas-pedreguer-rinpoche-khenpo-rinchen-khyentse-la.jpg"
+                 alt="Teachings in Pedreguer 2012 — Rinpoche, Khenpo Rinchen and Khyentse-la"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">H.E. Gongkar Dorje Dhenpa Rinpoche, Ven. Khenpo Rinchen Gyaltsen, and Ven. Khyentse-la. Pedreguer, 2012.</p>
+          </div>
+          <div>
+            <img src="/assets/img/espana/esp-01-grupo-pedreguer-2012.jpg"
+                 alt="Group of practitioners in Pedreguer, 2012"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">Group of practitioners. Pedreguer, 2012.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>Peaceful Tara by day and wrathful Tara by night · 2017</h2>
+        <p>In September 2017, H.E. Gongkar Dorje Dhenpa Rinpoche transmitted for the first time in Spain the teachings and initiations of Peaceful Tara by day and Wrathful Tara by night, a tantric practice of exceptional depth belonging to the Sakya Dzongpa lineage. The event took place at the Sakya Buddhist Centre in Pedreguer, Alicante, known as Paramita, and brought together a large group of practitioners from different parts of Spain.</p>
+        <p>This practice, which integrates the peaceful and wrathful aspects of Tara in a single cycle of transmission, is especially valued within the lineage for its power of protection and its capacity to remove obstacles on the spiritual path. The 2017 transmission marked a milestone in the presence of the Dzongpa lineage in Spain and strengthened the bond between the Spanish community and the living tradition that Rinpoche carries and transmits.</p>
+      </div>
+
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble">
+          <div>
+            <img src="/assets/img/espana/esp-12-rinpoche-tara-paramita-2017.jpg"
+                 alt="H.E. Gongkar Dorje Dhenpa Rinpoche during the teachings at Paramita, Pedreguer, 2017"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">H.E. Gongkar Dorje Dhenpa Rinpoche during the teachings. Paramita, Pedreguer, 2017.</p>
+          </div>
+          <div>
+            <img src="/assets/img/espana/esp-13-rinpoche-ritual-paramita-2017.jpg"
+                 alt="H.E. Gongkar Dorje Dhenpa Rinpoche at the altar during the initiation. Paramita, 2017"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">H.E. Gongkar Dorje Dhenpa Rinpoche at the altar during the initiation. Paramita, 2017.</p>
+          </div>
+        </div>
+        <div class="historia-doble" style="margin-top: 0;">
+          <div>
+            <img src="/assets/img/espana/esp-14-ensenanzas-sala-paramita-2017.jpg"
+                 alt="View of the hall during the teachings. Paramita, Pedreguer, 2017"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">View of the hall during the teachings. Paramita, 2017.</p>
+          </div>
+          <div>
+            <img src="/assets/img/espana/esp-15-grupo-paramita-2017.jpg"
+                 alt="Group of practitioners at the Sakya Buddhist Centre in Pedreguer, September 2017"
+                 loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">Group of practitioners. Sakya Buddhist Centre of Pedreguer, September 2017.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>Valencia, 2019</h2>
+        <p>In September 2019, Rinpoche visited Valencia, where he bestowed the Ati Yoga initiation of the complete mandala of Guru Rinpoche, within the cycle of Lama Sangdü. During that visit, Rinpoche expressed his wish that a Dzongpa center could be established in the city of Valencia, as a place of practice, study, and preservation of the lineage.</p>
+      </div>
+
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble" style="align-items: stretch;">
+          <div style="display:flex; flex-direction:column;">
+            <img src="/assets/img/espana/esp-06-rinpoche-valencia-2019.jpg"
+                 alt="Rinpoche giving teachings in Valencia, September 2019"
+                 loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+            <p class="historia-foto-caption">H.E. Gongkar Dorje Dhenpa Rinpoche in Valencia, September 2019.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <img src="/assets/img/espana/esp-07-grupo-valencia-2019.jpg"
+                   alt="Group of practitioners during the teachings in Valencia, 2019"
+                   loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+              <p class="historia-foto-caption">Group of practitioners. Valencia, 2019.</p>
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <img src="/assets/img/espana/esp-10-valencia-2019-c.jpg"
+                   alt="During the initiation. Valencia, 2019."
+                   loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+              <p class="historia-foto-caption">During the initiation. Valencia, 2019.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>Formation of the practice group</h2>
+        <p>Following the aspiration expressed by Rinpoche, in 2020 a practice group linked to the Dzongpa lineage began to take shape. This group gradually created the human, spiritual, and organizational conditions needed to sustain regular activities, receive teachings, and give form to a stable project.</p>
+
+        <h2>Establishment of the Dzongpa Cultural Association</h2>
+        <p>In 2022, this process crystallized with the formal registration of the Dzongpa Cultural Association, registered in the Register of Associations of the Valencian Community under number <strong>CV-01-062727-V</strong> (First Section), with its headquarters in Valencia. The association was created with the purpose of preserving and sharing the Sakya Dzongpa lineage in Valencia, Spain, and Europe, dedicating itself to the study of Tibetan Buddhism, the practice of meditation, the organization of teachings and retreats, and the creation of favorable conditions for Rinpoche's activities.</p>
+
+        <h2>Blessings of His Holiness the 41st and the 42nd Sakya Trizin</h2>
+        <p>In 2022, David Sanz and his wife, Rosi, travelled to Switzerland on behalf of the Dzongpa Cultural Association, where they received the blessings of His Holiness the 42nd Sakya Trizin for the project of a Dzongpa center in Valencia. His Holiness the 41st Sakya Trizin was also present in that context, as he was giving teachings there.</p>
+        <p>During that meeting, His Holiness the 42nd Sakya Trizin instructed David and Rosi to go to Paramita — the former Sakya Foundation — in La Sella, Pedreguer, where both Sakya Trizins were to give teachings that same year, so that they could discuss the project of the Dzongpa center in Valencia in greater detail.</p>
+        <p>Later, at Paramita, during a private meeting, His Holiness the 41st Sakya Trizin bestowed his blessings for the Dzongpa center in Valencia. As an auspicious gesture, Rinpoche gifted a thangka of Buddha Shakyamuni and expressed his wish that the necessary conditions be created for Gongkar Dorje Dhenpa Rinpoche to transmit his teachings and develop his Dharma activities.</p>
+        <p>These meetings represented an important spiritual support for the association and strengthened the aspiration to establish a stable space for practice, study, and encounter around the Sakya Dzongpa lineage.</p>
+      </div>
+
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble" style="align-items: stretch;">
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <img src="/assets/img/espana/esp-08-ss41-sakya-trizin-suiza-2022.jpg"
+                   alt="His Holiness Gongma Trichen Rinpoche. Switzerland, 2022"
+                   loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+              <p class="historia-foto-caption">His Holiness Sakya Trizin 41: Gongma Trichen Rinpoche. Switzerland, 2022.</p>
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <img src="/assets/img/espana/esp-11-suiza-2022-c.jpg"
+                   alt="H.H. Sakya Trizin 41 and H.H. Sakya Trizin 42 with the group. Switzerland, 2022."
+                   loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+              <p class="historia-foto-caption">H.H. Sakya Trizin 41 and H.H. Sakya Trizin 42 with the group. Switzerland, 2022.</p>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            <img src="/assets/img/espana/esp-09-rinpoche-david-suiza-2022.jpg"
+                 alt="H.H. Sakya Trizin 42 and David Sanz in Switzerland, 2022"
+                 loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+            <p class="historia-foto-caption">H.H. Sakya Trizin 42 and David Sanz, president of the association. Switzerland, 2022.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>A history in development</h2>
+        <p>Since then, Dzongpa Europa has continued working to consolidate a practice community in Valencia and to open spaces for encounter in Spain and Europe. The association maintains the aspiration to preserve the Sakya Dzongpa lineage, support Rinpoche's activities, and offer those interested a respectful and living access to the teachings of the Dharma.</p>
+        <p>Today, this journey enters a new phase: <strong>Dzongpa Europa</strong>, an initiative that seeks to build bridges between the Sakya Dzongpa tradition and interested people across Europe, forming part of the international network of the lineage, which already has centers in India, Taiwan, the United Kingdom, Spain, Australia, and Hong Kong.</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px; margin-bottom: 8px;">
+        <img src="/assets/img/espana/esp-16-rinpoche-sonriendo-paramita-2017.jpg"
+             alt="H.E. Gongkar Dorje Dhenpa Rinpoche smiling during the teachings at Paramita, 2017"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 860px; margin: 0 auto; display: block;">
+        <div style="max-width: 860px; margin: 32px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+          <blockquote style="margin:0; padding: 20px 24px; border-left: 3px solid var(--c-granate); background: var(--c-crema-soft); border-radius: 0 8px 8px 0;">
+            <p style="font-style: italic; color: var(--c-texto); font-size: 0.95rem; line-height: 1.7; margin: 0 0 12px;">&ldquo;Since bodhichitta is what determines whether or not our practice becomes the path to enlightenment, bodhichitta is truly the heart essence of all the Buddha's teachings.&rdquo;</p>
+            <cite style="font-size: 0.82rem; color: var(--c-texto-suave); font-style: normal; font-weight: 600;">— H.H. the Dalai Lama</cite>
+          </blockquote>
+          <blockquote style="margin:0; padding: 20px 24px; border-left: 3px solid var(--c-granate); background: var(--c-crema-soft); border-radius: 0 8px 8px 0;">
+            <p style="font-style: italic; color: var(--c-texto); font-size: 0.95rem; line-height: 1.7; margin: 0 0 12px;">&ldquo;When your practice becomes a daily habit, then it ceases to be difficult.&rdquo;</p>
+            <cite style="font-size: 0.82rem; color: var(--c-texto-suave); font-style: normal; font-weight: 600;">— H.E. Gongkar Dorje Dhenpa Rinpoche</cite>
+          </blockquote>
+        </div>
+        <style>
+          @media (max-width: 700px) {
+            .historia-citas { grid-template-columns: 1fr !important; }
+          }
+        </style>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container-prose">
+        <h2>Chronology</h2>
+        <ul class="timeline-v2">
+          <li>
+            <strong>2000s · Dehradun, India</strong>
+            Meeting between H.E. Gongkar Dorje Dhenpa Rinpoche and Kunga Tsondru at Sakya College in Dehradun. The first invitation to teach in Spain is born.
+          </li>
+          <li>
+            <strong>2012 · Pedreguer, Alicante</strong>
+            Rinpoche gives the first teachings in Spain at the Sakya Foundation in Pedreguer, accompanied by Venerable Khenpo Rinchen and Venerable Khyentse-la, under the spiritual presence of His Holiness the 41st Sakya Trizin.
+          </li>
+          <li>
+            <strong>September 2017 · Pedreguer, Alicante</strong>
+            H.E. Gongkar Dorje Dhenpa Rinpoche transmits for the first time in Spain the teachings and initiations of Peaceful Tara by day and Wrathful Tara by night, at the Sakya Buddhist Centre in Pedreguer.
+          </li>
+          <li>
+            <strong>September 2019 · Valencia</strong>
+            Rinpoche visits Valencia and bestows the Ati Yoga initiation of the complete mandala of Guru Rinpoche, within the Lama Sangdü cycle. He expresses his wish that a Dzongpa center may be established in Valencia.
+          </li>
+          <li>
+            <strong>2020 · Formation of the practice group</strong>
+            A practice group linked to the Dzongpa lineage begins to consolidate, gradually creating the spiritual and organizational conditions to sustain regular activities.
+          </li>
+          <li>
+            <strong>January 14, 2022 · Valencia</strong>
+            Formal establishment of the Dzongpa Cultural Association, registered in the Register of Associations of the Valencian Community (CV-01-062727-V).
+          </li>
+          <li>
+            <strong>2022 · Switzerland</strong>
+            David Sanz and Rosi receive the blessings of His Holiness the 42nd Sakya Trizin for the project of the Dzongpa center in Valencia, also in the presence of His Holiness the 41st Sakya Trizin.
+          </li>
+          <li>
+            <strong>2022 · Paramita, Pedreguer</strong>
+            Private meeting with His Holiness the 41st Sakya Trizin at Paramita: he grants his blessings for the center and offers a thangka of Buddha Shakyamuni as an auspicious gesture.
+          </li>
+          <li>
+            <strong>February 2026 · Valencia</strong>
+            Cycle of teachings and initiations in Valencia with Rinpoche. First official visit within the framework of Dzongpa Europa.
+          </li>
+          <li>
+            <strong>2026 · Europe</strong>
+            Launch of Dzongpa Europa: expansion of the project into a continental dimension, within the international network of the Sakya Dzongpa lineage.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2>Teachings in Valencia · February 2026</h2>
+          <p class="lead">The first official visit of Rinpoche within the framework of Dzongpa Europa</p>
+        </div>
+        <div class="foto-galeria" style="margin-top: 32px;">
+          <img src="/assets/img/espana-2026/esp26-003-ensenanzas-sala.jpg"
+               alt="Rinpoche's teachings in Valencia, February 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-009-ensenanzas-sala.jpg"
+               alt="Teachings in the hall, Valencia 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-036-ensenanzas-sala.jpg"
+               alt="View of the hall during the teachings, Valencia 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-044-comunidad-entrega-logo.jpg"
+               alt="Dzongpa Europa logo handover to the community, 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-049-comida-comunidad.jpg"
+               alt="Community meal during the teachings, Valencia 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-052-foto-grupo-exterior.jpg"
+               alt="Outdoor group photo, Dzongpa Valencia community 2026" loading="lazy">
+        </div>
+      </div>
+    </section>
+{% endblock %}

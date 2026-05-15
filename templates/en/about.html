@@ -1,0 +1,59 @@
+{% extends "_base_en.html" %}
+{% set page = {
+  "title": 'About us · Dzongpa Europa',
+  "description": 'Learn about the Dzongpa Cultural Association, its mission and the Dzongpa Europa project, dedicated to preserving the Sakya Dzongpa lineage in Europe.',
+  "slug": 'about',
+  "es_slug": 'quienes-somos',
+  "active": 'about'
+} %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>About us</h1>
+        <p class="page-header__lede">A cultural association dedicated to preserving the Sakya Dzongpa lineage</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <h2>The association</h2>
+        <p>The Dzongpa Cultural Association is a non-profit organization dedicated to promoting Tibetan culture, the study of Tibetan Buddhism, the practice of meditation, and the preservation of the teachings of the Dzongpa lineage.</p>
+        <p>It was created with the purpose of establishing an open, respectful, and stable space where interested people can approach the Dharma, take part in cultural activities, receive teachings, practice meditation, and collaborate in projects that benefit the community.</p>
+
+        <h2>Dzongpa Europa</h2>
+        <p>Dzongpa Europa is the European expression of the association's work. Under the guidance of H.E. the VI Gongkar Dorje Dhenpa Rinpoche, this project seeks to build bridges between the Tibetan tradition of the Dzongpa lineage and people interested in Europe. It forms part of an international network with centers in India, Taiwan, the United Kingdom, Spain, Australia, and Hong Kong, in addition to the root monastery, Gongkar Choede.</p>
+
+        <h2>Our purpose</h2>
+        <p>To help keep the Buddhist teachings of the Dzongpa lineage alive and accessible by creating the right conditions to invite masters, organize retreats, translate texts, sustain regular activities, and build a strong community of practitioners and supporters in Europe.</p>
+
+        <h2>Values</h2>
+        <ul>
+          <li><strong>Authenticity.</strong> Fidelity to the lineage and to the teachings transmitted by Rinpoche and the qualified masters of the Sakya Dzongpa tradition.</li>
+          <li><strong>Openness.</strong> An inclusive welcome to people of any background, age, culture, or level of practice.</li>
+          <li><strong>Service.</strong> Dedication to the benefit of beings and to the local community.</li>
+          <li><strong>Transparency.</strong> Clear financial management, accountability, and open communication.</li>
+          <li><strong>Sustainability.</strong> Balance between the growth of the project and the preservation of its spiritual identity.</li>
+        </ul>
+
+        <p style="margin-top: 32px;">Dzongpa Europa is sustained thanks to the commitment of its members and donors. Every person who joins contributes to making the teachings of the Dharma and Tibetan culture available to more people, today and in the future.</p>
+
+        <p class="text-center" style="margin-top: 40px;">
+          <a href="/en/history" class="btn btn--outline">Read the history of Dzongpa in Spain →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="foto-galeria" style="grid-template-columns: repeat(3, 1fr);">
+          <img src="/assets/img/espana-2026/esp26-060-foto-grupo-valencia-ensenanzas-iniciacion.jpg"
+               alt="Group photo at the teachings and initiation in Valencia, 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-061-foto-grupal-primer-dia-ensenanzas-febrero-2026.jpg"
+               alt="Group photo on the first day of teachings in Valencia, February 2026" loading="lazy">
+          <img src="/assets/img/espana/esp-05-grupo-valencia-2022.jpg"
+               alt="Community gathered in Valencia, 2022" loading="lazy">
+        </div>
+      </div>
+    </section>
+{% endblock %}
