@@ -1,0 +1,36 @@
+page:
+  lang: zh
+  base: _base_zh.html
+  title: 联系 · Dzongpa Europa
+  description: 请写信给我们，了解信息、成为会员、捐款、参与活动或作为义工。
+  slug: contact
+  active: contact
+  es_slug: contacto
+header:
+  title: 联系
+  lede: 我们随时为您服务
+lead: 如果您希望获取信息、参与活动、成为会员、作为义工合作或支持项目，请写信给我们。我们接受西班牙语、英语和中文的询问。
+write_title: 给我们写信
+write_intro: 更喜欢直接写信？请发送电子邮件至 <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a>，我们将尽快回复您。
+form_ok_title: 消息已发送
+form_ok_text: 感谢您的来信。我们将在3至5个工作日内回复。
+form_err_text: 发送消息时发生错误。请重试或直接写信至 <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b;
+  font-weight:600;">secretaria@dzongpaeuropa.org</a>。
+label_name: 姓名 *
+label_email: 电子邮件 *
+label_phone: 电话（选填）
+label_reason: 联系原因 *
+label_language: 首选回复语言 *
+label_message: 消息 *
+reason_placeholder: 请选择…
+reasons:
+- 一般咨询
+- 成为会员
+- 捐款
+- 活动
+- 义工
+- 媒体
+- 其他
+privacy_label: 我已阅读并接受<a href="/zh/privacy">隐私政策</a>。
+submit_text: 发送消息
+response_text: 我们平均在3至5个工作日内回复询问。

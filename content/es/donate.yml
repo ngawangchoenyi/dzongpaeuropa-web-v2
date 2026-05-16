@@ -1,0 +1,66 @@
+page:
+  lang: es
+  base: _base.html
+  title: Donaciones · Dzongpa Europa
+  description: Apoya con tu donación las actividades de Dzongpa Europa y la preservación
+    del linaje Sakya Dzongpa.
+  slug: donaciones
+  active: ''
+  en_slug: donate
+header:
+  title: Donaciones
+  lede: Una contribución para que las enseñanzas florezcan
+lead: Las donaciones ayudan a sostener las actividades de Dzongpa Europa y a crear
+  las condiciones necesarias para preservar y compartir las enseñanzas del linaje
+  Dzongpa.
+p2: Las aportaciones pueden destinarse a la organización de enseñanzas y retiros,
+  las visitas de maestros, la traducción de textos, el alquiler de espacios, el mantenimiento
+  de la página web, la comunicación, los materiales de práctica y la creación de un
+  fondo estable para la asociación.
+purpose_title: Destino de las donaciones
+purpose_items:
+- Invitación de maestros del linaje y organización de retiros.
+- Enseñanzas presenciales y online.
+- Traducción de textos del Dharma al español, inglés y chino.
+- Alquiler de espacios para retiros y enseñanzas.
+- Materiales de práctica y biblioteca.
+- Página web, comunicación y boletín.
+- Fondo estable de la asociación.
+- Apoyo a otros proyectos culturales y espirituales del linaje.
+stripe_title: Donar con tarjeta
+stripe_subtitle: Pago puntual o recurrente con tarjeta de crédito o débito. Plataforma
+  segura Stripe.
+stripe_other_btn: Otro importe
+stripe_secure_text: Serás redirigido a la pasarela segura de Stripe. Aceptamos Visa,
+  Mastercard y American Express.
+other_title: Otras formas de donar
+has_bizum: true
+bizum_title: Bizum solidario (donativo ONG)
+bizum_intro: 'Importante: nuestra asociación recibe Bizum a través de la opción solidaria,
+  no del envío convencional. Sigue estos pasos:'
+bizum_steps:
+- Abre tu app bancaria y entra en Bizum.
+- Busca la opción <strong>«Donar / Donativo ONG»</strong> (no el envío convencional).
+- Introduce el código <strong>06845</strong>.
+- Aparecerá <strong>«Asociación Cultural Dzongpa»</strong>. Selecciónala e indica
+  el importe.
+transfer_title: Transferencia bancaria
+transfer_name: Asociación Cultural Dzongpa
+transfer_bank_label: Banco
+transfer_bank: Caixa Popular
+transfer_ref_label: Concepto
+transfer_ref: «Donación + tu nombre»
+patrimony_title: Donaciones patrimoniales
+patrimony_p: La asociación también puede recibir donaciones no monetarias o patrimoniales
+  —bienes muebles, inmuebles, biblioteca, objetos de práctica— siempre que estén alineadas
+  con sus fines culturales y espirituales y sean aceptadas conforme a la normativa
+  aplicable y a los acuerdos internos de la entidad. Si deseas realizar una aportación
+  de este tipo, escríbenos a <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+  y te acompañaremos en el proceso.
+tax_title: Aspectos fiscales
+tax_p: La Asociación Cultural Dzongpa está inscrita en el Registro de Asociaciones
+  de la Comunitat Valenciana con el número <strong>CV-01-062727-V</strong> (Sección
+  Primera). Como entidad sin ánimo de lucro, emitimos un certificado anual de aportaciones
+  que permite, en su caso, beneficiarte de las deducciones fiscales aplicables a donaciones
+  a entidades sin ánimo de lucro. Para ello, necesitamos tu nombre completo, NIF y
+  dirección postal.

@@ -1,0 +1,56 @@
+page:
+  lang: de
+  base: _base_de.html
+  title: Aktivitäten · Dzongpa Europa
+  description: Meditation, Dharma-Studium, Retreats und Unterweisungen der Sakya-Dzongpa-Linie
+    in Valencia und Europa.
+  slug: activities
+  active: activities
+  es_slug: actividades
+header:
+  title: Aktivitäten
+  lede: Meditation, Studium, Retreats und Gemeinschaftsleben
+lead: Dzongpa Europa organisiert ein regelmäßiges Programm von Aktivitäten, die die
+  Lehren des Dharma und die tibetische Kultur Menschen aller Hintergründe näherbringen
+  sollen. Wir verbinden offene Praktiken für Neulinge mit tieferen Räumen für regelmäßige
+  Praktizierende und Mitglieder.
+types_title: Arten von Aktivitäten
+med:
+  h3: Geführte Meditation
+  p: Regelmäßige Meditationstreffen zur Kultivierung von Geistesruhe, Achtsamkeit,
+    Mitgefühl und innerer Klarheit. Offen für Menschen mit und ohne Vorerfahrung.
+study:
+  h3: Dharma-Studium
+  p: Einführungs- und Studiumssitzungen über tibetischen Buddhismus, traditionelle
+    Texte, die Unterweisungen der Linienmeister und die grundlegenden Prinzipien des
+    buddhistischen Weges.
+talks:
+  h3: Kulturelle Vorträge
+  p: Offene Aktivitäten über tibetische Kultur, die Geschichte des Buddhismus, sakrale
+    Kunst, Ikonographie, Rituale, Sprache und die spirituellen Traditionen des Himalayas.
+retreats:
+  h3: Retreats und Unterweisungen
+  p: Organisation von Retreats, Kursen und Unterweisungen mit qualifizierten Meistern,
+    sowohl in Valencia als auch an anderen Orten in Europa, mit der Möglichkeit von
+    Besuchen Rinpoches.
+community:
+  h3: Gemeinschaft und Ehrenamt
+  p: Begegnungsräume für Mitglieder, Praktizierende und Sympathisanten sowie Möglichkeiten
+    zur Mitarbeit in Organisation, Kommunikation, Übersetzung, Logistik und Unterstützung
+    bei Aktivitäten.
+calendar:
+  title: Kommende Aktivitäten
+  subtitle: Schauen Sie sich den Kalender für Meditationen, Unterweisungen, Retreats
+    und Treffen an.
+  hl: de
+  contact_url: /de/contact
+  contact_text: Haben Sie Fragen? Schreiben Sie uns
+newsletter:
+  title: Dzongpa Europa Newsletter
+  subtitle: Erhalten Sie Informationen über Aktivitäten, Unterweisungen und Neuigkeiten
+    des Vereins.
+  placeholder: ihre@email.com
+  btn_text: Abonnieren
+photo:
+  alt: Unterweisungen von Rinpoche in Valencia, 2026
+  caption: Unterweisungszyklus in Valencia, 2026.

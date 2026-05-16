@@ -1,0 +1,74 @@
+page:
+  lang: en
+  base: _base_en.html
+  title: Join us · Dzongpa Europa
+  description: Become a Friend, Supporter, Protector, or Benefactor member and help
+    preserve the Sakya Dzongpa lineage in Europe.
+  slug: join
+  active: join
+  es_slug: hazte-socio
+header:
+  title: Become a member
+  lede: Together, support the preservation of the lineage
+lead: Becoming a member of the Dzongpa Cultural Association is a direct way to support
+  the growth of Dzongpa Europa and to help make the teachings of the Dharma available
+  to more people.
+p2: Members' contributions make it possible to cover basic expenses, organize activities,
+  invite masters, rent spaces, translate materials, maintain the website, and create
+  a stable fund for future retreats and teachings.
+p3: Every contribution, large or small, helps create the conditions for Tibetan culture
+  and the Buddhism of the Dzongpa lineage to flourish in our community.
+gallery_alts:
+- Dzongpa Europa community in Valencia
+- Community sharing a meal during the teachings
+- Group photo of the Dzongpa Europa community
+tiers_title: Types of membership
+tiers:
+- name: Friend
+  price: '10'
+  period: per month
+  desc: For those who wish to support the association in a simple way and remain close
+    to the project.
+  btn: Become a Friend
+  stripe: https://buy.stripe.com/28EdR8gUtb3Tdeyca7a3u01
+  featured: false
+- name: Supporter
+  price: '21'
+  period: per month
+  desc: For those who participate regularly and wish to sustain the association's
+    ongoing activities.
+  btn: Become a Supporter
+  stripe: https://buy.stripe.com/00w3cu9s17RHdey4HFa3u02
+  featured: false
+- name: Protector
+  price: '50'
+  period: per month
+  desc: For those who wish to offer strong support for the development of the project
+    and the teachings.
+  btn: Become a Protector
+  stripe: https://buy.stripe.com/8x24gyaw51tjeiCfmja3u03
+  featured: false
+- name: Benefactor
+  price: '108'
+  period: per month
+  desc: For those who wish to contribute with a full commitment. The number 108 holds
+    sacred significance in the Buddhist tradition.
+  btn: Become a Benefactor
+  stripe: https://buy.stripe.com/4gMfZgaw53Br8Yia1Za3u04
+  featured: true
+benefits_title: Benefits for members
+benefits_all_intro: 'All members receive:'
+benefits_all:
+- Access to the association's monthly newsletter.
+- Priority notices of activities, retreats, and visits by masters.
+- Access to the internal community channel for members.
+- Reduced rates for retreats and events with invited masters.
+- Annual certificate of contributions for income tax purposes.
+benefits_upper_intro: 'Supporters, Protectors, and Benefactors also receive:'
+benefits_upper:
+- Reserved places at special events with limited capacity.
+- Optional recognition as supporters of the project.
+- Invitation to the annual meeting with the association's leadership.
+cancel_text: Contributions may be modified or cancelled at any time by writing to
+  <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>.
+  Each member may also make additional one-off contributions at any time.

@@ -1,0 +1,57 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: Activités · Dzongpa Europa
+  description: Méditation, étude du Dharma, retraites et enseignements de la lignée
+    Sakya Dzongpa à Valence et en Europe.
+  slug: activities
+  active: activities
+  es_slug: actividades
+header:
+  title: Activités
+  lede: Méditation, étude, retraites et vie en communauté
+lead: Dzongpa Europa organise un programme régulier d'activités destinées à rapprocher
+  les enseignements du Dharma et la culture tibétaine de personnes de tous horizons.
+  Nous combinons des pratiques ouvertes pour les nouveaux venus avec des espaces plus
+  approfondis pour les pratiquants réguliers et les membres.
+types_title: Types d'activités
+med:
+  h3: Méditation guidée
+  p: Rencontres régulières de méditation visant à cultiver la quiétude mentale, la
+    pleine conscience, la compassion et la clarté intérieure. Ouvertes aux personnes
+    avec ou sans expérience préalable.
+study:
+  h3: Étude du Dharma
+  p: Sessions d'introduction et d'étude sur le bouddhisme tibétain, les textes traditionnels,
+    les enseignements des maîtres de la lignée et les principes fondamentaux du chemin
+    bouddhiste.
+talks:
+  h3: Conférences culturelles
+  p: Activités ouvertes sur la culture tibétaine, l'histoire du bouddhisme, l'art
+    sacré, l'iconographie, les rituels, la langue et les traditions spirituelles de
+    l'Himalaya.
+retreats:
+  h3: Retraites et enseignements
+  p: Organisation de retraites, cours et enseignements avec des maîtres qualifiés,
+    tant à Valence que dans d'autres lieux d'Europe, avec la possibilité de visites
+    de Rinpoché.
+community:
+  h3: Communauté et bénévolat
+  p: Espaces de rencontre pour les membres, pratiquants et sympathisants, ainsi que
+    des opportunités de collaboration dans l'organisation, la communication, la traduction,
+    la logistique et le soutien aux activités.
+calendar:
+  title: Prochaines activités
+  subtitle: Consultez le calendrier des méditations, enseignements, retraites et rencontres.
+  hl: fr
+  contact_url: /fr/contact
+  contact_text: Vous avez des questions ? Écrivez-nous
+newsletter:
+  title: Bulletin de Dzongpa Europa
+  subtitle: Recevez des informations sur les activités, les enseignements et les nouvelles
+    de l'association.
+  placeholder: votre@email.com
+  btn_text: S'abonner
+photo:
+  alt: Enseignements de Rinpoché à Valence, 2026
+  caption: Cycle d'enseignements à Valence, 2026.

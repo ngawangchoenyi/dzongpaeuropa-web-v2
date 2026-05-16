@@ -1,0 +1,44 @@
+page:
+  lang: es
+  base: _base.html
+  title: Contacto · Dzongpa Europa
+  description: Escríbenos para informarte, hacerte socio, donar, participar en actividades
+    o colaborar como voluntario en Dzongpa Europa.
+  slug: contacto
+  active: contacto
+  en_slug: contact
+header:
+  title: Contacto
+  lede: Estamos aquí para ayudarte
+lead: Si deseas recibir información, participar en actividades, hacerte socio, colaborar
+  como voluntario o apoyar el proyecto, escríbenos. Atendemos las consultas en español,
+  inglés y chino.
+write_title: Escríbenos
+write_intro: ¿Prefieres escribirnos directamente? Mándanos un correo a <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a>
+  y te responderemos lo antes posible.
+form_ok_title: Mensaje enviado
+form_ok_text: Gracias por escribirnos. Te responderemos en un plazo de 3 a 5 días
+  laborables.
+form_err_text: Ha ocurrido un error al enviar el mensaje. Por favor inténtalo de nuevo
+  o escríbenos directamente a <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b;
+  font-weight:600;">secretaria@dzongpaeuropa.org</a>.
+label_name: Nombre y apellidos *
+label_email: Correo electrónico *
+label_phone: Teléfono (opcional)
+label_reason: Motivo de contacto *
+label_language: Idioma preferido para la respuesta *
+label_message: Mensaje *
+reason_placeholder: Selecciona…
+reasons:
+- Información general
+- Hacerme socio
+- Donaciones
+- Actividades
+- Voluntariado
+- Prensa
+- Otro
+privacy_label: He leído y acepto la <a href="/privacidad">política de privacidad</a>.
+submit_text: Enviar mensaje
+response_text: Respondemos a las consultas en un plazo medio de 3 a 5 días laborables.
+  Para consultas urgentes relacionadas con actividades inminentes, indícalo en el
+  asunto del mensaje.

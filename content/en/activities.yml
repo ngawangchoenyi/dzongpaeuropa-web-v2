@@ -1,0 +1,53 @@
+page:
+  lang: en
+  base: _base_en.html
+  title: Activities · Dzongpa Europa
+  description: Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa
+    lineage in Valencia and Europe.
+  slug: activities
+  active: activities
+  es_slug: actividades
+header:
+  title: Activities
+  lede: Meditation, study, retreats, and community life
+lead: Dzongpa Europa organizes a regular program of activities designed to bring the
+  teachings of the Dharma and Tibetan culture closer to people from all walks of life.
+  We combine open practices for those approaching for the first time with deeper spaces
+  for regular practitioners and members.
+types_title: Types of activities
+med:
+  h3: Guided meditation
+  p: Regular meditation gatherings aimed at cultivating calm abiding, mindfulness,
+    compassion, and inner clarity. Open to people with or without previous experience.
+study:
+  h3: Dharma study
+  p: Introductory and study sessions on Tibetan Buddhism, traditional texts, the teachings
+    of lineage masters, and the fundamental principles of the Buddhist path.
+talks:
+  h3: Cultural talks
+  p: Open activities on Tibetan culture, the history of Buddhism, sacred art, iconography,
+    rituals, language, and the spiritual traditions of the Himalayas.
+retreats:
+  h3: Retreats and teachings
+  p: Organization of retreats, courses, and teachings with qualified masters, both
+    in Valencia and in other places in Europe, including the possibility of visits
+    by Rinpoche.
+community:
+  h3: Community and volunteering
+  p: Spaces for encounter among members, practitioners, and supporters, as well as
+    opportunities to collaborate in organization, communication, translation, logistics,
+    and support for activities.
+calendar:
+  title: Upcoming activities
+  subtitle: Check the calendar of meditations, teachings, retreats, and gatherings.
+  hl: en
+  contact_url: /en/contact
+  contact_text: Do you have questions? Write to us
+newsletter:
+  title: Dzongpa Europa Newsletter
+  subtitle: Receive information about activities, teachings, and news from the association.
+  placeholder: your@email.com
+  btn_text: Subscribe
+photo:
+  alt: Teachings by Rinpoche in Valencia, 2026
+  caption: Cycle of teachings in Valencia, 2026.

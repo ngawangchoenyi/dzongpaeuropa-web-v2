@@ -1,0 +1,52 @@
+page:
+  lang: de
+  base: _base_de.html
+  title: Spenden · Dzongpa Europa
+  description: Unterstützen Sie Dzongpa Europa mit Ihrer Spende und helfen Sie bei
+    der Bewahrung der Sakya-Dzongpa-Linie.
+  slug: donate
+  active: ''
+  es_slug: donaciones
+header:
+  title: Spenden
+  lede: Ein Beitrag, damit die Lehren aufblühen können
+lead: Spenden helfen dabei, die Aktivitäten von Dzongpa Europa zu unterstützen und
+  die notwendigen Bedingungen zu schaffen, um die Lehren der Dzongpa-Linie zu bewahren
+  und zu teilen.
+p2: Beiträge können für die Organisation von Unterweisungen und Retreats, Meisterbesuche,
+  Textübersetzungen, Raummiete, Website-Pflege, Kommunikation, Praxismaterialien und
+  den Aufbau eines stabilen Vereinsfonds verwendet werden.
+purpose_title: Verwendung der Spenden
+purpose_items:
+- Einladung von Linienmeistern und Organisation von Retreats.
+- Präsenz- und Online-Unterweisungen.
+- Übersetzung von Dharma-Texten ins Spanische, Englische und Chinesische.
+- Raummiete für Retreats und Unterweisungen.
+- Praxismaterialien und Bibliothek.
+- Website, Kommunikation und Newsletter.
+- Stabiler Vereinsfonds.
+- Unterstützung anderer kultureller und spiritueller Linienprojekte.
+stripe_title: Mit Karte spenden
+stripe_subtitle: Einmalige oder wiederkehrende Zahlung per Kredit- oder Debitkarte.
+  Sichere Plattform Stripe.
+stripe_other_btn: Anderen Betrag eingeben
+stripe_secure_text: Sie werden zur sicheren Zahlungsabwicklung von Stripe weitergeleitet.
+  Wir akzeptieren Visa, Mastercard und American Express.
+other_title: Weitere Möglichkeiten zu spenden
+has_bizum: false
+transfer_title: Banküberweisung
+transfer_name: Asociación Cultural Dzongpa
+transfer_bank_label: Bank
+transfer_bank: Caixa Popular
+transfer_ref_label: Verwendungszweck
+transfer_ref: '"Spende + Ihr Name"'
+patrimony_title: Sachspenden und Vermögenswerte
+patrimony_p: Der Verein kann auch nicht-monetäre Spenden oder Sachspenden — bewegliche
+  Güter, Immobilien, Bibliothek, Praxisgegenstände — empfangen, sofern sie mit seinen
+  kulturellen und spirituellen Zielen vereinbar sind. Bei Interesse schreiben Sie
+  uns an <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>.
+tax_title: Steuerliche Aspekte
+tax_p: Der Kulturverein Dzongpa ist im Vereinsregister der Valencianischen Gemeinschaft
+  unter der Nummer <strong>CV-01-062727-V</strong> (Erste Sektion) eingetragen. Als
+  gemeinnützige Einrichtung stellen wir eine jährliche Spendenbescheinigung aus. Dafür
+  benötigen wir Ihren vollständigen Namen und Ihre Postanschrift.

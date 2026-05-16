@@ -1,0 +1,63 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg"
+             alt="{{ data.hero_alt }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 640px; margin: 0 auto 40px; display: block;">
+      </div>
+
+      <div class="container-prose prose">
+        <p class="lead">{{ data.lead }}</p>
+
+        <h2>{{ data.tulku.title }}</h2>
+        <p>{{ data.tulku.p1 }}</p>
+        <p>{{ data.tulku.p2 }}</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/dalai-lama/dal-02-rinpoche-joven-con-dalai-lama.jpg"
+             alt="{{ data.tulku.dal02_caption }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.tulku.dal02_caption }}</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>{{ data.training.title }}</h2>
+        <p>{{ data.training.p1 }}</p>
+        <p>{{ data.training.p2 }}</p>
+
+        <h2>{{ data.gongkar.title }}</h2>
+        <p>{{ data.gongkar.p1 }}</p>
+        {% if data.gongkar.p2 %}<p>{{ data.gongkar.p2 }}</p>{% endif %}
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/dalai-lama/dal-03-rinpoche-dalai-lama-41-sakya-trichen.jpg"
+             alt="{{ data.gongkar.dal03_caption }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.gongkar.dal03_caption }}</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>{{ data.international.title }}</h2>
+        <p>{{ data.international.p1 }}</p>
+        {% if data.international.p2 %}<p>{{ data.international.p2 }}</p>{% endif %}
+
+        <h2>{{ data.europa.title }}</h2>
+        <p>{{ data.europa.p1 }}</p>
+      </div>
+    </section>
+{% endblock %}

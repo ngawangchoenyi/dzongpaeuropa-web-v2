@@ -1,0 +1,58 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: Son Éminence le VIe Gongkar Dorje Denpa Rinpoché · Dzongpa Europa
+  description: Biographie de Son Éminence le VIe Gongkar Dorje Denpa Rinpoché, Tenzin
+    Jampal Lungtok Namgyal, Chef suprême de la lignée Sakya Dzongpa.
+  slug: rinpoche
+  active: rinpoche
+  es_slug: rinpoche
+header:
+  title: Son Éminence le VIe Gongkar Dorje Denpa Rinpoché
+  lede: Tenzin Jampal Lungtok Namgyal · Chef suprême de la lignée Dzongpa de la tradition
+    Sakya
+hero_alt: S.É. le VIe Gongkar Dorje Denpa Rinpoché
+lead: Son Éminence le VIe Gongkar Dorje Denpa Rinpoché, Tenzin Jampal Lungtok Namgyal,
+  est le Chef suprême de la lignée Dzongpa de la tradition Sakya du bouddhisme tibétain.
+  Né en 1977 dans l'Arunachal Pradesh, au nord-est de l'Inde, sa vie et son enseignement
+  sont consacrés à la préservation de la tradition Dzongpa et au bien des êtres.
+tulku:
+  title: Reconnaissance comme tulkou
+  p1: Son prédécesseur, le Ve Dorjedenpa Tulkou, est décédé prématurément au Tibet
+    en 1959 lors du soulèvement de Lhassa. Les moines de la lignée Dzongpa demandèrent
+    à plusieurs reprises à Sa Sainteté le Dalaï-Lama si leur maître s'était réincarné.
+    Après un examen attentif, Sa Sainteté leur indiqua de diriger la recherche vers
+    le nord-est de l'Inde, près de la frontière tibétaine.
+  p2: En 1989, Rinpoché fut trouvé en Arunachal Pradesh et reconnu par Sa Sainteté
+    le Dalaï-Lama, qui lui conféra la cérémonie de coupe des cheveux et lui donna
+    le nom de Tenzin Jampal Lungtok Namgyal.
+  dal02_caption: Sa Sainteté le XIVe Dalaï-Lama a officiellement reconnu Rinpoché
+    comme la réincarnation du Ve Dorjedenpa Tulkou en 1989.
+training:
+  title: Formation
+  p1: Il entra comme le plus jeune élève au Sakya College de Dehradun, où il obtint
+    son diplôme avec distinction en 1999.
+  p2: Outre la maîtrise des treize grands shastras, Rinpoché reçut le Lamdré complet
+    et de nombreuses transmissions tantriques de Sa Sainteté le 41e Sakya Trichen.
+gongkar:
+  title: Rétablissement de Gongkar Choede
+  p1: En 2003, Rinpoché rétablit le monastère de Gongkar Choede à Dehradun, en Inde.
+    Le monastère fut inauguré par Sa Sainteté le Dalaï-Lama et, lors de cette même
+    cérémonie, Rinpoché fut intronisé comme Lama Chef de la lignée par Sa Sainteté
+    le 41e Sakya Trichen.
+  p2: ''
+  dal03_caption: Les deux plus hautes autorités spirituelles qui ont béni le chemin
+    de Rinpoché.
+international:
+  title: Activité internationale
+  p1: Depuis 2005, Rinpoché voyage à l'international pour offrir des enseignements
+    bouddhistes. Il a établi la Sakya Dzongpa Vajrayana Community à Taipei, et des
+    communautés se sont formées en Inde, à Taïwan, au Royaume-Uni, en Espagne, en
+    Australie et à Hong Kong.
+  p2: ''
+europa:
+  title: Sa guidance pour Dzongpa Europa
+  p1: L'Association culturelle Dzongpa et le projet Dzongpa Europa se développent
+    sous l'inspiration et la direction spirituelle de Rinpoché, avec le souhait de
+    créer des conditions favorables pour que ses enseignements et ceux de la lignée
+    Dzongpa puissent être reçus, étudiés et pratiqués en Europe.

@@ -1,0 +1,43 @@
+page:
+  lang: en
+  base: _base_en.html
+  title: Contact · Dzongpa Europa
+  description: Write to us to get information, become a member, donate, participate
+    in activities, or volunteer at Dzongpa Europa.
+  slug: contact
+  active: contact
+  es_slug: contacto
+header:
+  title: Contact
+  lede: We are here to help you
+lead: If you wish to receive information, participate in activities, become a member,
+  collaborate as a volunteer, or support the project, write to us. We respond to enquiries
+  in Spanish, English, and Chinese.
+write_title: Write to us
+write_intro: Prefer to write to us directly? Send us an email at <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a>
+  and we will get back to you as soon as possible.
+form_ok_title: Message sent
+form_ok_text: Thank you for writing to us. We will reply within 3 to 5 working days.
+form_err_text: An error occurred while sending the message. Please try again or write
+  to us directly at <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b;
+  font-weight:600;">secretaria@dzongpaeuropa.org</a>.
+label_name: Full name *
+label_email: Email address *
+label_phone: Phone (optional)
+label_reason: Reason for contact *
+label_language: Preferred language for reply *
+label_message: Message *
+reason_placeholder: Select…
+reasons:
+- General information
+- Become a member
+- Donations
+- Activities
+- Volunteering
+- Press
+- Other
+privacy_label: I have read and accept the <a href="/en/privacy">privacy policy</a>.
+submit_text: Send message
+response_text: We respond to enquiries within an average of 3 to 5 working days. For
+  urgent enquiries related to imminent activities, please indicate this in the subject
+  of your message.

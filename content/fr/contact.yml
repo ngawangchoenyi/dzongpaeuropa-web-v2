@@ -1,0 +1,42 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: Contact · Dzongpa Europa
+  description: Écrivez-nous pour vous informer, devenir membre, faire un don, participer
+    aux activités ou collaborer comme bénévole.
+  slug: contact
+  active: contact
+  es_slug: contacto
+header:
+  title: Contact
+  lede: Nous sommes là pour vous aider
+lead: Si vous souhaitez recevoir des informations, participer aux activités, devenir
+  membre, collaborer comme bénévole ou soutenir le projet, écrivez-nous. Nous répondons
+  aux demandes en espagnol, anglais et chinois.
+write_title: Écrivez-nous
+write_intro: Vous préférez nous écrire directement ? Envoyez-nous un e-mail à <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a>
+  et nous vous répondrons dès que possible.
+form_ok_title: Message envoyé
+form_ok_text: Merci de nous avoir écrit. Nous vous répondrons dans un délai de 3 à
+  5 jours ouvrables.
+form_err_text: Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer
+  ou nous écrire directement à <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b;
+  font-weight:600;">secretaria@dzongpaeuropa.org</a>.
+label_name: Nom et prénom *
+label_email: Adresse e-mail *
+label_phone: Téléphone (facultatif)
+label_reason: Motif du contact *
+label_language: Langue préférée pour la réponse *
+label_message: Message *
+reason_placeholder: Sélectionnez…
+reasons:
+- Informations générales
+- Devenir membre
+- Dons
+- Activités
+- Bénévolat
+- Presse
+- Autre
+privacy_label: J'ai lu et j'accepte la <a href="/fr/privacy">politique de confidentialité</a>.
+submit_text: Envoyer le message
+response_text: Nous répondons aux demandes dans un délai moyen de 3 à 5 jours ouvrables.

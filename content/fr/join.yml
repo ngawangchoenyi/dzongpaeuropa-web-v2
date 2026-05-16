@@ -1,0 +1,76 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: Devenir membre · Dzongpa Europa
+  description: Devenez membre Ami, Soutien, Protecteur ou Bienfaiteur et soutenez
+    la préservation de la lignée Sakya Dzongpa en Europe.
+  slug: join
+  active: join
+  es_slug: hazte-socio
+header:
+  title: Devenir membre
+  lede: Soutenons ensemble la préservation de la lignée
+lead: Devenir membre de l'Association Culturelle Dzongpa est une manière directe de
+  soutenir le développement de Dzongpa Europa et de contribuer à rendre les enseignements
+  du Dharma disponibles à davantage de personnes.
+p2: Les cotisations des membres permettent de couvrir les dépenses de base, d'organiser
+  des activités, d'inviter des maîtres, de louer des espaces, de traduire des matériaux,
+  de maintenir le site web et de créer un fonds stable pour les futures retraites
+  et enseignements.
+p3: Chaque contribution, grande ou petite, aide à créer les conditions pour que la
+  culture tibétaine et le bouddhisme de la lignée Dzongpa puissent s'épanouir dans
+  notre communauté.
+gallery_alts:
+- Communauté Dzongpa Europa à Valence
+- La communauté partage un repas pendant les enseignements
+- Photo de groupe de la communauté Dzongpa Europa
+tiers_title: Types de membres
+tiers:
+- name: Ami
+  price: '10'
+  period: par mois
+  desc: Pour ceux qui souhaitent soutenir l'association de manière simple et rester
+    proches du projet.
+  btn: Devenir Ami
+  stripe: https://buy.stripe.com/28EdR8gUtb3Tdeyca7a3u01
+  featured: false
+- name: Soutien
+  price: '21'
+  period: par mois
+  desc: Pour ceux qui participent régulièrement et souhaitent soutenir les activités
+    habituelles.
+  btn: Devenir Soutien
+  stripe: https://buy.stripe.com/00w3cu9s17RHdey4HFa3u02
+  featured: false
+- name: Protecteur
+  price: '50'
+  period: par mois
+  desc: Pour ceux qui souhaitent offrir un soutien solide au développement du projet
+    et des enseignements.
+  btn: Devenir Protecteur
+  stripe: https://buy.stripe.com/8x24gyaw51tjeiCfmja3u03
+  featured: false
+- name: Bienfaiteur
+  price: '108'
+  period: par mois
+  desc: Pour ceux qui souhaitent contribuer avec un engagement plein. Le nombre 108
+    a une signification sacrée dans la tradition bouddhiste.
+  btn: Devenir Bienfaiteur
+  stripe: https://buy.stripe.com/4gMfZgaw53Br8Yia1Za3u04
+  featured: true
+benefits_title: Avantages pour les membres
+benefits_all_intro: 'Tous les membres reçoivent :'
+benefits_all:
+- Accès au bulletin mensuel de l'association.
+- Avis prioritaires sur les activités, les retraites et les visites des maîtres.
+- Accès au canal interne de la communauté pour les membres.
+- Tarifs réduits pour les retraites et les événements avec des maîtres invités.
+- Certificat annuel de cotisations pour la déclaration d'impôts.
+benefits_upper_intro: 'Les Soutiens, Protecteurs et Bienfaiteurs bénéficient également
+  de :'
+benefits_upper:
+- Place réservée lors d'événements spéciaux à places limitées.
+- Reconnaissance optionnelle en tant que soutiens du projet.
+- Invitation à la réunion annuelle avec la direction de l'association.
+cancel_text: Les cotisations peuvent être modifiées ou annulées à tout moment en écrivant
+  à <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>.

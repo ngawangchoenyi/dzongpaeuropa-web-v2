@@ -1,0 +1,55 @@
+page:
+  lang: en
+  base: _base_en.html
+  title: Donations · Dzongpa Europa
+  description: Support Dzongpa Europa with your donation and help preserve the Sakya
+    Dzongpa lineage.
+  slug: donate
+  active: ''
+  es_slug: donaciones
+header:
+  title: Donations
+  lede: A contribution so that the teachings may flourish
+lead: Donations help sustain the activities of Dzongpa Europa and create the necessary
+  conditions to preserve and share the teachings of the Dzongpa lineage.
+p2: Contributions may be used for the organization of teachings and retreats, visits
+  by masters, translation of texts, rental of spaces, website maintenance, communication,
+  practice materials, and the creation of a stable fund for the association.
+purpose_title: Purpose of donations
+purpose_items:
+- Inviting lineage masters and organizing retreats.
+- In-person and online teachings.
+- Translation of Dharma texts into Spanish, English, and Chinese.
+- Rental of spaces for retreats and teachings.
+- Practice materials and library.
+- Website, communication, and newsletter.
+- Stable fund for the association.
+- Support for other cultural and spiritual projects of the lineage.
+stripe_title: Donate by card
+stripe_subtitle: One-time or recurring payment by credit or debit card. Secure Stripe
+  platform.
+stripe_other_btn: Other amount
+stripe_secure_text: You will be redirected to Stripe's secure payment gateway. We
+  accept Visa, Mastercard, and American Express.
+other_title: Other ways to donate
+has_bizum: false
+transfer_title: Bank transfer
+transfer_name: Asociación Cultural Dzongpa
+transfer_bank_label: Bank
+transfer_bank: Caixa Popular
+transfer_ref_label: Reference
+transfer_ref: '"Donation + your name"'
+patrimony_title: Non-monetary and asset donations
+patrimony_p: The association may also receive non-monetary or asset donations — movable
+  goods, real estate, libraries, practice objects — provided that they are aligned
+  with its cultural and spiritual aims and are accepted in accordance with the applicable
+  regulations and the entity's internal agreements. If you wish to make a contribution
+  of this kind, write to us at <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+  and we will guide you through the process.
+tax_title: Tax aspects
+tax_p: The Dzongpa Cultural Association is registered in the Register of Associations
+  of the Valencian Community under number <strong>CV-01-062727-V</strong> (First Section).
+  As a non-profit organization, we issue an annual certificate of contributions which
+  may, where applicable, allow you to benefit from the tax deductions available for
+  donations to non-profit entities. For this purpose, we need your full name, tax
+  identification number, and postal address.

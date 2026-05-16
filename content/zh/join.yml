@@ -1,0 +1,63 @@
+page:
+  lang: zh
+  base: _base_zh.html
+  title: 成为会员 · Dzongpa Europa
+  description: 成为朋友、支持者、护持者或施主，支持萨迦宗巴传承在欧洲的保存。每月会费从10欧元起。
+  slug: join
+  active: join
+  es_slug: hazte-socio
+header:
+  title: 成为会员
+  lede: 让我们共同护持传承的保存
+lead: 成为 Dzongpa 文化协会的会员是直接支持 Dzongpa Europa 发展的方式，有助于让更多人接触佛法教义。
+p2: 会员的贡献使覆盖基本费用、组织活动、邀请上师、租用场地、翻译材料、维护网站以及为未来闭关和教法创建稳定基金成为可能。
+p3: 每一份贡献，无论大小，都有助于创造条件，使藏族文化和宗巴传承佛教能在我们的社区中蓬勃发展。
+gallery_alts:
+- Dzongpa Europa 瓦伦西亚社区
+- 社区在教法期间共进餐食
+- Dzongpa Europa 社区集体照
+tiers_title: 会员类型
+tiers:
+- name: 朋友
+  price: '10'
+  period: 每月
+  desc: 适合希望以简单方式支持协会并与项目保持联系的人士。
+  btn: 成为朋友
+  stripe: https://buy.stripe.com/28EdR8gUtb3Tdeyca7a3u01
+  featured: false
+- name: 支持者
+  price: '21'
+  period: 每月
+  desc: 适合定期参与并希望支持常规活动的人士。
+  btn: 成为支持者
+  stripe: https://buy.stripe.com/00w3cu9s17RHdey4HFa3u02
+  featured: false
+- name: 护持者
+  price: '50'
+  period: 每月
+  desc: 适合希望为项目和教法发展提供有力支持的人士。
+  btn: 成为护持者
+  stripe: https://buy.stripe.com/8x24gyaw51tjeiCfmja3u03
+  featured: false
+- name: 施主
+  price: '108'
+  period: 每月
+  desc: 适合希望以全力承诺做出贡献的人士。数字108在佛教传统中具有神圣意义。
+  btn: 成为施主
+  stripe: https://buy.stripe.com/4gMfZgaw53Br8Yia1Za3u04
+  featured: true
+benefits_title: 会员权益
+benefits_all_intro: 所有会员均可获得：
+benefits_all:
+- 订阅协会月度通讯。
+- 活动、闭关和上师访问的优先通知。
+- 访问会员专属社区内部频道。
+- 闭关及特邀上师活动的优惠票价。
+- 年度捐款证明（用于报税）。
+benefits_upper_intro: 支持者、护持者和施主还可额外享有：
+benefits_upper:
+- 名额有限的特别活动预留席位。
+- 可选择作为项目支持者公开致谢。
+- 受邀参加协会年度领导层会议。
+cancel_text: 可随时发送邮件至 <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+  修改或取消会费。

@@ -1,0 +1,75 @@
+page:
+  lang: de
+  base: _base_de.html
+  title: Mitglied werden · Dzongpa Europa
+  description: Werden Sie Freund, Unterstützer, Beschützer oder Wohltäter und fördern
+    Sie die Bewahrung der Sakya-Dzongpa-Linie in Europa.
+  slug: join
+  active: join
+  es_slug: hazte-socio
+header:
+  title: Mitglied werden
+  lede: Unterstützen wir gemeinsam die Bewahrung der Linie
+lead: Mitglied des Kulturvereins Dzongpa zu werden ist eine direkte Möglichkeit, die
+  Entwicklung von Dzongpa Europa zu unterstützen und dazu beizutragen, die Lehren
+  des Dharma mehr Menschen zugänglich zu machen.
+p2: Die Beiträge der Mitglieder ermöglichen es, Grundausgaben zu decken, Aktivitäten
+  zu organisieren, Meister einzuladen, Räume zu mieten, Materialien zu übersetzen,
+  die Website zu unterhalten und einen stabilen Fonds für zukünftige Retreats und
+  Unterweisungen aufzubauen.
+p3: Jeder Beitrag, groß oder klein, hilft dabei, die Bedingungen zu schaffen, damit
+  die tibetische Kultur und der Buddhismus der Dzongpa-Linie in unserer Gemeinschaft
+  gedeihen können.
+gallery_alts:
+- Dzongpa Europa Gemeinschaft in Valencia
+- Die Gemeinschaft teilt eine Mahlzeit während der Unterweisungen
+- Gruppenfoto der Dzongpa Europa Gemeinschaft
+tiers_title: Mitgliedstypen
+tiers:
+- name: Freund
+  price: '10'
+  period: pro Monat
+  desc: Für diejenigen, die den Verein auf einfache Weise unterstützen und dem Projekt
+    nahbleiben möchten.
+  btn: Freund werden
+  stripe: https://buy.stripe.com/28EdR8gUtb3Tdeyca7a3u01
+  featured: false
+- name: Unterstützer
+  price: '21'
+  period: pro Monat
+  desc: Für diejenigen, die regelmäßig teilnehmen und die laufenden Aktivitäten des
+    Vereins fördern möchten.
+  btn: Unterstützer werden
+  stripe: https://buy.stripe.com/00w3cu9s17RHdey4HFa3u02
+  featured: false
+- name: Beschützer
+  price: '50'
+  period: pro Monat
+  desc: Für diejenigen, die eine solide Unterstützung für die Entwicklung des Projekts
+    und der Unterweisungen anbieten möchten.
+  btn: Beschützer werden
+  stripe: https://buy.stripe.com/8x24gyaw51tjeiCfmja3u03
+  featured: false
+- name: Wohltäter
+  price: '108'
+  period: pro Monat
+  desc: Für diejenigen, die mit vollem Engagement beitragen möchten. Die Zahl 108
+    hat eine heilige Bedeutung in der buddhistischen Tradition.
+  btn: Wohltäter werden
+  stripe: https://buy.stripe.com/4gMfZgaw53Br8Yia1Za3u04
+  featured: true
+benefits_title: Mitgliedsvorteile
+benefits_all_intro: 'Alle Mitglieder erhalten:'
+benefits_all:
+- Zugang zum monatlichen Newsletter des Vereins.
+- Prioritätsmitteilungen über Aktivitäten, Retreats und Meisterbesuche.
+- Zugang zum internen Gemeinschaftskanal für Mitglieder.
+- Ermäßigte Preise für Retreats und Veranstaltungen mit eingeladenen Meistern.
+- Jährliche Spendenbestätigung für die Steuererklärung.
+benefits_upper_intro: 'Unterstützer, Beschützer und Wohltäter genießen außerdem:'
+benefits_upper:
+- Reservierter Platz bei Sonderveranstaltungen mit begrenzter Kapazität.
+- Optionale Anerkennung als Unterstützer des Projekts.
+- Einladung zur jährlichen Sitzung mit der Vereinsleitung.
+cancel_text: Beiträge können jederzeit durch eine Nachricht an <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+  geändert oder gekündigt werden.

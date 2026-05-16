@@ -1,0 +1,66 @@
+page:
+  lang: de
+  base: _base_de.html
+  title: S.E. der VI. Gongkar Dorje Denpa Rinpoche · Dzongpa Europa
+  description: Biographie Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche, Tenzin
+    Jampal Lungtok Namgyal, Oberhaupt der Sakya-Dzongpa-Linie.
+  slug: rinpoche
+  active: rinpoche
+  es_slug: rinpoche
+header:
+  title: S.E. der VI. Gongkar Dorje Denpa Rinpoche
+  lede: Tenzin Jampal Lungtok Namgyal · Oberhaupt der Dzongpa-Linie der Sakya-Tradition
+hero_alt: S.E. der VI. Gongkar Dorje Denpa Rinpoche auf dem Zeremonialthron
+lead: Seine Eminenz der VI. Gongkar Dorje Denpa Rinpoche, Tenzin Jampal Lungtok Namgyal,
+  ist das Oberhaupt der Dzongpa-Linie der Sakya-Tradition des tibetischen Buddhismus.
+  1977 im Arunachal Pradesh im Nordosten Indiens nahe der tibetischen Grenze geboren,
+  sind sein Leben und seine Lehre der Bewahrung der Dzongpa-Tradition und dem Wohl
+  aller Wesen gewidmet.
+tulku:
+  title: Anerkennung als Tulku
+  p1: Sein Vorgänger, der V. Dorjedenpa Tulku, starb 1959 vorzeitig beim Lhasa-Aufstand.
+    Die Mönche der Dzongpa-Linie fragten wiederholt Seine Heiligkeit den Dalai Lama,
+    ob ihr Meister wiedergeboren worden sei. Nach sorgfältiger Prüfung wies Seine
+    Heiligkeit sie an, die Suche nach Nordostindien nahe der tibetischen Grenze zu
+    richten.
+  p2: 1989 wurde Rinpoche im Arunachal Pradesh gefunden und von Seiner Heiligkeit
+    dem Dalai Lama anerkannt, der ihm die Haarschneidzeremonie erteilte und ihm den
+    Namen Tenzin Jampal Lungtok gab. Später erweiterte Seine Eminenz der verstorbene
+    Chogye Trichen Rinpoche seinen Namen zu Tenzin Jampal Lungtok Namgyal.
+  dal02_caption: Seine Heiligkeit der XIV. Dalai Lama erkannte Rinpoche 1989 offiziell
+    als Reinkarnation des V. Dorjedenpa Tulku an.
+training:
+  title: Ausbildung
+  p1: Seine Heiligkeit der Dalai Lama betonte die Wichtigkeit einer gründlichen und
+    umfassenden Ausbildung für Rinpoche. So trat er als jüngster Schüler ins Sakya
+    College in Dehradun ein, unter der Aufsicht des verstorbenen Khenpo Migmar Tsering,
+    wo er 1999 mit Auszeichnung graduierte.
+  p2: Zusätzlich zur Beherrschung der dreizehn großen Shastras der Nalanda-Tradition,
+    wie sie in der Sakya-Tradition gelehrt werden, erhielt Rinpoche den Tantra-Compendium,
+    den Sadhana-Compendium, das vollständige Lamdré sowie zahlreiche tantrische Empowerments,
+    Übertragungen und Unterweisungen von Seiner Heiligkeit dem 41. Sakya Trichen und
+    anderen großen Meistern der Linie.
+gongkar:
+  title: Wiedererrichtung von Gongkar Choede
+  p1: 2003 errichtete Rinpoche das Kloster Gongkar Choede in Dehradun, Indien, wieder
+    und gab damit der Hauptstätte der Linie im Exil Kontinuität, die ursprünglich
+    1464 in Tibet gegründet worden war. Das Kloster wurde von Seiner Heiligkeit dem
+    Dalai Lama eingeweiht, und bei derselben Zeremonie wurde Rinpoche von Seiner Heiligkeit
+    dem 41. Sakya Trichen als Oberhaupt-Lama der Linie inthronisiert.
+  p2: ''
+  dal03_caption: Die zwei höchsten spirituellen Autoritäten, die Rinpoches Weg gesegnet
+    haben.
+international:
+  title: Internationale Tätigkeit
+  p1: Seit 2005 reist Rinpoche international, um buddhistische Unterweisungen an verschiedenen
+    Orten der Welt anzubieten. Er gründete die Sakya Dzongpa Vajrayana Community in
+    Taipei, wo er regelmäßige Unterweisungen gibt, und seitdem haben sich Praxisgemeinschaften
+    der Linie in Indien, Taiwan, Großbritannien, Spanien, Australien und Hongkong
+    gebildet.
+  p2: ''
+europa:
+  title: Seine Führung über Dzongpa Europa
+  p1: Der Kulturverein Dzongpa und das Projekt Dzongpa Europa werden unter der Inspiration
+    und spirituellen Führung Rinpoches entwickelt, mit dem Wunsch, geeignete Bedingungen
+    zu schaffen, damit seine Unterweisungen und die der Dzongpa-Linie in Europa empfangen,
+    studiert und praktiziert werden können.

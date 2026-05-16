@@ -1,0 +1,61 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">{{ data.lead }}</p>
+        <p>{{ data.p2 }}</p>
+        <p>{{ data.p3 }}</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px; margin-bottom: 0;">
+        <div class="foto-galeria" style="grid-template-columns: repeat(3, 1fr);">
+          <img src="/assets/img/espana-2026/esp26-044-comunidad-entrega-logo.jpg"
+               alt="{{ data.gallery_alts[0] }}" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-049-comida-comunidad.jpg"
+               alt="{{ data.gallery_alts[1] }}" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-052-foto-grupo-exterior.jpg"
+               alt="{{ data.gallery_alts[2] }}" loading="lazy">
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 48px;">
+        <h2 class="text-center">{{ data.tiers_title }}</h2>
+        <div class="socio-grid">
+          {% for tier in data.tiers %}
+          <div class="socio-card{% if tier.featured %} socio-card--featured{% endif %}">
+            <h3>{{ tier.name }}</h3>
+            <div class="socio-card__price">{{ tier.price }} €<span class="socio-card__price-period">{{ tier.period }}</span></div>
+            <p>{{ tier.desc }}</p>
+            <a href="{{ tier.stripe }}" target="_blank" rel="noopener" class="btn {% if tier.featured %}btn--primary{% else %}btn--outline{% endif %}">{{ tier.btn }}</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 32px;">
+        <h2>{{ data.benefits_title }}</h2>
+        <p><strong>{{ data.benefits_all_intro }}</strong></p>
+        <ul>
+          {% for b in data.benefits_all %}
+          <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+        <p><strong>{{ data.benefits_upper_intro }}</strong></p>
+        <ul>
+          {% for b in data.benefits_upper %}
+          <li>{{ b }}</li>
+          {% endfor %}
+        </ul>
+        <p style="margin-top: 32px;">{{ data.cancel_text | safe }}</p>
+      </div>
+    </section>
+{% endblock %}

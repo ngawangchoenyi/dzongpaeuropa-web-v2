@@ -1,0 +1,56 @@
+page:
+  lang: es
+  base: _base.html
+  title: Actividades · Dzongpa Europa
+  description: Meditación, estudio del Dharma, retiros y enseñanzas del linaje Sakya
+    Dzongpa en Valencia y Europa.
+  slug: actividades
+  active: actividades
+  en_slug: activities
+header:
+  title: Actividades
+  lede: Meditación, estudio, retiros y vida en comunidad
+lead: Dzongpa Europa organiza un programa regular de actividades pensadas para acercar
+  las enseñanzas del Dharma y la cultura tibetana a personas de todos los ámbitos.
+  Combinamos prácticas abiertas para quienes se acercan por primera vez con espacios
+  más profundos para practicantes habituales y socios.
+types_title: Tipos de actividades
+med:
+  h3: Meditación guiada
+  p: Encuentros regulares de meditación orientados a cultivar calma mental, atención
+    plena, compasión y claridad interior. Abiertos a personas con o sin experiencia
+    previa.
+study:
+  h3: Estudio del Dharma
+  p: Sesiones de introducción y estudio sobre el budismo tibetano, los textos tradicionales,
+    las enseñanzas de los maestros del linaje y los principios fundamentales del camino
+    budista.
+talks:
+  h3: Charlas culturales
+  p: Actividades abiertas sobre la cultura tibetana, la historia del budismo, el arte
+    sagrado, la iconografía, los rituales, la lengua y las tradiciones espirituales
+    del Himalaya.
+retreats:
+  h3: Retiros y enseñanzas
+  p: Organización de retiros, cursos y enseñanzas con maestros cualificados, tanto
+    en Valencia como en otros lugares de Europa, con la posibilidad de visitas de
+    Rinpoche.
+community:
+  h3: Comunidad y voluntariado
+  p: Espacios de encuentro para socios, practicantes y simpatizantes, así como oportunidades
+    de colaboración en organización, comunicación, traducción, logística y apoyo a
+    actividades.
+calendar:
+  title: Próximas actividades
+  subtitle: Consulta el calendario de meditaciones, enseñanzas, retiros y encuentros.
+  hl: es
+  contact_url: /contacto
+  contact_text: ¿Tienes dudas? Escríbenos
+newsletter:
+  title: Boletín de Dzongpa Europa
+  subtitle: Recibe información sobre actividades, enseñanzas y noticias de la asociación.
+  placeholder: tu@correo.com
+  btn_text: Suscribirme
+photo:
+  alt: Enseñanzas de Tulku Dorje Dhenpa Rinpoche en Valencia, 2026
+  caption: Ciclo de enseñanzas en Valencia, 2026.

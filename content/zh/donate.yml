@@ -1,0 +1,39 @@
+page:
+  lang: zh
+  base: _base_zh.html
+  title: 捐款 · Dzongpa Europa
+  description: 通过您的捐款支持 Dzongpa Europa 的活动和萨迦宗巴传承的保存。
+  slug: donate
+  active: ''
+  es_slug: donaciones
+header:
+  title: 捐款
+  lede: 一份让教法得以绽放的贡献
+lead: 捐款有助于支持 Dzongpa Europa 的活动，并创造保存和分享宗巴传承教法所需的条件。
+p2: 捐款可用于组织教法和闭关、上师访问、文本翻译、场地租用、网站维护、传播、修行材料，以及为协会建立稳定基金。
+purpose_title: 捐款用途
+purpose_items:
+- 邀请传承上师并组织闭关。
+- 线下和线上教法。
+- 将佛法文本翻译成西班牙语、英语和中文。
+- 为闭关和教法租用场地。
+- 修行材料和图书馆。
+- 网站、传播和通讯。
+- 协会稳定基金。
+- 支持传承其他文化和精神项目。
+stripe_title: 刷卡捐款
+stripe_subtitle: 一次性或定期信用卡/借记卡付款。Stripe 安全平台。
+stripe_other_btn: 其他金额
+stripe_secure_text: 您将被重定向到 Stripe 安全支付网关。我们接受 Visa、Mastercard 和 American Express。
+other_title: 其他捐款方式
+has_bizum: false
+transfer_title: 银行转账
+transfer_name: Asociación Cultural Dzongpa
+transfer_bank_label: 银行
+transfer_bank: Caixa Popular
+transfer_ref_label: 备注
+transfer_ref: 「捐款 + 您的姓名」
+patrimony_title: 非货币及资产捐赠
+patrimony_p: 协会也可接受非货币或资产捐赠——动产、不动产、图书馆、修行物品——前提是与其文化和精神宗旨一致。如有意向，请发送电子邮件至 <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>。
+tax_title: 税务方面
+tax_p: Dzongpa 文化协会以编号 <strong>CV-01-062727-V</strong>（第一部分）登记于瓦伦西亚社区协会登记册。作为非营利实体，我们开具年度捐款证明。为此，我们需要您的全名和通讯地址。

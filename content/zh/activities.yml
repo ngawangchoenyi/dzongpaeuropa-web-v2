@@ -1,0 +1,42 @@
+page:
+  lang: zh
+  base: _base_zh.html
+  title: 活动 · Dzongpa Europa
+  description: Dzongpa Europa定期举办禅修、佛法学习、闭关和萨迦宗巴传承教法活动。
+  slug: activities
+  active: activities
+  es_slug: actividades
+header:
+  title: 活动
+  lede: 禅修、学习、闭关与社区生活
+lead: Dzongpa Europa 定期举办各类活动，旨在将佛法教义和藏族文化带给各种背景的人。我们将面向初学者的开放修习与面向常规修行者和会员的深度空间相结合。
+types_title: 活动类型
+med:
+  h3: 引导禅修
+  p: 定期禅修聚会，旨在培养心灵安住、正念、慈悲和内在清明。向有无经验的人士开放。
+study:
+  h3: 佛法学习
+  p: 关于藏传佛教、传统典籍、传承上师教法和佛道基本原则的入门及学习课程。
+talks:
+  h3: 文化讲座
+  p: 关于藏族文化、佛教历史、神圣艺术、图像学、仪轨、语言和喜马拉雅精神传统的开放活动。
+retreats:
+  h3: 闭关与教法
+  p: 与合格上师共同在瓦伦西亚及欧洲其他地方组织闭关、课程和教法，并有可能迎请仁波切亲临。
+community:
+  h3: 社区与义工
+  p: 为会员、修行者和支持者提供相聚空间，以及在组织、传播、翻译、后勤和活动支持方面的合作机会。
+calendar:
+  title: 近期活动
+  subtitle: 查看禅修、教法、闭关和聚会日历。
+  hl: zh-CN
+  contact_url: /zh/contact
+  contact_text: 有疑问？请写信给我们
+newsletter:
+  title: Dzongpa Europa 通讯
+  subtitle: 接收有关活动、教法和协会新闻的信息。
+  placeholder: 您的@邮箱.com
+  btn_text: 订阅
+photo:
+  alt: 仁波切在瓦伦西亚的教法，2026年
+  caption: 2026年瓦伦西亚教法系列。
