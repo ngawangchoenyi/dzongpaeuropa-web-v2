@@ -35,6 +35,7 @@ git add \
   zh/ \
   sitemap.xml \
   robots.txt \
+  manifest.json \
   vercel.json \
   assets/css/style.css \
   assets/js/lightbox.js \

@@ -1,0 +1,32 @@
+{
+  "name": "Dzongpa Europa",
+  "short_name": "Dzongpa",
+  "description": "Tibetan Buddhism of the Sakya Dzongpa lineage in Europe",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F5EFE0",
+  "theme_color": "#8B1A1A",
+  "icons": [
+    {
+      "src": "/assets/img/logo/logo-03-dzongpa-europa-icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/logo/logo-03-dzongpa-europa-icon-64x64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/logo/logo-03-dzongpa-europa-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/logo/logo-03-dzongpa-europa-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

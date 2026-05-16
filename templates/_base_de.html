@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="de">
-  <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/{{ page.es_slug | default('') }}">
-  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/{{ page.slug }}">
-  <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/{{ page.slug }}">
-  <link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/{{ page.slug }}">
-  <link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/{{ page.slug }}">
-  <link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/"/>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org{% if page.es_slug | default('') %}/{{ page.es_slug }}{% else %}/{% endif %}">
+  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en{% if page.slug %}/{{ page.slug }}{% endif %}">
+  <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr{% if page.slug %}/{{ page.slug }}{% endif %}">
+  <link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de{% if page.slug %}/{{ page.slug }}{% endif %}">
+  <link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh{% if page.slug %}/{{ page.slug }}{% endif %}">
+  <link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org{% if page.es_slug | default('') %}/{{ page.es_slug }}{% else %}/{% endif %}">
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ page.description }}">
-  <meta name="author" content="Dzongpa Cultural Association">
+  <meta name="author" content="Kulturverein Dzongpa">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page.title }}">
@@ -21,7 +21,7 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://www.dzongpaeuropa.org/de/{{ page.slug }}">
+  <meta property="og:url" content="https://www.dzongpaeuropa.org/de{% if page.slug %}/{{ page.slug }}{% endif %}">
   <meta property="og:site_name" content="Dzongpa Europa">
   <meta property="og:locale" content="de_DE">
   <meta name="twitter:card" content="summary_large_image">
@@ -36,7 +36,7 @@
   <meta name="theme-color" content="#8B1A1A">
   <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/logo/logo-03-dzongpa-europa-icon-64x64.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/logo/logo-03-dzongpa-europa-icon-512x512.png">
-  <link rel="canonical" href="https://www.dzongpaeuropa.org/de/{{ page.slug }}">
+  <link rel="canonical" href="https://www.dzongpaeuropa.org/de{% if page.slug %}/{{ page.slug }}{% endif %}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,19 +47,19 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="site-header">
     <div class="container">
       <nav class="nav" aria-label="Hauptnavigation">
-        <a href="/de/" class="nav__brand" aria-label="Home · Dzongpa Europa">
+        <a href="/de/" class="nav__brand" aria-label="Startseite · Dzongpa Europa">
           <img src="/assets/img/logo/logo-03-dzongpa-europa-simbolo-avatar.png" alt="" width="44" height="44" class="nav__brand-mark" style="background:transparent;border-radius:0;">
           <span class="nav__brand-text">
             <span class="nav__brand-name">Dzongpa Europa</span>
-            <span class="nav__brand-sub">Dzongpa Cultural Association</span>
+            <span class="nav__brand-sub">Kulturverein Dzongpa</span>
           </span>
         </a>
-        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-menu">
           <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
         </button>
         <ul class="nav__menu" id="nav-menu">
@@ -95,12 +95,12 @@
       <div class="footer-grid">
         <div>
           <div class="footer__brand">Dzongpa Europa</div>
-          <p class="footer__sub">A project of the Dzongpa Cultural Association, under the spiritual guidance of H.E. the VI Gongkar Dorje Dhenpa Rinpoche.</p>
+          <p class="footer__sub">Ein Projekt des Kulturvereins Dzongpa unter der spirituellen Führung S.E. des VI. Gongkar Dorje Dhenpa Rinpoche.</p>
           <p class="footer__sub" style="margin:0;">— Möge diese Arbeit allen Wesen zugutekommen.</p>
         </div>
         <div>
           <h4>Entdecken</h4>
-          <a href="/de/about">About us</a>
+          <a href="/de/about">Über uns</a>
           <a href="/de/rinpoche">Rinpoche</a>
           <a href="/de/lineage">Linie</a>
           <a href="/de/activities">Aktivitäten</a>
@@ -142,7 +142,7 @@
       toggle.addEventListener('click', function(){
         var isOpen = menu.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', String(isOpen));
-        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
       });
       menu.querySelectorAll('a').forEach(function(link){
         link.addEventListener('click', function(){
