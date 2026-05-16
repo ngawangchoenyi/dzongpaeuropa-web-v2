@@ -1,0 +1,144 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <img src="{{ data.hero_src }}"
+             alt="{{ data.hero_alt }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 1080px; margin: 0 auto 40px; display: block;">
+      </div>
+
+      <div class="container-prose prose">
+        <p class="lead">{{ data.intro.lead }}</p>
+        <p>{{ data.intro.p2 }}</p>
+
+        <h2>{{ data.sakya_branch.title }}</h2>
+        <p>{{ data.sakya_branch.p1 }}</p>
+      </div>
+
+      <div class="container" style="margin-top: 60px;">
+        <img src="/assets/img/linaje-gongkar/lin-01-sachen-kunga-nyingpo-mural-gongkar-choede.jpg"
+             alt="{{ data.sakya_branch.sachen_caption }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 600px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.sakya_branch.sachen_caption }}</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>{{ data.origin.title }}</h2>
+        <p>{{ data.origin.p1 }}</p>
+        <p>{{ data.origin.p2 }}</p>
+
+        <h2>{{ data.gongkar_choede.title }}</h2>
+        <p>{{ data.gongkar_choede.p1 }}</p>
+        <p>{{ data.gongkar_choede.p2 }}</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/linaje-gongkar/lin-02-buda-shakyamuni-mural-khyenri-gongkar-choede.jpg"
+             alt="{{ data.gongkar_choede.khyenri_caption }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 600px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.gongkar_choede.khyenri_caption }}</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>{{ data.dalai_lama.title }}</h2>
+        <p>{{ data.dalai_lama.p1 }}</p>
+        <p>{{ data.dalai_lama.p2 }}</p>
+
+        <h2>{{ data.core_practices.title }}</h2>
+        <p>{{ data.core_practices.intro }}</p>
+        <ul>
+          {% for item in data.core_practices.practice_list %}
+          <li><strong>{{ item.title }}</strong> {{ item.text }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/linaje-gongkar/lin-04-brahmanrupa-mahakala-protector-dzongpa.jpg"
+             alt="{{ data.core_practices.brahmanrupa_caption }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.core_practices.brahmanrupa_caption }}</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>{{ data.succession.title }}</h2>
+        <p>{{ data.succession.p1 }}</p>
+        <p>{{ data.succession.p2 }}</p>
+
+        <h2>{{ data.preservation.title }}</h2>
+        <p>{{ data.preservation.p1 }}</p>
+        <p>{{ data.preservation.p2 }}</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="text-center">
+          <h2 style="margin-bottom: 0.2em;">{{ data.brahmanrupa_story.section_title }}</h2>
+          <p class="page-header__lede" style="margin-top: 0;">{{ data.brahmanrupa_story.section_subtitle }}</p>
+        </div>
+
+        <div class="container" style="margin-top: 32px;">
+          <img src="{{ data.brahmanrupa_story.statue_photo.src }}"
+               alt="{{ data.brahmanrupa_story.statue_photo.alt }}"
+               loading="lazy"
+               style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+          <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.brahmanrupa_story.statue_photo.caption }}</p>
+        </div>
+
+        <div class="container-prose prose" style="margin-top: 40px;">
+          <p>{{ data.brahmanrupa_story.p1 }}</p>
+          <p>{{ data.brahmanrupa_story.p2 }}</p>
+          <p>{{ data.brahmanrupa_story.p3 }}</p>
+          <p>{{ data.brahmanrupa_story.p4 }}</p>
+          <blockquote>{{ data.brahmanrupa_story.blockquote }}</blockquote>
+          <p>{{ data.brahmanrupa_story.p5 }}</p>
+          <p>{{ data.brahmanrupa_story.p6 }}</p>
+          <p>{{ data.brahmanrupa_story.p7 }}</p>
+          <p>{{ data.brahmanrupa_story.p8 }}</p>
+        </div>
+
+        <div class="container" style="margin-top: 40px;">
+          <img src="{{ data.brahmanrupa_story.mural_photo.src }}"
+               alt="{{ data.brahmanrupa_story.mural_photo.alt }}"
+               loading="lazy"
+               style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 600px; margin: 0 auto; display: block;">
+          <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.brahmanrupa_story.mural_photo.caption }}</p>
+        </div>
+
+        <div class="container-prose prose" style="margin-top: 40px;">
+          <p>{{ data.brahmanrupa_story.p9 }}</p>
+          <p>{{ data.brahmanrupa_story.p10 }}</p>
+          <p>{{ data.brahmanrupa_story.p11 }}</p>
+          <p>{{ data.brahmanrupa_story.p12 }}</p>
+        </div>
+
+        <div class="container" style="margin-top: 32px;">
+          <img src="{{ data.brahmanrupa_story.altar_photo.src }}"
+               alt="{{ data.brahmanrupa_story.altar_photo.alt }}"
+               loading="lazy"
+               style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+          <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">{{ data.brahmanrupa_story.altar_photo.caption }}</p>
+        </div>
+
+        <div class="container-prose" style="margin-top: 32px;">
+          <p style="text-align: center; font-size: 0.88rem; color: var(--c-texto-suave); border-top: 1px solid var(--c-borde); padding-top: 20px;">
+            <em>{{ data.brahmanrupa_story.attribution_text }}<br>{{ data.brahmanrupa_story.attribution_photos }}</em>
+          </p>
+        </div>
+      </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,175 @@
+page:
+  lang: de
+  base: _base_de.html
+  title: Die Sakya-Dzongpa-Linie · Dzongpa Europa
+  description: 'Geschichte und Übertragung der Sakya-Dzongpa-Linie: Ursprünge, Kloster
+    Gongkar Choede, besondere Praktiken, Sukzession und zeitgenössische Bewahrung.'
+  slug: lineage
+  active: lineage
+  es_slug: linaje
+header:
+  title: Die Sakya-Dzongpa-Linie
+  lede: Tradition, Geschichte und Übertragung
+hero_src: /assets/img/linaje-gongkar/lin-03-gongkar-choede-lhokha-tibet-exterior-hero.jpg
+hero_alt: Kloster Gongkar Choede in Lhokha, Tibet, gegründet 1464
+intro:
+  lead: Die Dzongpa-Linie ist eine Untertradition der Sakya-Schule des tibetischen
+    Buddhismus. Ihre spätere Form, bekannt als Gongkar Dzongpa, wurde im 15. Jahrhundert
+    von Dorje Denpa Kunga Namgyal konsolidiert, dem Gründer des Klosters Gongkar Choede
+    im Jahr 1464 in Zentraltibet.
+  p2: Unter der Führung Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche bewahrt
+    die Linie eine reiche Tradition des Studiums, der Meditation, der tantrischen
+    Praxis, der Liturgie, der sakralen Kunst und des Dienstes am Dharma.
+sakya_branch:
+  title: Ein Zweig der Sakya-Tradition
+  p1: 'Die Dzongpa-Tradition ist keine eigenständige Schule. Sie gehört zur Sakya-Schule,
+    einer der großen Traditionen des tibetischen Buddhismus, die sich durch die Integration
+    von philosophischem Studium, Meditation und tantrischer Praxis auszeichnet. Innerhalb
+    von Sakya bewahrt Dzongpa eine eigene Identität: eine besondere Übertragung des
+    Lamdré, eine historische monastische Tradition, die mit Gongkar Choede verbunden
+    ist, ein charakteristisches Textkorpus und ein eigenes Ritualprogramm.'
+  sachen_caption: Sachen Kunga Nyingpo (1092–1158), erster der Fünf Gründungspatriarchen
+    der Sakya-Schule. Historisches Wandgemälde, Gongkar Choede, Lhokha (Tibet).
+origin:
+  title: Ursprung und Geschichte
+  p1: Die Dzongpa-Tradition hat ihre Wurzeln in der Übertragung großer Sakya-Meister,
+    darunter Lama Dampa Sonam Gyaltsen (1312–1375) und Thegchen Chöje Kunga Tashi.
+    Ihre spätere Form, Gongkar Dzongpa, wurde von Dorje Denpa Kunga Namgyal (1432–1496)
+    konsolidiert, einem tantrischen Meister, Gelehrten und Bewahrer der Sakya-Tradition.
+  p2: Der Überlieferung zufolge wurde der erste Dorje Denpa von Guru Padmasambhava
+    als Reinkarnation seines Schülers Nanam Dorje Dujom prophezeit, vorhergesagt als
+    ein Mönch namens Kunga, der in Zentraltibet erscheinen würde, um die Tantras zu
+    erhellen.
+gongkar_choede:
+  title: Gongkar Choede, Hauptkloster
+  p1: 1464 gründete Dorje Denpa Kunga Namgyal Gongkar Choede — auch als Gongkar Dorjeden
+    bekannt — in der Region Lhokha in Zentraltibet, südlich des Tsangpo-Flusses. Das
+    Kloster wurde zum Hauptzentrum der Dzongpa-Tradition und zu einem bedeutenden
+    Ort für die Praxis des Lamdré, tantrische Rituale, Mandalazyklen, Hevajra-Unterweisungen,
+    Sakya-Beschützer und das monastische Leben.
+  p2: Seine Wandgemälde im Khyenri-Stil der tibetischen Malerei stellen eine der bemerkenswertesten
+    künstlerischen Ausdrucksformen des tibetischen Buddhismus des 15. Jahrhunderts
+    dar. Seine rituellen Cham-Tänze, inspiriert von den mystischen Visionen des ersten
+    Dorje Denpa, gehören ebenfalls zum lebendigen Erbe der Linie.
+  khyenri_caption: Buddha Shakyamuni im Bhumisparsha-Mudra, Wandgemälde im Khyenri-Stil.
+    Gongkar Choede, 15. Jahrhundert.
+dalai_lama:
+  title: Verbindung mit dem Dalai Lama
+  p1: Der Große Fünfte Dalai Lama (1642–1682) hegte eine tiefe Bewunderung für diese
+    Linie. Er vertraute Gongkar Choede die Bewahrung des dreidimensionalen goldenen
+    Kalachakra-Mandalas seines Potala-Palastes an, in dem die Mönche über viele Generationen
+    hinweg Kalachakra-Rituale für den Weltfrieden durchführten. Er gründete auch den
+    Zhol Tsedrub Lhakang im Dorf am Fuß des Potala, damit die Mönche von Gongkar Choede
+    dort Weiße-Tara-Rituale für langes Leben und Heilung vollziehen konnten.
+  p2: Ebenso wurde ihnen der Meru Nyingpa Lhakang, angrenzend an den Jokhang-Tempel
+    in Lhasa, anvertraut, um die Schutzrituale zu Ehren ihres Schutzpatrons Brahmanrupa
+    Mahakala durchzuführen. Seitdem haben die Dorje Denpa Rinpoches und die Dzongpa-Mönche
+    von Gongkar Choede eine besondere Nähe zu jedem Dalai Lama aufrechterhalten.
+core_practices:
+  title: Charakteristische Praktiken und Unterweisungen
+  intro: 'Die Sakya-Dzongpa-Tradition bewahrt ein reiches Corpus von Praktiken:'
+  practice_list:
+  - title: Das Lamdré.
+    text: „Der Weg und seine Frucht“, zentrale Unterweisung der Sakya-Tradition, in
+      einer besonderen Linie übertragen, die mit den Meistern der Dzongpa-Linie verbunden
+      ist.
+  - title: Der Hevajra-Zyklus.
+    text: Untrennbar vom Lamdré, mit Mandala-Darstellungen und zugehörigen tantrischen
+      Praktiken.
+  - title: Die Mandalas der vier Tantraklassen.
+    text: Ein ausgedehnter ritueller Mandalazyklus, der von Dorje Denpa Kunga Namgyal
+      eingerichtet wurde.
+  - title: Die Mahakala-Beschützer.
+    text: Insbesondere Panjara, Chaturmukha und Brahmanrupa Mahakala, eigene Beschützer
+      der Tradition.
+  - title: Vajrakilaya.
+    text: Praxis, die historisch mit der Befriedung und Weihung des Klostergeländes
+      verbunden ist.
+  - title: Kalachakra und Weiße Tara.
+    text: Rituale, die seit dem Band mit dem Fünften Dalai Lama besondere Relevanz
+      haben.
+  - title: Die Cham-Tänze.
+    text: Rituelle Tanzliturgie, inspiriert von den mystischen Visionen des ersten
+      Dorje Denpa.
+  brahmanrupa_caption: Brahmanrupa Mahakala, Schutzpatron der Dzongpa-Tradition.
+succession:
+  title: Sukzession und Kontinuität
+  p1: Die Sukzession der Dorje Denpa Rinpoches bewahrt die spirituelle Kontinuität
+    von Gongkar Dzongpa. Der erste Dorje Denpa, Dzogchen Kunga Namgyal (1432–1496),
+    gründete Gongkar Choede. Der fünfte Dorjedenpa Tulku, Jampel Lungtok Choekyi Gyaltsen
+    (1928–1959), starb während des Lhasa-Aufstands und unterbrach damit die von ihm
+    getragene Übertragungslinie.
+  p2: Die Tradition wurde mit der Anerkennung des heutigen VI. Gongkar Dorje Denpa
+    Rinpoche im Jahr 1989 durch Seine Heiligkeit den Dalai Lama und mit der Wiedererrichtung
+    von Gongkar Choede in Dehradun (Indien) im Jahr 2003 wiederhergestellt.
+preservation:
+  title: Zeitgenössische Bewahrung
+  p1: 'Nach den Schwierigkeiten des 20. Jahrhunderts ist die Dzongpa-Tradition Gegenstand
+    eines Prozesses der Wiederherstellung und Bewahrung, der noch heute andauert:
+    Wiederherstellung des monastischen Lebens im Exil, Restaurierung ritueller und
+    liturgischer Texte, Wiederaufnahme des Lamdré-Unterrichts und der Ritualzyklen
+    sowie Ausbildung neuer Generationen von Praktizierenden.'
+  p2: Dzongpa Europa ist Teil dieser Bewahrungsbewegung mit dem Ziel, die Unterweisungen,
+    die Kultur und die Praxis der Sakya-Dzongpa-Linie in Europa zugänglich zu machen.
+brahmanrupa_story:
+  section_title: Die heiligen Ursprünge des Brahmanen Mahakala
+  section_subtitle: Eine Geschichte des Dzongpa-Beschützers
+  statue_photo:
+    src: /assets/img/linaje-gongkar/lin-06-brahman-mahakala-estatua-gongkar-choede.jpg
+    alt: Statue des Brahmanen Mahakala, geschaffen von Gongkar Khyentse Chenmo in
+      Gongkar Choede
+    caption: Statue des Brahmanen Mahakala, geschaffen von Gongkar Khyentse Chenmo
+      nach der Vision von Dorje Denpa Kunga Namgyal. Gongkar Choede, Lhokha (Tibet).
+  p1: Der Erste Dorje Denpa, Kunga Namgyal, unterhielt eine besonders enge Beziehung
+    zum viergesichtigen Mahakala als seinem Dharma-Beschützer.
+  p2: Dieser Dharma-Beschützer stammt aus der indischen Linie des Guhyasamaja-Tantra,
+    wie es von Nagarjuna gelehrt wurde, und wurde unter der Gestalt eines Brahmanen
+    — eines indischen Heiligen — nach Tibet gebracht, wo er zu einem der wichtigsten
+    Beschützer der Sakya-Tradition zur Zeit von Sachen Kunga Nyingpo wurde.
+  p3: Der Beschützer beseitigte zahlreiche Hindernisse und brachte der Sakya-Tradition
+    über viele Generationen hinweg großen Nutzen. Er erschien verkleidet, weil die
+    viergesichtige Form die innere Form ist und als esoterisch gilt. Auf Sakya-Altären
+    wird nur die äußere Form des Brahmanen gezeigt.
+  p4: 'Als Dorje Denpa Kunga Namgyal noch sehr jung war, sah er seinen Dharma-Beschützer
+    in einer reinen Vision. Mahakala sagte zu ihm:'
+  blockquote: „Ich bin dein Freund und werde für dich arbeiten.“
+  p5: Von da an diente er als sein Beschützer.
+  p6: Später, nachdem Dorje Denpa Kunga Namgyal Mönch geworden war, pilgerte er nach
+    Sakya und besuchte einen heiligen Ort von Mahakala nicht weit davon entfernt,
+    namens Kau Dragdzong. Dort vollzog er eine aufwendige Puja für Mahakala und konnte
+    den Klang einer Femurtrompete hören, obwohl niemand sie blies.
+  p7: Er folgte dem Klang und sah seinen Dharma-Beschützer in der Gestalt eines Brahmanen,
+    der in einer Höhle saß. Bei dieser Begegnung bot Mahakala Dorje Denpa Kunga Namgyal
+    die Lebenskraft seines Herzens an und verpflichtete sich, ihm zu dienen und ihm
+    dabei zu helfen, seine Dharma-Aktivitäten auf alle möglichen Weisen zu erfüllen.
+  p8: 'Nach dieser Erfahrung schuf der berühmte Künstlerschüler von Dorje Denpa Kunga
+    Namgyal, Gongkar Khyentse Chenmo, eine Statue der Brahmanenform genau so, wie
+    sein Meister sie beschrieben hatte: die Femurtrompete spielend.'
+  mural_photo:
+    src: /assets/img/linaje-gongkar/lin-08-mural-primer-dorje-denpa-gongkar-choede.jpg
+    alt: Altes Wandgemälde des Ersten Dorje Denpa, Dzogchen Kunga Namgyal, in Gongkar
+      Choede
+    caption: Wandgemälde des Ersten Dorje Denpa, Dzogchen Kunga Namgyal (1432–1496).
+      Gongkar Choede, Lhokha (Tibet).
+  p9: Diese Form der Darstellung des Brahmanen wurde in Zentraltibet sehr populär.
+    In der Nähe des Jokhang, des heiligsten Tempels Tibets in der Hauptstadt Lhasa,
+    wurde ein Heiligtum errichtet, das dieser Statue gewidmet ist. Dieses Heiligtum
+    erhielt den Namen Meru Nyingpa Lhakhang.
+  p10: Auf dem Höhepunkt von Gongkar Dorje Den hieß es, die Opfergaben an die Statue
+    in diesem Lhakhang seien ausreichend, um den materiellen Bedarf der gesamten Sangha
+    von Gongkar Dorje Den zu decken, die aus fast dreitausend Mönchen bestand.
+  p11: 'Dies war auf den großen Glauben zurückzuführen, den die Menschen in diese
+    reine Linie von Mahakala-Pujas für Schutz und Überwindung von Hindernissen hatten.
+    Nicht nur Tibeter: auch Han-chinesische und uigurische Händler, die den Ort besuchten,
+    haben jahrhundertelang Opfergaben an das Heiligtum dargebracht, und dieses existiert
+    noch heute.'
+  p12: Glücklicherweise für die Dzongpa-Gemeinschaft werden die Pujas und Gebete von
+    Dorje Denpa Kunga Namgyal an Mahakala dank S.E. Gongkar Dorje Dhenpa Rinpoche,
+    der sie freundlicherweise regelmäßig für uns alle durchführt, fortgesetzt.
+  altar_photo:
+    src: /assets/img/linaje-gongkar/lin-07-altar-gongkar-choede-v-dorjedenpa-retrato.jpg
+    alt: Altar von Gongkar Choede mit Porträt des V. Dorjedenpa Tulku
+    caption: Innenaltar von Gongkar Choede, mit dem Porträt des V. Dorjedenpa Tulku,
+      Jampel Lungtok Choekyi Gyaltsen (1928–1959).
+  attribution_text: 'Text von: Ehrwürdiger Kassapo'
+  attribution_photos: 'Fotos und Videos von: Kunga Zhoennu'

@@ -46,6 +46,11 @@ YAML_PAGE_MAP = {
     'fr/history.html':    ('fr', 'history'),
     'de/history.html':    ('de', 'history'),
     'zh/history.html':    ('zh', 'history'),
+    'linaje.html':        ('es', 'lineage'),
+    'en/lineage.html':    ('en', 'lineage'),
+    'fr/lineage.html':    ('fr', 'lineage'),
+    'de/lineage.html':    ('de', 'lineage'),
+    'zh/lineage.html':    ('zh', 'lineage'),
 }
 
 PAGES = [
