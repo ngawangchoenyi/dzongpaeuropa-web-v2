@@ -39,6 +39,8 @@ git add \
   vercel.json \
   assets/css/style.css \
   assets/js/lightbox.js \
+  assets/img/ \
+  googleb3b0a98eb44d048e.html \
   deploy.sh
 
 git commit -m "$MSG"
