@@ -229,7 +229,7 @@ p:last-child { margin-bottom: 0; }
   transition: transform var(--t), opacity var(--t);
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1180px) {
   .nav__menu {
     display: none;
     position: absolute;
