@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/contact">
   <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/contacto">
+  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/contact">
+  <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/contact">
+  <link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/contact">
+  <link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/contact">
+  <link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/"/>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact · Dzongpa Europa</title>
-  <meta name="description" content="Write to us to get information, become a member, donate, take part in activities, or collaborate as a volunteer at Dzongpa Europa.">
+  <meta name="description" content="Write to us to get information, become a member, donate, participate in activities, or volunteer at Dzongpa Europa.">
   <meta name="author" content="Dzongpa Cultural Association">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact · Dzongpa Europa">
-  <meta property="og:description" content="Write to us to get information, become a member, donate, take part in activities, or collaborate as a volunteer at Dzongpa Europa.">
+  <meta property="og:description" content="Write to us to get information, become a member, donate, participate in activities, or volunteer at Dzongpa Europa.">
   <meta property="og:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:secure_url" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -22,7 +26,7 @@
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact · Dzongpa Europa">
-  <meta name="twitter:description" content="Write to us to get information, become a member, donate, take part in activities, or collaborate as a volunteer at Dzongpa Europa.">
+  <meta name="twitter:description" content="Write to us to get information, become a member, donate, participate in activities, or volunteer at Dzongpa Europa.">
   <meta name="twitter:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
 
   <link rel="icon" href="/assets/img/logo/favicon.ico">
@@ -82,25 +86,25 @@
     <section class="page-header">
       <div class="container">
         <h1>Contact</h1>
-        <p class="page-header__lede">We are here to help</p>
+        <p class="page-header__lede">We are here to help you</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container-prose prose">
-        <p class="lead">If you would like to receive information, take part in activities, become a member, collaborate as a volunteer, or support the project, write to us. We answer enquiries in Spanish, English, and Chinese.</p>
+        <p class="lead">If you wish to receive information, participate in activities, become a member, collaborate as a volunteer, or support the project, write to us. We respond to enquiries in Spanish, English, and Chinese.</p>
       </div>
 
       <div class="container">
         <ul class="contact-list">
-          <li><strong>Institutional email</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
+          <li><strong>Email</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
         </ul>
       </div>
 
       <div class="container-prose">
         <h2 class="text-center" style="margin-top: 32px;">Write to us</h2>
         <div class="golden-box" style="margin: 0 auto 32px; max-width: 580px;">
-          <p style="margin: 0; font-size: 0.95rem;">Would you rather contact us directly? Send us an email at <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a> and we will reply as soon as possible.</p>
+          <p style="margin: 0; font-size: 0.95rem;">Prefer to write to us directly? Send us an email at <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a> and we will get back to you as soon as possible.</p>
         </div>
 
         <div id="form-ok" style="display:none; max-width:580px; margin:0 auto 32px; padding:32px 28px; background:var(--c-crema); border:1px solid var(--c-dorado); border-radius:12px; text-align:center;">
@@ -110,52 +114,62 @@
         </div>
 
         <div id="form-err" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
-          An error occurred while sending the message. Please try again or write directly to <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b; font-weight:600;">secretaria@dzongpaeuropa.org</a>.
+          An error occurred while sending the message. Please try again or write to us directly at <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b; font-weight:600;">secretaria@dzongpaeuropa.org</a>.
         </div>
 
         <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="53ebea9c-e5d3-4448-b166-741447c4d22f">
-          <input type="hidden" name="subject" value="New contact message · Dzongpa Europa">
-          <input type="hidden" name="from_name" value="Dzongpa Europa Web">
+          <input type="hidden" name="subject" value="Contact · Dzongpa Europa">
+          <input type="hidden" name="from_name" value="Web Dzongpa Europa">
           <input type="hidden" name="redirect" value="false">
           <input type="checkbox" name="botcheck" style="display:none;">
 
           <div class="form__row">
             <label for="f-nombre">Full name *</label>
-            <input id="f-nombre" name="nombre" type="text" required placeholder="E.g. Maria Smith">
+            <input id="f-nombre" name="nombre" type="text" required>
           </div>
           <div class="form__row">
             <label for="f-email">Email address *</label>
-            <input id="f-email" name="email" type="email" required placeholder="your@email.com">
+            <input id="f-email" name="email" type="email" required>
           </div>
           <div class="form__row">
             <label for="f-tel">Phone (optional)</label>
-            <input id="f-tel" name="telefono" type="tel" placeholder="+44 7700 000000">
+            <input id="f-tel" name="telefono" type="tel">
           </div>
           <div class="form__row">
             <label for="f-motivo">Reason for contact *</label>
             <select id="f-motivo" name="motivo" required>
               <option value="">Select…</option>
+              
               <option>General information</option>
+              
               <option>Become a member</option>
+              
               <option>Donations</option>
+              
               <option>Activities</option>
+              
               <option>Volunteering</option>
+              
               <option>Press</option>
+              
               <option>Other</option>
+              
             </select>
           </div>
           <div class="form__row">
             <label for="f-idioma">Preferred language for reply *</label>
             <select id="f-idioma" name="idioma" required>
-              <option>English</option>
               <option>Español</option>
+              <option>English</option>
+              <option>Français</option>
+              <option>Deutsch</option>
               <option>中文</option>
             </select>
           </div>
           <div class="form__row">
             <label for="f-mensaje">Message *</label>
-            <textarea id="f-mensaje" name="mensaje" required placeholder="Tell us how we can help you"></textarea>
+            <textarea id="f-mensaje" name="mensaje" required></textarea>
           </div>
           <div class="form__row form__row--check">
             <input id="f-priv" name="privacidad" type="checkbox" required>
@@ -163,7 +177,7 @@
           </div>
           <button type="submit" id="submit-btn" class="btn btn--primary">Send message</button>
         </form>
-        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">We respond to enquiries within an average of 3 to 5 working days. For urgent enquiries related to upcoming activities, please indicate this in the subject line of your message.</p>
+        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">We respond to enquiries within an average of 3 to 5 working days. For urgent enquiries related to imminent activities, please indicate this in the subject of your message.</p>
       </div>
     </section>
 
@@ -246,6 +260,35 @@
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
   
+<script>
+  (function() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      try {
+        var res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        var json = await res.json();
+        if (json.success) {
+          document.getElementById('form-ok').style.display = 'block';
+          form.style.display = 'none';
+        } else {
+          document.getElementById('form-err').style.display = 'block';
+          btn.disabled = false;
+        }
+      } catch(err) {
+        document.getElementById('form-err').style.display = 'block';
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
+
 
   <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])

@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh">
+  <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/contacto">
+  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/contact">
+  <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/contact">
+  <link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/contact">
   <link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/contact">
+  <link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/"/>
+
   <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/contacto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>联系 · Dzongpa Europa</title>
-  <meta name="description" content="请写信给我们，了解信息、成为会员、捐款、参与活动或作为 Dzongpa Europa 的义工。">
+  <meta name="description" content="请写信给我们，了解信息、成为会员、捐款、参与活动或作为义工。">
   <meta name="author" content="Dzongpa Cultural Association">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="联系 · Dzongpa Europa">
-  <meta property="og:description" content="请写信给我们，了解信息、成为会员、捐款、参与活动或作为 Dzongpa Europa 的义工。">
+  <meta property="og:description" content="请写信给我们，了解信息、成为会员、捐款、参与活动或作为义工。">
   <meta property="og:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:secure_url" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -22,7 +28,7 @@
   <meta property="og:locale" content="zh_CN">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="联系 · Dzongpa Europa">
-  <meta name="twitter:description" content="请写信给我们，了解信息、成为会员、捐款、参与活动或作为 Dzongpa Europa 的义工。">
+  <meta name="twitter:description" content="请写信给我们，了解信息、成为会员、捐款、参与活动或作为义工。">
   <meta name="twitter:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
 
   <link rel="icon" href="/assets/img/logo/favicon.ico">
@@ -93,7 +99,7 @@
 
       <div class="container">
         <ul class="contact-list">
-          <li><strong>机构电子邮件</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
+          <li><strong>Email</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
         </ul>
       </div>
 
@@ -106,7 +112,7 @@
         <div id="form-ok" style="display:none; max-width:580px; margin:0 auto 32px; padding:32px 28px; background:var(--c-crema); border:1px solid var(--c-dorado); border-radius:12px; text-align:center;">
           <div style="font-size:2rem; color:var(--c-dorado); margin-bottom:12px;">✦</div>
           <h3 style="margin-bottom:8px;">消息已发送</h3>
-          <p style="margin:0; color:var(--c-texto-suave);">感谢您联系我们。我们将在3至5个工作日内回复您。</p>
+          <p style="margin:0; color:var(--c-texto-suave);">感谢您的来信。我们将在3至5个工作日内回复。</p>
         </div>
 
         <div id="form-err" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
@@ -115,34 +121,42 @@
 
         <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="53ebea9c-e5d3-4448-b166-741447c4d22f">
-          <input type="hidden" name="subject" value="新联系消息 · Dzongpa Europa">
+          <input type="hidden" name="subject" value="联系 · Dzongpa Europa">
           <input type="hidden" name="from_name" value="Web Dzongpa Europa">
           <input type="hidden" name="redirect" value="false">
           <input type="checkbox" name="botcheck" style="display:none;">
 
           <div class="form__row">
             <label for="f-nombre">姓名 *</label>
-            <input id="f-nombre" name="nombre" type="text" required placeholder="例：张三">
+            <input id="f-nombre" name="nombre" type="text" required>
           </div>
           <div class="form__row">
             <label for="f-email">电子邮件 *</label>
-            <input id="f-email" name="email" type="email" required placeholder="您的邮箱@example.com">
+            <input id="f-email" name="email" type="email" required>
           </div>
           <div class="form__row">
             <label for="f-tel">电话（选填）</label>
-            <input id="f-tel" name="telefono" type="tel" placeholder="+86 130 0000 0000">
+            <input id="f-tel" name="telefono" type="tel">
           </div>
           <div class="form__row">
             <label for="f-motivo">联系原因 *</label>
             <select id="f-motivo" name="motivo" required>
               <option value="">请选择…</option>
+              
               <option>一般咨询</option>
+              
               <option>成为会员</option>
+              
               <option>捐款</option>
+              
               <option>活动</option>
+              
               <option>义工</option>
+              
               <option>媒体</option>
+              
               <option>其他</option>
+              
             </select>
           </div>
           <div class="form__row">
@@ -150,12 +164,14 @@
             <select id="f-idioma" name="idioma" required>
               <option>Español</option>
               <option>English</option>
+              <option>Français</option>
+              <option>Deutsch</option>
               <option>中文</option>
             </select>
           </div>
           <div class="form__row">
             <label for="f-mensaje">消息 *</label>
-            <textarea id="f-mensaje" name="mensaje" required placeholder="请告诉我们您需要什么帮助"></textarea>
+            <textarea id="f-mensaje" name="mensaje" required></textarea>
           </div>
           <div class="form__row form__row--check">
             <input id="f-priv" name="privacidad" type="checkbox" required>
@@ -163,7 +179,7 @@
           </div>
           <button type="submit" id="submit-btn" class="btn btn--primary">发送消息</button>
         </form>
-        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">我们通常在3至5个工作日内回复询问。如有关于即将举行活动的紧急询问，请在消息中注明。</p>
+        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">我们平均在3至5个工作日内回复询问。</p>
       </div>
     </section>
 
@@ -246,6 +262,35 @@
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
   
+<script>
+  (function() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      try {
+        var res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        var json = await res.json();
+        if (json.success) {
+          document.getElementById('form-ok').style.display = 'block';
+          form.style.display = 'none';
+        } else {
+          document.getElementById('form-err').style.display = 'block';
+          btn.disabled = false;
+        }
+      } catch(err) {
+        document.getElementById('form-err').style.display = 'block';
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
+
 
   <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])

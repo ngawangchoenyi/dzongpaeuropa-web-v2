@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/contact">
   <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/contacto">
+  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/contact">
+  <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/contact">
+  <link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/contact">
+  <link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/contact">
+  <link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/"/>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact · Dzongpa Europa</title>
-  <meta name="description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole à Dzongpa Europa.">
+  <meta name="description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole.">
   <meta name="author" content="Dzongpa Cultural Association">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact · Dzongpa Europa">
-  <meta property="og:description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole à Dzongpa Europa.">
+  <meta property="og:description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole.">
   <meta property="og:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:secure_url" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -22,7 +26,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact · Dzongpa Europa">
-  <meta name="twitter:description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole à Dzongpa Europa.">
+  <meta name="twitter:description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole.">
   <meta name="twitter:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
 
   <link rel="icon" href="/assets/img/logo/favicon.ico">
@@ -93,7 +97,7 @@
 
       <div class="container">
         <ul class="contact-list">
-          <li><strong>Email institutionnel</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
+          <li><strong>Email</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
         </ul>
       </div>
 
@@ -115,34 +119,42 @@
 
         <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="53ebea9c-e5d3-4448-b166-741447c4d22f">
-          <input type="hidden" name="subject" value="Nouveau message de contact · Dzongpa Europa">
+          <input type="hidden" name="subject" value="Contact · Dzongpa Europa">
           <input type="hidden" name="from_name" value="Web Dzongpa Europa">
           <input type="hidden" name="redirect" value="false">
           <input type="checkbox" name="botcheck" style="display:none;">
 
           <div class="form__row">
             <label for="f-nombre">Nom et prénom *</label>
-            <input id="f-nombre" name="nombre" type="text" required placeholder="Ex. Marie Dupont">
+            <input id="f-nombre" name="nombre" type="text" required>
           </div>
           <div class="form__row">
             <label for="f-email">Adresse e-mail *</label>
-            <input id="f-email" name="email" type="email" required placeholder="votre@email.com">
+            <input id="f-email" name="email" type="email" required>
           </div>
           <div class="form__row">
             <label for="f-tel">Téléphone (facultatif)</label>
-            <input id="f-tel" name="telefono" type="tel" placeholder="+33 6 00 00 00 00">
+            <input id="f-tel" name="telefono" type="tel">
           </div>
           <div class="form__row">
             <label for="f-motivo">Motif du contact *</label>
             <select id="f-motivo" name="motivo" required>
               <option value="">Sélectionnez…</option>
+              
               <option>Informations générales</option>
+              
               <option>Devenir membre</option>
+              
               <option>Dons</option>
+              
               <option>Activités</option>
+              
               <option>Bénévolat</option>
+              
               <option>Presse</option>
+              
               <option>Autre</option>
+              
             </select>
           </div>
           <div class="form__row">
@@ -150,12 +162,14 @@
             <select id="f-idioma" name="idioma" required>
               <option>Español</option>
               <option>English</option>
+              <option>Français</option>
+              <option>Deutsch</option>
               <option>中文</option>
             </select>
           </div>
           <div class="form__row">
             <label for="f-mensaje">Message *</label>
-            <textarea id="f-mensaje" name="mensaje" required placeholder="Dites-nous comment nous pouvons vous aider"></textarea>
+            <textarea id="f-mensaje" name="mensaje" required></textarea>
           </div>
           <div class="form__row form__row--check">
             <input id="f-priv" name="privacidad" type="checkbox" required>
@@ -163,7 +177,7 @@
           </div>
           <button type="submit" id="submit-btn" class="btn btn--primary">Envoyer le message</button>
         </form>
-        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">Nous répondons aux demandes dans un délai moyen de 3 à 5 jours ouvrables. Pour les demandes urgentes concernant des activités imminentes, veuillez l'indiquer dans le message.</p>
+        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">Nous répondons aux demandes dans un délai moyen de 3 à 5 jours ouvrables.</p>
       </div>
     </section>
 
@@ -246,6 +260,35 @@
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
   
+<script>
+  (function() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      try {
+        var res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        var json = await res.json();
+        if (json.success) {
+          document.getElementById('form-ok').style.display = 'block';
+          form.style.display = 'none';
+        } else {
+          document.getElementById('form-err').style.display = 'block';
+          btn.disabled = false;
+        }
+      } catch(err) {
+        document.getElementById('form-err').style.display = 'block';
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
+
 
   <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
