@@ -1,0 +1,52 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: "Qui sommes-nous · Dzongpa Europa"
+  description: "L'Association Culturelle Dzongpa et le projet Dzongpa Europa, dédiés à la préservation de la lignée Sakya Dzongpa en Europe."
+  slug: about
+  active: about
+  es_slug: quienes-somos
+
+header:
+  title: "Qui sommes-nous"
+  lede: "Une association culturelle dédiée à la préservation de la lignée Sakya Dzongpa"
+
+association:
+  title: "L'association"
+  p1: "L'Association Culturelle Dzongpa est une entité à but non lucratif consacrée à la promotion de la culture tibétaine, à l'étude du bouddhisme tibétain, à la pratique de la méditation et à la préservation des enseignements de la lignée Dzongpa."
+  p2: "Elle est née avec le dessein de créer un espace ouvert, respectueux et stable où les personnes intéressées peuvent s'approcher du Dharma, participer à des activités culturelles, recevoir des enseignements, pratiquer la méditation et collaborer à des projets bénéfiques pour la communauté."
+
+dzongpa_europa:
+  title: "Dzongpa Europa"
+  p1: "Dzongpa Europa est la projection européenne du travail de l'association. Sous la guidance de Son Éminence le VIe Gongkar Dorje Denpa Rinpoché, ce projet cherche à établir des ponts entre la tradition tibétaine de la lignée Dzongpa et les personnes intéressées en Europe. Il fait partie d'un réseau international comprenant des centres en Inde, à Taïwan, au Royaume-Uni, en Espagne, en Australie et à Hong Kong, ainsi que le monastère racine, Gongkar Choede."
+
+purpose:
+  title: "Notre objectif"
+  p1: "Contribuer à maintenir vivants et accessibles les enseignements bouddhistes de la lignée Dzongpa, en créant les conditions appropriées pour inviter des maîtres, organiser des retraites, traduire des textes, soutenir des activités régulières et former une communauté solide de pratiquants et de sympathisants en Europe."
+
+core_values:
+  title: "Valeurs"
+  items:
+    - title: "Authenticité."
+      text: "Fidélité à la lignée et aux enseignements transmis par Rinpoché et par les maîtres qualifiés de la tradition Sakya Dzongpa."
+    - title: "Ouverture."
+      text: "Accueil inclusif des personnes de toute origine, de tout âge, de toute culture et de tout niveau de pratique."
+    - title: "Service."
+      text: "Dévouement au bien des êtres et à la communauté locale."
+    - title: "Transparence."
+      text: "Gestion économique claire, reddition des comptes et communication ouverte."
+    - title: "Durabilité."
+      text: "Équilibre entre le développement du projet et la préservation de son identité spirituelle."
+
+closing:
+  p1: "Dzongpa Europa est soutenu grâce à l'engagement de ses membres et donateurs. Chaque personne qui rejoint le projet contribue à rendre les enseignements du Dharma et la culture tibétaine disponibles à un plus grand nombre, aujourd'hui et à l'avenir."
+  cta_text: "Lire l'histoire de Dzongpa en Espagne →"
+  cta_href: "/fr/history"
+
+photos:
+  - src: "/assets/img/espana-2026/esp26-060-foto-grupo-valencia-ensenanzas-iniciacion.jpg"
+    alt: "Photo de groupe lors des enseignements et initiations à Valence, 2026"
+  - src: "/assets/img/espana-2026/esp26-061-foto-grupal-primer-dia-ensenanzas-febrero-2026.jpg"
+    alt: "Photo de groupe du premier jour des enseignements à Valence, février 2026"
+  - src: "/assets/img/espana/esp-05-grupo-valencia-2022.jpg"
+    alt: "Communauté réunie à Valence, 2022"

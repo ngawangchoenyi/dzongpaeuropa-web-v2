@@ -2,19 +2,46 @@
 """
 build.py — Genera los HTML del sitio Dzongpa Europa desde las plantillas Jinja2.
 Uso: python3 build.py
+
+Soporta dos modos:
+  1. YAML-driven: si existe content/{lang}/{page}.yml, usa templates/pages/{page}.html
+     con los datos del YAML como variable 'data'.
+  2. Legacy: si no hay YAML, usa el template del idioma directamente (comportamiento anterior).
 """
 
 import os
+import yaml
 from jinja2 import Environment, FileSystemLoader
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(ROOT, 'templates')
+CONTENT_DIR = os.path.join(ROOT, 'content')
+PAGES_TEMPLATES_DIR = os.path.join(TEMPLATES_DIR, 'pages')
 
 env = Environment(
     loader=FileSystemLoader(TEMPLATES_DIR),
     autoescape=False,
     keep_trailing_newline=True,
 )
+
+# Mapa: lang prefix → base template (para YAML-driven pages)
+BASE_TEMPLATE = {
+    'es': '_base.html',
+    'en': '_base_en.html',
+    'fr': '_base_fr.html',
+    'de': '_base_de.html',
+    'zh': '_base_zh.html',
+}
+
+# Mapa: output path → (lang, page_stem) para páginas YAML-driven
+# ES usa el slug de página en español; el resto usan el slug en inglés
+YAML_PAGE_MAP = {
+    'quienes-somos.html': ('es', 'about'),
+    'en/about.html':      ('en', 'about'),
+    'fr/about.html':      ('fr', 'about'),
+    'de/about.html':      ('de', 'about'),
+    'zh/about.html':      ('zh', 'about'),
+}
 
 PAGES = [
     'index.html',
@@ -92,29 +119,72 @@ ZH_PAGES = [
     'zh/credits.html',
 ]
 
+
+def load_yaml_content(lang, page_stem):
+    """Carga el archivo YAML de contenido para una página e idioma dados."""
+    yaml_path = os.path.join(CONTENT_DIR, lang, f'{page_stem}.yml')
+    if not os.path.exists(yaml_path):
+        return None
+    with open(yaml_path, 'r', encoding='utf-8') as f:
+        data = yaml.safe_load(f)
+    return data
+
+
+def render_yaml_page(lang, page_stem):
+    """Renderiza una página usando YAML + template único en templates/pages/."""
+    data = load_yaml_content(lang, page_stem)
+    if data is None:
+        return None
+    # Asegurar que page.base esté definido
+    if 'page' not in data:
+        data['page'] = {}
+    if 'base' not in data['page']:
+        data['page']['base'] = BASE_TEMPLATE.get(lang, '_base.html')
+    template = env.get_template(f'pages/{page_stem}.html')
+    return template.render(data=data)
+
+
 def build():
     ok = 0
     errors = []
+    yaml_count = 0
+    legacy_count = 0
     all_pages = PAGES + EN_PAGES + FR_PAGES + DE_PAGES + ZH_PAGES
 
     for page in all_pages:
         try:
-            template = env.get_template(page)
-            html = template.render()
+            html = None
+
+            # Intentar modo YAML-driven primero
+            if page in YAML_PAGE_MAP:
+                lang, page_stem = YAML_PAGE_MAP[page]
+                html = render_yaml_page(lang, page_stem)
+                if html is not None:
+                    yaml_count += 1
+                    print(f'  ✓ {page}  [yaml]')
+
+            # Fallback: sistema legacy de templates por idioma
+            if html is None:
+                template = env.get_template(page)
+                html = template.render()
+                legacy_count += 1
+                print(f'  ✓ {page}')
+
             out_path = os.path.join(ROOT, page)
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
             with open(out_path, 'w', encoding='utf-8') as f:
                 f.write(html)
-            print(f'  ✓ {page}')
             ok += 1
+
         except Exception as e:
             errors.append(f'  ✗ {page}: {e}')
             print(errors[-1])
 
-    print(f'\n✓ Build completo: {ok} páginas generadas, {len(errors)} errores.')
+    print(f'\n✓ Build completo: {ok} páginas generadas ({yaml_count} yaml, {legacy_count} legacy), {len(errors)} errores.')
     if errors:
         for e in errors:
             print(e)
+
 
 if __name__ == '__main__':
     build()

@@ -1,0 +1,48 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <h2>{{ data.association.title }}</h2>
+        <p>{{ data.association.p1 }}</p>
+        <p>{{ data.association.p2 }}</p>
+
+        <h2>{{ data.dzongpa_europa.title }}</h2>
+        <p>{{ data.dzongpa_europa.p1 }}</p>
+
+        <h2>{{ data.purpose.title }}</h2>
+        <p>{{ data.purpose.p1 }}</p>
+
+        <h2>{{ data.core_values.title }}</h2>
+        <ul>
+          {% for item in data.core_values['items'] %}
+          <li><strong>{{ item.title }}</strong> {{ item.text }}</li>
+          {% endfor %}
+        </ul>
+
+        <p style="margin-top: 32px;">{{ data.closing.p1 }}</p>
+
+        <p class="text-center" style="margin-top: 40px;">
+          <a href="{{ data.closing.cta_href }}" class="btn btn--outline">{{ data.closing.cta_text }}</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="foto-galeria" style="grid-template-columns: repeat(3, 1fr);">
+          {% for photo in data.photos %}
+          <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy">
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+{% endblock %}
