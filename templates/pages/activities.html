@@ -76,11 +76,11 @@
       if (header) header.style.display = 'none';
       if (input) {
         input.style.cssText = 'font-family:inherit!important;font-size:1rem!important;border:1px solid #d4c5a0!important;border-radius:6px!important;padding:10px 14px!important;';
-        input.placeholder = '{{ data.newsletter.placeholder }}';
+        input.placeholder = {{ data.newsletter.placeholder | tojson }};
       }
       if (btn) {
         btn.style.cssText = 'background-color:#8B1A1A!important;font-family:inherit!important;font-size:0.95rem!important;border-radius:6px!important;padding:12px 32px!important;cursor:pointer!important;';
-        btn.textContent = '{{ data.newsletter.btn_text }}';
+        btn.textContent = {{ data.newsletter.btn_text | tojson }};
       }
       return true;
     }
