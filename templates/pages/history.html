@@ -1,0 +1,217 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block extra_head %}
+<style>
+  .historia-foto { border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width: 100%; height: auto; display: block; margin: 0 auto; }
+  .historia-foto-caption { text-align: center; font-style: italic; color: var(--c-texto-suave); margin-top: 10px; font-size: 0.9rem; }
+  .historia-doble { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin: 40px 0; }
+  @media (max-width: 700px) { .historia-doble { grid-template-columns: 1fr; } }
+  .timeline-v2 { list-style: none; padding: 0; margin: 40px 0 0; border-left: 3px solid var(--c-granate); padding-left: 28px; }
+  .timeline-v2 li { position: relative; margin-bottom: 36px; }
+  .timeline-v2 li::before { content: ''; position: absolute; left: -37px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--c-granate); border: 3px solid var(--c-fondo-alt); }
+  .timeline-v2 li strong { display: block; font-family: var(--f-sans); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-granate); margin-bottom: 6px; }
+</style>
+{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <!-- Hero photo -->
+      <div class="container">
+        <img src="{{ data.hero.src }}"
+             alt="{{ data.hero.alt }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto 12px; display: block;">
+        <p class="historia-foto-caption" style="margin-bottom: 40px;">{{ data.hero.caption }}</p>
+      </div>
+
+      <!-- Lead -->
+      <div class="container-prose prose">
+        <p class="lead">{{ data.lead }}</p>
+
+        <!-- Origin section -->
+        <h2>{{ data.origin.title }}</h2>
+        <p>{{ data.origin.p1 }}</p>
+      </div>
+
+      <!-- Origin photos (doble) -->
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble">
+          {% for photo in data.origin['photos'] %}
+          <div>
+            <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">{{ photo.caption }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- 2012 section -->
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>{{ data.ensenanzas_2012.title }}</h2>
+        <p>{{ data.ensenanzas_2012.p1 }}</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <div class="historia-doble">
+          {% for photo in data.ensenanzas_2012['photos'] %}
+          <div>
+            <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">{{ photo.caption }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Tara 2017 section -->
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>{{ data.tara_2017.title }}</h2>
+        <p>{{ data.tara_2017.p1 }}</p>
+        <p>{{ data.tara_2017.p2 }}</p>
+      </div>
+
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble">
+          <div>
+            <img src="{{ data.tara_2017['photos'][0].src }}" alt="{{ data.tara_2017['photos'][0].alt }}" loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">{{ data.tara_2017['photos'][0].caption }}</p>
+          </div>
+          <div>
+            <img src="{{ data.tara_2017['photos'][1].src }}" alt="{{ data.tara_2017['photos'][1].alt }}" loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">{{ data.tara_2017['photos'][1].caption }}</p>
+          </div>
+        </div>
+        <div class="historia-doble" style="margin-top: 0;">
+          <div>
+            <img src="{{ data.tara_2017['photos'][2].src }}" alt="{{ data.tara_2017['photos'][2].alt }}" loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">{{ data.tara_2017['photos'][2].caption }}</p>
+          </div>
+          <div>
+            <img src="{{ data.tara_2017['photos'][3].src }}" alt="{{ data.tara_2017['photos'][3].alt }}" loading="lazy" class="historia-foto">
+            <p class="historia-foto-caption">{{ data.tara_2017['photos'][3].caption }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valencia 2019 section -->
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>{{ data.valencia_2019.title }}</h2>
+        <p>{{ data.valencia_2019.p1 }}</p>
+      </div>
+
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble" style="align-items: stretch;">
+          <div style="display:flex; flex-direction:column;">
+            <img src="{{ data.valencia_2019.photo_main.src }}"
+                 alt="{{ data.valencia_2019.photo_main.alt }}"
+                 loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+            <p class="historia-foto-caption">{{ data.valencia_2019.photo_main.caption }}</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            {% for photo in data.valencia_2019.photos_right %}
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <img src="{{ photo.src }}" alt="{{ photo.alt }}"
+                   loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+              <p class="historia-foto-caption">{{ photo.caption }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice group & constitution -->
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>{{ data.grupo_practica.title }}</h2>
+        <p>{{ data.grupo_practica.p1 }}</p>
+
+        <h2>{{ data.constitucion.title }}</h2>
+        <p>{{ data.constitucion.p1 }}</p>
+
+        <!-- Blessings -->
+        <h2>{{ data.bendiciones.title }}</h2>
+        <p>{{ data.bendiciones.p1 }}</p>
+        <p>{{ data.bendiciones.p2 }}</p>
+        <p>{{ data.bendiciones.p3 }}</p>
+        {% if data.bendiciones.p4 %}<p>{{ data.bendiciones.p4 }}</p>{% endif %}
+      </div>
+
+      <!-- Blessings photos -->
+      <div class="container" style="margin-top: 32px;">
+        <div class="historia-doble" style="align-items: stretch;">
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            {% for photo in data.bendiciones.photos_left %}
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <img src="{{ photo.src }}" alt="{{ photo.alt }}"
+                   loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+              <p class="historia-foto-caption">{{ photo.caption }}</p>
+            </div>
+            {% endfor %}
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            <img src="{{ data.bendiciones.photo_right.src }}"
+                 alt="{{ data.bendiciones.photo_right.alt }}"
+                 loading="lazy" class="historia-foto" style="flex:1; object-fit:cover; min-height:0;">
+            <p class="historia-foto-caption">{{ data.bendiciones.photo_right.caption }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Development section -->
+      <div class="container-prose prose" style="margin-top: 48px;">
+        <h2>{{ data.desarrollo.title }}</h2>
+        <p>{{ data.desarrollo.p1 }}</p>
+        <p>{{ data.desarrollo.p2 }}</p>
+      </div>
+
+      <!-- Closing photo + quotes -->
+      <div class="container" style="margin-top: 40px; margin-bottom: 8px;">
+        <img src="{{ data.desarrollo.photo.src }}"
+             alt="{{ data.desarrollo.photo.alt }}"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 860px; margin: 0 auto; display: block;">
+        <div style="max-width: 860px; margin: 32px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+          {% for quote in data['quotes'] %}
+          <blockquote style="margin:0; padding: 20px 24px; border-left: 3px solid var(--c-granate); background: var(--c-crema-soft); border-radius: 0 8px 8px 0;">
+            <p style="font-style: italic; color: var(--c-texto); font-size: 0.95rem; line-height: 1.7; margin: 0 0 12px;">{{ quote.text }}</p>
+            <cite style="font-size: 0.82rem; color: var(--c-texto-suave); font-style: normal; font-weight: 600;">{{ quote.cite }}</cite>
+          </blockquote>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section section--alt">
+      <div class="container-prose">
+        <h2>{{ data.timeline.title }}</h2>
+        <ul class="timeline-v2">
+          {% for item in data.timeline['items'] %}
+          <li>
+            <strong>{{ item.year }}</strong>
+            {{ item.text }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2026 Gallery -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <h2>{{ data.gallery_2026.title }}</h2>
+          <p class="lead">{{ data.gallery_2026.subtitle }}</p>
+        </div>
+        <div class="foto-galeria" style="margin-top: 32px;">
+          {% for photo in data.gallery_2026['photos'] %}
+          <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy">
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+{% endblock %}

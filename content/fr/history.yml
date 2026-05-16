@@ -1,0 +1,155 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: "Histoire de Dzongpa en Espagne · Dzongpa Europa"
+  description: "De Dehradun à Valence : l'origine et la trajectoire de la lignée Sakya Dzongpa en Espagne, depuis les premiers enseignements en 2012 jusqu'à la constitution de l'association et les bénédictions des Sakya Trizin."
+  slug: history
+  active: history
+  es_slug: historia
+
+header:
+  title: "Histoire de Dzongpa en Espagne"
+  lede: "De Dehradun à Valence, de Valence à l'Europe"
+
+hero:
+  src: "/assets/img/juventud-rinpoche/juv-05-rinpoche-retrato-v-dorjedenpa-tulku.jpg"
+  alt: "S.É. Gongkar Dorje Dhenpa Rinpoché tenant une image du précédent Dorje Dhenpa, Jampal Lungthok"
+  caption: "S.É. Gongkar Dorje Dhenpa Rinpoché tenant une image du précédent Dorje Dhenpa, Jampal Lungthok."
+
+lead: "La présence de la lignée Sakya Dzongpa en Espagne possède une histoire plus longue que ne pourrait le suggérer sa forme juridique actuelle. Ses racines remontent à une rencontre à Dehradun, en Inde, d'où est née avec le temps une communauté de pratique, une association et, aujourd'hui, le projet Dzongpa Europa."
+
+origin:
+  title: "L'origine : Dehradun et la rencontre avec Kunga Tsondru"
+  p1: "Les origines de Dzongpa en Espagne remontent à la rencontre entre S.É. Gongkar Dorje Dhenpa Rinpoché et Kunga Tsondru — José Manuel Sánchez — en automne 1993 au Sakya College de Dehradun, en Inde. De cette rencontre naquit une amitié et un lien spirituel qui conduiraient, avec le temps, à la première invitation de Rinpoché à enseigner en Espagne."
+  photos:
+    - src: "/assets/img/india/ind-01-rinpoche-sakya-college-dehradun.jpg"
+      alt: "Rinpoché au Sakya College de Dehradun, Inde"
+      caption: "S.É. Gongkar Dorje Dhenpa Rinpoché au Sakya College, Dehradun. 1995."
+    - src: "/assets/img/india/ind-02-sakya-college-con-monjes-dehradun.jpg"
+      alt: "Rinpoché avec des moines au Sakya College, Dehradun"
+      caption: "S.É. Gongkar Dorje Dhenpa Rinpoché avec des moines au Sakya College, Dehradun. 1998."
+
+ensenanzas_2012:
+  title: "Premiers enseignements en Espagne · 2012"
+  p1: "En 2012, S.É. Gongkar Dorje Dhenpa Rinpoché donna des enseignements à la Fondation Sakya de Pedreguer (Alicante), accompagné du Vénérable Khyentse-la, et sous la présence spirituelle de Sa Sainteté le 41e Sakya Trizin. Ces enseignements, reçus par un groupe de pratiquants espagnols, semèrent les graines de ce qui deviendrait des années plus tard une communauté stable."
+  photos:
+    - src: "/assets/img/espana/esp-02-ensenanzas-pedreguer-rinpoche-khyentse-la.jpg"
+      alt: "Enseignements à Pedreguer 2012 — Rinpoché et Khyentse-la"
+      caption: "S.É. Gongkar Dorje Dhenpa Rinpoché et vén. Khyentse-la. Pedreguer, 2012."
+    - src: "/assets/img/espana/esp-01-grupo-pedreguer-2012.jpg"
+      alt: "Groupe de pratiquants à Pedreguer, 2012"
+      caption: "Groupe de pratiquants. Pedreguer, 2012."
+
+tara_2017:
+  title: "Tara paisible de jour et courroucée de nuit · 2017"
+  p1: "En septembre 2017, S.É. Gongkar Dorje Dhenpa Rinpoché transmit pour la première fois en Espagne les enseignements et initiations de Tara paisible de jour et courroucée de nuit, une pratique tantrique d'une profondeur singulière appartenant à la lignée Sakya Dzongpa, au Centre Bouddhiste Sakya de Pedreguer (Alicante), connu sous le nom de Paramita."
+  p2: "Cette pratique, qui intègre les aspects pacifique et courroucé de Tara dans un unique cycle de transmission, est particulièrement appréciée au sein de la lignée pour sa puissance de protection et sa capacité à éliminer les obstacles sur le chemin spirituel."
+  photos:
+    - src: "/assets/img/espana/esp-12-rinpoche-tara-paramita-2017.jpg"
+      alt: "S.É. Gongkar Dorje Dhenpa Rinpoché donnant des enseignements à Paramita, Pedreguer, 2017"
+      caption: "S.É. Gongkar Dorje Dhenpa Rinpoché pendant les enseignements. Paramita, Pedreguer, 2017."
+    - src: "/assets/img/espana/esp-13-rinpoche-ritual-paramita-2017.jpg"
+      alt: "S.É. Gongkar Dorje Dhenpa Rinpoché à l'autel pendant l'initiation. Paramita, 2017"
+      caption: "S.É. Gongkar Dorje Dhenpa Rinpoché à l'autel pendant l'initiation. Paramita, 2017."
+    - src: "/assets/img/espana/esp-14-ensenanzas-sala-paramita-2017.jpg"
+      alt: "Vue de la salle pendant les enseignements. Paramita, Pedreguer, 2017"
+      caption: "Vue de la salle pendant les enseignements. Paramita, 2017."
+    - src: "/assets/img/espana/esp-15-grupo-paramita-2017.jpg"
+      alt: "Groupe de pratiquants au Centre Bouddhiste Sakya de Pedreguer, septembre 2017"
+      caption: "Groupe de pratiquants. Centre Bouddhiste Sakya de Pedreguer, septembre 2017."
+
+valencia_2019:
+  title: "Valence · 2019"
+  p1: "En septembre 2019, Rinpoché visita Valence, où il conféra l'initiation de l'Ati Yoga du mandala complet de Gourou Rinpoché, dans le cycle de Lama Sangdü. Durant cette visite, Rinpoché exprima son souhait qu'un centre Dzongpa puisse être établi dans la ville de Valence, comme lieu de pratique, d'étude et de préservation de la lignée."
+  photo_main:
+    src: "/assets/img/espana/esp-06-rinpoche-valencia-2019.jpg"
+    alt: "Rinpoché donnant des enseignements à Valence, septembre 2019"
+    caption: "S.É. Gongkar Dorje Dhenpa Rinpoché à Valence, septembre 2019."
+  photos_right:
+    - src: "/assets/img/espana/esp-07-grupo-valencia-2019.jpg"
+      alt: "Groupe de pratiquants pendant les enseignements à Valence, 2019"
+      caption: "Groupe de pratiquants. Valence, 2019."
+    - src: "/assets/img/espana/esp-10-valencia-2019-c.jpg"
+      alt: "Pendant l'initiation. Valence, 2019."
+      caption: "Pendant l'initiation. Valence, 2019."
+
+grupo_practica:
+  title: "Formation du groupe de pratique"
+  p1: "À partir de l'aspiration exprimée par Rinpoché, en 2020 commença à se consolider un groupe de pratique lié à la lignée Dzongpa. Ce groupe créa progressivement les conditions humaines, spirituelles et organisationnelles nécessaires pour soutenir des activités régulières, recevoir des enseignements et donner forme à un projet stable."
+
+constitucion:
+  title: "Constitution de l'Association Culturelle Dzongpa"
+  p1: "En 2022, ce processus se concrétisa avec l'enregistrement officiel de l'Association Culturelle Dzongpa, inscrite au Registre des Associations de la Communauté Valencienne sous le numéro <strong>CV-01-062727-V</strong> (Première Section), avec siège à Valence."
+
+bendiciones:
+  title: "Bénédictions de Sa Sainteté le 41e et le 42e Sakya Trizin"
+  p1: "En 2022, David Sanz et son épouse Rosi voyagèrent en Suisse en représentation de l'Association Culturelle Dzongpa, où ils reçurent les bénédictions de Sa Sainteté le 42e Sakya Trizin pour le projet du centre Dzongpa à Valence. Sa Sainteté le 41e Sakya Trizin était également présente."
+  p2: "Lors de cette rencontre, Sa Sainteté le 42e Sakya Trizin indiqua à David et Rosi de se rendre à Paramita — ancienne Fondation Sakya — à La Sella, Pedreguer, où cette même année les deux Sakya Trizin allaient donner des enseignements."
+  p3: "Par la suite, à Paramita, lors d'une rencontre privée, Sa Sainteté le 41e Sakya Trizin accorda ses bénédictions pour le centre Dzongpa à Valence. En signe auspicieux, il offrit une thangka de Bouddha Shakyamuni et exprima son souhait que soient créées les conditions nécessaires pour que Gongkar Dorje Dhenpa Rinpoché puisse transmettre ses enseignements."
+  p4: ""
+  photos_left:
+    - src: "/assets/img/espana/esp-08-ss41-sakya-trizin-suiza-2022.jpg"
+      alt: "Sa Sainteté Gongma Trichen Rinpoché. Suisse, 2022"
+      caption: "Sa Sainteté Sakya Trizin 41 : Gongma Trichen Rinpoché. Suisse, 2022."
+    - src: "/assets/img/espana/esp-11-suiza-2022-c.jpg"
+      alt: "Sa Sainteté Gongma Trichen Rinpoché et Sa Sainteté le 42e Sakya Trizin avec le groupe. Suisse, 2022."
+      caption: "S.S. Sakya Trizin 41 et S.S. Sakya Trizin 42 avec le groupe. Suisse, 2022."
+  photo_right:
+    src: "/assets/img/espana/esp-09-rinpoche-david-suiza-2022.jpg"
+    alt: "Rinpoché et David Sanz en Suisse, 2022"
+    caption: "S.S. Sakya Trizin 42 et David Sanz, président de l'association. Suisse, 2022."
+
+desarrollo:
+  title: "Une histoire en développement"
+  p1: "Depuis lors, Dzongpa Europa continue de travailler à la consolidation d'une communauté de pratique à Valence et à l'ouverture d'espaces de rencontre en Espagne et en Europe. L'association maintient l'aspiration de préserver la lignée Sakya Dzongpa, de soutenir les activités de Rinpoché et d'offrir aux personnes intéressées un accès respectueux et vivant aux enseignements du Dharma."
+  p2: "Aujourd'hui, ce parcours se projette dans une nouvelle phase : <strong>Dzongpa Europa</strong>, une initiative qui cherche à établir des ponts entre la tradition Sakya Dzongpa et les personnes intéressées dans toute l'Europe, faisant partie du réseau international de la lignée."
+  photo:
+    src: "/assets/img/espana/esp-16-rinpoche-sonriendo-paramita-2017.jpg"
+    alt: "S.É. Gongkar Dorje Dhenpa Rinpoché souriant pendant les enseignements à Paramita, 2017"
+
+quotes:
+  - text: "&ldquo;Puisque la bodhicitta est ce qui détermine si notre pratique devient ou non le chemin vers l'éveil, la bodhicitta est véritablement l'essence du cœur de tous les enseignements du Bouddha.&rdquo;"
+    cite: "— S.S. le Dalaï-Lama"
+  - text: "&ldquo;Quand ta pratique devient une habitude quotidienne, alors elle cesse d'être difficile.&rdquo;"
+    cite: "— S.É. Gongkar Dorje Dhenpa Rinpoché"
+
+timeline:
+  title: "Chronologie"
+  items:
+    - year: "Automne 1993 · Dehradun, Inde"
+      text: "Rencontre entre S.É. Gongkar Dorje Dhenpa Rinpoché et Kunga Tsondru au Sakya College de Dehradun. Naissance de la première invitation à enseigner en Espagne."
+    - year: "2012 · Pedreguer (Alicante)"
+      text: "Rinpoché donne les premiers enseignements en Espagne à la Fondation Sakya de Pedreguer, accompagné du Vénérable Khyentse-la, sous la présence spirituelle de Sa Sainteté le 41e Sakya Trizin."
+    - year: "Septembre 2017 · Pedreguer (Alicante)"
+      text: "S.É. Gongkar Dorje Dhenpa Rinpoché transmet pour la première fois en Espagne les enseignements et initiations de Tara paisible de jour et courroucée de nuit, au Centre Bouddhiste Sakya de Pedreguer."
+    - year: "Septembre 2019 · Valence"
+      text: "Rinpoché visite Valence et confère l'initiation de l'Ati Yoga du mandala complet de Gourou Rinpoché. Il exprime son souhait qu'un centre Dzongpa puisse être établi à Valence."
+    - year: "2020 · Formation du groupe de pratique"
+      text: "Début de la consolidation d'un groupe de pratique lié à la lignée Dzongpa, créant progressivement les conditions spirituelles et organisationnelles pour soutenir des activités régulières."
+    - year: "14 janvier 2022 · Valence"
+      text: "Constitution officielle de l'Association Culturelle Dzongpa, inscrite au Registre des Associations de la Communauté Valencienne (CV-01-062727-V)."
+    - year: "2022 · Suisse"
+      text: "David Sanz et Rosi reçoivent les bénédictions de Sa Sainteté le 42e Sakya Trizin pour le projet du centre Dzongpa à Valence, en présence également de Sa Sainteté le 41e Sakya Trizin."
+    - year: "2022 · Paramita, Pedreguer"
+      text: "Rencontre privée avec Sa Sainteté le 41e Sakya Trizin à Paramita : il accorde ses bénédictions pour le centre et offre une thangka de Bouddha Shakyamuni."
+    - year: "Février 2026 · Valence"
+      text: "Cycle d'enseignements et d'initiations à Valence avec Rinpoché. Première visite officielle dans le cadre de Dzongpa Europa."
+    - year: "2026 · Europe"
+      text: "Lancement de Dzongpa Europa : extension du projet à une projection continentale, au sein du réseau international de la lignée Sakya Dzongpa."
+
+gallery_2026:
+  title: "Enseignements à Valence · Février 2026"
+  subtitle: "La première visite officielle de Rinpoché dans le cadre de Dzongpa Europa"
+  photos:
+    - src: "/assets/img/espana-2026/esp26-003-ensenanzas-sala.jpg"
+      alt: "Enseignements de Rinpoché à Valence, février 2026"
+    - src: "/assets/img/espana-2026/esp26-009-ensenanzas-sala.jpg"
+      alt: "Enseignements dans la salle, Valence 2026"
+    - src: "/assets/img/espana-2026/esp26-036-ensenanzas-sala.jpg"
+      alt: "Vue de la salle pendant les enseignements, Valence 2026"
+    - src: "/assets/img/espana-2026/esp26-044-comunidad-entrega-logo.jpg"
+      alt: "Remise du logo de Dzongpa Europa à la communauté, 2026"
+    - src: "/assets/img/espana-2026/esp26-049-comida-comunidad.jpg"
+      alt: "Repas communautaire pendant les enseignements, Valence 2026"
+    - src: "/assets/img/espana-2026/esp26-052-foto-grupo-exterior.jpg"
+      alt: "Photo de groupe extérieure, communauté Dzongpa Valence 2026"

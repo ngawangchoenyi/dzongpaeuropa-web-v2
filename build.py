@@ -41,6 +41,11 @@ YAML_PAGE_MAP = {
     'fr/about.html':      ('fr', 'about'),
     'de/about.html':      ('de', 'about'),
     'zh/about.html':      ('zh', 'about'),
+    'historia.html':      ('es', 'history'),
+    'en/history.html':    ('en', 'history'),
+    'fr/history.html':    ('fr', 'history'),
+    'de/history.html':    ('de', 'history'),
+    'zh/history.html':    ('zh', 'history'),
 }
 
 PAGES = [
