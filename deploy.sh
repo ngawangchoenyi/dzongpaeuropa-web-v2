@@ -14,6 +14,7 @@ fi
 
 git add \
   templates/ \
+  content/ \
   build.py \
   index.html \
   quienes-somos.html \
@@ -28,6 +29,10 @@ git add \
   privacidad.html \
   creditos.html \
   404.html \
+  en/ \
+  fr/ \
+  de/ \
+  zh/ \
   sitemap.xml \
   robots.txt \
   vercel.json \
