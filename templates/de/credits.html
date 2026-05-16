@@ -1,20 +1,34 @@
 {% extends "_base_de.html" %}
 {% set page = {
   "title": 'Impressum · Dzongpa Europa',
-  "description": 'Bildnachweise und Gestaltung.',
+  "description": 'Bildnachweise, Autoren und Danksagungen der Website von Dzongpa Europa.',
   "slug": 'credits',
   "es_slug": 'creditos',
   "active": ''
 } %}
+{% block extra_head %}{% endblock %}
 {% block content %}
-    <section class="page-header"><div class="container-prose text-center"><h1>Impressum</h1></div></section>
-    <section class="section"><div class="container-prose prose">
-        <p>Die auf dieser Website erscheinenden Fotografien gehören ihren jeweiligen Urhebern und werden mit deren Genehmigung veröffentlicht.</p>
+    <section class="page-header">
+      <div class="container">
+        <h1>Impressum</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p>Die auf dieser Website erscheinenden Fotografien gehören ihren jeweiligen Urhebern und werden mit deren Genehmigung veröffentlicht. Wir danken allen Personen und Zentren der Linie, die zum Bildarchiv beigetragen haben.</p>
+
         <h2>Erbe der Linie</h2>
         <p>Historische Wandmalereien des Klosters Gongkar Choede, Lhokha (Tibet): Erbe der Linie, reproduziert mit Genehmigung des Klosters.</p>
+
+        <h2>Logo</h2>
+        <p>Logo des Kulturvereins Dzongpa: traditionelles Design, angepasst für Dzongpa Europa.</p>
+
         <h2>Fotos von Rinpoche</h2>
-        <p>Persönliches Archiv und Büro Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche.</p>
+        <p>Persönliches Archiv und Büro Seiner Eminenz des VI. Gongkar Dorje Dhenpa Rinpoche.</p>
+
         <h2>Hinweis</h2>
-        <p>Sollte ein Bild irrtümlich ohne angemessene Genehmigung veröffentlicht worden sein, kontaktieren Sie uns bitte unter <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>.</p>
-    </div></section>
+        <p>Sollte ein Bild irrtümlich ohne angemessene Genehmigung veröffentlicht worden sein, bitten wir Sie, uns unter <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a> zu kontaktieren. Wir werden es umgehend entfernen oder berichtigen.</p>
+      </div>
+    </section>
 {% endblock %}
