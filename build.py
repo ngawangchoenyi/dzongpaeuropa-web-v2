@@ -10,6 +10,7 @@ Soporta dos modos:
 """
 
 import os
+import sys
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -205,6 +206,8 @@ def build():
                 legacy_count += 1
                 print(f'  ✓ {page}')
 
+            html = '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
+
             out_path = os.path.join(ROOT, page)
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
             with open(out_path, 'w', encoding='utf-8') as f:
@@ -219,7 +222,6 @@ def build():
     if errors:
         for e in errors:
             print(e)
-
 
 if __name__ == '__main__':
     build()

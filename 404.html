@@ -45,8 +45,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/style.css">
-  
-
 
 </head>
 <body>
@@ -91,21 +89,46 @@
   </header>
 
   <main id="main">
-    
+
     <section class="page-header">
       <div class="container">
-        <h1>Página no encontrada</h1>
+        <h1 id="e404-heading">Página no encontrada</h1>
       </div>
     </section>
 
     <section class="section text-center">
       <div class="container-prose prose">
         <p style="font-size: 4rem; font-family: var(--f-serif); color: var(--c-granate); margin: 0;">404</p>
-        <h2>La página que buscas no existe</h2>
-        <p>Es posible que el enlace esté roto o que la página haya sido movida.</p>
-        <p style="margin-top: 32px;"><a href="/" class="btn btn--primary">Volver al inicio</a></p>
+        <h2 id="e404-title">La página que buscas no existe</h2>
+        <p id="e404-body">Es posible que el enlace esté roto o que la página haya sido movida.</p>
+        <p style="margin-top: 32px;"><a id="e404-btn" href="/" class="btn btn--primary">Volver al inicio</a></p>
       </div>
     </section>
+
+    <script>
+    (function() {
+      var msgs = {
+        es: { heading: 'Página no encontrada', title: 'La página que buscas no existe',          body: 'Es posible que el enlace esté roto o que la página haya sido movida.',           btn: 'Volver al inicio',      home: '/' },
+        en: { heading: 'Page not found',        title: 'The page you are looking for does not exist', body: 'The link may be broken or the page may have been moved.',               btn: 'Back to home',          home: '/en/' },
+        fr: { heading: 'Page introuvable',      title: "La page que vous cherchez n'existe pas", body: "Le lien est peut-être cassé ou la page a été déplacée.",                        btn: "Retour à l'accueil",    home: '/fr/' },
+        de: { heading: 'Seite nicht gefunden',  title: 'Die gesuchte Seite existiert nicht',     body: 'Der Link ist möglicherweise fehlerhaft oder die Seite wurde verschoben.',       btn: 'Zurück zur Startseite', home: '/de/' },
+        zh: { heading: '页面未找到',             title: '您访问的页面不存在',                      body: '链接可能已损坏或页面已被移动。',                                                btn: '返回首页',              home: '/zh/' }
+      };
+      var path = window.location.pathname;
+      var lang = 'es';
+      if      (path.startsWith('/en/') || path === '/en') lang = 'en';
+      else if (path.startsWith('/fr/') || path === '/fr') lang = 'fr';
+      else if (path.startsWith('/de/') || path === '/de') lang = 'de';
+      else if (path.startsWith('/zh/') || path === '/zh') lang = 'zh';
+      var m = msgs[lang];
+      document.getElementById('e404-heading').textContent = m.heading;
+      document.getElementById('e404-title').textContent   = m.title;
+      document.getElementById('e404-body').textContent    = m.body;
+      var btn = document.getElementById('e404-btn');
+      btn.textContent = m.btn;
+      btn.href = m.home;
+    })();
+    </script>
 
   </main>
 
@@ -185,7 +208,7 @@
     }
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
-  
+
 
   <!-- MailerLite Universal -->
   <script>
