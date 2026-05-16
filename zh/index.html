@@ -42,7 +42,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260516-newsletter">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260517-newsletter-min">
 
   <style>
     @media (max-width: 800px) { .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; } }
@@ -205,14 +205,10 @@
           <a href="/zh/join" class="btn btn--gold">成为会员</a>
           <a href="/zh/donate" class="btn btn--ghost">立即捐款</a>
         </div>
-      </div>
-    </section>
-
-    <section class="section newsletter-home" aria-labelledby="newsletter-home-title">
-      <div class="container-prose text-center">
-        <h2 id="newsletter-home-title">Dzongpa Europa 通讯</h2>
-        <p class="newsletter-home__lead">接收协会活动、教法和新闻信息。</p>
-        <div class="newsletter-form--ml ml-embedded" data-form="Y2nyWO" data-placeholder="you@email.com" data-button="订阅"></div>
+        <div class="support-newsletter" aria-labelledby="support-newsletter-title">
+          <h3 id="support-newsletter-title" class="support-newsletter__title">通讯</h3>
+          <div class="newsletter-form--ml ml-embedded" data-form="Y2nyWO" data-placeholder="email" data-button="订阅"></div>
+        </div>
       </div>
     </section>
 
@@ -294,39 +290,7 @@
     }
   </script>
   <script src="/assets/js/lightbox.js" defer></script>
-
-<script>
-  (function(){
-    var root = document.querySelector('.newsletter-form--ml');
-    if(!root) return;
-    function styleNewsletterForm(){
-      var wrapper = root.querySelector('.ml-form-embedWrapper');
-      if(!wrapper) return false;
-      var header = root.querySelector('.ml-form-embedContent');
-      var body = root.querySelector('.ml-form-embedBody');
-      var row = root.querySelector('.ml-form-horizontalRow');
-      var input = root.querySelector('input[type="email"]');
-      var btn = root.querySelector('.ml-form-embedSubmit button');
-      wrapper.style.cssText = 'background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;max-width:450px!important;margin:0 auto!important;';
-      if(header) header.style.display = 'none';
-      if(body) body.style.cssText = 'padding:0!important;';
-      if(row) row.style.cssText = 'display:block!important;';
-      if(input) {
-        input.placeholder = root.getAttribute('data-placeholder') || input.placeholder;
-        input.style.cssText = 'width:100%!important;height:54px!important;font-family:inherit!important;font-size:1rem!important;color:#2B2B2B!important;background:#fff!important;border:1px solid #d6c28f!important;border-radius:6px!important;padding:0 16px!important;box-shadow:none!important;';
-      }
-      if(btn) {
-        btn.textContent = root.getAttribute('data-button') || btn.textContent;
-        btn.style.cssText = 'width:100%!important;min-height:56px!important;margin-top:18px!important;background:#8B1A1A!important;color:#fff!important;font-family:inherit!important;font-size:1rem!important;font-weight:700!important;border:0!important;border-radius:6px!important;padding:14px 28px!important;cursor:pointer!important;';
-      }
-      return true;
-    }
-    var tries = 0;
-    var iv = setInterval(function(){
-      if(styleNewsletterForm() || ++tries > 40) clearInterval(iv);
-    }, 250);
-  })();
-</script>
+  <script src="/assets/js/newsletter.js?v=20260517-min" defer></script>
 
 
   <script>
