@@ -157,4 +157,4 @@ La página de inicio (`index.html`) está editada a mano y no se regenera con es
 
 © Asociación Cultural Dzongpa Valencia. Todos los derechos reservados.
 
-Construido bajo la guía espiritual de Su Eminencia el VI Gongkar Dorje Denpa Rinpoche. Que esta labor beneficie a todos los seres.
+Construido bajo la guía espiritual de Su Eminencia el VI Gongkar Dorje Dhenpa Rinpoche. Que esta labor beneficie a todos los seres.

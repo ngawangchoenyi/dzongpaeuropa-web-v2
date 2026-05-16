@@ -222,6 +222,7 @@ def build():
     if errors:
         for e in errors:
             print(e)
+        sys.exit(1)
 
 if __name__ == '__main__':
     build()

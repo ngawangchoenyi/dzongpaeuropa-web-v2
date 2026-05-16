@@ -139,7 +139,7 @@ Ejemplo de uso en una página:
 
 ```html
 <img src="/assets/img/rinpoche/rin-02-rinpoche-altar-sonriente.jpg"
-     alt="Su Eminencia el VI Gongkar Dorje Denpa Rinpoche en su residencia"
+     alt="Su Eminencia el VI Gongkar Dorje Dhenpa Rinpoche en su residencia"
      width="1200" height="800" loading="lazy">
 ```
 
