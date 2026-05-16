@@ -6,12 +6,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact · Dzongpa Europa</title>
-  <meta name="description" content="Contactez l'Association Culturelle Dzongpa.">
+  <meta name="description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole à Dzongpa Europa.">
   <meta name="author" content="Dzongpa Cultural Association">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact · Dzongpa Europa">
-  <meta property="og:description" content="Contactez l'Association Culturelle Dzongpa.">
+  <meta property="og:description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole à Dzongpa Europa.">
   <meta property="og:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:secure_url" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -22,7 +22,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact · Dzongpa Europa">
-  <meta name="twitter:description" content="Contactez l'Association Culturelle Dzongpa.">
+  <meta name="twitter:description" content="Écrivez-nous pour vous informer, devenir membre, faire un don, participer aux activités ou collaborer comme bénévole à Dzongpa Europa.">
   <meta name="twitter:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
 
   <link rel="icon" href="/assets/img/logo/favicon.ico">
@@ -80,17 +80,90 @@
   <main id="main">
     
     <section class="page-header">
-      <div class="container-prose text-center">
+      <div class="container">
         <h1>Contact</h1>
-        <p class="lead">Nous sommes là pour vous aider</p>
+        <p class="page-header__lede">Nous sommes là pour vous aider</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container-prose prose text-center">
-        <p>Si vous souhaitez recevoir des informations, participer aux activités, devenir membre, collaborer comme bénévole ou soutenir le projet, écrivez-nous. Nous répondons aux demandes en espagnol, anglais et chinois.</p>
-        <p style="margin-top:32px;"><a href="mailto:secretaria@dzongpaeuropa.org" class="btn btn--gold" style="font-size:1.05rem;">secretaria@dzongpaeuropa.org</a></p>
-        <p style="margin-top:16px;color:var(--c-texto-suave);">Nous répondons dans un délai moyen de 3 à 5 jours ouvrables.</p>
+      <div class="container-prose prose">
+        <p class="lead">Si vous souhaitez recevoir des informations, participer aux activités, devenir membre, collaborer comme bénévole ou soutenir le projet, écrivez-nous. Nous répondons aux demandes en espagnol, anglais et chinois.</p>
+      </div>
+
+      <div class="container">
+        <ul class="contact-list">
+          <li><strong>Email institutionnel</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
+        </ul>
+      </div>
+
+      <div class="container-prose">
+        <h2 class="text-center" style="margin-top: 32px;">Écrivez-nous</h2>
+        <div class="golden-box" style="margin: 0 auto 32px; max-width: 580px;">
+          <p style="margin: 0; font-size: 0.95rem;">Vous préférez nous écrire directement ? Envoyez-nous un e-mail à <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a> et nous vous répondrons dès que possible.</p>
+        </div>
+
+        <div id="form-ok" style="display:none; max-width:580px; margin:0 auto 32px; padding:32px 28px; background:var(--c-crema); border:1px solid var(--c-dorado); border-radius:12px; text-align:center;">
+          <div style="font-size:2rem; color:var(--c-dorado); margin-bottom:12px;">✦</div>
+          <h3 style="margin-bottom:8px;">Message envoyé</h3>
+          <p style="margin:0; color:var(--c-texto-suave);">Merci de nous avoir écrit. Nous vous répondrons dans un délai de 3 à 5 jours ouvrables.</p>
+        </div>
+
+        <div id="form-err" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
+          Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer ou nous écrire directement à <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b; font-weight:600;">secretaria@dzongpaeuropa.org</a>.
+        </div>
+
+        <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="53ebea9c-e5d3-4448-b166-741447c4d22f">
+          <input type="hidden" name="subject" value="Nouveau message de contact · Dzongpa Europa">
+          <input type="hidden" name="from_name" value="Web Dzongpa Europa">
+          <input type="hidden" name="redirect" value="false">
+          <input type="checkbox" name="botcheck" style="display:none;">
+
+          <div class="form__row">
+            <label for="f-nombre">Nom et prénom *</label>
+            <input id="f-nombre" name="nombre" type="text" required placeholder="Ex. Marie Dupont">
+          </div>
+          <div class="form__row">
+            <label for="f-email">Adresse e-mail *</label>
+            <input id="f-email" name="email" type="email" required placeholder="votre@email.com">
+          </div>
+          <div class="form__row">
+            <label for="f-tel">Téléphone (facultatif)</label>
+            <input id="f-tel" name="telefono" type="tel" placeholder="+33 6 00 00 00 00">
+          </div>
+          <div class="form__row">
+            <label for="f-motivo">Motif du contact *</label>
+            <select id="f-motivo" name="motivo" required>
+              <option value="">Sélectionnez…</option>
+              <option>Informations générales</option>
+              <option>Devenir membre</option>
+              <option>Dons</option>
+              <option>Activités</option>
+              <option>Bénévolat</option>
+              <option>Presse</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="f-idioma">Langue préférée pour la réponse *</label>
+            <select id="f-idioma" name="idioma" required>
+              <option>Español</option>
+              <option>English</option>
+              <option>中文</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="f-mensaje">Message *</label>
+            <textarea id="f-mensaje" name="mensaje" required placeholder="Dites-nous comment nous pouvons vous aider"></textarea>
+          </div>
+          <div class="form__row form__row--check">
+            <input id="f-priv" name="privacidad" type="checkbox" required>
+            <label for="f-priv">J'ai lu et j'accepte la <a href="/fr/privacy">politique de confidentialité</a>.</label>
+          </div>
+          <button type="submit" id="submit-btn" class="btn btn--primary">Envoyer le message</button>
+        </form>
+        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">Nous répondons aux demandes dans un délai moyen de 3 à 5 jours ouvrables. Pour les demandes urgentes concernant des activités imminentes, veuillez l'indiquer dans le message.</p>
       </div>
     </section>
 

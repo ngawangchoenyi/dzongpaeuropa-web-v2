@@ -1,26 +1,58 @@
 {% extends "_base_de.html" %}
 {% set page = {
   "title": 'Über uns · Dzongpa Europa',
-  "description": 'Der Kulturverein Dzongpa und das Projekt Dzongpa Europa.',
+  "description": 'Der Kulturverein Dzongpa und das Projekt Dzongpa Europa, gewidmet der Bewahrung der Sakya-Dzongpa-Linie in Europa.',
   "slug": 'about',
   "es_slug": 'quienes-somos',
   "active": 'about'
 } %}
 {% block content %}
-    <section class="page-header"><div class="container-prose text-center"><h1>Über uns</h1><p class="lead">Ein Kulturverein zur Bewahrung der Sakya-Dzongpa-Linie</p></div></section>
-    <section class="section"><div class="container-prose prose">
+    <section class="page-header">
+      <div class="container">
+        <h1>Über uns</h1>
+        <p class="page-header__lede">Ein Kulturverein zur Bewahrung der Sakya-Dzongpa-Linie</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
         <h2>Der Verein</h2>
         <p>Der Kulturverein Dzongpa ist eine gemeinnützige Einrichtung, die sich der Förderung der tibetischen Kultur, dem Studium des tibetischen Buddhismus, der Meditationspraxis und der Bewahrung der Lehren der Dzongpa-Linie widmet.</p>
+        <p>Er wurde mit dem Ziel gegründet, einen offenen, respektvollen und stabilen Raum zu schaffen, in dem interessierte Menschen dem Dharma begegnen, an kulturellen Aktivitäten teilnehmen, Unterweisungen erhalten, Meditation üben und an gemeinschaftlichen Projekten mitwirken können.</p>
+
         <h2>Dzongpa Europa</h2>
-        <p>Dzongpa Europa ist die europäische Ausrichtung der Arbeit des Vereins. Unter der Führung Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche möchte dieses Projekt Brücken zwischen der tibetischen Tradition der Dzongpa-Linie und interessierten Menschen in Europa bauen.</p>
+        <p>Dzongpa Europa ist die europäische Ausrichtung der Arbeit des Vereins. Unter der Führung Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche möchte dieses Projekt Brücken zwischen der tibetischen Tradition der Dzongpa-Linie und interessierten Menschen in Europa bauen. Es ist Teil eines internationalen Netzwerks mit Zentren in Indien, Taiwan, Großbritannien, Spanien, Australien und Hongkong sowie dem Wurzelkloster Gongkar Choede.</p>
+
+        <h2>Unser Ziel</h2>
+        <p>Dazu beizutragen, die buddhistischen Lehren der Dzongpa-Linie lebendig und zugänglich zu halten, indem geeignete Bedingungen geschaffen werden, um Meister einzuladen, Retreats zu organisieren, Texte zu übersetzen, regelmäßige Aktivitäten zu unterstützen und eine solide Gemeinschaft von Praktizierenden und Sympathisanten in Europa aufzubauen.</p>
+
         <h2>Werte</h2>
         <ul>
-          <li><strong>Authentizität.</strong> Treue zur Linie und zu den Lehren, die von Rinpoche übermittelt wurden.</li>
-          <li><strong>Offenheit.</strong> Ein inklusiver Empfang für Menschen jeder Herkunft, jedes Alters und jeder Kultur.</li>
+          <li><strong>Authentizität.</strong> Treue zur Linie und zu den Lehren, die von Rinpoche und den qualifizierten Meistern der Sakya-Dzongpa-Tradition übermittelt wurden.</li>
+          <li><strong>Offenheit.</strong> Ein inklusiver Empfang für Menschen jeder Herkunft, jedes Alters, jeder Kultur und jedes Praxisniveaus.</li>
           <li><strong>Dienst.</strong> Hingabe an das Wohl der Wesen und an die lokale Gemeinschaft.</li>
-          <li><strong>Transparenz.</strong> Klare finanzielle Verwaltung und offene Kommunikation.</li>
+          <li><strong>Transparenz.</strong> Klare finanzielle Verwaltung, Rechenschaftspflicht und offene Kommunikation.</li>
           <li><strong>Nachhaltigkeit.</strong> Gleichgewicht zwischen dem Wachstum des Projekts und der Bewahrung seiner spirituellen Identität.</li>
         </ul>
-        <p><a href="/de/history" class="btn btn--outline">Die Geschichte von Dzongpa in Spanien lesen →</a></p>
-    </div></section>
+
+        <p style="margin-top: 32px;">Dzongpa Europa wird durch das Engagement seiner Mitglieder und Spender getragen. Jede Person, die sich anschließt, trägt dazu bei, die Lehren des Dharma und die tibetische Kultur heute und in Zukunft für mehr Menschen zugänglich zu machen.</p>
+
+        <p class="text-center" style="margin-top: 40px;">
+          <a href="/de/history" class="btn btn--outline">Die Geschichte von Dzongpa in Spanien lesen →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="foto-galeria" style="grid-template-columns: repeat(3, 1fr);">
+          <img src="/assets/img/espana-2026/esp26-060-foto-grupo-valencia-ensenanzas-iniciacion.jpg"
+               alt="Gruppenfoto bei den Unterweisungen und Initiationen in Valencia, 2026" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-061-foto-grupal-primer-dia-ensenanzas-febrero-2026.jpg"
+               alt="Gruppenfoto des ersten Unterweisungstages in Valencia, Februar 2026" loading="lazy">
+          <img src="/assets/img/espana/esp-05-grupo-valencia-2022.jpg"
+               alt="Gemeinschaft versammelt in Valencia, 2022" loading="lazy">
+        </div>
+      </div>
+    </section>
 {% endblock %}

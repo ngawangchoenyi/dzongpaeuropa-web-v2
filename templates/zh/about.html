@@ -1,19 +1,31 @@
 {% extends "_base_zh.html" %}
 {% set page = {
   "title": '关于我们 · Dzongpa Europa',
-  "description": 'Dzongpa 文化协会与 Dzongpa Europa 项目。',
+  "description": 'Dzongpa 文化协会与 Dzongpa Europa 项目，致力于在欧洲保存萨迦宗巴传承。',
   "slug": 'about',
   "es_slug": 'quienes-somos',
   "active": 'about'
 } %}
 {% block content %}
-    <section class="page-header"><div class="container-prose text-center"><h1>我们是谁</h1><p class="lead">一个致力于保存萨迦宗巴传承的文化协会</p></div></section>
-    <section class="section"><div class="container-prose prose">
+    <section class="page-header">
+      <div class="container">
+        <h1>我们是谁</h1>
+        <p class="page-header__lede">一个致力于保存萨迦宗巴传承的文化协会</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
         <h2>协会</h2>
         <p>Dzongpa 文化协会是一个非营利实体，致力于推广藏族文化、学习藏传佛教、实践禅修，并保存宗巴传承的教法。</p>
         <p>协会成立的目的，是创造一个开放、尊重且稳定的空间，让有兴趣的人能够接近佛法、参与文化活动、接受教法、修习禅修，并共同参与有益于社区的项目。</p>
+
         <h2>Dzongpa Europa</h2>
-        <p>Dzongpa Europa 是协会工作在欧洲的延伸。在尊贵的第六世贡噶多杰丹巴仁波切指导下，本项目希望在宗巴传承的藏传传统与欧洲有兴趣的人之间建立桥梁。</p>
+        <p>Dzongpa Europa 是协会工作在欧洲的延伸。在尊贵的第六世贡噶多杰丹巴仁波切的指导下，本项目希望在宗巴传承的藏传传统与欧洲有兴趣的人之间建立桥梁。它是一个国际网络的一部分，在印度、台湾、英国、西班牙、澳大利亚和香港均设有中心，以及根本寺院贡噶确德。</p>
+
+        <h2>我们的目标</h2>
+        <p>致力于保持宗巴传承的佛法教义的活力与可及性，通过创造适当条件来邀请上师、组织闭关、翻译文本、支持定期活动，并在欧洲建立一个稳固的修行者和支持者社区。</p>
+
         <h2>价值观</h2>
         <ul>
           <li><strong>真实性。</strong>忠实于传承，以及仁波切和萨迦宗巴传统具格上师所传授的教法。</li>
@@ -22,6 +34,25 @@
           <li><strong>透明。</strong>清晰的财务管理、问责和开放沟通。</li>
           <li><strong>可持续性。</strong>在项目成长与保持其精神身份之间取得平衡。</li>
         </ul>
-        <p><a href="/zh/history" class="btn btn--outline">阅读 Dzongpa 在西班牙的历史 →</a></p>
-    </div></section>
+
+        <p style="margin-top: 32px;">Dzongpa Europa 依靠其会员和捐助者的承诺而运作。每一位加入的人都为使佛法教义和藏族文化今天和未来对更多人可及而做出贡献。</p>
+
+        <p class="text-center" style="margin-top: 40px;">
+          <a href="/zh/history" class="btn btn--outline">阅读 Dzongpa 在西班牙的历史 →</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="foto-galeria" style="grid-template-columns: repeat(3, 1fr);">
+          <img src="/assets/img/espana-2026/esp26-060-foto-grupo-valencia-ensenanzas-iniciacion.jpg"
+               alt="2026年瓦伦西亚教法与灌顶期间的集体合影" loading="lazy">
+          <img src="/assets/img/espana-2026/esp26-061-foto-grupal-primer-dia-ensenanzas-febrero-2026.jpg"
+               alt="2026年2月瓦伦西亚教法第一天的集体合影" loading="lazy">
+          <img src="/assets/img/espana/esp-05-grupo-valencia-2022.jpg"
+               alt="2022年瓦伦西亚社区聚会" loading="lazy">
+        </div>
+      </div>
+    </section>
 {% endblock %}

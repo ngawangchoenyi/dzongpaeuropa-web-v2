@@ -1,16 +1,98 @@
 {% extends "_base_zh.html" %}
 {% set page = {
   "title": '联系 · Dzongpa Europa',
-  "description": '联系 Dzongpa 文化协会。',
+  "description": '请写信给我们，了解信息、成为会员、捐款、参与活动或作为 Dzongpa Europa 的义工。',
   "slug": 'contact',
   "es_slug": 'contacto',
   "active": 'contact'
 } %}
+{% block extra_head %}{% endblock %}
 {% block content %}
-    <section class="page-header"><div class="container-prose text-center"><h1>联系</h1><p class="lead">我们随时为您服务</p></div></section>
-    <section class="section"><div class="container-prose prose text-center">
-        <p>如果您希望获取信息、参与活动、成为会员、作为志愿者合作或支持项目，请写信给我们。我们接受西班牙语、英语和中文的询问。</p>
-        <p style="margin-top:32px;"><a href="mailto:secretaria@dzongpaeuropa.org" class="btn btn--gold" style="font-size:1.05rem;">secretaria@dzongpaeuropa.org</a></p>
-        <p style="margin-top:16px;color:var(--c-texto-suave);">我们通常在3至5个工作日内回复。</p>
-    </div></section>
+    <section class="page-header">
+      <div class="container">
+        <h1>联系</h1>
+        <p class="page-header__lede">我们随时为您服务</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">如果您希望获取信息、参与活动、成为会员、作为义工合作或支持项目，请写信给我们。我们接受西班牙语、英语和中文的询问。</p>
+      </div>
+
+      <div class="container">
+        <ul class="contact-list">
+          <li><strong>机构电子邮件</strong><a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a></li>
+        </ul>
+      </div>
+
+      <div class="container-prose">
+        <h2 class="text-center" style="margin-top: 32px;">给我们写信</h2>
+        <div class="golden-box" style="margin: 0 auto 32px; max-width: 580px;">
+          <p style="margin: 0; font-size: 0.95rem;">更喜欢直接写信？请发送电子邮件至 <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a>，我们将尽快回复您。</p>
+        </div>
+
+        <div id="form-ok" style="display:none; max-width:580px; margin:0 auto 32px; padding:32px 28px; background:var(--c-crema); border:1px solid var(--c-dorado); border-radius:12px; text-align:center;">
+          <div style="font-size:2rem; color:var(--c-dorado); margin-bottom:12px;">✦</div>
+          <h3 style="margin-bottom:8px;">消息已发送</h3>
+          <p style="margin:0; color:var(--c-texto-suave);">感谢您联系我们。我们将在3至5个工作日内回复您。</p>
+        </div>
+
+        <div id="form-err" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
+          发送消息时发生错误。请重试或直接写信至 <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b; font-weight:600;">secretaria@dzongpaeuropa.org</a>。
+        </div>
+
+        <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="53ebea9c-e5d3-4448-b166-741447c4d22f">
+          <input type="hidden" name="subject" value="新联系消息 · Dzongpa Europa">
+          <input type="hidden" name="from_name" value="Web Dzongpa Europa">
+          <input type="hidden" name="redirect" value="false">
+          <input type="checkbox" name="botcheck" style="display:none;">
+
+          <div class="form__row">
+            <label for="f-nombre">姓名 *</label>
+            <input id="f-nombre" name="nombre" type="text" required placeholder="例：张三">
+          </div>
+          <div class="form__row">
+            <label for="f-email">电子邮件 *</label>
+            <input id="f-email" name="email" type="email" required placeholder="您的邮箱@example.com">
+          </div>
+          <div class="form__row">
+            <label for="f-tel">电话（选填）</label>
+            <input id="f-tel" name="telefono" type="tel" placeholder="+86 130 0000 0000">
+          </div>
+          <div class="form__row">
+            <label for="f-motivo">联系原因 *</label>
+            <select id="f-motivo" name="motivo" required>
+              <option value="">请选择…</option>
+              <option>一般咨询</option>
+              <option>成为会员</option>
+              <option>捐款</option>
+              <option>活动</option>
+              <option>义工</option>
+              <option>媒体</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="f-idioma">首选回复语言 *</label>
+            <select id="f-idioma" name="idioma" required>
+              <option>Español</option>
+              <option>English</option>
+              <option>中文</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="f-mensaje">消息 *</label>
+            <textarea id="f-mensaje" name="mensaje" required placeholder="请告诉我们您需要什么帮助"></textarea>
+          </div>
+          <div class="form__row form__row--check">
+            <input id="f-priv" name="privacidad" type="checkbox" required>
+            <label for="f-priv">我已阅读并接受<a href="/zh/privacy">隐私政策</a>。</label>
+          </div>
+          <button type="submit" id="submit-btn" class="btn btn--primary">发送消息</button>
+        </form>
+        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">我们通常在3至5个工作日内回复询问。如有关于即将举行活动的紧急询问，请在消息中注明。</p>
+      </div>
+    </section>
 {% endblock %}

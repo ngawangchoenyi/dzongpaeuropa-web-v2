@@ -1,32 +1,72 @@
 {% extends "_base_zh.html" %}
 {% set page = {
-  "title": '仁波切 · Dzongpa Europa',
-  "description": '尊贵的第六世贡噶多杰丹巴仁波切传记。',
+  "title": '尊贵的第六世贡噶多杰丹巴仁波切 · Dzongpa Europa',
+  "description": '尊贵的第六世贡噶多杰丹巴仁波切——丹增蒋巴隆托南嘉——的传记，萨迦宗巴传承最高上师。',
   "slug": 'rinpoche',
   "es_slug": 'rinpoche',
   "active": 'rinpoche'
 } %}
 {% block extra_head %}
   <style>
-    @media (max-width: 800px) { .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; } }
+    @media (max-width: 800px) {
+      .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; }
+    }
   </style>
 {% endblock %}
 {% block content %}
-    <section class="page-header"><div class="container-prose text-center"><h1>尊贵的第六世贡噶多杰丹巴仁波切</h1><p class="lead">丹增蒋巴隆托南嘉 · 宗巴传承的最高持有者</p></div></section>
-    <section class="section"><div class="container">
-      <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start;" class="rin-block">
-        <div><img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg" alt="尊贵的第六世贡噶多杰丹巴仁波切" loading="lazy" style="border-radius:12px; box-shadow:0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;"></div>
-        <div class="prose">
-          <p>尊贵的第六世贡噶多杰丹巴仁波切，丹增蒋巴隆托南嘉，是藏传佛教萨迦传统中宗巴传承的最高持有者。仁波切1977年生于印度东北部阿鲁纳恰尔邦，毗邻西藏边境。</p>
-          <h2>认证为祖古</h2>
-          <p>1989年，仁波切在阿鲁纳恰尔邦被找到，并由尊胜的达赖喇嘛认证，赐名丹增蒋巴隆托南嘉。</p>
-          <h2>教育</h2>
-          <p>仁波切作为年龄最小的学生进入德拉敦萨迦学院，于1999年以优异成绩毕业。他从第四十一任萨迦赤钦处领受了完整的道果法及众多密续传授。</p>
-          <h2>重建贡噶确德寺</h2>
-          <p>2003年，仁波切在印度德拉敦重建了贡噶确德寺。该寺由达赖喇嘛开光，仁波切同时由第四十一任萨迦赤钦升座为传承法主。</p>
-          <h2>国际弘法</h2>
-          <p>自2005年起，仁波切在国际间旅行弘法。他在台北建立了萨迦宗巴金刚乘中心，并在印度、台湾、英国、西班牙、澳大利亚和香港形成了修行团体。</p>
-        </div>
+    <section class="page-header">
+      <div class="container">
+        <h1>尊贵的第六世贡噶多杰丹巴仁波切</h1>
+        <p class="page-header__lede">丹增蒋巴隆托南嘉 · 萨迦宗巴传承最高上师</p>
       </div>
-    </div></section>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg"
+             alt="尊贵的第六世贡噶多杰丹巴仁波切在法座上"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 640px; margin: 0 auto 40px; display: block;">
+      </div>
+      <div class="container-prose prose">
+        <p class="lead">尊贵的第六世贡噶多杰丹巴仁波切——丹增蒋巴隆托南嘉——是藏传佛教萨迦宗巴传承的最高上师。他于1977年生于印度东北部阿鲁纳恰尔邦，靠近西藏边境。他的生命与教法致力于保存宗巴传统，以及利益一切众生。</p>
+
+        <h2>被认定为祖古</h2>
+        <p>他的前任——第五位多杰丹巴祖古——于1959年拉萨起义期间过早圆寂。宗巴传承的僧侣们多次向达赖喇嘛尊者询问他们的上师是否已转世。经过仔细审查，尊者指示他们将寻访方向转向印度东北部，靠近西藏边境之处。</p>
+        <p>1989年，仁波切在阿鲁纳恰尔邦被找到，并由达赖喇嘛尊者认定，尊者为他举行了剃度仪式并赐名丹增蒋巴隆托。随后，已故的确吉崔钦仁波切将其名扩展为丹增蒋巴隆托南嘉。</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/dalai-lama/dal-02-rinpoche-joven-con-dalai-lama.jpg"
+             alt="第十四世达赖喇嘛尊者于1989年陪伴祖古多杰丹巴仁波切"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">第十四世达赖喇嘛尊者于1989年正式认定仁波切为第五位多杰丹巴祖古的转世。</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>修学历程</h2>
+        <p>达赖喇嘛尊者强调仁波切接受深入全面培训的重要性。为此，他作为年龄最小的学生进入德拉敦萨迦学院，在已故肯波米玛次仁的指导下，于1999年以优异成绩毕业。</p>
+        <p>除了精通那烂陀传统十三部大论（如萨迦传统所授），仁波切还从至圣第四十一任萨迦赤津和其他传承大上师处领受了密续总集、修法总集、完整道果法，以及众多密续灌顶、传授与口诀。</p>
+
+        <h2>重建贡噶确德寺</h2>
+        <p>2003年，仁波切在印度德拉敦重建了贡噶确德寺，使这一传承主寺在流亡地得以延续——该寺最初建于1464年西藏。寺院由达赖喇嘛尊者主持开光，同一典礼上仁波切由至圣第四十一任萨迦赤津坐床，成为传承首席上师。</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/dalai-lama/dal-03-rinpoche-dalai-lama-41-sakya-trichen.jpg"
+             alt="祖古多杰丹巴仁波切与达赖喇嘛尊者及第四十一任萨迦赤津"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">两位祝福仁波切修行之路的最高精神权威。</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>国际弘法活动</h2>
+        <p>自2005年以来，仁波切在世界各地进行国际弘法之旅。他在台北建立了萨迦宗巴金刚乘社区，在那里定期给予教法；此后，与传承相连的修行社区已在印度、台湾、英国、西班牙、澳大利亚和香港相继形成。</p>
+
+        <h2>对 Dzongpa Europa 的指导</h2>
+        <p>Dzongpa 文化协会和 Dzongpa Europa 项目在仁波切的鼓励与精神指导下发展，希望创造适当的条件，使他的教法和宗巴传承的教法能够在欧洲被领受、学习和修习。</p>
+      </div>
+    </section>
 {% endblock %}

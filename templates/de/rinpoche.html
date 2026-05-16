@@ -1,32 +1,72 @@
 {% extends "_base_de.html" %}
 {% set page = {
-  "title": 'Rinpoche · Dzongpa Europa',
-  "description": 'Biografie Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche.',
+  "title": 'S.E. der VI. Gongkar Dorje Denpa Rinpoche · Dzongpa Europa',
+  "description": 'Biographie Seiner Eminenz des VI. Gongkar Dorje Denpa Rinpoche, Tenzin Jampal Lungtok Namgyal, Oberhaupt der Sakya-Dzongpa-Linie.',
   "slug": 'rinpoche',
   "es_slug": 'rinpoche',
   "active": 'rinpoche'
 } %}
 {% block extra_head %}
   <style>
-    @media (max-width: 800px) { .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; } }
+    @media (max-width: 800px) {
+      .rin-block { grid-template-columns: 1fr !important; gap: 32px !important; }
+    }
   </style>
 {% endblock %}
 {% block content %}
-    <section class="page-header"><div class="container-prose text-center"><h1>Seine Eminenz der VI. Gongkar Dorje Denpa Rinpoche</h1><p class="lead">Tenzin Jampal Lungtok Namgyal · Oberstes Oberhaupt der Dzongpa-Linie</p></div></section>
-    <section class="section"><div class="container">
-      <div style="display:grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start;" class="rin-block">
-        <div><img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg" alt="S.E. der VI. Gongkar Dorje Denpa Rinpoche" loading="lazy" style="border-radius:12px; box-shadow:0 12px 32px rgba(43,43,43,.12); width:100%; height:auto;"></div>
-        <div class="prose">
-          <p>Seine Eminenz der VI. Gongkar Dorje Denpa Rinpoche, Tenzin Jampal Lungtok Namgyal, ist das oberste Oberhaupt der Dzongpa-Linie der Sakya-Tradition des tibetischen Buddhismus. Geboren 1977 in Arunachal Pradesh, Nordostindien.</p>
-          <h2>Anerkennung als Tulku</h2>
-          <p>1989 wurde Rinpoche in Arunachal Pradesh gefunden und von Seiner Heiligkeit dem Dalai Lama anerkannt, der ihm den Namen Tenzin Jampal Lungtok Namgyal gab.</p>
-          <h2>Ausbildung</h2>
-          <p>Er trat als jüngster Schüler in das Sakya College in Dehradun ein und schloss sein Studium 1999 mit Auszeichnung ab. Er empfing das vollständige Lamdré und zahlreiche tantrische Übertragungen von Seiner Heiligkeit dem 41. Sakya Trichen.</p>
-          <h2>Wiedererrichtung von Gongkar Choede</h2>
-          <p>2003 errichtete Rinpoche das Kloster Gongkar Choede in Dehradun wieder. Das Kloster wurde von Seiner Heiligkeit dem Dalai Lama eingeweiht und Rinpoche vom 41. Sakya Trichen als Linienoberhaupt inthronisiert.</p>
-          <h2>Internationale Tätigkeit</h2>
-          <p>Seit 2005 reist Rinpoche international, um buddhistische Unterweisungen anzubieten. Er hat die Sakya Dzongpa Vajrayana Community in Taipeh gegründet, und Gemeinschaften haben sich in Indien, Taiwan, dem Vereinigten Königreich, Spanien, Australien und Hongkong gebildet.</p>
-        </div>
+    <section class="page-header">
+      <div class="container">
+        <h1>S.E. der VI. Gongkar Dorje Denpa Rinpoche</h1>
+        <p class="page-header__lede">Tenzin Jampal Lungtok Namgyal · Oberhaupt der Dzongpa-Linie der Sakya-Tradition</p>
       </div>
-    </div></section>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <img src="/assets/img/rinpoche/rin-01-rinpoche-trono-pandita-manto-dorado.jpg"
+             alt="S.E. der VI. Gongkar Dorje Denpa Rinpoche auf dem Zeremonialthron"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 640px; margin: 0 auto 40px; display: block;">
+      </div>
+      <div class="container-prose prose">
+        <p class="lead">Seine Eminenz der VI. Gongkar Dorje Denpa Rinpoche, Tenzin Jampal Lungtok Namgyal, ist das Oberhaupt der Dzongpa-Linie der Sakya-Tradition des tibetischen Buddhismus. 1977 im Arunachal Pradesh im Nordosten Indiens nahe der tibetischen Grenze geboren, sind sein Leben und seine Lehre der Bewahrung der Dzongpa-Tradition und dem Wohl aller Wesen gewidmet.</p>
+
+        <h2>Anerkennung als Tulku</h2>
+        <p>Sein Vorgänger, der V. Dorjedenpa Tulku, starb 1959 vorzeitig beim Lhasa-Aufstand. Die Mönche der Dzongpa-Linie fragten wiederholt Seine Heiligkeit den Dalai Lama, ob ihr Meister wiedergeboren worden sei. Nach sorgfältiger Prüfung wies Seine Heiligkeit sie an, die Suche nach Nordostindien nahe der tibetischen Grenze zu richten.</p>
+        <p>1989 wurde Rinpoche im Arunachal Pradesh gefunden und von Seiner Heiligkeit dem Dalai Lama anerkannt, der ihm die Haarschneidzeremonie erteilte und ihm den Namen Tenzin Jampal Lungtok gab. Später erweiterte Seine Eminenz der verstorbene Chogye Trichen Rinpoche seinen Namen zu Tenzin Jampal Lungtok Namgyal.</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/dalai-lama/dal-02-rinpoche-joven-con-dalai-lama.jpg"
+             alt="Seine Heiligkeit der XIV. Dalai Lama begleitet Tulku Dorje Dhenpa Rinpoche im Jahr 1989"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">Seine Heiligkeit der XIV. Dalai Lama erkannte Rinpoche 1989 offiziell als Reinkarnation des V. Dorjedenpa Tulku an.</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>Ausbildung</h2>
+        <p>Seine Heiligkeit der Dalai Lama betonte die Wichtigkeit einer gründlichen und umfassenden Ausbildung für Rinpoche. So trat er als jüngster Schüler ins Sakya College in Dehradun ein, unter der Aufsicht des verstorbenen Khenpo Migmar Tsering, wo er 1999 mit Auszeichnung graduierte.</p>
+        <p>Zusätzlich zur Beherrschung der dreizehn großen Shastras der Nalanda-Tradition, wie sie in der Sakya-Tradition gelehrt werden, erhielt Rinpoche den Tantra-Compendium, den Sadhana-Compendium, das vollständige Lamdré sowie zahlreiche tantrische Empowerments, Übertragungen und Unterweisungen von Seiner Heiligkeit dem 41. Sakya Trichen und anderen großen Meistern der Linie.</p>
+
+        <h2>Wiedererrichtung von Gongkar Choede</h2>
+        <p>2003 errichtete Rinpoche das Kloster Gongkar Choede in Dehradun, Indien, wieder und gab damit der Hauptstätte der Linie im Exil Kontinuität, die ursprünglich 1464 in Tibet gegründet worden war. Das Kloster wurde von Seiner Heiligkeit dem Dalai Lama eingeweiht, und bei derselben Zeremonie wurde Rinpoche von Seiner Heiligkeit dem 41. Sakya Trichen als Oberhaupt-Lama der Linie inthronisiert.</p>
+      </div>
+
+      <div class="container" style="margin-top: 40px;">
+        <img src="/assets/img/dalai-lama/dal-03-rinpoche-dalai-lama-41-sakya-trichen.jpg"
+             alt="Tulku Dorje Dhenpa Rinpoche neben Seiner Heiligkeit dem Dalai Lama und Seiner Heiligkeit dem 41. Sakya Trichen"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 720px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">Die zwei höchsten spirituellen Autoritäten, die Rinpoches Weg gesegnet haben.</p>
+      </div>
+
+      <div class="container-prose prose" style="margin-top: 60px;">
+        <h2>Internationale Tätigkeit</h2>
+        <p>Seit 2005 reist Rinpoche international, um buddhistische Unterweisungen an verschiedenen Orten der Welt anzubieten. Er gründete die Sakya Dzongpa Vajrayana Community in Taipei, wo er regelmäßige Unterweisungen gibt, und seitdem haben sich Praxisgemeinschaften der Linie in Indien, Taiwan, Großbritannien, Spanien, Australien und Hongkong gebildet.</p>
+
+        <h2>Seine Führung über Dzongpa Europa</h2>
+        <p>Der Kulturverein Dzongpa und das Projekt Dzongpa Europa werden unter der Inspiration und spirituellen Führung Rinpoches entwickelt, mit dem Wunsch, geeignete Bedingungen zu schaffen, damit seine Unterweisungen und die der Dzongpa-Linie in Europa empfangen, studiert und praktiziert werden können.</p>
+      </div>
+    </section>
 {% endblock %}

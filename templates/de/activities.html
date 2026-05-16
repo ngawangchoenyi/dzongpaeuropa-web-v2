@@ -1,20 +1,99 @@
 {% extends "_base_de.html" %}
 {% set page = {
   "title": 'Aktivitäten · Dzongpa Europa',
-  "description": 'Meditation, Studium, Retreats und Gemeinschaftsleben.',
+  "description": 'Meditation, Dharma-Studium, Retreats und Unterweisungen der Sakya-Dzongpa-Linie in Valencia und Europa. Kalender und Teilnahmemöglichkeiten.',
   "slug": 'activities',
   "es_slug": 'actividades',
   "active": 'activities'
 } %}
+{% block extra_head %}{% endblock %}
 {% block content %}
-    <section class="page-header"><div class="container-prose text-center"><h1>Aktivitäten</h1><p class="lead">Meditation, Studium, Retreats und Gemeinschaftsleben</p></div></section>
-    <section class="section"><div class="container-prose prose">
-        <p>Dzongpa Europa organisiert ein regelmäßiges Programm von Aktivitäten, die die Lehren des Dharma und die tibetische Kultur Menschen aller Hintergründe näherbringen sollen.</p>
-        <div class="pillars" style="margin-top:40px;">
-          <article class="pillar"><div class="pillar__symbol" aria-hidden="true">☸</div><h3>Geführte Meditation</h3><p>Regelmäßige Meditationstreffen zur Kultivierung von geistigem Frieden, Achtsamkeit und Mitgefühl.</p></article>
-          <article class="pillar"><div class="pillar__symbol" aria-hidden="true">✦</div><h3>Dharma-Studium</h3><p>Einführungs- und Studiensitzungen über tibetischen Buddhismus und traditionelle Texte.</p></article>
-          <article class="pillar"><div class="pillar__symbol" aria-hidden="true">⚭</div><h3>Retreats und Unterweisungen</h3><p>Organisation von Retreats und Unterweisungen mit qualifizierten Meistern in Valencia und ganz Europa.</p></article>
+    <section class="page-header">
+      <div class="container">
+        <h1>Aktivitäten</h1>
+        <p class="page-header__lede">Meditation, Studium, Retreats und Gemeinschaftsleben</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">Dzongpa Europa organisiert ein regelmäßiges Programm von Aktivitäten, die die Lehren des Dharma und die tibetische Kultur Menschen aller Hintergründe näherbringen sollen. Wir verbinden offene Praktiken für Neulinge mit tieferen Räumen für regelmäßige Praktizierende und Mitglieder.</p>
+
+        <h2>Arten von Aktivitäten</h2>
+        <h3>Geführte Meditation</h3>
+        <p>Regelmäßige Meditationstreffen zur Kultivierung von geistigem Frieden, Achtsamkeit, Mitgefühl und innerer Klarheit. Offen für Menschen mit oder ohne Vorerfahrung.</p>
+
+        <h3>Dharma-Studium</h3>
+        <p>Einführungs- und Studiensitzungen über tibetischen Buddhismus, traditionelle Texte, Unterweisungen der Linienmeister und grundlegende Prinzipien des buddhistischen Weges.</p>
+
+        <h3>Kulturvorträge</h3>
+        <p>Offene Aktivitäten über tibetische Kultur, Geschichte des Buddhismus, sakrale Kunst, Ikonographie, Rituale, Sprache und spirituelle Traditionen des Himalayas.</p>
+
+        <h3>Retreats und Unterweisungen</h3>
+        <p>Organisation von Retreats, Kursen und Unterweisungen mit qualifizierten Meistern, sowohl in Valencia als auch an anderen Orten in Europa, mit der Möglichkeit von Besuchen Rinpoches.</p>
+
+        <h3>Gemeinschaft und Ehrenamt</h3>
+        <p>Begegnungsräume für Mitglieder, Praktizierende und Sympathisanten sowie Möglichkeiten zur Mitarbeit in Organisation, Kommunikation, Übersetzung, Logistik und Unterstützung von Aktivitäten.</p>
+      </div>
+
+      <div class="container" style="margin-top: 48px;">
+        <h2 class="text-center">Kommende Aktivitäten</h2>
+        <p class="text-center" style="color: var(--c-texto-suave); margin-bottom: 28px;">Konsultieren Sie den Kalender für Meditationen, Unterweisungen, Retreats und Treffen.</p>
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=c_80fa866ed9d544435bd5882bfafbda29dbec367ec0a8cee2b0e364a798e29e5e%40group.calendar.google.com&ctz=Europe%2FMadrid&hl=de&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH&bgcolor=%23F5EFE0&color=%238B1A1A"
+            style="border: none; border-radius: 12px; min-width: 320px; width: 100%; height: 600px; display: block;"
+            frameborder="0"
+            scrolling="no"
+            title="Aktivitätenkalender Dzongpa Europa">
+          </iframe>
         </div>
-        <p class="text-center" style="margin-top:40px;"><a href="/de/contact" class="btn btn--outline">Fragen? Schreiben Sie uns</a></p>
-    </div></section>
+        <p class="text-center" style="margin-top: 16px;">
+          <a href="/de/contact" class="btn btn--outline">Fragen? Schreiben Sie uns</a>
+        </p>
+      </div>
+
+      <div class="container-prose" style="margin-top: 60px; text-align: center;">
+        <h2>Newsletter von Dzongpa Europa</h2>
+        <p style="color: var(--c-texto-suave); margin-bottom: 28px;">Erhalten Sie Informationen über Aktivitäten, Unterweisungen und Neuigkeiten des Vereins.</p>
+        <div class="ml-embedded" data-form="Y2nyWO" id="ml-form-boletin"></div>
+      </div>
+
+      <div class="container" style="margin-top: 60px;">
+        <img src="/assets/img/espana/esp-04-ensenanzas-valencia-2026.jpg"
+             alt="Unterweisungen von Tulku Dorje Dhenpa Rinpoche in Valencia, 2026"
+             loading="lazy"
+             style="border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width:100%; max-width: 1000px; margin: 0 auto; display: block;">
+        <p class="text-center" style="font-style: italic; color: var(--c-texto-suave); margin-top: 12px; font-size: 0.9rem;">Unterweisungszyklus in Valencia, 2026.</p>
+      </div>
+    </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  (function() {
+    function styleMLForm() {
+      var wrapper = document.querySelector('#ml-form-boletin .ml-form-embedWrapper');
+      var header  = document.querySelector('#ml-form-boletin .ml-form-embedContent');
+      var input   = document.querySelector('#ml-form-boletin input[type="email"]');
+      var btn     = document.querySelector('#ml-form-boletin .ml-form-embedSubmit button');
+      if (!wrapper) return false;
+      wrapper.style.cssText = 'background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;';
+      if (header) header.style.display = 'none';
+      if (input) {
+        input.style.cssText = 'font-family:inherit!important;font-size:1rem!important;border:1px solid #d4c5a0!important;border-radius:6px!important;padding:10px 14px!important;';
+        input.placeholder = 'ihre@email.de';
+      }
+      if (btn) {
+        btn.style.cssText = 'background-color:#8B1A1A!important;font-family:inherit!important;font-size:0.95rem!important;border-radius:6px!important;padding:12px 32px!important;cursor:pointer!important;';
+        if (btn.textContent.trim() === 'Subscribe') btn.textContent = 'Abonnieren';
+      }
+      return true;
+    }
+    var tries = 0;
+    var iv = setInterval(function() {
+      if (styleMLForm() || ++tries > 30) clearInterval(iv);
+    }, 300);
+  })();
+</script>
 {% endblock %}
