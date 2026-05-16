@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /_build/
 
-Sitemap: https://dzongpaeuropa.org/sitemap.xml
+Sitemap: https://www.dzongpaeuropa.org/sitemap.xml

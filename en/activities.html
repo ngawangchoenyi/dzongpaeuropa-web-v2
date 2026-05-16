@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/activities">
   <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/actividades">
+  <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/activities">
+  <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/activities">
+  <link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/activities">
+  <link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/activities">
+  <link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/"/>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Activities · Dzongpa Europa</title>
-  <meta name="description" content="Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa lineage in Valencia and Europe. Calendar and ways to participate.">
+  <meta name="description" content="Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa lineage in Valencia and Europe.">
   <meta name="author" content="Dzongpa Cultural Association">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Activities · Dzongpa Europa">
-  <meta property="og:description" content="Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa lineage in Valencia and Europe. Calendar and ways to participate.">
+  <meta property="og:description" content="Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa lineage in Valencia and Europe.">
   <meta property="og:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:secure_url" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -22,12 +26,15 @@
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Activities · Dzongpa Europa">
-  <meta name="twitter:description" content="Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa lineage in Valencia and Europe. Calendar and ways to participate.">
+  <meta name="twitter:description" content="Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa lineage in Valencia and Europe.">
   <meta name="twitter:image" content="https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg">
 
   <link rel="icon" href="/assets/img/logo/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/logo-03-dzongpa-europa-icon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/logo-03-dzongpa-europa-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/logo/logo-03-dzongpa-europa-icon-64x64.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/logo/logo-03-dzongpa-europa-icon-512x512.png">
+  <link rel="canonical" href="https://www.dzongpaeuropa.org/en/activities">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,7 +123,7 @@
             style="border: none; border-radius: 12px; min-width: 320px; width: 100%; height: 600px; display: block;"
             frameborder="0"
             scrolling="no"
-            title="Dzongpa Europa activities calendar">
+            title="Upcoming activities">
           </iframe>
         </div>
         <p class="text-center" style="margin-top: 16px;">
@@ -127,7 +134,7 @@
       <div class="container-prose" style="margin-top: 60px; text-align: center;">
         <h2>Dzongpa Europa Newsletter</h2>
         <p style="color: var(--c-texto-suave); margin-bottom: 28px;">Receive information about activities, teachings, and news from the association.</p>
-        <div class="ml-embedded" data-form="Y2nyWO" id="ml-form-newsletter"></div>
+        <div class="ml-embedded" data-form="Y2nyWO" id="ml-form-boletin"></div>
       </div>
 
       <div class="container" style="margin-top: 60px;">
@@ -221,10 +228,10 @@
 <script>
   (function() {
     function styleMLForm() {
-      var wrapper = document.querySelector('#ml-form-newsletter .ml-form-embedWrapper');
-      var header  = document.querySelector('#ml-form-newsletter .ml-form-embedContent');
-      var input   = document.querySelector('#ml-form-newsletter input[type="email"]');
-      var btn     = document.querySelector('#ml-form-newsletter .ml-form-embedSubmit button');
+      var wrapper = document.querySelector('#ml-form-boletin .ml-form-embedWrapper');
+      var header  = document.querySelector('#ml-form-boletin .ml-form-embedContent');
+      var input   = document.querySelector('#ml-form-boletin input[type="email"]');
+      var btn     = document.querySelector('#ml-form-boletin .ml-form-embedSubmit button');
       if (!wrapper) return false;
       wrapper.style.cssText = 'background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;';
       if (header) header.style.display = 'none';
@@ -234,7 +241,7 @@
       }
       if (btn) {
         btn.style.cssText = 'background-color:#8B1A1A!important;font-family:inherit!important;font-size:0.95rem!important;border-radius:6px!important;padding:12px 32px!important;cursor:pointer!important;';
-        if (btn.textContent.trim() === 'Subscribe') btn.textContent = 'Subscribe';
+        btn.textContent = 'Subscribe';
       }
       return true;
     }
