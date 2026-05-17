@@ -38,6 +38,7 @@ reasons:
 - Other
 privacy_label: I have read and accept the <a href="/en/privacy">privacy policy</a>.
 submit_text: Send message
+sending_text: Sending...
 response_text: We respond to enquiries within an average of 3 to 5 working days. For
   urgent enquiries related to imminent activities, please indicate this in the subject
   of your message.

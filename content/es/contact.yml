@@ -39,6 +39,7 @@ reasons:
 - Otro
 privacy_label: He leído y acepto la <a href="/privacidad">política de privacidad</a>.
 submit_text: Enviar mensaje
+sending_text: Enviando...
 response_text: Respondemos a las consultas en un plazo medio de 3 a 5 días laborables.
   Para consultas urgentes relacionadas con actividades inminentes, indícalo en el
   asunto del mensaje.

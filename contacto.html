@@ -123,39 +123,41 @@
           <p style="margin: 0; font-size: 0.95rem;">¿Prefieres escribirnos directamente? Mándanos un correo a <a href="mailto:secretaria@dzongpaeuropa.org"><strong>secretaria@dzongpaeuropa.org</strong></a> y te responderemos lo antes posible.</p>
         </div>
 
-        <div id="form-ok" style="display:none; max-width:580px; margin:0 auto 32px; padding:32px 28px; background:var(--c-crema); border:1px solid var(--c-dorado); border-radius:12px; text-align:center;">
+        <div id="form-ok" role="status" aria-live="polite" tabindex="-1" style="display:none; max-width:580px; margin:0 auto 32px; padding:32px 28px; background:var(--c-crema); border:1px solid var(--c-dorado); border-radius:12px; text-align:center;">
           <div style="font-size:2rem; color:var(--c-dorado); margin-bottom:12px;">✦</div>
           <h3 style="margin-bottom:8px;">Mensaje enviado</h3>
           <p style="margin:0; color:var(--c-texto-suave);">Gracias por escribirnos. Te responderemos en un plazo de 3 a 5 días laborables.</p>
         </div>
 
-        <div id="form-err" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
+        <div id="form-err" role="alert" aria-live="assertive" tabindex="-1" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
           Ha ocurrido un error al enviar el mensaje. Por favor inténtalo de nuevo o escríbenos directamente a <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b; font-weight:600;">secretaria@dzongpaeuropa.org</a>.
         </div>
 
-        <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
+        <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST" data-sending-text="Enviando..." aria-describedby="contact-response-text">
           <input type="hidden" name="access_key" value="53ebea9c-e5d3-4448-b166-741447c4d22f">
           <input type="hidden" name="subject" value="Contacto · Dzongpa Europa">
           <input type="hidden" name="from_name" value="Web Dzongpa Europa">
+          <input type="hidden" name="site_language" value="es">
+          <input type="hidden" name="source_page" value="Contacto · Dzongpa Europa">
           <input type="hidden" name="redirect" value="false">
-          <input type="checkbox" name="botcheck" style="display:none;">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none;">
 
           <div class="form__row">
             <label for="f-nombre">Nombre y apellidos *</label>
-            <input id="f-nombre" name="nombre" type="text" required>
+            <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
           </div>
           <div class="form__row">
             <label for="f-email">Correo electrónico *</label>
-            <input id="f-email" name="email" type="email" required>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
           </div>
           <div class="form__row">
             <label for="f-tel">Teléfono (opcional)</label>
-            <input id="f-tel" name="telefono" type="tel">
+            <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
           </div>
           <div class="form__row">
             <label for="f-motivo">Motivo de contacto *</label>
             <select id="f-motivo" name="motivo" required>
-              <option value="">Selecciona…</option>
+              <option value="" disabled selected>Selecciona…</option>
 
               <option>Información general</option>
 
@@ -176,11 +178,11 @@
           <div class="form__row">
             <label for="f-idioma">Idioma preferido para la respuesta *</label>
             <select id="f-idioma" name="idioma" required>
-              <option>Español</option>
-              <option>English</option>
-              <option>Français</option>
-              <option>Deutsch</option>
-              <option>中文</option>
+              <option value="Español" selected>Español</option>
+              <option value="English" >English</option>
+              <option value="Français" >Français</option>
+              <option value="Deutsch" >Deutsch</option>
+              <option value="中文" >中文</option>
             </select>
           </div>
           <div class="form__row">
@@ -193,7 +195,7 @@
           </div>
           <button type="submit" id="submit-btn" class="btn btn--primary">Enviar mensaje</button>
         </form>
-        <p style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">Respondemos a las consultas en un plazo medio de 3 a 5 días laborables. Para consultas urgentes relacionadas con actividades inminentes, indícalo en el asunto del mensaje.</p>
+        <p id="contact-response-text" style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">Respondemos a las consultas en un plazo medio de 3 a 5 días laborables. Para consultas urgentes relacionadas con actividades inminentes, indícalo en el asunto del mensaje.</p>
       </div>
     </section>
 
@@ -285,23 +287,47 @@
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       var btn = document.getElementById('submit-btn');
+      var ok = document.getElementById('form-ok');
+      var err = document.getElementById('form-err');
+      var originalText = btn.textContent;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (ok) ok.style.display = 'none';
+      if (err) err.style.display = 'none';
       btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      btn.textContent = form.getAttribute('data-sending-text') || originalText;
       try {
+        var formData = new FormData(form);
+        formData.append('page_url', window.location.href);
         var res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          body: new FormData(form)
+          headers: { 'Accept': 'application/json' },
+          body: formData
         });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         var json = await res.json();
         if (json.success) {
-          document.getElementById('form-ok').style.display = 'block';
+          ok.style.display = 'block';
           form.style.display = 'none';
+          ok.focus();
         } else {
-          document.getElementById('form-err').style.display = 'block';
+          err.style.display = 'block';
+          err.focus();
           btn.disabled = false;
+          btn.removeAttribute('aria-busy');
+          btn.textContent = originalText;
         }
       } catch(err) {
         document.getElementById('form-err').style.display = 'block';
+        document.getElementById('form-err').focus();
         btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+        btn.textContent = originalText;
       }
     });
   })();
