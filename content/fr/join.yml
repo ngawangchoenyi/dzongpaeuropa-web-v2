@@ -2,8 +2,7 @@ page:
   lang: fr
   base: _base_fr.html
   title: Devenir membre · Dzongpa Europa
-  description: Devenez membre Ami, Soutien, Protecteur ou Bienfaiteur et soutenez
-    la préservation de la lignée Sakya Dzongpa en Europe.
+  description: "Devenez membre Ami, Soutien, Protecteur ou Bienfaiteur et contribuez aux enseignements, retraites et à la préservation de la lignée Sakya Dzongpa en Europe."
   slug: join
   active: join
   es_slug: hazte-socio

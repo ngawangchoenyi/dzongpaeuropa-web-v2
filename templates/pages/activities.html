@@ -50,7 +50,7 @@
       <div class="container-prose" style="margin-top: 60px; text-align: center;">
         <h2>{{ data.newsletter.title }}</h2>
         <p style="color: var(--c-texto-suave); margin-bottom: 28px;">{{ data.newsletter.subtitle }}</p>
-        <div class="newsletter-form--ml ml-embedded" data-form="Y2nyWO" data-placeholder="{{ data.newsletter.placeholder | e }}" data-button="{{ data.newsletter.btn_text | e }}" id="ml-form-boletin"></div>
+        <div class="newsletter-form--ml ml-embedded" data-form="{% if data.page.lang == 'es' %}Y2nyWO{% else %}KlZrwQ{% endif %}" data-placeholder="{{ data.newsletter.placeholder | e }}" data-button="{{ data.newsletter.btn_text | e }}" id="ml-form-boletin"></div>
       </div>
 
       <div class="container" style="margin-top: 60px;">

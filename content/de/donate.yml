@@ -2,8 +2,7 @@ page:
   lang: de
   base: _base_de.html
   title: Spenden · Dzongpa Europa
-  description: Unterstützen Sie Dzongpa Europa mit Ihrer Spende und helfen Sie bei
-    der Bewahrung der Sakya-Dzongpa-Linie.
+  description: "Unterstützen Sie Dzongpa Europa mit Ihrer Spende: Unterweisungen, Retreats, Textübersetzungen und Erhalt der Sakya-Dzongpa-Linie in Europa."
   slug: donate
   active: ''
   es_slug: donaciones
@@ -38,6 +37,7 @@ transfer_title: Banküberweisung
 transfer_name: Asociación Cultural Dzongpa
 transfer_bank_label: Bank
 transfer_bank: Caixa Popular
+transfer_iban: "ES69 3159 0049 8128 4488 3229"
 transfer_ref_label: Verwendungszweck
 transfer_ref: '"Spende + Ihr Name"'
 patrimony_title: Sachspenden und Vermögenswerte
@@ -49,4 +49,4 @@ tax_title: Steuerliche Aspekte
 tax_p: Der Kulturverein Dzongpa ist im Vereinsregister der Valencianischen Gemeinschaft
   unter der Nummer <strong>CV-01-062727-V</strong> (Erste Sektion) eingetragen. Als
   gemeinnützige Einrichtung stellen wir eine jährliche Spendenbescheinigung aus. Dafür
-  benötigen wir Ihren vollständigen Namen und Ihre Postanschrift.
+  benötigen wir Ihre

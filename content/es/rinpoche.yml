@@ -2,8 +2,7 @@ page:
   lang: es
   base: _base.html
   title: Su Eminencia el VI Gongkar Dorje Dhenpa Rinpoche · Dzongpa Europa
-  description: Biografía de Su Eminencia el VI Gongkar Dorje Dhenpa Rinpoche, Tenzin
-    Jampal Lungtok Namgyal, Cabeza Suprema del linaje Sakya Dzongpa.
+  description: "Biografía de Su Eminencia el VI Gongkar Dorje Dhenpa Rinpoche, Tenzin Jampal Lungtok Namgyal, Cabeza Suprema del linaje Sakya Dzongpa."
   slug: rinpoche
   active: rinpoche
   en_slug: rinpoche

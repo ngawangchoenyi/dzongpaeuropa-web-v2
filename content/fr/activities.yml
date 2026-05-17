@@ -2,8 +2,7 @@ page:
   lang: fr
   base: _base_fr.html
   title: Activités · Dzongpa Europa
-  description: Méditation, étude du Dharma, retraites et enseignements de la lignée
-    Sakya Dzongpa à Valence et en Europe.
+  description: "Méditation, étude du Dharma, retraites et enseignements de la lignée Sakya Dzongpa à Valence et en Europe. Activités à venir et comment participer."
   slug: activities
   active: activities
   es_slug: actividades

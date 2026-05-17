@@ -2,8 +2,7 @@ page:
   lang: de
   base: _base_de.html
   title: Aktivitäten · Dzongpa Europa
-  description: Meditation, Dharma-Studium, Retreats und Unterweisungen der Sakya-Dzongpa-Linie
-    in Valencia und Europa.
+  description: "Meditation, Dharma-Studium, Retreats und Unterweisungen der Sakya-Dzongpa-Linie in Valencia und Europa. Kommende Aktivitäten und Mitmachen."
   slug: activities
   active: activities
   es_slug: actividades

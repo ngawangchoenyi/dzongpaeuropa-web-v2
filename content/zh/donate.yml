@@ -31,6 +31,7 @@ transfer_title: 银行转账
 transfer_name: Asociación Cultural Dzongpa
 transfer_bank_label: 银行
 transfer_bank: Caixa Popular
+transfer_iban: "ES69 3159 0049 8128 4488 3229"
 transfer_ref_label: 备注
 transfer_ref: 「捐款 + 您的姓名」
 patrimony_title: 非货币及资产捐赠

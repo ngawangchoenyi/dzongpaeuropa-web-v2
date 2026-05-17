@@ -2,8 +2,7 @@ page:
   lang: es
   base: _base.html
   title: Donaciones · Dzongpa Europa
-  description: Apoya con tu donación las actividades de Dzongpa Europa y la preservación
-    del linaje Sakya Dzongpa.
+  description: "Apoya con tu donación las actividades de Dzongpa Europa: enseñanzas, retiros, traducción de textos y preservación del linaje Sakya Dzongpa en Europa."
   slug: donaciones
   active: ''
   en_slug: donate
@@ -48,6 +47,7 @@ transfer_title: Transferencia bancaria
 transfer_name: Asociación Cultural Dzongpa
 transfer_bank_label: Banco
 transfer_bank: Caixa Popular
+transfer_iban: "ES69 3159 0049 8128 4488 3229"
 transfer_ref_label: Concepto
 transfer_ref: «Donación + tu nombre»
 patrimony_title: Donaciones patrimoniales
@@ -62,5 +62,4 @@ tax_p: La Asociación Cultural Dzongpa está inscrita en el Registro de Asociaci
   de la Comunitat Valenciana con el número <strong>CV-01-062727-V</strong> (Sección
   Primera). Como entidad sin ánimo de lucro, emitimos un certificado anual de aportaciones
   que permite, en su caso, beneficiarte de las deducciones fiscales aplicables a donaciones
-  a entidades sin ánimo de lucro. Para ello, necesitamos tu nombre completo, NIF y
-  dirección postal.
+  a entidades sin ánimo de lucro. Para ello, necesitamos

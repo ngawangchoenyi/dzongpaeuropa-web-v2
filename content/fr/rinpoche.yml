@@ -2,8 +2,7 @@ page:
   lang: fr
   base: _base_fr.html
   title: Son Éminence le VIe Gongkar Dorje Dhenpa Rinpoché · Dzongpa Europa
-  description: Biographie de Son Éminence le VIe Gongkar Dorje Dhenpa Rinpoché, Tenzin
-    Jampal Lungtok Namgyal, Chef suprême de la lignée Sakya Dzongpa.
+  description: "Biographie de S.É. le VIe Gongkar Dorje Dhenpa Rinpoché, Tenzin Jampal Lungtok Namgyal, Chef suprême de la lignée Sakya Dzongpa."
   slug: rinpoche
   active: rinpoche
   es_slug: rinpoche

@@ -2,8 +2,7 @@ page:
   lang: fr
   base: _base_fr.html
   title: Contact · Dzongpa Europa
-  description: Écrivez-nous pour vous informer, devenir membre, faire un don, participer
-    aux activités ou collaborer comme bénévole.
+  description: "Écrivez-nous pour vous informer, adhérer, faire un don, participer aux activités ou proposer votre aide bénévole à Dzongpa Europa."
   slug: contact
   active: contact
   es_slug: contacto

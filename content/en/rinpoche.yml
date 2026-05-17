@@ -2,8 +2,7 @@ page:
   lang: en
   base: _base_en.html
   title: H.E. the VI Gongkar Dorje Dhenpa Rinpoche · Dzongpa Europa
-  description: Biography of H.E. the VI Gongkar Dorje Dhenpa Rinpoche, Tenzin Jampal
-    Lungtok Namgyal, Supreme Head of the Sakya Dzongpa lineage.
+  description: "Biography of H.E. the VI Gongkar Dorje Dhenpa Rinpoche, Tenzin Jampal Lungtok Namgyal, Supreme Head of the Sakya Dzongpa lineage."
   slug: rinpoche
   active: rinpoche
   es_slug: rinpoche

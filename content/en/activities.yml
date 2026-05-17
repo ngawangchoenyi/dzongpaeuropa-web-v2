@@ -2,8 +2,7 @@ page:
   lang: en
   base: _base_en.html
   title: Activities · Dzongpa Europa
-  description: Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa
-    lineage in Valencia and Europe.
+  description: "Meditation, Dharma study, retreats and teachings of the Sakya Dzongpa lineage in Valencia and Europe. Upcoming activities, calendar and how to participate."
   slug: activities
   active: activities
   es_slug: actividades

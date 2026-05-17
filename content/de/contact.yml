@@ -2,8 +2,7 @@ page:
   lang: de
   base: _base_de.html
   title: Kontakt · Dzongpa Europa
-  description: Schreiben Sie uns, um Informationen zu erhalten, Mitglied zu werden,
-    zu spenden oder mitzuwirken.
+  description: "Schreiben Sie uns für Informationen, Mitgliedschaft, Spenden, Aktivitäten oder Freiwilligenarbeit bei Dzongpa Europa. Wir freuen uns auf Ihre Nachricht."
   slug: contact
   active: contact
   es_slug: contacto
