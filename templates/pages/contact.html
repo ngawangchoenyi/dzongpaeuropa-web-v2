@@ -49,7 +49,8 @@
         </div>
 
         <div id="form-err" role="alert" aria-live="assertive" tabindex="-1" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
-          {{ data.form_err_text | safe }}
+          <span>{{ data.form_err_text | safe }}</span>
+          <span id="form-err-detail" style="display:block; margin-top:8px; font-size:0.82rem;"></span>
         </div>
 
         <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST" data-sending-text="{{ data.sending_text | default(data.submit_text) }}" aria-describedby="contact-response-text">
@@ -134,6 +135,8 @@
 
       if (ok) ok.style.display = 'none';
       if (err) err.style.display = 'none';
+      var errDetail = document.getElementById('form-err-detail');
+      if (errDetail) errDetail.textContent = '';
       btn.disabled = true;
       btn.setAttribute('aria-busy', 'true');
       btn.textContent = form.getAttribute('data-sending-text') || originalText;
@@ -145,13 +148,19 @@
           headers: { 'Accept': 'application/json' },
           body: formData
         });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        var json = await res.json();
+        var json = null;
+        try { json = await res.json(); } catch(parseError) {}
+        if (!res.ok) {
+          var httpMessage = json && (json.message || (json.body && json.body.message));
+          throw new Error(httpMessage || ('HTTP ' + res.status));
+        }
         if (json.success) {
           ok.style.display = 'block';
           form.style.display = 'none';
           ok.focus();
         } else {
+          var detail = json && (json.message || (json.body && json.body.message));
+          if (errDetail && detail) errDetail.textContent = 'Detalle: ' + detail;
           err.style.display = 'block';
           err.focus();
           btn.disabled = false;
@@ -159,8 +168,11 @@
           btn.textContent = originalText;
         }
       } catch(err) {
-        document.getElementById('form-err').style.display = 'block';
-        document.getElementById('form-err').focus();
+        var errorBox = document.getElementById('form-err');
+        var errorDetail = document.getElementById('form-err-detail');
+        if (errorDetail && err && err.message) errorDetail.textContent = 'Detalle: ' + err.message;
+        errorBox.style.display = 'block';
+        errorBox.focus();
         btn.disabled = false;
         btn.removeAttribute('aria-busy');
         btn.textContent = originalText;
