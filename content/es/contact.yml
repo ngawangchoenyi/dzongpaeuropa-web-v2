@@ -43,5 +43,5 @@ response_text: Respondemos a las consultas en un plazo medio de 3 a 5 días labo
   Para consultas urgentes relacionadas con actividades inminentes, indícalo en el
   asunto del mensaje.
 
-# hCaptcha: reemplaza con tu sitekey real (hcaptcha.com)
-hcaptcha_sitekey: "0c9e182a-cd86-439a-aace-fc46f8ae2a16"
+# hCaptcha para Web3Forms free plan
+hcaptcha_sitekey: "50b2fe65-b00b-4b9e-ad62-3ba471098be2"
