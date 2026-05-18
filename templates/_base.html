@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% set og_image = page.og_image | default('https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg') %}
   {% set og_image_alt = page.og_image_alt | default('Dzongpa Europa - Asociación Cultural Dzongpa') %}
+  {% if page.slug != '404' %}
   <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org{% if page.slug %}/{{ page.slug }}{% else %}/{% endif %}">
   <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en{% if page.en_slug | default('') %}/{{ page.en_slug }}{% endif %}">
   <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr{% if page.en_slug | default('') %}/{{ page.en_slug }}{% endif %}">
   <link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de{% if page.en_slug | default('') %}/{{ page.en_slug }}{% endif %}">
   <link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh{% if page.en_slug | default('') %}/{{ page.en_slug }}{% endif %}">
   <link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org{% if page.slug %}/{{ page.slug }}{% else %}/{% endif %}">
+  {% endif %}
   <title>{{ page.title }}</title>
   <meta name="description" content="{{ page.description }}">
   <meta name="author" content="Asociación Cultural Dzongpa">
