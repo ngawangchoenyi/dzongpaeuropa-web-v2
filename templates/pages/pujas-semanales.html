@@ -1,0 +1,127 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block jsonld %}
+{% if data.page.lang == 'es' %}
+  {% set _burl = 'https://www.dzongpaeuropa.org/' + data.page.slug %}
+  {% set _bhome_item = 'https://www.dzongpaeuropa.org/' %}
+  {% set _bhome_name = 'Inicio' %}
+{% else %}
+  {% set _burl = 'https://www.dzongpaeuropa.org/' + data.page.lang + '/' + data.page.slug %}
+  {% set _bhome_item = 'https://www.dzongpaeuropa.org/' + data.page.lang %}
+  {% set _bhome_name = {'en': 'Home', 'fr': 'Accueil', 'de': 'Startseite', 'zh': '首页'}[data.page.lang] %}
+{% endif %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ _bhome_name }}","item":"{{ _bhome_item }}"},{"@type":"ListItem","position":2,"name":"{{ data.header.title | e }}","item":"{{ _burl }}"}]}
+</script>
+{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose">
+        <p class="lead">{{ data.intro }}</p>
+
+        <!-- Horario -->
+        <div class="golden-box" style="margin: 32px 0;">
+          <h2 style="margin-top:0;">{{ data.schedule.title }}</h2>
+          <p style="font-size:1.1rem; font-weight:600; margin-bottom:8px;">{{ data.schedule.days }}</p>
+          <ul style="margin:0; padding-left:1.4em;">
+            {% for t in data.schedule.times %}
+            <li>{{ t }}</li>
+            {% endfor %}
+          </ul>
+          <p style="margin-bottom:0; margin-top:12px; font-size:0.9rem; color:var(--c-texto-suave);">⏳ {{ data.schedule.note }}</p>
+        </div>
+
+        <!-- Cómo participar -->
+        <h2>{{ data.how_title }}</h2>
+        <ol>
+          {% for step in data.how_steps %}
+          <li>{{ step }}</li>
+          {% endfor %}
+        </ol>
+      </div>
+
+      <!-- Prácticas habituales -->
+      <div class="container" style="margin-top:48px;">
+        <h2 class="text-center">{{ data.practices.title }}</h2>
+        <p class="text-center" style="color:var(--c-texto-suave); margin-bottom:32px;">{{ data.practices.intro }}</p>
+        <div class="pillars" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+          {% for p in data.practices.list %}
+          <article class="pillar">
+            <div class="pillar__symbol" aria-hidden="true">☸</div>
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.desc }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Registro -->
+      <div class="container-prose" style="margin-top:60px; text-align:center;">
+        <h2>{{ data.registration.title }}</h2>
+        <p>{{ data.registration.text }}</p>
+        <a href="{{ data.registration.url }}" class="btn btn--primary">{{ data.registration.btn }}</a>
+        <p style="font-size:0.88rem; color:var(--c-texto-suave); margin-top:14px;">🔒 {{ data.registration.note }}</p>
+      </div>
+
+      <!-- Calendario -->
+      <div class="container" style="margin-top:60px;">
+        <h2 class="text-center">{{ data.calendar.title }}</h2>
+        <p class="text-center" style="color:var(--c-texto-suave); margin-bottom:24px;">{{ data.calendar.text }}</p>
+        <div id="calendario-pujas" style="border-radius:12px; background:var(--c-crema); min-height:160px; display:flex; align-items:center; justify-content:center; padding:40px 20px; text-align:center;">
+          <p style="color:var(--c-texto-suave); margin:0;">{{ data.calendar.placeholder }}</p>
+        </div>
+      </div>
+
+      <!-- Donativos -->
+      <div class="container-prose prose" style="margin-top:60px;">
+        <h2>{{ data.donations.title }}</h2>
+        <p>{{ data.donations.intro }}</p>
+
+        <!-- Bizum -->
+        <div class="golden-box" style="margin:28px 0;">
+          <h3 style="margin-top:0;">{{ data.donations.bizum.title }}</h3>
+          <p>{{ data.donations.bizum.text }}</p>
+          <ol style="margin-bottom:0;">
+            {% for step in data.donations.bizum.steps %}
+            <li>{{ step }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+
+        <!-- Transferencia -->
+        <h3>{{ data.donations.transfer.title }}</h3>
+        <p>{{ data.donations.transfer.text }}</p>
+        <table style="border-collapse:collapse; width:100%; font-size:0.93rem; margin-bottom:8px;">
+          <tr><td style="padding:6px 12px 6px 0; font-weight:600; white-space:nowrap;">Titular</td><td>{{ data.donations.transfer.holder }}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0; font-weight:600;">Banco</td><td>{{ data.donations.transfer.bank }}</td></tr>
+          <tr><td style="padding:6px 12px 6px 0; font-weight:600;">IBAN</td><td><code>{{ data.donations.transfer.iban }}</code></td></tr>
+          <tr><td style="padding:6px 12px 6px 0; font-weight:600;">Concepto</td><td>{{ data.donations.transfer.concept }}</td></tr>
+        </table>
+
+        <!-- Tarjeta -->
+        <h3>{{ data.donations.card.title }}</h3>
+        <p>{{ data.donations.card.text }}</p>
+        <p style="font-size:0.88rem; color:var(--c-texto-suave); font-style:italic;">{{ data.donations.card.note }}</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; justify-content:center;">
+          <a href="{{ data.donations.card.url_individual }}" class="btn btn--primary">{{ data.donations.card.btn_individual }}</a>
+          <a href="{{ data.donations.card.url_family }}" class="btn btn--primary">{{ data.donations.card.btn_family }}</a>
+          <a href="{{ data.donations.card.url_free }}" class="btn btn--outline">{{ data.donations.card.btn_free }}</a>
+        </div>
+      </div>
+
+      <!-- Avisos email -->
+      <div class="container-prose" style="margin-top:60px; padding:40px; background:var(--c-crema); border-radius:12px; text-align:center;">
+        <h2 style="margin-top:0;">{{ data.newsletter.title }}</h2>
+        <p>{{ data.newsletter.text }}</p>
+        <p style="color:var(--c-texto-suave); font-size:0.93rem; margin-bottom:0;">{{ data.newsletter.reminder }}</p>
+      </div>
+
+    </section>
+{% endblock %}

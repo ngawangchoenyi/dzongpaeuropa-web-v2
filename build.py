@@ -82,6 +82,7 @@ YAML_PAGE_MAP = {
     'fr/contact.html':    ('fr', 'contact'),
     'de/contact.html':    ('de', 'contact'),
     'zh/contact.html':    ('zh', 'contact'),
+    'pujas-semanales.html': ('es', 'pujas-semanales'),
 }
 
 PAGES = [
@@ -95,6 +96,7 @@ PAGES = [
     'donaciones.html',
     'gracias.html',
     'contacto.html',
+    'pujas-semanales.html',
     'aviso-legal.html',
     'privacidad.html',
     'creditos.html',
