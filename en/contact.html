@@ -147,7 +147,6 @@
 
         <div id="form-err" role="alert" aria-live="assertive" tabindex="-1" style="display:none; max-width:580px; margin:0 auto 32px; padding:20px 24px; background:#fff0f0; border:1px solid #c0392b; border-radius:8px; color:#c0392b; font-size:0.93rem;">
           <span>An error occurred while sending the message. Please try again or write to us directly at <a href="mailto:secretaria@dzongpaeuropa.org" style="color:#c0392b; font-weight:600;">secretaria@dzongpaeuropa.org</a>.</span>
-          <span id="form-err-detail" style="display:block; margin-top:8px; font-size:0.82rem;"></span>
         </div>
 
         <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST" data-sending-text="Sending..." aria-describedby="contact-response-text">
@@ -323,8 +322,6 @@
 
       if (ok) ok.style.display = 'none';
       if (err) err.style.display = 'none';
-      var errDetail = document.getElementById('form-err-detail');
-      if (errDetail) errDetail.textContent = '';
       btn.disabled = true;
       btn.setAttribute('aria-busy', 'true');
       btn.textContent = form.getAttribute('data-sending-text') || originalText;
@@ -347,18 +344,14 @@
           form.style.display = 'none';
           ok.focus();
         } else {
-          var detail = json && (json.message || (json.body && json.body.message));
-          if (errDetail && detail) errDetail.textContent = 'Detalle: ' + detail;
           err.style.display = 'block';
           err.focus();
           btn.disabled = false;
           btn.removeAttribute('aria-busy');
           btn.textContent = originalText;
         }
-      } catch(err) {
+      } catch(error) {
         var errorBox = document.getElementById('form-err');
-        var errorDetail = document.getElementById('form-err-detail');
-        if (errorDetail && err && err.message) errorDetail.textContent = 'Detalle: ' + err.message;
         errorBox.style.display = 'block';
         errorBox.focus();
         btn.disabled = false;
