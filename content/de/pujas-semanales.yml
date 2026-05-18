@@ -53,7 +53,7 @@ registration:
   title: "Vorherige Anmeldung"
   text: "Zur Teilnahme an den wöchentlichen Pujas ist eine vorherige Anmeldung erforderlich. Nach der Anmeldung werden die entsprechenden Zugangsinformationen zugesandt."
   btn: "Anmelden"
-  url: "/contacto"
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSfGSGeSLLvUDO2t9Xb6vNucPppjzrWeug3ObdQ3mJNF7veK4A/viewform"
   note: "Der Zoom-Zugang wird nur an angemeldete Teilnehmer gesendet. Er wird nicht auf der Website veröffentlicht."
 
 calendar:

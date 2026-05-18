@@ -53,7 +53,7 @@ registration:
   title: "Prior registration"
   text: "To participate in the weekly pujas, prior registration is required. After registration, the corresponding access information will be sent."
   btn: "Register"
-  url: "/contacto"
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSfGSGeSLLvUDO2t9Xb6vNucPppjzrWeug3ObdQ3mJNF7veK4A/viewform"
   note: "Zoom access is sent only to registered participants. It is not published on the website."
 
 calendar:

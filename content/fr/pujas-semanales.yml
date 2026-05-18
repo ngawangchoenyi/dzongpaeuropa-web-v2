@@ -53,7 +53,7 @@ registration:
   title: "Inscription préalable"
   text: "Pour participer aux pujas hebdomadaires, une inscription préalable est nécessaire. Après l'inscription, les informations d'accès correspondantes seront envoyées."
   btn: "S'inscrire"
-  url: "/contacto"
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSfGSGeSLLvUDO2t9Xb6vNucPppjzrWeug3ObdQ3mJNF7veK4A/viewform"
   note: "L'accès Zoom est envoyé uniquement aux personnes inscrites. Il n'est pas publié sur le site."
 
 calendar:

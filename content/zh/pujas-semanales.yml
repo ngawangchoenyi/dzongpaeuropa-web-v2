@@ -53,7 +53,7 @@ registration:
   title: "提前登记"
   text: "参加每周法事需提前登记。登记后将收到相应的访问信息。"
   btn: "立即登记"
-  url: "/contacto"
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSfGSGeSLLvUDO2t9Xb6vNucPppjzrWeug3ObdQ3mJNF7veK4A/viewform"
   note: "Zoom链接仅发送给已登记的参与者，不在网站上公开。"
 
 calendar:

@@ -54,7 +54,7 @@ registration:
   title: "Registro previo"
   text: "Para participar en las pujas semanales es necesario registrarse previamente. Tras el registro, se enviará la información de acceso correspondiente."
   btn: "Registrarse"
-  url: "/contacto"
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSfGSGeSLLvUDO2t9Xb6vNucPppjzrWeug3ObdQ3mJNF7veK4A/viewform"
   note: "El acceso al Zoom se envía únicamente a las personas registradas. No se publica en la web."
 
 calendar:
