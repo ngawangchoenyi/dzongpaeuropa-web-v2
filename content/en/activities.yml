@@ -42,6 +42,8 @@ calendar:
   hl: en
   contact_url: /en/contact
   contact_text: Do you have questions? Write to us
+  consent_needed: To display the calendar, you need to accept cookies.
+  consent_btn: Accept cookies
 newsletter:
   title: Dzongpa Europa Newsletter
   subtitle: Receive information about activities, teachings, and news from the association.

@@ -32,6 +32,8 @@ calendar:
   hl: zh-CN
   contact_url: /zh/contact
   contact_text: 有疑问？请写信给我们
+  consent_needed: 要显示日历，需要接受 Cookie。
+  consent_btn: 接受 Cookie
 newsletter:
   title: Dzongpa Europa 通讯
   subtitle: 接收有关活动、教法和协会新闻的信息。

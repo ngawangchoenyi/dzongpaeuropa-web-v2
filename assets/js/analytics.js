@@ -5,31 +5,31 @@
   var copy = {
     es: {
       title: 'Privacidad',
-      text: 'Usamos Google Analytics para medir visitas y mejorar la web. Solo se activa si aceptas.',
+      text: 'Usamos Google Analytics, Google Calendar y MailerLite para medir visitas, mostrar el calendario de actividades y gestionar el boletín. Solo se activan si aceptas.',
       accept: 'Aceptar',
       decline: 'Rechazar'
     },
     en: {
       title: 'Privacy',
-      text: 'We use Google Analytics to measure visits and improve the website. It is only activated if you accept.',
+      text: 'We use Google Analytics, Google Calendar, and MailerLite to measure visits, display the activities calendar, and manage the newsletter. They are only activated if you accept.',
       accept: 'Accept',
       decline: 'Decline'
     },
     fr: {
       title: 'Confidentialité',
-      text: 'Nous utilisons Google Analytics pour mesurer les visites et améliorer le site. Il ne s\'active que si vous acceptez.',
+      text: 'Nous utilisons Google Analytics, Google Calendar et MailerLite pour mesurer les visites, afficher le calendrier des activités et gérer le bulletin. Ils ne s\'activent que si vous acceptez.',
       accept: 'Accepter',
       decline: 'Refuser'
     },
     de: {
       title: 'Datenschutz',
-      text: 'Wir verwenden Google Analytics, um Besuche zu messen und die Website zu verbessern. Es wird nur aktiviert, wenn Sie zustimmen.',
+      text: 'Wir verwenden Google Analytics, Google Calendar und MailerLite, um Besuche zu messen, den Aktivitätskalender anzuzeigen und den Newsletter zu verwalten. Sie werden nur aktiviert, wenn Sie zustimmen.',
       accept: 'Akzeptieren',
       decline: 'Ablehnen'
     },
     zh: {
       title: '隐私',
-      text: '我们使用 Google Analytics 衡量访问量并改进网站。只有在您同意后才会启用。',
+      text: '我们使用 Google Analytics、Google Calendar 和 MailerLite 来衡量访问量、显示活动日历并管理通讯。只有在您同意后才会启用。',
       accept: '接受',
       decline: '拒绝'
     }
@@ -79,6 +79,18 @@
     window.gtag('config', GA_ID);
   }
 
+  function loadMailerLite() {
+    if (window.__dzongpaMlLoaded) return;
+    window.__dzongpaMlLoaded = true;
+
+    (function(w, d, e, u, f, l, n) {
+      w[f] = w[f] || function() { (w[f].q = w[f].q || []).push(arguments); };
+      l = d.createElement(e); l.async = 1; l.src = u;
+      n = d.getElementsByTagName(e)[0]; n.parentNode.insertBefore(l, n);
+    })(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+    window.ml('account', '2347774');
+  }
+
   function applyConsent(value) {
     var granted = value === 'granted';
     window.gtag('consent', 'update', {
@@ -88,7 +100,10 @@
       ad_personalization: 'denied'
     });
 
-    if (granted) loadGoogleAnalytics();
+    if (granted) {
+      loadGoogleAnalytics();
+      loadMailerLite();
+    }
   }
 
   function removeBanner() {

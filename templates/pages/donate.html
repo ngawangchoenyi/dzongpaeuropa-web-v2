@@ -26,11 +26,12 @@
         <h3>{{ data.stripe_title }}</h3>
         <p style="color: var(--c-texto-suave); margin-bottom: 20px;">{{ data.stripe_subtitle }}</p>
         <div class="hero__cta-row" style="margin-top: 0; flex-wrap: wrap; gap: 10px;">
-          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=10" target="_blank" rel="noopener" class="btn btn--outline">10 €</a>
-          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=25" target="_blank" rel="noopener" class="btn btn--outline">25 €</a>
-          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=50" target="_blank" rel="noopener" class="btn btn--outline">50 €</a>
-          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=108" target="_blank" rel="noopener" class="btn btn--primary">108 €</a>
-          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00" target="_blank" rel="noopener" class="btn btn--outline">{{ data.stripe_other_btn }}</a>
+          {% set stripe_locale = 'zh-CN' if data.page.lang == 'zh' else data.page.lang %}
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=10&locale={{ stripe_locale }}" target="_blank" rel="noopener" class="btn btn--outline">10 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=25&locale={{ stripe_locale }}" target="_blank" rel="noopener" class="btn btn--outline">25 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=50&locale={{ stripe_locale }}" target="_blank" rel="noopener" class="btn btn--outline">50 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=108&locale={{ stripe_locale }}" target="_blank" rel="noopener" class="btn btn--primary">108 €</a>
+          <a href="https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?locale={{ stripe_locale }}" target="_blank" rel="noopener" class="btn btn--outline">{{ data.stripe_other_btn }}</a>
         </div>
         <p style="font-size: 0.82rem; color: var(--c-texto-suave); margin-top: 14px; margin-bottom: 0;">
           {{ data.stripe_secure_text }}

@@ -37,8 +37,16 @@
   // Activar en todas las imágenes de galerías
   document.addEventListener('click', function (e) {
     var t = e.target;
+    // Clic directo sobre imagen
     if (t.tagName === 'IMG' && !t.closest('.nav') && !t.closest('.site-footer') && !t.closest('.lb-overlay')) {
       open(t.src, t.alt);
+      return;
+    }
+    // Clic sobre caption o li de centros-foto-grid (móvil: la caption cubre la imagen)
+    var li = t.closest('.centros-foto-grid li, .foto-galeria li');
+    if (li && !t.closest('.lb-overlay')) {
+      var liImg = li.querySelector('img');
+      if (liImg) open(liImg.src, liImg.alt);
     }
   });
 })();

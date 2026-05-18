@@ -35,7 +35,8 @@
             <h3>{{ tier.name }}</h3>
             <div class="socio-card__price">{{ tier.price }} €<span class="socio-card__price-period">{{ tier.period }}</span></div>
             <p>{{ tier.desc }}</p>
-            <a href="{{ tier.stripe }}" target="_blank" rel="noopener" class="btn {% if tier.featured %}btn--primary{% else %}btn--outline{% endif %}">{{ tier.btn }}</a>
+            {% set stripe_locale = 'zh-CN' if data.page.lang == 'zh' else data.page.lang %}
+            <a href="{{ tier.stripe }}?locale={{ stripe_locale }}" target="_blank" rel="noopener" class="btn {% if tier.featured %}btn--primary{% else %}btn--outline{% endif %}">{{ tier.btn }}</a>
           </div>
           {% endfor %}
         </div>
