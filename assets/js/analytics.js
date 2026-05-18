@@ -167,7 +167,7 @@
     showBanner();
   }
 
-  // ── G-01: Custom GA4 events ──────────────────────────────────────────────
+  // ── G-01: Eventos GA4 personalizados ────────────────────────────────────
   function sendEvent(name, params) {
     if (window.gtag && getStoredConsent() === 'granted') {
       window.gtag('event', name, params || {});
@@ -177,7 +177,7 @@
   document.addEventListener('click', function(ev) {
     var t = ev.target;
 
-    // Donation button clicks (donate page)
+    // Clics en botones de donación (Stripe)
     var donateLink = t.closest('a[href*="buy.stripe.com"]');
     if (donateLink) {
       var amount = donateLink.href.match(/prefilled_quantity=(\d+)/);
@@ -189,22 +189,24 @@
       return;
     }
 
-    // Join / hazte-socio tier clicks
+    // Clics en niveles de socio
     var joinLink = t.closest('[data-tier]');
     if (joinLink) {
       sendEvent('join_click', { tier: joinLink.getAttribute('data-tier') });
       return;
     }
 
-    // Language switcher
+    // Cambio de idioma
     var langLink = t.closest('.lang-switcher a, .lang-dropdown a');
     if (langLink) {
-      sendEvent('language_change', { target_lang: langLink.getAttribute('hreflang') || langLink.textContent.trim() });
+      sendEvent('language_change', {
+        target_lang: langLink.getAttribute('hreflang') || langLink.textContent.trim()
+      });
       return;
     }
   });
 
-  // Contact form submission
+  // Envío formulario de contacto
   document.addEventListener('submit', function(ev) {
     var form = ev.target;
     if (form.id === 'contact-form' || form.getAttribute('data-form-type') === 'contact') {
@@ -212,17 +214,18 @@
     }
   });
 
-  // Newsletter subscription (MailerLite fires a custom event after success)
+  // Suscripción al boletín (MailerLite lanza evento tras éxito)
   document.addEventListener('ml:subscribe', function(ev) {
-    sendEvent('newsletter_subscribe', { form_id: ev.detail && ev.detail.formId || 'ml' });
+    sendEvent('newsletter_subscribe', {
+      form_id: ev.detail && ev.detail.formId || 'ml'
+    });
   });
 
-  // ── G-02: Purchase event on /gracias pages ───────────────────────────────
+  // ── G-02: Evento purchase en páginas /gracias ────────────────────────────
   (function() {
     var path = window.location.pathname;
     var isThanks = path === '/gracias' || /^\/(en|fr|de|zh)\/thanks/.test(path);
     if (!isThanks) return;
-    // Read amount from URL param ?amount=25 (set via Stripe success_url)
     var params = new URLSearchParams(window.location.search);
     var amount = parseFloat(params.get('amount') || '0');
     var txId = params.get('session_id') || ('don-' + Date.now());
@@ -231,7 +234,12 @@
         transaction_id: txId,
         value: amount,
         currency: 'EUR',
-        items: [{ item_id: 'donation', item_name: 'Donación Dzongpa Europa', quantity: 1, price: amount }]
+        items: [{
+          item_id: 'donation',
+          item_name: 'Donación Dzongpa Europa',
+          quantity: 1,
+          price: amount
+        }]
       });
     }
   })();
