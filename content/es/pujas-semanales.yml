@@ -88,9 +88,9 @@ donations:
     btn_individual: "Donativo individual · 8 €"
     btn_family: "Donativo familiar · 15 €"
     btn_free: "Donativo libre"
-    url_individual: "#donativo-individual"
-    url_family: "#donativo-familiar"
-    url_free: "#donativo-libre"
+    url_individual: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=8&locale=es"
+    url_family: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=15&locale=es"
+    url_free: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?locale=es"
 
 newsletter:
   title: "Avisos por email"

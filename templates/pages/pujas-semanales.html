@@ -110,9 +110,9 @@
         <p>{{ data.donations.card.text }}</p>
         <p style="font-size:0.88rem; color:var(--c-texto-suave); font-style:italic;">{{ data.donations.card.note }}</p>
         <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; justify-content:center;">
-          <a href="{{ data.donations.card.url_individual }}" class="btn btn--primary">{{ data.donations.card.btn_individual }}</a>
-          <a href="{{ data.donations.card.url_family }}" class="btn btn--primary">{{ data.donations.card.btn_family }}</a>
-          <a href="{{ data.donations.card.url_free }}" class="btn btn--outline">{{ data.donations.card.btn_free }}</a>
+          <a href="{{ data.donations.card.url_individual }}" class="btn btn--primary" target="_blank" rel="noopener">{{ data.donations.card.btn_individual }}</a>
+          <a href="{{ data.donations.card.url_family }}" class="btn btn--primary" target="_blank" rel="noopener">{{ data.donations.card.btn_family }}</a>
+          <a href="{{ data.donations.card.url_free }}" class="btn btn--outline" target="_blank" rel="noopener">{{ data.donations.card.btn_free }}</a>
         </div>
       </div>
 

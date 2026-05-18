@@ -87,9 +87,9 @@ donations:
     btn_individual: "个人供养 · 8€"
     btn_family: "家庭供养 · 15€"
     btn_free: "随喜供养"
-    url_individual: "#donativo-individual"
-    url_family: "#donativo-familiar"
-    url_free: "#donativo-libre"
+    url_individual: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=8&locale=zh-CN"
+    url_family: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=15&locale=zh-CN"
+    url_free: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?locale=zh-CN"
 
 newsletter:
   title: "邮件通知"
