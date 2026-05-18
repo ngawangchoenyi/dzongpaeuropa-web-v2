@@ -1,0 +1,27 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: Merci pour votre don · Dzongpa Europa
+  description: "Votre don a bien été reçu. Merci de soutenir les enseignements et les activités de Dzongpa Europa."
+  slug: thanks
+  es_slug: gracias
+  active: ''
+  robots: 'noindex, follow'
+header:
+  title: Merci infiniment !
+  lede: Votre générosité permet aux enseignements de continuer
+body:
+  p1: Votre don a bien été reçu. Votre soutien contribue directement à préserver
+    et à partager les enseignements de la lignée Dzongpa en Europe.
+  p2: Vous recevrez bientôt un e-mail de confirmation de Stripe avec le récapitulatif
+    de votre don. Si vous avez besoin d'un reçu fiscal, écrivez-nous à
+    <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+    en indiquant votre nom complet et votre adresse postale.
+newsletter_title: Restez informé
+newsletter_p: Abonnez-vous à notre bulletin et recevez des informations sur les activités,
+  les enseignements et les actualités de l'association.
+newsletter:
+  placeholder: votre@courriel.fr
+  btn_text: S'abonner
+back_btn: Retour à l'accueil
+back_url: /fr

@@ -47,12 +47,12 @@
             function loadCal() {
               var ph = document.getElementById('cal-placeholder');
               if (!ph) return;
-              var wrapper = document.getElementById('cal-wrapper');
               var iframe = document.createElement('iframe');
               iframe.src = CAL_SRC;
               iframe.style.cssText = 'border:none;border-radius:12px;min-width:320px;width:100%;height:600px;display:block;';
               iframe.frameBorder = '0';
               iframe.scrolling = 'no';
+              iframe.loading = 'lazy';
               iframe.title = CAL_TITLE;
               ph.parentNode.replaceChild(iframe, ph);
             }

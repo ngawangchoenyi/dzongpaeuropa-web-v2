@@ -1,0 +1,35 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block extra_head %}{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-prose prose" style="text-align: center;">
+
+        <div style="font-size: 4rem; margin: 0 0 16px;">🙏</div>
+
+        <p>{{ data.body.p1 }}</p>
+        <p>{{ data.body.p2 }}</p>
+
+        <a href="{{ data.back_url }}" class="btn btn--primary" style="margin-top: 24px; display: inline-block;">
+          {{ data.back_btn }}
+        </a>
+      </div>
+
+      <div class="container-prose" style="margin-top: 60px; text-align: center;">
+        <h2>{{ data.newsletter_title }}</h2>
+        <p style="color: var(--c-texto-suave); margin-bottom: 28px;">{{ data.newsletter_p }}</p>
+        <div class="newsletter-form--ml ml-embedded" data-form="{% if data.page.lang == 'es' %}Y2nyWO{% else %}KlZrwQ{% endif %}" data-placeholder="{{ data.newsletter.placeholder | e }}" data-button="{{ data.newsletter.btn_text | e }}" id="ml-form-gracias"></div>
+      </div>
+    </section>
+{% endblock %}
+
+{% block extra_scripts %}
+  <script src="/assets/js/newsletter.js?v=20260517-foundation" defer></script>
+{% endblock %}

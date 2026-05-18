@@ -1,0 +1,27 @@
+page:
+  lang: en
+  base: _base_en.html
+  title: Thank you for your donation · Dzongpa Europa
+  description: "Your donation has been received. Thank you for supporting the teachings and activities of Dzongpa Europa."
+  slug: thanks
+  es_slug: gracias
+  active: ''
+  robots: 'noindex, follow'
+header:
+  title: Thank you!
+  lede: Your generosity keeps the teachings alive
+body:
+  p1: Your donation has been successfully received. Your support directly contributes
+    to preserving and sharing the teachings of the Dzongpa lineage in Europe.
+  p2: You will shortly receive a confirmation email from Stripe with your donation
+    summary. If you need a tax certificate, please write to us at
+    <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+    with your full name and postal address.
+newsletter_title: Stay in touch
+newsletter_p: Subscribe to our newsletter and receive information about activities,
+  teachings, and news from the association.
+newsletter:
+  placeholder: your@email.com
+  btn_text: Subscribe
+back_btn: Back to home
+back_url: /en

@@ -1,0 +1,27 @@
+page:
+  lang: de
+  base: _base_de.html
+  title: Danke für Ihre Spende · Dzongpa Europa
+  description: "Ihre Spende ist eingegangen. Vielen Dank für Ihre Unterstützung der Lehren und Aktivitäten von Dzongpa Europa."
+  slug: thanks
+  es_slug: gracias
+  active: ''
+  robots: 'noindex, follow'
+header:
+  title: Herzlichen Dank!
+  lede: Ihre Großzügigkeit ermöglicht das Fortbestehen der Lehren
+body:
+  p1: Ihre Spende ist erfolgreich eingegangen. Ihre Unterstützung trägt direkt dazu
+    bei, die Lehren der Dzongpa-Linie in Europa zu bewahren und weiterzugeben.
+  p2: Sie erhalten in Kürze eine Bestätigungs-E-Mail von Stripe mit einer Zusammenfassung
+    Ihrer Spende. Wenn Sie eine Spendenbescheinigung benötigen, schreiben Sie uns bitte
+    an <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>
+    mit Ihrem vollständigen Namen und Ihrer Postanschrift.
+newsletter_title: Bleiben Sie informiert
+newsletter_p: Abonnieren Sie unseren Newsletter und erhalten Sie Informationen über
+  Aktivitäten, Unterweisungen und Neuigkeiten des Vereins.
+newsletter:
+  placeholder: ihre@email.de
+  btn_text: Abonnieren
+back_btn: Zurück zur Startseite
+back_url: /de

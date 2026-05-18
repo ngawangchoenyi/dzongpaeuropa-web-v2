@@ -166,4 +166,74 @@
   } else {
     showBanner();
   }
+
+  // ── G-01: Custom GA4 events ──────────────────────────────────────────────
+  function sendEvent(name, params) {
+    if (window.gtag && getStoredConsent() === 'granted') {
+      window.gtag('event', name, params || {});
+    }
+  }
+
+  document.addEventListener('click', function(ev) {
+    var t = ev.target;
+
+    // Donation button clicks (donate page)
+    var donateLink = t.closest('a[href*="buy.stripe.com"]');
+    if (donateLink) {
+      var amount = donateLink.href.match(/prefilled_quantity=(\d+)/);
+      sendEvent('donation_click', {
+        value: amount ? parseInt(amount[1]) : 0,
+        currency: 'EUR',
+        label: donateLink.textContent.trim()
+      });
+      return;
+    }
+
+    // Join / hazte-socio tier clicks
+    var joinLink = t.closest('[data-tier]');
+    if (joinLink) {
+      sendEvent('join_click', { tier: joinLink.getAttribute('data-tier') });
+      return;
+    }
+
+    // Language switcher
+    var langLink = t.closest('.lang-switcher a, .lang-dropdown a');
+    if (langLink) {
+      sendEvent('language_change', { target_lang: langLink.getAttribute('hreflang') || langLink.textContent.trim() });
+      return;
+    }
+  });
+
+  // Contact form submission
+  document.addEventListener('submit', function(ev) {
+    var form = ev.target;
+    if (form.id === 'contact-form' || form.getAttribute('data-form-type') === 'contact') {
+      sendEvent('form_submit', { form_id: form.id || 'contact' });
+    }
+  });
+
+  // Newsletter subscription (MailerLite fires a custom event after success)
+  document.addEventListener('ml:subscribe', function(ev) {
+    sendEvent('newsletter_subscribe', { form_id: ev.detail && ev.detail.formId || 'ml' });
+  });
+
+  // ── G-02: Purchase event on /gracias pages ───────────────────────────────
+  (function() {
+    var path = window.location.pathname;
+    var isThanks = path === '/gracias' || /^\/(en|fr|de|zh)\/thanks/.test(path);
+    if (!isThanks) return;
+    // Read amount from URL param ?amount=25 (set via Stripe success_url)
+    var params = new URLSearchParams(window.location.search);
+    var amount = parseFloat(params.get('amount') || '0');
+    var txId = params.get('session_id') || ('don-' + Date.now());
+    if (amount > 0) {
+      sendEvent('purchase', {
+        transaction_id: txId,
+        value: amount,
+        currency: 'EUR',
+        items: [{ item_id: 'donation', item_name: 'Donación Dzongpa Europa', quantity: 1, price: amount }]
+      });
+    }
+  })();
+
 })();

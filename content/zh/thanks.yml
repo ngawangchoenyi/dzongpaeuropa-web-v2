@@ -1,0 +1,24 @@
+page:
+  lang: zh
+  base: _base_zh.html
+  title: 感谢您的捐款 · Dzongpa Europa
+  description: "您的捐款已收到。感谢您支持 Dzongpa Europa 的教法与活动。"
+  slug: thanks
+  es_slug: gracias
+  active: ''
+  robots: 'noindex, follow'
+header:
+  title: 衷心感谢！
+  lede: 您的慷慨使教法得以延续
+body:
+  p1: 您的捐款已成功收到。您的支持直接有助于在欧洲保护和传播宗巴传承的教法。
+  p2: 您将很快收到 Stripe 发来的确认邮件，其中包含您的捐款摘要。如果您需要税务证明，请发送邮件至
+    <a href="mailto:secretaria@dzongpaeuropa.org">secretaria@dzongpaeuropa.org</a>，
+    并提供您的全名和通讯地址。
+newsletter_title: 保持联系
+newsletter_p: 订阅我们的通讯，接收有关活动、教法和协会新闻的信息。
+newsletter:
+  placeholder: 您的邮箱
+  btn_text: 订阅
+back_btn: 返回首页
+back_url: /zh
