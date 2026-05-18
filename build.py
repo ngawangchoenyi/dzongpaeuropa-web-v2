@@ -226,11 +226,12 @@ def build():
                 legacy_count += 1
                 print(f'  ✓ {page}')
 
+            html = html.replace('\x00', '')
             html = '\n'.join(line.rstrip() for line in html.splitlines()) + '\n'
 
             out_path = os.path.join(ROOT, page)
             os.makedirs(os.path.dirname(out_path), exist_ok=True)
-            with open(out_path, 'w', encoding='utf-8') as f:
+            with open(out_path, 'w', encoding='utf-8', newline='\n') as f:
                 f.write(html)
             ok += 1
 
