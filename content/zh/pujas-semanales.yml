@@ -1,0 +1,97 @@
+page:
+  lang: zh
+  base: _base_zh.html
+  title: "仁波切每周法事 · Dzongpa Europa"
+  description: "贡卡多杰登巴仁波切每周从台湾龙巴中心主持法事和传承修法。需提前登记。日历、修法介绍及供养。"
+  slug: weekly-pujas
+  active: activities
+  robots: "index, follow"
+
+header:
+  title: "仁波切从台湾主持每周法事"
+  lede: "每周六，贡卡多杰登巴仁波切从台湾龙巴中心主持不同的法事和传承修法。"
+
+intro: "这些活动让社区能够定期与传承的加持相连，并支持仁波切的弘法事业。具体修法通常提前3至5天公布，参加前需提前登记。"
+
+schedule:
+  title: "常规时间"
+  days: "每周六"
+  times:
+    - "台湾时间 15:00（亚洲/台北）"
+    - "西班牙夏令时 09:00"
+    - "西班牙冬令时 08:00"
+  note: "具体修法通常提前3至5天公布。"
+
+how_title: "如何参加"
+how_steps:
+  - "具体法事提前数天公布。"
+  - "Dzongpa Europa更新日历并发送相应通知。"
+  - "有意参加者提前登记。"
+  - "已登记者将收到Zoom访问信息。"
+  - "愿意的参加者可为仁波切进行建议供养。"
+
+practices:
+  title: "常见修法"
+  intro: "法事可能包括龙巴传承的以下修法（不限于此）："
+  list:
+    - name: "绿度母"
+      desc: "度母的修法，是保护和解脱障碍的源泉。"
+    - name: "婆罗门相大黑天"
+      desc: "龙巴传承600余年的护法，与仁波切有特殊缘起。"
+    - name: "财宝天王"
+      desc: "掌管精神与物质财富与丰盛的本尊。"
+    - name: "龙巴白象鼻财神"
+      desc: "龙巴传承的稀有修法，增长财富并圆满福德。"
+    - name: "四臂观世音"
+      desc: "大悲者，为利益一切众生的核心修法。"
+    - name: "金刚火焰火供"
+      desc: "火供，用于净化负面业力，消除内外障碍。"
+    - name: "荟供"
+      desc: "积累福慧资粮，恢复誓言与戒律。"
+
+registration:
+  title: "提前登记"
+  text: "参加每周法事需提前登记。登记后将收到相应的访问信息。"
+  btn: "立即登记"
+  url: "/contacto"
+  note: "Zoom链接仅发送给已登记的参与者，不在网站上公开。"
+
+calendar:
+  title: "法事日历"
+  text: "每周具体修法确认后将更新日历。"
+  placeholder: "此处将整合Dzongpa Europa的谷歌日历。"
+
+donations:
+  title: "建议供养仁波切"
+  intro: "供养有助于支持仁波切的弘法事业和传承修法的持续。参加需提前登记。建议供养为个人8欧元或家庭15欧元。"
+  bizum:
+    title: "Bizum（仅限西班牙）"
+    text: "如果您有西班牙银行账户，可通过银行APP的Bizum进行供养。"
+    steps:
+      - "在银行APP中打开Bizum。"
+      - '选择「捐款」或「NGO捐款」选项。'
+      - "输入编号06845。"
+      - '选择「Asociación Cultural Dzongpa」。'
+      - "输入供养金额。"
+  transfer:
+    title: "银行转账"
+    text: "您也可以进行银行转账。如果您的银行支持即时转账，可使用此方式。"
+    holder: "Asociación Cultural Dzongpa"
+    bank: "Caixa Popular"
+    iban: "ES69 3159 0049 8128 4488 3229"
+    concept: "Puja + 姓名"
+  card:
+    title: "刷卡支付"
+    text: "您也可以通过Stripe进行安全的刷卡供养。此方式对西班牙境外的人士尤为便捷。"
+    note: "刷卡支付可能产生手续费。如您愿意，可自愿额外添加少量金额以帮助抵扣手续费。"
+    btn_individual: "个人供养 · 8€"
+    btn_family: "家庭供养 · 15€"
+    btn_free: "随喜供养"
+    url_individual: "#donativo-individual"
+    url_family: "#donativo-familiar"
+    url_free: "#donativo-libre"
+
+newsletter:
+  title: "邮件通知"
+  text: "已登记或订阅通讯的人员将收到每周法事的通知和提醒。具体修法确认后，Dzongpa Europa将发送相应信息的通知。"
+  reminder: "计划在法事确认后（通常提前3至5天）发送通知，并在修法前向已登记者发送提醒。"

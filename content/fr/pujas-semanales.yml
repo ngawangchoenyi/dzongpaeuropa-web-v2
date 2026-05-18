@@ -1,0 +1,97 @@
+page:
+  lang: fr
+  base: _base_fr.html
+  title: "Pujas hebdomadaires avec Rinpoche · Dzongpa Europa"
+  description: "Pujas hebdomadaires avec S.E. Gongkar Dorje Dhenpa Rinpoche depuis le centre Dzongpa de Taïwan. Inscription préalable requise. Calendrier, pratiques et dons."
+  slug: weekly-pujas
+  active: activities
+  robots: "index, follow"
+
+header:
+  title: "Pujas hebdomadaires avec Rinpoche depuis Taïwan"
+  lede: "Chaque samedi, S.E. Gongkar Dorje Dhenpa Rinpoche dirige différentes pujas et pratiques du lignage depuis le centre Dzongpa de Taïwan."
+
+intro: "Ces activités permettent à la communauté de se connecter régulièrement aux bénédictions du lignage et de soutenir les activités de Rinpoche. La pratique concrète est généralement communiquée 3 à 5 jours à l'avance et une inscription préalable est requise."
+
+schedule:
+  title: "Horaire habituel"
+  days: "Samedis"
+  times:
+    - "15h00 Taïwan (Asia/Taipei)"
+    - "09h00 Espagne (heure d'été)"
+    - "08h00 Espagne (heure d'hiver)"
+  note: "La pratique concrète est généralement communiquée 3 à 5 jours à l'avance."
+
+how_title: "Comment participer"
+how_steps:
+  - "La puja concrète est annoncée quelques jours à l'avance."
+  - "Dzongpa Europa met à jour le calendrier et envoie l'avis correspondant."
+  - "Les personnes intéressées s'inscrivent préalablement."
+  - "Les inscrits reçoivent les informations d'accès Zoom."
+  - "Ceux qui le souhaitent peuvent effectuer le don suggéré pour Rinpoche."
+
+practices:
+  title: "Pratiques habituelles"
+  intro: "Les pujas peuvent inclure, entre autres, les pratiques suivantes du lignage Dzongpa :"
+  list:
+    - name: "Tara Verte"
+      desc: "Pratique de la Mère Tara, source de protection et de libération des obstacles."
+    - name: "Brahmanrupa Mahakala"
+      desc: "Protecteur du lignage Dzongpa depuis plus de 600 ans, avec un lien particulier avec Rinpoche."
+    - name: "Dzambala"
+      desc: "Divinité de l'abondance et de la richesse spirituelle et matérielle."
+    - name: "Ganapati Blanc Dzongpa"
+      desc: "Pratique peu commune du lignage Dzongpa qui accroît la richesse et perfectionne le mérite."
+    - name: "Avalokiteshvara à quatre bras"
+      desc: "Le Grand Compatissant, pratique centrale pour le bénéfice de tous les êtres."
+    - name: "Vajradaka Fire Puja"
+      desc: "Puja de feu pour purifier le karma négatif et éliminer les obstacles internes et externes."
+    - name: "Tsog Offering"
+      desc: "Accumulation de mérite et de sagesse, restauration des engagements et des vœux."
+
+registration:
+  title: "Inscription préalable"
+  text: "Pour participer aux pujas hebdomadaires, une inscription préalable est nécessaire. Après l'inscription, les informations d'accès correspondantes seront envoyées."
+  btn: "S'inscrire"
+  url: "/contacto"
+  note: "L'accès Zoom est envoyé uniquement aux personnes inscrites. Il n'est pas publié sur le site."
+
+calendar:
+  title: "Calendrier des pujas"
+  text: "Le calendrier est mis à jour lorsque la pratique concrète de chaque semaine est confirmée."
+  placeholder: "Le calendrier Google de Dzongpa Europa sera intégré ici."
+
+donations:
+  title: "Don suggéré pour Rinpoche"
+  intro: "Les dons contribuent à soutenir les activités de Rinpoche et la continuité des pratiques du lignage. La participation requiert une inscription préalable. Le don suggéré est de 8 € par personne ou 15 € par famille."
+  bizum:
+    title: "Bizum (Espagne uniquement)"
+    text: "Si vous avez un compte bancaire espagnol, vous pouvez effectuer votre don via Bizum depuis votre application bancaire."
+    steps:
+      - "Ouvrez Bizum dans votre application bancaire."
+      - "Sélectionnez l'option « Faire un don » ou « Don ONG »."
+      - "Entrez le code 06845."
+      - "Sélectionnez « Asociación Cultural Dzongpa »."
+      - "Indiquez le montant du don."
+  transfer:
+    title: "Virement bancaire"
+    text: "Vous pouvez également effectuer un virement bancaire. Si votre banque le permet, vous pouvez faire un virement instantané."
+    holder: "Asociación Cultural Dzongpa"
+    bank: "Caixa Popular"
+    iban: "ES69 3159 0049 8128 4488 3229"
+    concept: "Puja + nom"
+  card:
+    title: "Paiement par carte"
+    text: "Vous pouvez également effectuer votre don par paiement sécurisé par carte via Stripe. Cette option est particulièrement pratique pour les personnes en dehors de l'Espagne."
+    note: "Le paiement par carte peut entraîner des frais de traitement. Si vous le souhaitez, vous pouvez volontairement ajouter un petit montant supplémentaire pour aider à les couvrir."
+    btn_individual: "Don individuel · 8 €"
+    btn_family: "Don familial · 15 €"
+    btn_free: "Don libre"
+    url_individual: "#donativo-individual"
+    url_family: "#donativo-familiar"
+    url_free: "#donativo-libre"
+
+newsletter:
+  title: "Notifications par email"
+  text: "Les personnes inscrites ou abonnées à la newsletter recevront des avis et des rappels concernant les pujas hebdomadaires. Lorsque la pratique concrète sera confirmée, Dzongpa Europa enverra une notification avec les informations correspondantes."
+  reminder: "L'intention est d'envoyer un avis lorsque la puja est confirmée, généralement 3 à 5 jours avant, et un rappel aux personnes inscrites avant la pratique."

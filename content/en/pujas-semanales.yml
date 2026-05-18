@@ -1,0 +1,97 @@
+page:
+  lang: en
+  base: _base_en.html
+  title: "Weekly Pujas with Rinpoche · Dzongpa Europa"
+  description: "Weekly pujas with H.E. Gongkar Dorje Dhenpa Rinpoche from the Dzongpa centre in Taiwan. Prior registration required. Calendar, practices and donations."
+  slug: weekly-pujas
+  active: activities
+  robots: "index, follow"
+
+header:
+  title: "Weekly Pujas with Rinpoche from Taiwan"
+  lede: "Every Saturday, H.E. Gongkar Dorje Dhenpa Rinpoche leads different pujas and lineage practices from the Dzongpa centre in Taiwan."
+
+intro: "These activities allow the community to regularly connect with the blessings of the lineage and support Rinpoche's activities. The specific practice is usually announced 3 to 5 days in advance and prior registration is required."
+
+schedule:
+  title: "Regular schedule"
+  days: "Saturdays"
+  times:
+    - "15:00 Taiwan (Asia/Taipei)"
+    - "09:00 Spain (summer time)"
+    - "08:00 Spain (winter time)"
+  note: "The specific practice is usually announced 3 to 5 days in advance."
+
+how_title: "How to participate"
+how_steps:
+  - "The specific puja is announced a few days in advance."
+  - "Dzongpa Europa updates the calendar and sends the corresponding notice."
+  - "Interested participants register in advance."
+  - "Registered participants receive the Zoom access information."
+  - "Those who wish to may make the suggested donation for Rinpoche."
+
+practices:
+  title: "Regular practices"
+  intro: "The pujas may include, among others, the following practices of the Dzongpa lineage:"
+  list:
+    - name: "Green Tara"
+      desc: "Practice of Mother Tara, source of protection and liberation from obstacles."
+    - name: "Brahmanrupa Mahakala"
+      desc: "Protector of the Dzongpa lineage for over 600 years, with a special bond with Rinpoche."
+    - name: "Dzambala"
+      desc: "Deity of abundance and spiritual and material wealth."
+    - name: "White Ganapati Dzongpa"
+      desc: "An uncommon practice of the Dzongpa lineage that increases wealth and perfects merit."
+    - name: "Four-Armed Avalokiteshvara"
+      desc: "The Great Compassionate One, a central practice for the benefit of all beings."
+    - name: "Vajradaka Fire Puja"
+      desc: "Fire puja to purify negative karma and remove inner and outer obstacles."
+    - name: "Tsog Offering"
+      desc: "Accumulation of merit and wisdom, restoration of commitments and vows."
+
+registration:
+  title: "Prior registration"
+  text: "To participate in the weekly pujas, prior registration is required. After registration, the corresponding access information will be sent."
+  btn: "Register"
+  url: "/contacto"
+  note: "Zoom access is sent only to registered participants. It is not published on the website."
+
+calendar:
+  title: "Puja calendar"
+  text: "The calendar is updated when the specific practice for each week is confirmed."
+  placeholder: "The Dzongpa Europa Google Calendar will be integrated here."
+
+donations:
+  title: "Suggested donation for Rinpoche"
+  intro: "Donations help sustain Rinpoche's activities and the continuity of the lineage practices. Participation requires prior registration. The suggested donation is €8 per person or €15 per family."
+  bizum:
+    title: "Bizum (Spain only)"
+    text: "If you have a Spanish bank account, you can make your donation via Bizum from your banking app."
+    steps:
+      - "Open Bizum in your banking app."
+      - "Select the 'Donate' or 'Donation NGO' option."
+      - "Enter code 06845."
+      - "Select 'Asociación Cultural Dzongpa'."
+      - "Enter the donation amount."
+  transfer:
+    title: "Bank transfer"
+    text: "You can also make a bank transfer. If your bank allows it, you can make an instant transfer."
+    holder: "Asociación Cultural Dzongpa"
+    bank: "Caixa Popular"
+    iban: "ES69 3159 0049 8128 4488 3229"
+    concept: "Puja + name"
+  card:
+    title: "Card payment"
+    text: "You can also make your donation via secure card payment through Stripe. This option is especially convenient for people outside Spain."
+    note: "Card payment may incur processing fees. If you wish, you can voluntarily add a small additional amount to help cover them."
+    btn_individual: "Individual donation · €8"
+    btn_family: "Family donation · €15"
+    btn_free: "Free donation"
+    url_individual: "#donativo-individual"
+    url_family: "#donativo-familiar"
+    url_free: "#donativo-libre"
+
+newsletter:
+  title: "Email notifications"
+  text: "Registered participants or newsletter subscribers will receive notices and reminders about the weekly pujas. When the specific practice is confirmed, Dzongpa Europa will send a notification with the corresponding information."
+  reminder: "The intention is to send a notice when the puja is confirmed, usually 3 to 5 days before, and a reminder to registered participants before the practice."

@@ -1,0 +1,97 @@
+page:
+  lang: de
+  base: _base_de.html
+  title: "Wöchentliche Pujas mit Rinpoche · Dzongpa Europa"
+  description: "Wöchentliche Pujas mit S.E. Gongkar Dorje Dhenpa Rinpoche vom Dzongpa-Zentrum in Taiwan. Vorherige Anmeldung erforderlich. Kalender, Praktiken und Spenden."
+  slug: weekly-pujas
+  active: activities
+  robots: "index, follow"
+
+header:
+  title: "Wöchentliche Pujas mit Rinpoche aus Taiwan"
+  lede: "Jeden Samstag leitet S.E. Gongkar Dorje Dhenpa Rinpoche verschiedene Pujas und Linienübungen vom Dzongpa-Zentrum in Taiwan."
+
+intro: "Diese Aktivitäten ermöglichen es der Gemeinschaft, regelmäßig mit den Segnungen der Linie in Verbindung zu treten und Rinpoches Aktivitäten zu unterstützen. Die konkrete Praxis wird in der Regel 3 bis 5 Tage im Voraus bekannt gegeben, und eine vorherige Anmeldung ist erforderlich."
+
+schedule:
+  title: "Regulärer Zeitplan"
+  days: "Samstage"
+  times:
+    - "15:00 Uhr Taiwan (Asia/Taipei)"
+    - "09:00 Uhr Spanien (Sommerzeit)"
+    - "08:00 Uhr Spanien (Winterzeit)"
+  note: "Die konkrete Praxis wird in der Regel 3 bis 5 Tage im Voraus bekannt gegeben."
+
+how_title: "Wie man teilnimmt"
+how_steps:
+  - "Die konkrete Puja wird einige Tage im Voraus bekannt gegeben."
+  - "Dzongpa Europa aktualisiert den Kalender und sendet die entsprechende Benachrichtigung."
+  - "Interessierte Teilnehmer melden sich im Voraus an."
+  - "Angemeldete Teilnehmer erhalten die Zoom-Zugangsinformationen."
+  - "Wer möchte, kann die vorgeschlagene Spende für Rinpoche leisten."
+
+practices:
+  title: "Regelmäßige Praktiken"
+  intro: "Die Pujas können unter anderem folgende Praktiken der Dzongpa-Linie umfassen:"
+  list:
+    - name: "Grüne Tara"
+      desc: "Praxis der Mutter Tara, Quelle des Schutzes und der Befreiung von Hindernissen."
+    - name: "Brahmanrupa Mahakala"
+      desc: "Beschützer der Dzongpa-Linie seit über 600 Jahren, mit einer besonderen Verbindung zu Rinpoche."
+    - name: "Dzambala"
+      desc: "Gottheit des Überflusses und des geistigen und materiellen Reichtums."
+    - name: "Weißer Ganapati Dzongpa"
+      desc: "Eine seltene Praxis der Dzongpa-Linie, die Reichtum mehrt und Verdienst vervollkommnet."
+    - name: "Vierarmiger Avalokiteshvara"
+      desc: "Der Große Mitfühlende, eine zentrale Praxis zum Wohl aller Wesen."
+    - name: "Vajradaka Feuerpuja"
+      desc: "Feuerpuja zur Reinigung negativen Karmas und zur Beseitigung innerer und äußerer Hindernisse."
+    - name: "Tsog-Opferung"
+      desc: "Ansammlung von Verdienst und Weisheit, Wiederherstellung von Verpflichtungen und Gelübden."
+
+registration:
+  title: "Vorherige Anmeldung"
+  text: "Zur Teilnahme an den wöchentlichen Pujas ist eine vorherige Anmeldung erforderlich. Nach der Anmeldung werden die entsprechenden Zugangsinformationen zugesandt."
+  btn: "Anmelden"
+  url: "/contacto"
+  note: "Der Zoom-Zugang wird nur an angemeldete Teilnehmer gesendet. Er wird nicht auf der Website veröffentlicht."
+
+calendar:
+  title: "Puja-Kalender"
+  text: "Der Kalender wird aktualisiert, wenn die konkrete Praxis für jede Woche bestätigt wird."
+  placeholder: "Der Google-Kalender von Dzongpa Europa wird hier integriert."
+
+donations:
+  title: "Vorgeschlagene Spende für Rinpoche"
+  intro: "Spenden helfen, Rinpoches Aktivitäten und die Kontinuität der Linienpraktiken zu unterstützen. Die Teilnahme erfordert eine vorherige Anmeldung. Die vorgeschlagene Spende beträgt 8 € pro Person oder 15 € pro Familie."
+  bizum:
+    title: "Bizum (nur Spanien)"
+    text: "Wenn Sie ein spanisches Bankkonto haben, können Sie Ihre Spende über Bizum in Ihrer Banking-App leisten."
+    steps:
+      - "Öffnen Sie Bizum in Ihrer Banking-App."
+      - "Wählen Sie die Option 'Spenden' oder 'NGO-Spende'."
+      - "Geben Sie den Code 06845 ein."
+      - "Wählen Sie 'Asociación Cultural Dzongpa'."
+      - "Geben Sie den Spendenbetrag ein."
+  transfer:
+    title: "Banküberweisung"
+    text: "Sie können auch eine Banküberweisung vornehmen. Falls Ihre Bank es ermöglicht, können Sie eine Sofortüberweisung durchführen."
+    holder: "Asociación Cultural Dzongpa"
+    bank: "Caixa Popular"
+    iban: "ES69 3159 0049 8128 4488 3229"
+    concept: "Puja + Name"
+  card:
+    title: "Kartenzahlung"
+    text: "Sie können Ihre Spende auch per sicherer Kartenzahlung über Stripe leisten. Diese Option ist besonders bequem für Personen außerhalb Spaniens."
+    note: "Kartenzahlungen können Bearbeitungsgebühren anfallen. Falls Sie möchten, können Sie freiwillig einen kleinen zusätzlichen Betrag hinzufügen, um diese zu decken."
+    btn_individual: "Einzelspende · 8 €"
+    btn_family: "Familienspende · 15 €"
+    btn_free: "Freie Spende"
+    url_individual: "#donativo-individual"
+    url_family: "#donativo-familiar"
+    url_free: "#donativo-libre"
+
+newsletter:
+  title: "E-Mail-Benachrichtigungen"
+  text: "Angemeldete Teilnehmer oder Newsletter-Abonnenten erhalten Hinweise und Erinnerungen zu den wöchentlichen Pujas. Wenn die konkrete Praxis bestätigt wird, sendet Dzongpa Europa eine Benachrichtigung mit den entsprechenden Informationen."
+  reminder: "Die Absicht ist, eine Benachrichtigung zu senden, wenn die Puja bestätigt wird, in der Regel 3 bis 5 Tage vorher, und eine Erinnerung an angemeldete Teilnehmer vor der Praxis."

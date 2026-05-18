@@ -606,4 +606,24 @@
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/credits"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/creditos"/>
   </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/en/weekly-pujas</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/fr/weekly-pujas</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/de/weekly-pujas</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/zh/weekly-pujas</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
