@@ -1024,3 +1024,30 @@ p:last-child { margin-bottom: 0; }
 }
 .lang-switcher__menu a:hover { background: var(--c-crema-soft); color: var(--c-granate); }
 .lang-switcher__menu span { color: var(--c-granate); background: var(--c-crema-soft); }
+
+/* ── WCAG AA — Accesibilidad ──────────────────────────────────────────────── */
+
+/* Suprimir outline al hacer clic (ratón), preservarlo para teclado */
+:focus:not(:focus-visible) { outline: none; }
+
+/* Anillo de foco visible para navegación por teclado */
+:focus-visible {
+  outline: 3px solid var(--c-dorado);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Inputs/select/textarea: el indicador es el box-shadow granate ya existente */
+.form__row input:focus-visible,
+.form__row select:focus-visible,
+.form__row textarea:focus-visible {
+  outline: none;
+  border-color: var(--c-granate);
+  box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.18);
+}
+
+/* Área táctil mínima 44×44 px — botones de cookies (era 42 px) */
+.cookie-consent__btn { min-height: 44px; }
+
+/* Skip link: también visible con :focus-visible */
+.skip-link:focus-visible { top: 0; }
