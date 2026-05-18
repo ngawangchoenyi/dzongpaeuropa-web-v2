@@ -43,6 +43,11 @@
   }{% endraw %}
   </script>
 {% endblock %}
+  {% block jsonld %}
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Dzongpa Europa","url":"https://www.dzongpaeuropa.org"}
+  </script>
+  {% endblock %}
 {% block content %}
     <!-- Hero -->
     <section class="hero-banner-image" aria-label="Dzongpa Europa">

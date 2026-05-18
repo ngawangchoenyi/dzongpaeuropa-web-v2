@@ -12,6 +12,20 @@
   .timeline-v2 li strong { display: block; font-family: var(--f-sans); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-granate); margin-bottom: 6px; }
 </style>
 {% endblock %}
+{% block jsonld %}
+{% if data.page.lang == 'es' %}
+  {% set _burl = 'https://www.dzongpaeuropa.org/' + data.page.slug %}
+  {% set _bhome_item = 'https://www.dzongpaeuropa.org/' %}
+  {% set _bhome_name = 'Inicio' %}
+{% else %}
+  {% set _burl = 'https://www.dzongpaeuropa.org/' + data.page.lang + '/' + data.page.slug %}
+  {% set _bhome_item = 'https://www.dzongpaeuropa.org/' + data.page.lang %}
+  {% set _bhome_name = {'en': 'Home', 'fr': 'Accueil', 'de': 'Startseite', 'zh': '首页'}[data.page.lang] %}
+{% endif %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ _bhome_name }}","item":"{{ _bhome_item }}"},{"@type":"ListItem","position":2,"name":"{{ data.header.title | e }}","item":"{{ _burl }}"}]}
+</script>
+{% endblock %}
 {% block content %}
     <section class="page-header">
       <div class="container">

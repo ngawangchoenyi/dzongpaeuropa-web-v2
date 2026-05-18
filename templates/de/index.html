@@ -39,6 +39,11 @@
   }{% endraw %}
   </script>
 {% endblock %}
+  {% block jsonld %}
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Dzongpa Europa","url":"https://www.dzongpaeuropa.org/de"}
+  </script>
+  {% endblock %}
 {% block content %}
     <section class="hero-banner-image" aria-label="Dzongpa Europa">
       <h1 class="visually-hidden">Dzongpa Europa</h1>

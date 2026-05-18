@@ -1,6 +1,22 @@
 {% extends data.page.base %}
 {% set page = data.page %}
-{% block extra_head %}{% endblock %}
+{% block extra_head %}
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+{% endblock %}
+{% block jsonld %}
+{% if data.page.lang == 'es' %}
+  {% set _burl = 'https://www.dzongpaeuropa.org/' + data.page.slug %}
+  {% set _bhome_item = 'https://www.dzongpaeuropa.org/' %}
+  {% set _bhome_name = 'Inicio' %}
+{% else %}
+  {% set _burl = 'https://www.dzongpaeuropa.org/' + data.page.lang + '/' + data.page.slug %}
+  {% set _bhome_item = 'https://www.dzongpaeuropa.org/' + data.page.lang %}
+  {% set _bhome_name = {'en': 'Home', 'fr': 'Accueil', 'de': 'Startseite', 'zh': '首页'}[data.page.lang] %}
+{% endif %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ _bhome_name }}","item":"{{ _bhome_item }}"},{"@type":"ListItem","position":2,"name":"{{ data.header.title | e }}","item":"{{ _burl }}"}]}
+</script>
+{% endblock %}
 {% block content %}
     <section class="page-header">
       <div class="container">
@@ -84,6 +100,7 @@
             <input id="f-priv" name="privacidad" type="checkbox" required>
             <label for="f-priv">{{ data.privacy_label | safe }}</label>
           </div>
+          <div class="h-captcha" data-sitekey="{{ data.hcaptcha_sitekey | default('10000000-ffff-ffff-ffff-000000000001') }}" style="margin-bottom: 16px;"></div>
           <button type="submit" id="submit-btn" class="btn btn--primary">{{ data.submit_text }}</button>
         </form>
         <p id="contact-response-text" style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">{{ data.response_text }}</p>
@@ -105,6 +122,13 @@
 
       if (!form.checkValidity()) {
         form.reportValidity();
+        return;
+      }
+      // hCaptcha validation
+      var hcaptchaResponse = form.querySelector('[name="h-captcha-response"]');
+      if (hcaptchaResponse && !hcaptchaResponse.value) {
+        var cap = form.querySelector('.h-captcha');
+        if (cap) cap.style.outline = '2px solid #c0392b';
         return;
       }
 

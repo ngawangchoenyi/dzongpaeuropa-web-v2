@@ -42,3 +42,6 @@ privacy_label: Ich habe die <a href="/de/privacy">Datenschutzrichtlinie</a> gele
 submit_text: Nachricht senden
 sending_text: Wird gesendet...
 response_text: Wir antworten auf Anfragen in einem Durchschnitt von 3 bis 5 Werktagen.
+
+# hCaptcha: reemplaza con tu sitekey real (hcaptcha.com)
+hcaptcha_sitekey: "10000000-ffff-ffff-ffff-000000000001"

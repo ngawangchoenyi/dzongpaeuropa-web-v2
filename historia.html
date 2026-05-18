@@ -58,7 +58,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260517-analytics">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260518-lang">
 
 <style>
   .historia-foto { border-radius: 12px; box-shadow: 0 12px 32px rgba(43,43,43,.12); width: 100%; height: auto; display: block; margin: 0 auto; }
@@ -70,6 +70,19 @@
   .timeline-v2 li::before { content: ''; position: absolute; left: -37px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--c-granate); border: 3px solid var(--c-fondo-alt); }
   .timeline-v2 li strong { display: block; font-family: var(--f-sans); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-granate); margin-bottom: 6px; }
 </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Asociación Cultural Dzongpa","alternateName":"Dzongpa Europa","url":"https://www.dzongpaeuropa.org","logo":"https://www.dzongpaeuropa.org/assets/img/logo/logo-03-dzongpa-europa-simbolo-avatar.png","email":"secretaria@dzongpaeuropa.org","sameAs":["https://www.facebook.com/profile.php?id=100081268205797"]}
+  </script>
+
+
+
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.dzongpaeuropa.org/"},{"@type":"ListItem","position":2,"name":"Historia de Dzongpa en España","item":"https://www.dzongpaeuropa.org/historia"}]}
+</script>
 
 </head>
 <body>
@@ -472,3 +485,15 @@
       var isOpen = sw.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(isOpen));
       if(isOpen) {
+        var close = function(e){ if(!sw.contains(e.target)){ sw.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); document.removeEventListener('click',close); } };
+        setTimeout(function(){ document.addEventListener('click',close); }, 0);
+      }
+    }
+  </script>
+  <script src="/assets/js/lightbox.js" defer></script>
+  <script src="/assets/js/analytics.js?v=20260517-ga4" defer></script>
+
+
+  <!-- MailerLite: loaded via analytics.js after cookie consent -->
+</body>
+</html>

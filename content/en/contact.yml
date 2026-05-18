@@ -41,3 +41,6 @@ sending_text: Sending...
 response_text: We respond to enquiries within an average of 3 to 5 working days. For
   urgent enquiries related to imminent activities, please indicate this in the subject
   of your message.
+
+# hCaptcha: reemplaza con tu sitekey real (hcaptcha.com)
+hcaptcha_sitekey: "10000000-ffff-ffff-ffff-000000000001"

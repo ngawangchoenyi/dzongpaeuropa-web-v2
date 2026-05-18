@@ -58,7 +58,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260517-analytics">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260518-lang">
+
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Asociación Cultural Dzongpa","alternateName":"Dzongpa Europa","url":"https://www.dzongpaeuropa.org","logo":"https://www.dzongpaeuropa.org/assets/img/logo/logo-03-dzongpa-europa-simbolo-avatar.png","email":"secretaria@dzongpaeuropa.org","sameAs":["https://www.facebook.com/profile.php?id=100081268205797"]}
+  </script>
+
+
+
+
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.dzongpaeuropa.org/"},{"@type":"ListItem","position":2,"name":"Contacto","item":"https://www.dzongpaeuropa.org/contacto"}]}
+</script>
 
 </head>
 <body>
@@ -198,6 +213,7 @@
             <input id="f-priv" name="privacidad" type="checkbox" required>
             <label for="f-priv">He leído y acepto la <a href="/privacidad">política de privacidad</a>.</label>
           </div>
+          <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001" style="margin-bottom: 16px;"></div>
           <button type="submit" id="submit-btn" class="btn btn--primary">Enviar mensaje</button>
         </form>
         <p id="contact-response-text" style="font-size: 0.88rem; color: var(--c-texto-suave); margin-top: 16px;">Respondemos a las consultas en un plazo medio de 3 a 5 días laborables. Para consultas urgentes relacionadas con actividades inminentes, indícalo en el asunto del mensaje.</p>
@@ -277,3 +293,75 @@
       var isOpen = sw.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', String(isOpen));
       if(isOpen) {
+        var close = function(e){ if(!sw.contains(e.target)){ sw.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); document.removeEventListener('click',close); } };
+        setTimeout(function(){ document.addEventListener('click',close); }, 0);
+      }
+    }
+  </script>
+  <script src="/assets/js/lightbox.js" defer></script>
+  <script src="/assets/js/analytics.js?v=20260517-ga4" defer></script>
+
+<script>
+  (function() {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submit-btn');
+      var ok = document.getElementById('form-ok');
+      var err = document.getElementById('form-err');
+      var originalText = btn.textContent;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      // hCaptcha validation
+      var hcaptchaResponse = form.querySelector('[name="h-captcha-response"]');
+      if (hcaptchaResponse && !hcaptchaResponse.value) {
+        var cap = form.querySelector('.h-captcha');
+        if (cap) cap.style.outline = '2px solid #c0392b';
+        return;
+      }
+
+      if (ok) ok.style.display = 'none';
+      if (err) err.style.display = 'none';
+      btn.disabled = true;
+      btn.setAttribute('aria-busy', 'true');
+      btn.textContent = form.getAttribute('data-sending-text') || originalText;
+      try {
+        var formData = new FormData(form);
+        formData.append('page_url', window.location.href);
+        var res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        var json = await res.json();
+        if (json.success) {
+          ok.style.display = 'block';
+          form.style.display = 'none';
+          ok.focus();
+        } else {
+          err.style.display = 'block';
+          err.focus();
+          btn.disabled = false;
+          btn.removeAttribute('aria-busy');
+          btn.textContent = originalText;
+        }
+      } catch(err) {
+        document.getElementById('form-err').style.display = 'block';
+        document.getElementById('form-err').focus();
+        btn.disabled = false;
+        btn.removeAttribute('aria-busy');
+        btn.textContent = originalText;
+      }
+    });
+  })();
+</script>
+
+
+  <!-- MailerLite: loaded via analytics.js after cookie consent -->
+</body>
+</html>

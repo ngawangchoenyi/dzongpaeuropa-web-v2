@@ -1005,7 +1005,11 @@ p:last-child { margin-bottom: 0; }
   z-index: 999;
   overflow: hidden;
 }
-.lang-switcher.is-open .lang-switcher__menu { display: block; }
+.lang-switcher.is-open .lang-switcher__menu,
+.lang-switcher:hover .lang-switcher__menu,
+.lang-switcher:focus-within .lang-switcher__menu {
+  display: block;
+}
 .lang-switcher__menu a,
 .lang-switcher__menu span {
   display: block;

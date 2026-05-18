@@ -35,3 +35,6 @@ privacy_label: 我已阅读并接受<a href="/zh/privacy">隐私政策</a>。
 submit_text: 发送消息
 sending_text: 发送中...
 response_text: 我们平均在3至5个工作日内回复询问。
+
+# hCaptcha: reemplaza con tu sitekey real (hcaptcha.com)
+hcaptcha_sitekey: "10000000-ffff-ffff-ffff-000000000001"

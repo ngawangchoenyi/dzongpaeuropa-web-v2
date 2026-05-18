@@ -40,3 +40,6 @@ privacy_label: J'ai lu et j'accepte la <a href="/fr/privacy">politique de confid
 submit_text: Envoyer le message
 sending_text: Envoi...
 response_text: Nous répondons aux demandes dans un délai moyen de 3 à 5 jours ouvrables.
+
+# hCaptcha: reemplaza con tu sitekey real (hcaptcha.com)
+hcaptcha_sitekey: "10000000-ffff-ffff-ffff-000000000001"
