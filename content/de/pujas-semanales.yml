@@ -87,8 +87,8 @@ donations:
     btn_individual: "Einzelspende · 8 €"
     btn_family: "Familienspende · 15 €"
     btn_free: "Freie Spende"
-    url_individual: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=8&locale=de"
-    url_family: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?prefilled_quantity=15&locale=de"
+    url_individual: "https://donate.stripe.com/00wdR8eMl2xn6Qaa1Za3u06?locale=de"
+    url_family: "https://donate.stripe.com/3cIaEW0Vvc7Xcaub63a3u07?locale=de"
     url_free: "https://buy.stripe.com/fZuaEW1Zzc7X2zU5LJa3u00?locale=de"
 
 newsletter:
