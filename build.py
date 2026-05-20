@@ -181,8 +181,7 @@ def load_shared_content(filename):
     yaml_path = os.path.join(CONTENT_DIR, 'shared', filename)
     if not os.path.exists(yaml_path):
         return None
-    with open(yaml_path, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
+    data = yaml.safe_load(read_yaml_text(yaml_path))
     return data or {}
 
 
@@ -191,9 +190,18 @@ def load_yaml_content(lang, page_stem):
     yaml_path = os.path.join(CONTENT_DIR, lang, f'{page_stem}.yml')
     if not os.path.exists(yaml_path):
         return None
-    with open(yaml_path, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
+    data = yaml.safe_load(read_yaml_text(yaml_path))
     return data
+
+
+def read_yaml_text(path):
+    """Lee YAML y elimina caracteres de control no permitidos."""
+    with open(path, 'r', encoding='utf-8') as f:
+        text = f.read()
+    return ''.join(
+        char for char in text
+        if char in '\n\r\t' or ord(char) >= 32 and not 127 <= ord(char) <= 159
+    )
 
 
 def render_yaml_page(lang, page_stem):
