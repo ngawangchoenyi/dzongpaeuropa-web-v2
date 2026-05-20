@@ -2,3 +2,9 @@
 __pycache__/
 *.pyc
 .fuse_hidden*
+
+# Apps Script local secrets
+.clasp.json
+ops/apps-script-pujas/.clasp.json
+ops/apps-script-pujas/backups/
+apps-script-pujas-backups/
