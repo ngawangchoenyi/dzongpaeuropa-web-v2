@@ -47,18 +47,24 @@
       <div class="container" style="margin-top: 60px; padding: 40px; background: var(--c-crema); border-radius: 12px; text-align: center;">
         <h2 style="margin-top:0;">{% if data.page.lang == 'es' %}Pujas semanales con Rinpoche{% elif data.page.lang == 'en' %}Weekly Pujas with Rinpoche{% elif data.page.lang == 'fr' %}Pujas hebdomadaires avec Rinpoche{% elif data.page.lang == 'de' %}Wöchentliche Pujas mit Rinpoche{% else %}仁波切每周法事{% endif %}</h2>
         <p style="color:var(--c-texto-suave); margin-bottom:24px;">{% if data.page.lang == 'es' %}Cada sábado, desde el centro Dzongpa de Taiwán, S. Em.ª Gongkar Dorje Dhenpa Rinpoche realiza diferentes pujas y prácticas del linaje. La práctica concreta suele comunicarse con unos días de antelación. La participación requiere registro previo.{% elif data.page.lang == 'en' %}Every Saturday, from the Dzongpa centre in Taiwan, H.E. Gongkar Dorje Dhenpa Rinpoche leads different pujas and lineage practices. The specific practice is usually announced a few days in advance. Prior registration is required.{% elif data.page.lang == 'fr' %}Chaque samedi, depuis le centre Dzongpa de Taïwan, S.E. Gongkar Dorje Dhenpa Rinpoche dirige différentes pujas et pratiques du lignage. La pratique concrète est généralement communiquée quelques jours à l'avance. Une inscription préalable est requise.{% elif data.page.lang == 'de' %}Jeden Samstag führt S.E. Gongkar Dorje Dhenpa Rinpoche vom Dzongpa-Zentrum in Taiwan verschiedene Pujas und Linienübungen durch. Die konkrete Praxis wird in der Regel einige Tage vorher bekannt gegeben. Eine Voranmeldung ist erforderlich.{% else %}每周六，贡卡多杰登巴仁波切从台湾龙巴中心主持不同的法事和传承修法。具体修法通常提前几天公布。参加前需预先登记。{% endif %}</p>
-        {% if data.page.lang == 'es' %}<a href="/pujas-semanales" class="btn btn--primary">Ver pujas semanales</a>
-        {% elif data.page.lang == 'en' %}<a href="/en/weekly-pujas" class="btn btn--primary">View weekly pujas</a>
-        {% elif data.page.lang == 'fr' %}<a href="/fr/weekly-pujas" class="btn btn--primary">Voir les pujas hebdomadaires</a>
-        {% elif data.page.lang == 'de' %}<a href="/de/weekly-pujas" class="btn btn--primary">Wöchentliche Pujas ansehen</a>
-        {% else %}<a href="/zh/weekly-pujas" class="btn btn--primary">查看每周法事</a>{% endif %}
-      </div>
-
-      <!-- Prácticas y deidades -->
-      <div class="container" style="margin-top: 32px; padding: 40px; background: var(--c-crema); border-radius: 12px; text-align: center;">
-        <h2 style="margin-top:0;">{% if data.page.lang == 'es' %}Prácticas y deidades del linaje{% elif data.page.lang == 'en' %}Lineage Practices & Deities{% elif data.page.lang == 'fr' %}Pratiques et divinités du lignage{% elif data.page.lang == 'de' %}Linienübungen und Gottheiten{% else %}传承修法与本尊{% endif %}</h2>
-        <p style="color:var(--c-texto-suave); margin-bottom:24px;">{% if data.page.lang == 'es' %}Conoce las deidades y prácticas del linaje Sakya Dzongpa: Tara Verde, Tara Blanca, Ganapati, Mahakala, Chenrezig, Buda de la Medicina y muchas más. Cada práctica incluye su descripción, beneficios tradicionales y contexto espiritual.{% elif data.page.lang == 'en' %}Discover the deities and practices of the Sakya Dzongpa lineage: Green Tara, White Tara, Ganapati, Mahakala, Chenrezig, Medicine Buddha and many more. Each practice includes its description, traditional benefits and spiritual context.{% elif data.page.lang == 'fr' %}Découvrez les divinités et pratiques du lignage Sakya Dzongpa : Tara Verte, Tara Blanche, Ganapati, Mahakala, Chenrezig, Bouddha de Médecine et bien d'autres. Chaque pratique comprend sa description, ses bénéfices traditionnels et son contexte spirituel.{% elif data.page.lang == 'de' %}Entdecken Sie die Gottheiten und Praktiken der Sakya-Dzongpa-Linie: Grüne Tara, Weiße Tara, Ganapati, Mahakala, Chenrezig, Medizin-Buddha und viele mehr. Jede Praxis umfasst ihre Beschreibung, traditionellen Nutzen und spirituellen Kontext.{% else %}了解萨迦龙巴传承的本尊与修法：绿度母、白度母、象鼻财神、大黑天、观世音、药师佛等。每项修法均包含描述、传统利益与修行背景。{% endif %}</p>
-        <a href="/deidades" class="btn btn--primary">{% if data.page.lang == 'es' %}Ver prácticas y deidades{% elif data.page.lang == 'en' %}View practices & deities{% elif data.page.lang == 'fr' %}Voir les pratiques et divinités{% elif data.page.lang == 'de' %}Übungen und Gottheiten ansehen{% else %}查看修法与本尊{% endif %}</a>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+          {% if data.page.lang == 'es' %}
+          <a href="/pujas-semanales" class="btn btn--primary">Ver pujas semanales</a>
+          <a href="/deidades" class="btn btn--outline">Prácticas y deidades</a>
+          {% elif data.page.lang == 'en' %}
+          <a href="/en/weekly-pujas" class="btn btn--primary">View weekly pujas</a>
+          <a href="/deidades" class="btn btn--outline">Practices &amp; deities</a>
+          {% elif data.page.lang == 'fr' %}
+          <a href="/fr/weekly-pujas" class="btn btn--primary">Voir les pujas hebdomadaires</a>
+          <a href="/deidades" class="btn btn--outline">Pratiques et divinités</a>
+          {% elif data.page.lang == 'de' %}
+          <a href="/de/weekly-pujas" class="btn btn--primary">Wöchentliche Pujas ansehen</a>
+          <a href="/deidades" class="btn btn--outline">Übungen und Gottheiten</a>
+          {% else %}
+          <a href="/zh/weekly-pujas" class="btn btn--primary">查看每周法事</a>
+          <a href="/deidades" class="btn btn--outline">修法与本尊</a>
+          {% endif %}
+        </div>
       </div>
 
       <div class="container" style="margin-top: 48px;">
