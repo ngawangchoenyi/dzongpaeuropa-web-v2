@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% set og_image = page.og_image | default('https://www.dzongpaeuropa.org/assets/img/og/og-dzongpa-europa-institucional-V4.jpg') %}
   {% set og_image_alt = page.og_image_alt | default('Dzongpa Europa - Asociación Cultural Dzongpa') %}
-  {% if page.slug != '404' %}
+  {% if page.slug != '404' and (page.translations_available | default(true)) %}
   <link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org{% if page.slug %}/{{ page.slug }}{% else %}/{% endif %}">
   <link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en{% if page.en_slug | default('') %}/{{ page.en_slug }}{% endif %}">
   <link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr{% if page.en_slug | default('') %}/{{ page.en_slug }}{% endif %}">
@@ -92,6 +92,7 @@
           <li><a href="/contacto" {% if page.active == 'contacto' %}aria-current="page"{% endif %}>Contacto</a></li>
           <li><a href="/hazte-socio" class="nav__cta" {% if page.active == 'hazte-socio' %}aria-current="page"{% endif %}>Hazte socio</a></li>
         </ul>
+        {% if page.translations_available | default(true) %}
         <div class="lang-switcher" id="lang-switcher">
           <button class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="toggleLang(this)">ES &#9662;</button>
           <div class="lang-switcher__menu">
@@ -102,6 +103,7 @@
             <a href="/zh/{{ page.en_slug | default('') }}">ZH</a>
           </div>
         </div>
+        {% endif %}
       </nav>
     </div>
   </header>
@@ -124,6 +126,7 @@
           <a href="/rinpoche">Rinpoche</a>
           <a href="/linaje">Linaje</a>
           <a href="/actividades">Actividades</a>
+          <a href="/deidades">Prácticas y deidades</a>
         </div>
         <div>
           <h4>Participar</h4>

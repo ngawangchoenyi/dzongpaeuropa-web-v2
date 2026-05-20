@@ -1051,3 +1051,179 @@ p:last-child { margin-bottom: 0; }
 
 /* Skip link: también visible con :focus-visible */
 .skip-link:focus-visible { top: 0; }
+
+/* ==========================================================
+   Deidades y prácticas
+   ========================================================== */
+
+.deities-page .lead {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.deities-note {
+  margin: 28px 0 0;
+  padding: 22px 24px;
+  border: 1px solid var(--c-dorado-soft);
+  background: var(--c-crema);
+  border-radius: var(--radius);
+}
+
+.deities-note p {
+  margin: 0;
+  color: var(--c-texto);
+  font-size: 0.98rem;
+}
+
+.deities-note p + p {
+  margin-top: 10px;
+}
+
+.deities-list {
+  max-width: 980px;
+  margin-top: 44px;
+}
+
+.deity-card {
+  border: 1px solid var(--c-borde);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.deity-card[open] {
+  border-color: var(--c-dorado);
+  box-shadow: var(--shadow-md);
+}
+
+.deity-card summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 24px;
+}
+
+.deity-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.deity-card summary::after {
+  content: "+";
+  float: right;
+  color: var(--c-granate);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-left: 18px;
+}
+
+.deity-card[open] summary::after {
+  content: "−";
+}
+
+.deity-card__summary {
+  display: block;
+  padding-right: 34px;
+}
+
+.deity-card__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.deity-card__title {
+  font-family: var(--f-serif);
+  font-size: clamp(1.35rem, 2vw, 1.72rem);
+  line-height: 1.15;
+  color: var(--c-azul);
+}
+
+.deity-card__badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 9px;
+  border: 1px solid var(--c-dorado-soft);
+  border-radius: 999px;
+  color: var(--c-granate);
+  background: var(--c-crema);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.deity-card__badge--restricted {
+  color: #fff;
+  background: var(--c-granate);
+  border-color: var(--c-granate);
+}
+
+.deity-card__short {
+  display: block;
+  color: var(--c-texto-suave);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.deity-card__body {
+  border-top: 1px solid var(--c-borde);
+  padding: 24px;
+}
+
+.deity-card__body p {
+  margin: 0 0 14px;
+  line-height: 1.72;
+}
+
+.deity-card__body h3 {
+  margin: 22px 0 10px;
+  font-size: 1.05rem;
+  color: var(--c-azul);
+}
+
+.deity-card__body ul {
+  margin: 0 0 16px;
+  padding-left: 1.25em;
+}
+
+.deity-card__body li + li {
+  margin-top: 6px;
+}
+
+.deity-card__subtitle {
+  color: var(--c-granate);
+  font-weight: 700;
+}
+
+.deity-card__restricted {
+  padding: 14px 16px;
+  border-left: 4px solid var(--c-granate);
+  background: var(--c-crema);
+  color: var(--c-texto);
+}
+
+.deity-card__meta {
+  font-size: 0.9rem;
+  color: var(--c-texto-suave);
+}
+
+@media (max-width: 640px) {
+  .deity-card summary,
+  .deity-card__body {
+    padding: 18px;
+  }
+
+  .deity-card__heading {
+    display: block;
+  }
+
+  .deity-card__badge {
+    margin-top: 8px;
+  }
+}

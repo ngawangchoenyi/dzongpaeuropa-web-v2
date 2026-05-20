@@ -83,6 +83,7 @@ YAML_PAGE_MAP = {
     'de/contact.html':    ('de', 'contact'),
     'zh/contact.html':    ('zh', 'contact'),
     'pujas-semanales.html':    ('es', 'pujas-semanales'),
+    'deidades.html':          ('es', 'deidades'),
     'en/weekly-pujas.html':    ('en', 'pujas-semanales'),
     'fr/weekly-pujas.html':    ('fr', 'pujas-semanales'),
     'de/weekly-pujas.html':    ('de', 'pujas-semanales'),
@@ -101,6 +102,7 @@ PAGES = [
     'gracias.html',
     'contacto.html',
     'pujas-semanales.html',
+    'deidades.html',
     'aviso-legal.html',
     'privacidad.html',
     'creditos.html',
@@ -204,6 +206,37 @@ def read_yaml_text(path):
     )
 
 
+
+
+def hydrate_deidades(data):
+    """Mezcla metadatos compartidos en la página pública de deidades."""
+    shared = load_shared_content('deidades-meta.yml') or {}
+    meta_items = shared.get('deidades', [])
+    meta_by_id = {item.get('id'): item for item in meta_items}
+    names_by_id = {
+        item.get('id'): item.get('nombre')
+        for item in data.get('deidades', [])
+    }
+    categories = shared.get('categorias', {})
+    disclaimers = shared.get('disclaimers', {})
+
+    for item in data.get('deidades', []):
+        meta = meta_by_id.get(item.get('id'), {})
+        for key, value in meta.items():
+            item.setdefault(key, value)
+
+        category_key = item.get('categoria_key')
+        item['categoria_label'] = categories.get(category_key, category_key or '')
+
+        disclaimer_id = item.get('disclaimer_id')
+        if disclaimer_id:
+            item['disclaimer'] = disclaimers.get(disclaimer_id, '')
+
+        item['practicas_relacionadas_nombres'] = [
+            names_by_id.get(related_id, related_id)
+            for related_id in (item.get('practicas_relacionadas') or [])
+        ]
+
 def render_yaml_page(lang, page_stem):
     """Renderiza una página usando YAML + template único en templates/pages/."""
     data = load_yaml_content(lang, page_stem)
@@ -218,6 +251,9 @@ def render_yaml_page(lang, page_stem):
     puja_shared = load_shared_content('puja-activa.yml')
     if puja_shared:
         data['active_puja'] = puja_shared.get('active_puja', puja_shared)
+
+    if page_stem == 'deidades':
+        hydrate_deidades(data)
 
     template = env.get_template(f'pages/{page_stem}.html')
     return template.render(data=data)

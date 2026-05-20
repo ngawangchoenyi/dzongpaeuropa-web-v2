@@ -1,0 +1,204 @@
+categorias:
+  riqueza: "Riqueza y prosperidad"
+  puja_fuego: "Puja de fuego"
+  protector: "Protector"
+  protectora: "Protectora"
+  buda: "Buda"
+  bodhisattva: "Bodhisattva"
+  tara: "Tara"
+  proteccion: "Protección"
+  restringida: "Práctica restringida"
+  practica_complementaria: "Práctica complementaria"
+disclaimers:
+  restringida: "Esta práctica se presenta solo con finalidad informativa. Para realizarla se requiere transmisión, permiso o instrucciones adecuadas dentro de la tradición."
+deidades:
+  -
+    id: "ganapati-blanco-dzongpa"
+    categoria_key: "riqueza"
+    nivel_acceso: "publico"
+    aliases:
+      - "Ganapati Blanco"
+      - "Dzongpa Ganapati"
+    practicas_relacionadas:
+      - "ganapati-rojo"
+      - "vajradaka-fire-puja"
+  -
+    id: "ganapati-rojo"
+    categoria_key: "riqueza"
+    nivel_acceso: "publico"
+    aliases:
+      - "Red Ganapati"
+    practicas_relacionadas:
+      - "ganapati-blanco-dzongpa"
+  -
+    id: "vajradaka-fire-puja"
+    categoria_key: "puja_fuego"
+    nivel_acceso: "publico"
+    aliases:
+      - "Vajradaka"
+      - "Fire Puja"
+      - "Puja de fuego Vajradaka"
+    practicas_relacionadas:
+      - "ganapati-blanco-dzongpa"
+      - "brahmanrupa-mahakala"
+  -
+    id: "brahmanrupa-mahakala"
+    categoria_key: "protector"
+    nivel_acceso: "publico"
+    aliases:
+      - "Brahmanrupa"
+      - "Mahakala Brahmanrupa"
+    practicas_relacionadas:
+      - "vajradaka-fire-puja"
+  -
+    id: "tsog-offering"
+    categoria_key: "practica_complementaria"
+    nivel_acceso: "publico"
+    aliases:
+      - "Tsog"
+      - "Ofrenda de Tsog"
+    practicas_relacionadas: []
+  -
+    id: "palden-lhamo"
+    categoria_key: "protectora"
+    nivel_acceso: "publico"
+    aliases:
+      - "Dinuma"
+      - "Mahakali"
+    practicas_relacionadas:
+      - "begtse-prana-atma"
+  -
+    id: "buda-akshobhya"
+    categoria_key: "buda"
+    nivel_acceso: "publico"
+    aliases:
+      - "Akshobhya"
+    practicas_relacionadas:
+      - "zambala-negro"
+  -
+    id: "chenrezig"
+    categoria_key: "bodhisattva"
+    nivel_acceso: "publico"
+    aliases:
+      - "Avalokiteshvara"
+      - "Avalokiteshvara de cuatro brazos"
+    practicas_relacionadas:
+      - "tara-verde"
+      - "tara-blanca"
+  -
+    id: "tara-verde"
+    categoria_key: "tara"
+    nivel_acceso: "publico"
+    aliases:
+      - "Green Tara"
+    practicas_relacionadas:
+      - "tara-blanca"
+      - "chenrezig"
+  -
+    id: "tara-blanca"
+    categoria_key: "tara"
+    nivel_acceso: "publico"
+    aliases:
+      - "White Tara"
+    practicas_relacionadas:
+      - "tara-verde"
+      - "buda-medicina"
+  -
+    id: "vasudhara-roja"
+    categoria_key: "riqueza"
+    nivel_acceso: "publico"
+    aliases:
+      - "Marpo Norgyunma"
+      - "Vasudhara Roja"
+    practicas_relacionadas:
+      - "zambala-negro"
+      - "ganapati-rojo"
+  -
+    id: "vajrapani"
+    categoria_key: "bodhisattva"
+    nivel_acceso: "publico"
+    aliases:
+      - "Vajrapani"
+    practicas_relacionadas:
+      - "garuda"
+  -
+    id: "buda-medicina"
+    categoria_key: "buda"
+    nivel_acceso: "publico"
+    aliases:
+      - "Medicine Buddha"
+      - "Bhaisajyaguru"
+    practicas_relacionadas:
+      - "tara-blanca"
+  -
+    id: "dhvajagrakeyura"
+    categoria_key: "proteccion"
+    nivel_acceso: "publico"
+    aliases:
+      - "Dhvajagrakeyira"
+    practicas_relacionadas:
+      - "madre-planetas"
+  -
+    id: "garuda"
+    categoria_key: "proteccion"
+    nivel_acceso: "publico"
+    aliases:
+      - "Garuda"
+    practicas_relacionadas:
+      - "vajrapani"
+  -
+    id: "zambala-negro"
+    categoria_key: "riqueza"
+    nivel_acceso: "publico"
+    aliases:
+      - "Jambhala Negro"
+      - "Black Zambala"
+    practicas_relacionadas:
+      - "buda-akshobhya"
+      - "vasudhara-roja"
+  -
+    id: "yogu-three-sisters"
+    categoria_key: "riqueza"
+    nivel_acceso: "publico"
+    aliases:
+      - "Yugu Chesum"
+      - "Yogu Three Sisters"
+      - "Tres Hermanas de la Riqueza"
+    practicas_relacionadas:
+      - "zambala-negro"
+      - "vasudhara-roja"
+  -
+    id: "madre-planetas"
+    categoria_key: "proteccion"
+    nivel_acceso: "publico"
+    aliases:
+      - "Madre de los Planetas"
+    practicas_relacionadas:
+      - "dhvajagrakeyura"
+  -
+    id: "dakini-blanca-rostro-leon"
+    categoria_key: "restringida"
+    nivel_acceso: "restringido"
+    aliases:
+      - "Dakini Blanca Rostro de León"
+      - "White Lion-Faced Dakini"
+    practicas_relacionadas: []
+    disclaimer_id: "restringida"
+  -
+    id: "begtse-prana-atma"
+    categoria_key: "protector"
+    nivel_acceso: "publico"
+    aliases:
+      - "Begtse"
+      - "Prana Atma"
+    practicas_relacionadas:
+      - "palden-lhamo"
+  -
+    id: "manjushri-negro"
+    categoria_key: "proteccion"
+    nivel_acceso: "publico"
+    aliases:
+      - "Black Manjushri"
+      - "Manjushri Negro"
+    practicas_relacionadas:
+      - "vajrapani"

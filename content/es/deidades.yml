@@ -1,0 +1,298 @@
+page:
+  lang: "es"
+  base: "_base.html"
+  title: "Prácticas y deidades · Dzongpa Europa"
+  description: "Catálogo divulgativo de prácticas, deidades y pujas del linaje Dzongpa, con contexto tradicional y notas editoriales."
+  slug: "deidades"
+  en_slug: ""
+  active: "actividades"
+  robots: "index, follow"
+  translations_available: false
+header:
+  title: "Prácticas y deidades del linaje Dzongpa"
+  lede: "Una guía divulgativa para comprender el sentido tradicional de las prácticas y pujas habituales."
+intro: "Este catálogo reúne descripciones públicas de prácticas y deidades asociadas al linaje Sakya Dzongpa. Su finalidad es ofrecer contexto cultural, histórico y devocional a las personas que participan en las actividades de Dzongpa Europa."
+nota_contexto: "Las expresiones tradicionales sobre protección, obstáculos, longevidad, purificación o riqueza se presentan en su marco religioso y simbólico propio. No constituyen promesas médicas, psicológicas, económicas ni sustituyen atención profesional."
+nota_restringidas: "Algunas prácticas requieren transmisión, permiso o instrucciones específicas de un maestro cualificado. Cuando una ficha aparece marcada como restringida, se ofrece solo información contextual."
+labels:
+  beneficios: "Beneficios tradicionales asociados"
+  aliases: "También conocida como"
+  relacionadas: "Prácticas relacionadas"
+  restringida: "Práctica restringida"
+  ver_mas: "Ver descripción"
+deidades:
+  -
+    id: "ganapati-blanco-dzongpa"
+    orden: 1
+    nombre: "Ganapati Blanco Dzongpa"
+    subtitulo: "Práctica poco común de prosperidad, mérito y condiciones favorables"
+    descripcion_corta: "Ganapati Blanco Dzongpa es presentado en la tradición como una práctica poco común asociada al incremento del mérito, la prosperidad y las condiciones favorables para la vida y la práctica del Dharma."
+    descripcion_larga:
+      - "En el contexto de la subtradición Dzongpa del linaje Sakya, Ganapati Blanco se contempla como una deidad vinculada a la eliminación de obstáculos y a la reunión de condiciones favorables. Su práctica no debe entenderse únicamente en términos materiales, sino como una forma de armonizar las circunstancias externas e internas para que la vida espiritual pueda desarrollarse con estabilidad. Tradicionalmente se asocia con la acumulación de mérito, la mejora de recursos, la buena fortuna y la capacidad de llevar adelante proyectos virtuosos."
+    beneficios:
+      - "Favorecer la acumulación de mérito y sabiduría."
+      - "Ayudar a reunir condiciones favorables para la práctica y las actividades de Dharma."
+      - "Disipar obstáculos relacionados con la escasez, la falta de recursos o la inestabilidad."
+      - "Apoyar proyectos personales o comunitarios orientados al beneficio de los seres."
+  -
+    id: "ganapati-rojo"
+    orden: 2
+    nombre: "Ganapati Rojo"
+    subtitulo: "Energía de magnetización, auspicio y actividad poderosa"
+    descripcion_corta: "Ganapati Rojo puede presentarse como una expresión de actividad poderosa y magnetizadora, vinculada a remover obstáculos y reunir condiciones de éxito y plenitud."
+    descripcion_larga:
+      - "Cuando aparece en el contexto de las actividades Dzongpa, Ganapati Rojo puede explicarse de manera sencilla como una práctica orientada a transformar obstáculos y reunir energía auspiciosa. En el budismo vajrayana, las formas rojas suelen relacionarse con la actividad de magnetización: atraer condiciones favorables, armonizar relaciones y reunir recursos para fines virtuosos. Para el público general, conviene presentarlo como una práctica que ayuda a crear conexión, impulso y dirección positiva en la vida y en la práctica."
+    beneficios:
+      - "Atraer condiciones favorables para actividades virtuosas."
+      - "Transformar obstáculos en impulso positivo."
+      - "Favorecer la conexión, la armonía y la continuidad de proyectos."
+      - "Apoyar la actividad del Dharma y el bienestar de la comunidad."
+  -
+    id: "vajradaka-fire-puja"
+    orden: 3
+    nombre: "Vajradaka Fire Puja"
+    subtitulo: "Puja de fuego de purificación y transformación de obstáculos"
+    descripcion_corta: "La Puja de Fuego de Vajradaka se presenta como una práctica de purificación profunda, asociada a la limpieza del karma negativo y la eliminación de obstáculos internos y externos."
+    descripcion_larga:
+      - "La Puja de Fuego de Vajradaka ocupa un lugar importante dentro de las actividades rituales del linaje Dzongpa. Según la tradición transmitida, el fundador del linaje Dzongpa, el Primer Venerable Gongkar Namgyal, practicaba Vajradaka diariamente. La práctica del fuego expresa la transformación: aquello que oscurece la mente, perturba la paz interior o bloquea el camino espiritual se ofrece al fuego de la sabiduría para ser purificado. Para un público general, puede explicarse como una ceremonia que simboliza la limpieza de hábitos negativos, obstáculos emocionales y condiciones adversas, abriendo espacio para la calma, la claridad y el progreso espiritual."
+    beneficios:
+      - "Purificar karma negativo y tendencias que perturban la mente."
+      - "Eliminar obstáculos internos y externos."
+      - "Favorecer la paz mental, la tranquilidad y la continuidad de la práctica."
+      - "Aumentar mérito y sabiduría cuando se realiza junto a otras prácticas del linaje."
+  -
+    id: "brahmanrupa-mahakala"
+    orden: 4
+    nombre: "Brahmanrupa Mahakala"
+    subtitulo: "Protector del Dharma y apoyo especial del linaje Dzongpa"
+    descripcion_corta: "Brahmanrupa Mahakala es un protector del Dharma asociado a la protección del linaje, la eliminación de obstáculos y la restauración de condiciones auspiciosas."
+    descripcion_larga:
+      - "Brahmanrupa Mahakala es una forma protectora vinculada a Mahakala y ocupa un lugar especialmente significativo en la tradición Dzongpa. Se le describe como un protector que mantiene una conexión sagrada poco común con las sucesivas encarnaciones de Dorje Dhenpa Rinpoche y con los discípulos del linaje. Su función tradicional es proteger el Dharma, apartar obstáculos, sostener la práctica y favorecer que las bendiciones maduren rápidamente. Para una página web abierta, conviene explicar que las prácticas de protectores no se basan en el miedo, sino en la confianza en las cualidades despiertas que protegen la virtud, la claridad y el compromiso espiritual."
+    beneficios:
+      - "Disipar obstáculos y dificultades."
+      - "Proteger la práctica, el linaje y la comunidad."
+      - "Atraer condiciones auspiciosas y buena fortuna según la tradición."
+      - "Apoyar la restauración de compromisos espirituales cuando se practica con Tsog."
+  -
+    id: "tsog-offering"
+    orden: 5
+    nombre: "Tsog Offering"
+    subtitulo: "Ofrenda de reunión, mérito y restauración de samayas"
+    descripcion_corta: "El Tsog es una ofrenda vajrayana que reúne a la comunidad para acumular mérito, restaurar compromisos y renovar la conexión con el maestro, el linaje y la práctica."
+    descripcion_larga:
+      - "La ofrenda de Tsog es una práctica de reunión y reparación espiritual. En el vajrayana, se entiende como una forma de acumular mérito y sabiduría, purificar faltas, restaurar samayas o compromisos espirituales, y fortalecer la conexión con el maestro y el linaje. Para un público general, puede describirse como una ceremonia de ofrecimiento y reconciliación interior, donde la comunidad participa con respeto, gratitud y aspiración de beneficiar a todos los seres."
+    beneficios:
+      - "Acumular mérito y sabiduría."
+      - "Restaurar compromisos espirituales dañados."
+      - "Fortalecer la relación con el maestro, el linaje y la comunidad."
+      - "Transformar la ofrenda en una práctica de generosidad y purificación."
+  -
+    id: "palden-lhamo"
+    orden: 6
+    nombre: "Palden Lhamo / Dinuma / Mahakali"
+    subtitulo: "Protectora femenina de sabiduría y actividad rápida"
+    descripcion_corta: "Palden Lhamo, también presentada como Dinuma o Mahakali en algunos anuncios, es una protectora femenina asociada a la sabiduría, la protección rápida y la eliminación de obstáculos."
+    descripcion_larga:
+      - "Palden Lhamo es una protectora femenina de gran importancia en el budismo tibetano. En los materiales Dzongpa se presenta como una manifestación poderosa de sabiduría protectora, capaz de responder rápidamente para auxiliar a los seres en dificultad. Su energía expresa la protección activa: disipar obstáculos, cortar condiciones adversas y sostener la práctica espiritual y los asuntos virtuosos. En una web para público general, puede explicarse como una figura que simboliza la fuerza compasiva de la sabiduría cuando actúa para proteger el Dharma y ayudar a los practicantes a superar circunstancias difíciles."
+    beneficios:
+      - "Eliminar obstáculos y condiciones adversas."
+      - "Proteger la práctica y las actividades del Dharma."
+      - "Favorecer paz, estabilidad y progreso armonioso."
+      - "Aumentar mérito y sabiduría cuando se combina con puja de fuego."
+  -
+    id: "buda-akshobhya"
+    orden: 7
+    nombre: "Buda Akshobhya"
+    subtitulo: "Purificación profunda y transformación del karma negativo"
+    descripcion_corta: "Akshobhya es un Buda asociado a la purificación profunda, especialmente de acciones negativas graves y tendencias que conducen a estados de sufrimiento."
+    descripcion_larga:
+      - "Buda Akshobhya representa la mente inamovible, clara y libre de agitación. En las prácticas Dzongpa mencionadas, se destaca su poder de purificación en tiempos difíciles. Su práctica se asocia con limpiar acciones negativas, purificar hábitos dañinos y beneficiar a los seres fallecidos, ayudándolos a evitar renacimientos inferiores según la tradición budista. Para el público general, puede explicarse como una práctica de reconciliación con el propio pasado y de transformación de la negatividad en claridad."
+    beneficios:
+      - "Purificar karma negativo y hábitos dañinos."
+      - "Beneficiar a personas fallecidas mediante recitación y dedicación."
+      - "Sanar la relación con acciones o palabras negativas del pasado."
+      - "Favorecer una mente más estable, clara e inamovible."
+  -
+    id: "chenrezig"
+    orden: 8
+    nombre: "Chenrezig / Avalokiteshvara de cuatro brazos"
+    subtitulo: "Buda de la gran compasión"
+    descripcion_corta: "Chenrezig, Avalokiteshvara de cuatro brazos, encarna la compasión ilimitada de todos los Budas y la aspiración de liberar a todos los seres del sufrimiento."
+    descripcion_larga:
+      - "Chenrezig o Avalokiteshvara es una de las figuras más queridas del budismo tibetano. Representa la compasión universal: la capacidad de escuchar el sufrimiento de los seres y responder con amor, sabiduría y presencia. En las actividades Dzongpa aparece tanto como práctica de bendición general como en contextos de dedicación a difuntos, antepasados y seres que atraviesan sufrimiento. Para el público general, puede presentarse como una práctica que cultiva el corazón compasivo, la paz interior y la intención de beneficiar a vivos y fallecidos."
+    beneficios:
+      - "Desarrollar compasión, sensibilidad y bondad."
+      - "Dedicar mérito a familiares, antepasados y seres fallecidos."
+      - "Favorecer paz y armonía espiritual."
+      - "Acompañar procesos de duelo con una orientación compasiva y benéfica."
+  -
+    id: "tara-verde"
+    orden: 9
+    nombre: "Tara Verde"
+    subtitulo: "Actividad iluminada, protección y respuesta compasiva"
+    descripcion_corta: "Tara Verde encarna la actividad iluminada de los Budas y se asocia con la rápida eliminación de obstáculos y la respuesta compasiva a las necesidades de los seres."
+    descripcion_larga:
+      - "Tara Verde es una de las manifestaciones femeninas más conocidas y amadas del budismo tibetano. Representa la actividad iluminada: una compasión que no permanece pasiva, sino que actúa rápidamente para aliviar el sufrimiento. En el contexto Dzongpa, se presenta como una práctica especialmente adecuada en tiempos de dificultad, cuando las personas necesitan recursos, protección y mérito para sostener tanto la vida cotidiana como la práctica del Dharma. Para una web de público general, Tara Verde puede describirse como una presencia de protección, esperanza y acción compasiva."
+    beneficios:
+      - "Eliminar obstáculos internos y externos."
+      - "Responder a necesidades y aspiraciones de los seres."
+      - "Favorecer protección, recursos y condiciones para la práctica."
+      - "Inspirar confianza, apertura y acción compasiva."
+  -
+    id: "tara-blanca"
+    orden: 10
+    nombre: "Tara Blanca"
+    subtitulo: "Longevidad, protección y continuidad del Dharma"
+    descripcion_corta: "Tara Blanca es tradicionalmente asociada con longevidad, salud, protección y aumento de mérito, así como con la continuidad de las actividades del Dharma."
+    descripcion_larga:
+      - "Tara Blanca es presentada en la tradición como la Madre de los Budas de los tres tiempos y una fuente de bendiciones de larga vida. En el contexto Dzongpa, se recuerda que esta práctica fue especialmente sostenida para orar por la perdurabilidad de las actividades del Dharma. Para el público general, puede explicarse como una práctica de cuidado profundo: cuidado de la vida, de la salud, de la estabilidad interior y de la continuidad de aquello que beneficia a los seres."
+    beneficios:
+      - "Favorecer longevidad, salud y protección."
+      - "Mitigar obstáculos, calamidades y condiciones adversas."
+      - "Aumentar mérito y cualidades positivas."
+      - "Apoyar la continuidad de las actividades del Dharma en el mundo."
+  -
+    id: "vasudhara-roja"
+    orden: 11
+    nombre: "Vasudhara Roja / Marpo Norgyunma"
+    subtitulo: "Deidad de riqueza, mérito y abundancia para fines virtuosos"
+    descripcion_corta: "Vasudhara Roja o Marpo Norgyunma es una práctica poco común de riqueza y mérito, orientada a reunir recursos y condiciones para sostener el camino espiritual."
+    descripcion_larga:
+      - "Vasudhara Roja, presentada como Marpo Norgyunma en los materiales, se asocia tradicionalmente con el aumento de riqueza, fortuna y mérito. Desde una perspectiva budista, la riqueza no se entiende solo como acumulación material, sino como la disponibilidad de recursos que permiten vivir con dignidad, practicar el Dharma y beneficiar a otros. Esta práctica puede explicarse al público general como una forma de cultivar generosidad, superar la escasez y crear condiciones de abundancia al servicio de la práctica y de la comunidad."
+    beneficios:
+      - "Aumentar mérito, prosperidad y recursos."
+      - "Ayudar a superar obstáculos relacionados con escasez o falta de apoyo."
+      - "Favorecer la plenitud en proyectos mundanos y espirituales."
+      - "Recordar que la abundancia debe orientarse al beneficio y la generosidad."
+  -
+    id: "vajrapani"
+    orden: 12
+    nombre: "Vajrapani"
+    subtitulo: "Poder iluminado, fuerza espiritual y superación de obstáculos"
+    descripcion_corta: "Vajrapani representa el poder iluminado de los Budas y se asocia con la fuerza para superar obstáculos, enfermedades, conflictos y dificultades emocionales."
+    descripcion_larga:
+      - "Vajrapani expresa la energía poderosa de la iluminación: la fuerza que protege la sabiduría y permite afrontar obstáculos sin perder claridad. En los materiales Dzongpa se describen sus beneficios en relación con salud, relaciones, carrera, emociones, riqueza, longevidad y mérito. Para una web abierta, conviene presentarlo como una práctica que ayuda a despertar valentía, estabilidad y energía espiritual, transformando dificultades en parte del camino."
+    beneficios:
+      - "Superar obstáculos relacionados con salud, emociones y relaciones."
+      - "Fortalecer energía, confianza y capacidad de acción."
+      - "Apoyar longevidad, mérito y sabiduría."
+      - "Ayudar a consolidar recursos para el camino del Dharma."
+  -
+    id: "buda-medicina"
+    orden: 13
+    nombre: "Buda de la Medicina"
+    subtitulo: "Sanación, alivio del sufrimiento y aspiraciones benéficas"
+    descripcion_corta: "El Buda de la Medicina es una figura de sanación espiritual asociada al alivio del sufrimiento, la curación de enfermedades y el cumplimiento de aspiraciones benéficas."
+    descripcion_larga:
+      - "El Buda de la Medicina representa la dimensión sanadora de la iluminación. Sus votos se orientan a aliviar el sufrimiento físico, mental y espiritual de los seres. En el contexto de las prácticas Dzongpa, se presenta junto a otras deidades de protección y pujas de fuego para purificar obstáculos, aumentar mérito y traer paz al cuerpo y la mente. Para el público general, puede explicarse como una práctica de sanación integral, que une compasión, sabiduría y dedicación por la salud propia y ajena."
+    beneficios:
+      - "Aliviar sufrimiento y obstáculos relacionados con la salud."
+      - "Favorecer paz en cuerpo y mente."
+      - "Aumentar mérito y sabiduría."
+      - "Dedicar energía positiva a enfermos, cuidadores y personas en dificultad."
+  -
+    id: "dhvajagrakeyura"
+    orden: 14
+    nombre: "Dhvajagrakeyura / Dhvajagrakeyira"
+    subtitulo: "Protección, victoria sobre obstáculos y circunstancias auspiciosas"
+    descripcion_corta: "Dhvajagrakeyura se presenta como una práctica de protección que ayuda a superar conflictos, obstáculos y condiciones adversas."
+    descripcion_larga:
+      - "Dhvajagrakeyura aparece en los materiales como una práctica protectora que acompaña a los discípulos del Buda en circunstancias difíciles. Se asocia con protección interna y externa, victoria sobre enemigos u obstáculos, y generación de circunstancias puras y auspiciosas. Para un público general, conviene explicar esta práctica no como una confrontación externa, sino como un apoyo para mantener claridad, dignidad y protección espiritual ante conflictos, disputas o dificultades."
+    beneficios:
+      - "Proteger frente a obstáculos internos y externos."
+      - "Favorecer resolución de conflictos y circunstancias adversas."
+      - "Generar condiciones auspiciosas para la práctica."
+      - "Fortalecer confianza y estabilidad en situaciones difíciles."
+  -
+    id: "garuda"
+    orden: 15
+    nombre: "Garuda"
+    subtitulo: "Purificación de enfermedades, obstáculos no humanos y armonización de elementos"
+    descripcion_corta: "Garuda se asocia tradicionalmente con la eliminación de enfermedades, energías dañinas y obstáculos vinculados a desequilibrios de los elementos."
+    descripcion_larga:
+      - "Garuda es una figura poderosa vinculada a la protección y la sanación. En los materiales Dzongpa se menciona su capacidad para tratar epidemias, pandemias y enfermedades vinculadas a causas no humanas, así como para armonizar los cinco elementos. En lenguaje accesible, puede describirse como una práctica de protección y equilibrio que busca pacificar condiciones perturbadoras, fortalecer la vitalidad y apoyar la salud espiritual y energética de los practicantes."
+    beneficios:
+      - "Pacificar enfermedades, epidemias y perturbaciones."
+      - "Armonizar los cinco elementos."
+      - "Eliminar obstáculos no humanos o energías dañinas según la tradición."
+      - "Proteger la práctica y transformar karma negativo en condiciones favorables."
+  -
+    id: "zambala-negro"
+    orden: 16
+    nombre: "Zambala Negro / Jambhala Negro"
+    subtitulo: "Riqueza, protección y recursos al servicio del Dharma"
+    descripcion_corta: "Zambala Negro es una deidad de riqueza asociada con aumento de recursos, protección, fortuna y condiciones materiales favorables para la práctica."
+    descripcion_larga:
+      - "Zambala Negro se vincula tradicionalmente con la riqueza, la generosidad y la protección frente a obstáculos materiales. En los materiales aparece junto a ofrendas de agua y la bendición del Buda Akshobhya, indicando una relación entre purificación, prosperidad y protección. Para el público general, conviene explicar que la riqueza en el Dharma no se reduce al dinero: incluye recursos, estabilidad, oportunidades, salud, generosidad y capacidad de sostener actividades benéficas."
+    beneficios:
+      - "Aumentar fortuna, riqueza y recursos."
+      - "Proteger frente a obstáculos, ladrones y condiciones de miedo."
+      - "Favorecer longevidad, buena suerte y cumplimiento de aspiraciones."
+      - "Orientar los recursos hacia la generosidad y el beneficio de los seres."
+  -
+    id: "yogu-three-sisters"
+    orden: 17
+    nombre: "Yogu Three Sisters / Tres Hermanas de la Riqueza"
+    subtitulo: "Sustento, bienestar familiar y equilibrio de los elementos"
+    descripcion_corta: "Las Tres Hermanas de la Riqueza se asocian con alimento, ropa, recursos y bienestar físico y mental, así como con la pacificación de desequilibrios de los elementos."
+    descripcion_larga:
+      - "Las Yogu Three Sisters, o Tres Hermanas de la Riqueza, aparecen en los materiales como deidades relacionadas con el sustento básico: alimento, vestido y recursos. Su sentido profundo puede explicarse como el cuidado de las condiciones ordinarias que permiten vivir con estabilidad y practicar el Dharma. También se asocian con bienestar físico y mental y con la pacificación de desequilibrios de los cinco elementos. Para una web pública, su descripción puede enfocarse en la protección del hogar, la familia, la abundancia suficiente y la armonía con el entorno."
+    beneficios:
+      - "Asegurar condiciones de sustento, alimento y recursos."
+      - "Favorecer bienestar físico y mental."
+      - "Pacificar desequilibrios de los cinco elementos."
+      - "Apoyar la estabilidad familiar y la práctica espiritual."
+  -
+    id: "madre-planetas"
+    orden: 18
+    nombre: "Madre de los Planetas"
+    subtitulo: "Protección frente a influencias planetarias y condiciones adversas"
+    descripcion_corta: "La Madre de los Planetas es una práctica orientada a proteger de perturbaciones planetarias, evitar desgracias y favorecer longevidad, estabilidad y cumplimiento de deseos nobles."
+    descripcion_larga:
+      - "La práctica de la Madre de los Planetas se presenta como una enseñanza solicitada por Vajrapani al Buda Shakyamuni para beneficiar a los seres afectados por influencias planetarias adversas. En términos accesibles, puede explicarse como una práctica de protección frente a ciclos difíciles, condiciones externas desfavorables y perturbaciones que afectan la vida, la salud, la riqueza o la estabilidad. Su énfasis está en armonizar fuerzas, prolongar la vida, evitar daños y favorecer aspiraciones nobles."
+    beneficios:
+      - "Proteger frente a perturbaciones y desgracias planetarias."
+      - "Favorecer longevidad y evitar muerte prematura según la tradición."
+      - "Eliminar pobreza y condiciones de pérdida."
+      - "Cumplir deseos nobles y armonizar circunstancias externas."
+  -
+    id: "dakini-blanca-rostro-leon"
+    orden: 19
+    nombre: "Dakini Blanca Rostro de León"
+    subtitulo: "Purificación de obstáculos sutiles y sabiduría no dual"
+    descripcion_corta: "La Dakini Blanca Rostro de León es una práctica poco común dentro de los Trece Dharmas Dorados de Sakya, asociada a la purificación de obstáculos y al surgimiento de sabiduría suprema."
+    descripcion_larga:
+      - "La Dakini Blanca Rostro de León aparece descrita como una práctica poco común de gran profundidad dentro de los Trece Dharmas Dorados de Sakya. Se la relaciona con Vajravarahi y con la purificación de perturbaciones demoníacas, obstáculos kármicos y condicionamientos sutiles. Para un público general, conviene explicarla con especial cuidado: es una práctica vajrayana profunda, tradicionalmente vinculada a niveles avanzados de iniciación y enseñanza, pero las pujas abiertas permiten recibir bendiciones y conexión auspiciosa. Su mensaje central es la transformación del miedo, la confusión y los obstáculos en sabiduría clara y no discriminativa."
+    beneficios:
+      - "Purificar obstáculos kármicos y perturbaciones sutiles."
+      - "Apoyar las cuatro actividades altruistas."
+      - "Favorecer el surgimiento de sabiduría suprema no discriminativa."
+      - "Crear conexión auspiciosa con prácticas profundas de la tradición Sakya."
+  -
+    id: "begtse-prana-atma"
+    orden: 20
+    nombre: "Begtse / Prana Atma"
+    subtitulo: "Protector poderoso asociado a protección, obstáculos y riqueza"
+    descripcion_corta: "Begtse, también mencionado como Prana Atma, es un protector poderoso asociado a la protección frente a daños, obstáculos y dificultades creadas por humanos, espíritus u otras condiciones adversas."
+    descripcion_larga:
+      - "Begtse ocupa un lugar destacado entre los protectores del panteón Sakya y se describe en los materiales como una deidad protectora vinculada a batallas y riqueza. A veces se le conoce coloquialmente como Mahakala Rojo. Para una web pública, puede explicarse como una expresión de protección feroz y compasiva: una energía que corta obstáculos, protege de daños y ayuda a los practicantes a mantenerse firmes en el camino. Su práctica se orienta a superar interferencias y fortalecer la confianza en el Dharma."
+    beneficios:
+      - "Proteger frente a daños y obstáculos."
+      - "Superar dificultades creadas por humanos, dioses, espíritus o fantasmas según la tradición."
+      - "Favorecer estabilidad, fuerza y protección espiritual."
+      - "Apoyar riqueza y recursos cuando se orientan al camino virtuoso."
+  -
+    id: "manjushri-negro"
+    orden: 21
+    nombre: "Manjushri Negro"
+    subtitulo: "Sabiduría protectora, ruptura de maldiciones y transformación de mala suerte"
+    descripcion_corta: "Manjushri Negro es una práctica de sabiduría protectora asociada a eliminar obstáculos a la comprensión, romper negatividades y transformar condiciones adversas en auspicio."
+    descripcion_larga:
+      - "Manjushri es el Buda de la sabiduría, y su forma negra se presenta en los materiales como una de las Trece Deidades Doradas de Sakya. Esta forma se asocia con una función especialmente protectora: eliminar obstáculos a la sabiduría, romper maldiciones, prácticas dañinas o plagas, curar daños causados por influencias no visibles y transformar la mala suerte en condiciones auspiciosas. Para un público general, puede explicarse como una práctica que une claridad mental y protección espiritual, orientada a disipar confusión y condiciones negativas."
+    beneficios:
+      - "Eliminar obstáculos a la sabiduría y comprensión."
+      - "Romper negatividades, maldiciones o prácticas dañinas según la tradición."
+      - "Transformar mala suerte en auspicio."
+      - "Proteger la mente y favorecer claridad profunda."
+      - "Recomendación de uso en la web"
+      - "Para una página pública de Dzongpa Europa, se recomienda usar versiones breves en tarjetas o listados de actividades, y reservar las versiones ampliadas para páginas específicas de explicación. En todos los casos conviene mantener expresiones como “según la tradición”, “se asocia con” o “se contempla como”, para respetar el sentido tradicional sin presentar los beneficios como promesas automáticas."

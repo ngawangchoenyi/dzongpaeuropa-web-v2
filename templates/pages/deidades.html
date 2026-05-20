@@ -1,0 +1,75 @@
+{% extends data.page.base %}
+{% set page = data.page %}
+{% block jsonld %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.dzongpaeuropa.org/"},{"@type":"ListItem","position":2,"name":"{{ data.header.title | e }}","item":"https://www.dzongpaeuropa.org/deidades"}]}
+</script>
+{% endblock %}
+{% block content %}
+    <section class="page-header">
+      <div class="container">
+        <h1>{{ data.header.title }}</h1>
+        <p class="page-header__lede">{{ data.header.lede }}</p>
+      </div>
+    </section>
+
+    <section class="section deities-page">
+      <div class="container-prose prose">
+        <p class="lead">{{ data.intro }}</p>
+        <div class="deities-note">
+          <p>{{ data.nota_contexto }}</p>
+          <p>{{ data.nota_restringidas }}</p>
+        </div>
+      </div>
+
+      <div class="container deities-list" aria-label="Catálogo de prácticas y deidades">
+        {% for deity in data.deidades %}
+        <details class="deity-card" id="deidad-{{ deity.id }}">
+          <summary>
+            <span class="deity-card__summary">
+              <span class="deity-card__heading">
+                <span class="deity-card__title">{{ deity.nombre }}</span>
+                <span class="deity-card__badge">{{ deity.categoria_label }}</span>
+                {% if deity.nivel_acceso == 'restringido' %}
+                <span class="deity-card__badge deity-card__badge--restricted">{{ data.labels.restringida }}</span>
+                {% endif %}
+              </span>
+              <span class="deity-card__short">{{ deity.descripcion_corta }}</span>
+            </span>
+          </summary>
+
+          <div class="deity-card__body">
+            {% if deity.subtitulo %}
+            <p class="deity-card__subtitle">{{ deity.subtitulo }}</p>
+            {% endif %}
+
+            {% for paragraph in deity.descripcion_larga %}
+            <p>{{ paragraph }}</p>
+            {% endfor %}
+
+            {% if deity.disclaimer %}
+            <p class="deity-card__restricted">{{ deity.disclaimer }}</p>
+            {% endif %}
+
+            {% if deity.beneficios %}
+            <h3>{{ data.labels.beneficios }}</h3>
+            <ul>
+              {% for benefit in deity.beneficios %}
+              <li>{{ benefit }}</li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if deity.aliases %}
+            <p class="deity-card__meta"><strong>{{ data.labels.aliases }}:</strong> {{ deity.aliases | join(', ') }}</p>
+            {% endif %}
+
+            {% if deity.practicas_relacionadas_nombres %}
+            <p class="deity-card__meta"><strong>{{ data.labels.relacionadas }}:</strong> {{ deity.practicas_relacionadas_nombres | join(', ') }}</p>
+            {% endif %}
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+    </section>
+{% endblock %}
