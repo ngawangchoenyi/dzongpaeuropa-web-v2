@@ -1,0 +1,294 @@
+page:
+  lang: "de"
+  base: "_base_de.html"
+  title: "Praktiken & Gottheiten · Dzongpa Europa"
+  description: "Ein informativer Leitfaden zu den Praktiken und Gottheiten der Dzongpa-Linie, mit traditionellem Kontext und redaktionellen Hinweisen."
+  slug: "deities"
+  active: "activities"
+  robots: "index, follow"
+header:
+  title: "Praktiken und Gottheiten der Dzongpa-Linie"
+  lede: "Ein zugänglicher Leitfaden zum Verständnis der traditionellen Bedeutung der Praktiken und Pujas der Dzongpa-Linie."
+intro: "Dieser Katalog vereint öffentliche Beschreibungen von Praktiken und Gottheiten, die mit der Sakya-Dzongpa-Linie verbunden sind. Sein Ziel ist es, Personen, die an den Aktivitäten von Dzongpa Europa teilnehmen, einen kulturellen, historischen und devotionalen Kontext zu bieten."
+nota_contexto: "Traditionelle Ausdrücke über Schutz, Hindernisse, Langlebigkeit, Reinigung oder Reichtum werden in ihrem eigenen religiösen und symbolischen Rahmen präsentiert. Sie stellen keine medizinischen, psychologischen oder finanziellen Versprechen dar und ersetzen keine professionelle Beratung."
+nota_restringidas: "Einige Praktiken erfordern Übertragung, Erlaubnis oder spezifische Anweisungen eines qualifizierten Lehrers. Wenn eine Praktik als eingeschränkt markiert ist, werden nur kontextuelle Informationen bereitgestellt."
+labels:
+  beneficios: "Zugehörige traditionelle Nutzen"
+  aliases: "Auch bekannt als"
+  relacionadas: "Verwandte Praktiken"
+  restringida: "Eingeschränkte Praktik"
+  ver_mas: "Beschreibung anzeigen"
+deidades:
+  -
+    id: "ganapati-blanco-dzongpa"
+    orden: 1
+    nombre: "Dzongpa Weißer Ganapati"
+    subtitulo: "Eine seltene Praxis der Prosperität, des Verdienstes und günstiger Bedingungen"
+    descripcion_corta: "Der Dzongpa Weiße Ganapati wird in der Tradition als seltene Praxis präsentiert, die mit der Zunahme von Verdienst, Wohlstand und günstigen Bedingungen für das Leben und die Dharma-Praxis verbunden ist."
+    descripcion_larga:
+      - "Im Rahmen der Dzongpa-Subtradition der Sakya-Linie wird der Weiße Ganapati als eine Gottheit betrachtet, die mit der Beseitigung von Hindernissen und dem Sammeln günstiger Bedingungen verbunden ist. Die Praxis sollte nicht rein in materiellen Begriffen verstanden werden, sondern als eine Weise, äußere und innere Umstände zu harmonisieren, damit sich das spirituelle Leben mit Stabilität entfalten kann. Traditionell ist sie mit der Anhäufung von Verdienst, der Verbesserung der Ressourcen, Glück und der Fähigkeit verbunden, tugendhafte Projekte voranzutreiben."
+    beneficios:
+      - "Die Anhäufung von Verdienst und Weisheit fördern."
+      - "Helfen, günstige Bedingungen für die Praxis und die Dharma-Aktivitäten zu sammeln."
+      - "Hindernisse im Zusammenhang mit Knappheit, mangelnden Ressourcen oder Instabilität zerstreuen."
+      - "Persönliche oder gemeinschaftliche Projekte unterstützen, die auf das Wohl der Wesen ausgerichtet sind."
+  -
+    id: "ganapati-rojo"
+    orden: 2
+    nombre: "Roter Ganapati"
+    subtitulo: "Energie der Magnetisierung, des Ausp­izes und kraftvoller Aktivität"
+    descripcion_corta: "Der Rote Ganapati kann als Ausdruck kraftvoller und magnetisierender Aktivität präsentiert werden, die mit der Beseitigung von Hindernissen und dem Sammeln von Bedingungen für Erfolg und Erfüllung verbunden ist."
+    descripcion_larga:
+      - "Wenn er im Kontext der Dzongpa-Aktivitäten erscheint, kann der Rote Ganapati einfach als eine Praxis erklärt werden, die auf die Transformation von Hindernissen und das Sammeln auspizöser Energie ausgerichtet ist. Im Vajrayana-Buddhismus sind rote Formen oft mit der Aktivität der Magnetisierung verbunden: günstige Bedingungen anziehen, Beziehungen harmonisieren und Ressourcen für tugendhafte Zwecke sammeln. Für die breite Öffentlichkeit kann er als eine Praxis präsentiert werden, die hilft, Verbindung, Schwung und positive Ausrichtung im Leben und in der Praxis zu schaffen."
+    beneficios:
+      - "Günstige Bedingungen für tugendhafte Aktivitäten anziehen."
+      - "Hindernisse in positiven Schwung umwandeln."
+      - "Verbindung, Harmonie und Kontinuität von Projekten fördern."
+      - "Die Aktivität des Dharma und das Wohlbefinden der Gemeinschaft unterstützen."
+  -
+    id: "vajradaka-fire-puja"
+    orden: 3
+    nombre: "Vajradaka Feuerpuja"
+    subtitulo: "Feuerpuja der Reinigung und Transformation von Hindernissen"
+    descripcion_corta: "Die Vajradaka-Feuerpuja wird als eine Praxis tiefer Reinigung präsentiert, die mit der Reinigung von negativem Karma und der Beseitigung innerer und äußerer Hindernisse verbunden ist."
+    descripcion_larga:
+      - "Die Vajradaka-Feuerpuja nimmt einen wichtigen Platz innerhalb der rituellen Aktivitäten der Dzongpa-Linie ein. Gemäß der überlieferten Tradition praktizierte der Gründer der Dzongpa-Linie, der Erste Ehrwürdige Gongkar Namgyal, täglich Vajradaka. Die Feuerpraxis drückt Transformation aus: Was den Geist verdunkelt, den inneren Frieden stört oder den spirituellen Weg blockiert, wird dem Feuer der Weisheit angeboten, um gereinigt zu werden. Für ein allgemeines Publikum kann sie als Zeremonie erklärt werden, die die Reinigung negativer Gewohnheiten, emotionaler Hindernisse und widriger Bedingungen symbolisiert und Raum für Ruhe, Klarheit und spirituellen Fortschritt öffnet."
+    beneficios:
+      - "Negatives Karma und geistestörende Tendenzen reinigen."
+      - "Innere und äußere Hindernisse beseitigen."
+      - "Geistigen Frieden, Stille und Kontinuität der Praxis fördern."
+      - "Verdienst und Weisheit steigern, wenn sie zusammen mit anderen Linienübungen praktiziert wird."
+  -
+    id: "brahmanrupa-mahakala"
+    orden: 4
+    nombre: "Brahmanrupa Mahakala"
+    subtitulo: "Dharma-Beschützer und besondere Stütze der Dzongpa-Linie"
+    descripcion_corta: "Brahmanrupa Mahakala ist ein Dharma-Beschützer, der mit dem Schutz der Linie, der Beseitigung von Hindernissen und der Wiederherstellung auspizöser Bedingungen verbunden ist."
+    descripcion_larga:
+      - "Brahmanrupa Mahakala ist eine Schutzform, die mit Mahakala verbunden ist und einen besonders bedeutsamen Platz in der Dzongpa-Tradition einnimmt. Er wird als Beschützer beschrieben, der eine seltene heilige Verbindung zu den aufeinanderfolgenden Inkarnationen von Dorje Dhenpa Rinpoche und den Schülern der Linie aufrechterhält. Seine traditionelle Funktion ist es, den Dharma zu schützen, Hindernisse abzuwehren, die Praxis zu stützen und die schnelle Reifung von Segnungen zu begünstigen. Für eine offene Website ist es sinnvoll zu erklären, dass Beschützerpraktiken nicht auf Angst beruhen, sondern auf Vertrauen in die erwachten Qualitäten, die Tugend, Klarheit und spirituelles Engagement schützen."
+    beneficios:
+      - "Hindernisse und Schwierigkeiten zerstreuen."
+      - "Praxis, Linie und Gemeinschaft schützen."
+      - "Auspizöse Bedingungen und Glück gemäß der Tradition anziehen."
+      - "Die Wiederherstellung spiritueller Verpflichtungen unterstützen, wenn sie mit Tsog praktiziert wird."
+  -
+    id: "tsog-offering"
+    orden: 5
+    nombre: "Tsog-Opfergabe"
+    subtitulo: "Sammelgabe, Verdienst und Wiederherstellung der Samayas"
+    descripcion_corta: "Tsog ist eine Vajrayana-Gabe, die die Gemeinschaft zusammenbringt, um Verdienst anzuhäufen, Verpflichtungen wiederherzustellen und die Verbindung mit dem Lehrer, der Linie und der Praxis zu erneuern."
+    descripcion_larga:
+      - "Die Tsog-Opfergabe ist eine Praxis des Sammelns und der spirituellen Wiederherstellung. Im Vajrayana wird sie als eine Weise verstanden, Verdienst und Weisheit anzuhäufen, Fehler zu reinigen, Samayas oder spirituelle Verpflichtungen wiederherzustellen und die Verbindung mit dem Lehrer und der Linie zu stärken. Für ein allgemeines Publikum kann sie als Zeremonie des Anbietens und der inneren Versöhnung beschrieben werden, bei der die Gemeinschaft mit Respekt, Dankbarkeit und dem Wunsch teilnimmt, allen Wesen zu nützen."
+    beneficios:
+      - "Verdienst und Weisheit anhäufen."
+      - "Beschädigte spirituelle Verpflichtungen wiederherstellen."
+      - "Die Beziehung zu Lehrer, Linie und Gemeinschaft stärken."
+      - "Die Gabe in eine Praxis der Großzügigkeit und Reinigung verwandeln."
+  -
+    id: "palden-lhamo"
+    orden: 6
+    nombre: "Palden Lhamo / Dinuma / Mahakali"
+    subtitulo: "Weibliche Beschützerin der Weisheit und schnellen Aktivität"
+    descripcion_corta: "Palden Lhamo, auch als Dinuma oder Mahakali in einigen Ankündigungen präsentiert, ist eine weibliche Beschützerin, die mit Weisheit, schnellem Schutz und der Beseitigung von Hindernissen verbunden ist."
+    descripcion_larga:
+      - "Palden Lhamo ist eine weibliche Beschützerin von großer Bedeutung im tibetischen Buddhismus. In den Dzongpa-Materialien wird sie als kraftvolle Manifestation schützender Weisheit präsentiert, die in der Lage ist, schnell zu reagieren, um Wesen in Not zu helfen. Ihre Energie drückt aktiven Schutz aus: Hindernisse zerstreuen, widrige Bedingungen durchtrennen und spirituelle Praxis sowie tugendhafte Aktivitäten stützen. Auf einer Website für die breite Öffentlichkeit kann sie als Figur erklärt werden, die die mitfühlende Kraft der Weisheit symbolisiert, wenn sie handelt, um den Dharma zu schützen und Praktizierenden zu helfen, schwierige Umstände zu überwinden."
+    beneficios:
+      - "Hindernisse und widrige Bedingungen beseitigen."
+      - "Die Praxis und die Aktivitäten des Dharma schützen."
+      - "Frieden, Stabilität und harmonischen Fortschritt fördern."
+      - "Verdienst und Weisheit steigern, wenn sie mit Feuerpuja kombiniert wird."
+  -
+    id: "buda-akshobhya"
+    orden: 7
+    nombre: "Buddha Akshobhya"
+    subtitulo: "Tiefe Reinigung und Transformation negativen Karmas"
+    descripcion_corta: "Akshobhya ist ein Buddha, der mit tiefer Reinigung verbunden ist, insbesondere von schwerwiegenden negativen Handlungen und Tendenzen, die zu Leidenszuständen führen."
+    descripcion_larga:
+      - "Buddha Akshobhya repräsentiert den unerschütterlichen Geist — klar und frei von Aufruhr. In den erwähnten Dzongpa-Praktiken wird seine Reinigungskraft in schwierigen Zeiten hervorgehoben. Seine Praxis ist mit der Reinigung negativer Handlungen, der Läuterung schädlicher Gewohnheiten und dem Nutzen für verstorbene Wesen verbunden, indem ihnen geholfen wird, niedere Wiedergeburten gemäß der buddhistischen Tradition zu vermeiden. Für die breite Öffentlichkeit kann sie als eine Praxis der Versöhnung mit der eigenen Vergangenheit und der Transformation von Negativität in Klarheit erklärt werden."
+    beneficios:
+      - "Negatives Karma und schädliche Gewohnheiten reinigen."
+      - "Verstorbenen Personen durch Rezitation und Widmung nützen."
+      - "Die Beziehung zu vergangenen negativen Handlungen oder Worten heilen."
+      - "Einen stabileren, klareren und unerschütterlicheren Geist fördern."
+  -
+    id: "chenrezig"
+    orden: 8
+    nombre: "Chenrezig / Vierarmiger Avalokiteshvara"
+    subtitulo: "Buddha des großen Mitgefühls"
+    descripcion_corta: "Chenrezig, der Vierarmige Avalokiteshvara, verkörpert das grenzenlose Mitgefühl aller Buddhas und das Streben, alle Wesen vom Leiden zu befreien."
+    descripcion_larga:
+      - "Chenrezig, oder Avalokiteshvara, ist eine der geliebtesten Figuren des tibetischen Buddhismus. Er repräsentiert universelles Mitgefühl: die Fähigkeit, das Leiden der Wesen zu hören und mit Liebe, Weisheit und Präsenz zu antworten. In den Dzongpa-Aktivitäten erscheint er sowohl als Praxis des allgemeinen Segens als auch in Kontexten der Widmung an Verstorbene, Vorfahren und Wesen, die Leid durchmachen. Für die breite Öffentlichkeit kann er als eine Praxis präsentiert werden, die das mitfühlende Herz, den inneren Frieden und die Absicht kultiviert, Lebenden und Verstorbenen zu nützen."
+    beneficios:
+      - "Mitgefühl, Feinfühligkeit und Güte entwickeln."
+      - "Verdienst Familienmitgliedern, Vorfahren und verstorbenen Wesen widmen."
+      - "Frieden und spirituelle Harmonie fördern."
+      - "Trauerprozesse mit einer mitfühlenden und heilsamen Ausrichtung begleiten."
+  -
+    id: "tara-verde"
+    orden: 9
+    nombre: "Grüne Tara"
+    subtitulo: "Erwachte Aktivität, Schutz und mitfühlende Antwort"
+    descripcion_corta: "Grüne Tara verkörpert die erwachte Aktivität der Buddhas und ist mit der schnellen Beseitigung von Hindernissen und der mitfühlenden Antwort auf die Bedürfnisse der Wesen verbunden."
+    descripcion_larga:
+      - "Grüne Tara ist eine der bekanntesten und geliebtesten weiblichen Manifestationen des tibetischen Buddhismus. Sie repräsentiert erwachte Aktivität: ein Mitgefühl, das nicht passiv bleibt, sondern schnell handelt, um Leiden zu lindern. Im Dzongpa-Kontext wird sie als eine Praxis präsentiert, die besonders geeignet ist für schwierige Zeiten, wenn Menschen Ressourcen, Schutz und Verdienst benötigen, um sowohl das Alltagsleben als auch die Dharma-Praxis zu stützen. Für eine Website mit allgemeinem Publikum kann Grüne Tara als Gegenwart von Schutz, Hoffnung und mitfühlendem Handeln beschrieben werden."
+    beneficios:
+      - "Innere und äußere Hindernisse beseitigen."
+      - "Auf die Bedürfnisse und Wünsche der Wesen antworten."
+      - "Schutz, Ressourcen und Bedingungen für die Praxis fördern."
+      - "Vertrauen, Offenheit und mitfühlendes Handeln inspirieren."
+  -
+    id: "tara-blanca"
+    orden: 10
+    nombre: "Weiße Tara"
+    subtitulo: "Langlebigkeit, Schutz und Kontinuität des Dharma"
+    descripcion_corta: "Weiße Tara ist traditionell mit Langlebigkeit, Gesundheit, Schutz und Zunahme von Verdienst sowie mit der Kontinuität der Dharma-Aktivitäten verbunden."
+    descripcion_larga:
+      - "Weiße Tara wird in der Tradition als Mutter der Buddhas der drei Zeiten und Quelle der Segnungen eines langen Lebens präsentiert. Im Dzongpa-Kontext wird daran erinnert, dass diese Praxis besonders gepflegt wurde, um für die Beständigkeit der Dharma-Aktivitäten zu beten. Für die breite Öffentlichkeit kann sie als eine Praxis tiefer Fürsorge erklärt werden: Fürsorge für das Leben, die Gesundheit, die innere Stabilität und die Kontinuität dessen, was den Wesen nützt."
+    beneficios:
+      - "Langlebigkeit, Gesundheit und Schutz fördern."
+      - "Hindernisse, Katastrophen und widrige Bedingungen mildern."
+      - "Verdienst und positive Qualitäten steigern."
+      - "Die Kontinuität der Dharma-Aktivitäten in der Welt unterstützen."
+  -
+    id: "vasudhara-roja"
+    orden: 11
+    nombre: "Rote Vasudhara / Marpo Norgyunma"
+    subtitulo: "Gottheit des Reichtums, Verdienstes und der Fülle für tugendhafte Zwecke"
+    descripcion_corta: "Rote Vasudhara, oder Marpo Norgyunma, ist eine seltene Praxis des Reichtums und Verdienstes, die auf das Sammeln von Ressourcen und Bedingungen zur Stützung des spirituellen Weges ausgerichtet ist."
+    descripcion_larga:
+      - "Rote Vasudhara, in den Materialien als Marpo Norgyunma präsentiert, ist traditionell mit der Zunahme von Reichtum, Glück und Verdienst verbunden. Aus buddhistischer Perspektive wird Reichtum nicht nur als materielle Anhäufung verstanden, sondern als Verfügbarkeit von Ressourcen, die es ermöglichen, in Würde zu leben, den Dharma zu praktizieren und anderen zu nützen. Diese Praxis kann der breiten Öffentlichkeit als eine Weise erklärt werden, Großzügigkeit zu kultivieren, Knappheit zu überwinden und Bedingungen der Fülle im Dienst der Praxis und der Gemeinschaft zu schaffen."
+    beneficios:
+      - "Verdienst, Wohlstand und Ressourcen steigern."
+      - "Helfen, Hindernisse im Zusammenhang mit Knappheit oder mangelnder Unterstützung zu überwinden."
+      - "Erfüllung in weltlichen und spirituellen Projekten fördern."
+      - "Daran erinnern, dass Fülle auf Nutzen und Großzügigkeit ausgerichtet sein sollte."
+  -
+    id: "vajrapani"
+    orden: 12
+    nombre: "Vajrapani"
+    subtitulo: "Erwachte Kraft, spirituelle Stärke und Überwindung von Hindernissen"
+    descripcion_corta: "Vajrapani repräsentiert die erwachte Kraft der Buddhas und ist mit der Stärke verbunden, Hindernisse, Krankheiten, Konflikte und emotionale Schwierigkeiten zu überwinden."
+    descripcion_larga:
+      - "Vajrapani drückt die kraftvolle Energie des Erwachens aus: die Kraft, die Weisheit schützt und es ermöglicht, Hindernissen zu begegnen, ohne die Klarheit zu verlieren. In den Dzongpa-Materialien werden seine Nutzen in Bezug auf Gesundheit, Beziehungen, Karriere, Emotionen, Reichtum, Langlebigkeit und Verdienst beschrieben. Für eine offene Website kann er als eine Praxis präsentiert werden, die hilft, Mut, Stabilität und spirituelle Energie zu erwecken und Schwierigkeiten in Teil des Weges zu verwandeln."
+    beneficios:
+      - "Hindernisse im Zusammenhang mit Gesundheit, Emotionen und Beziehungen überwinden."
+      - "Energie, Vertrauen und Handlungsfähigkeit stärken."
+      - "Langlebigkeit, Verdienst und Weisheit unterstützen."
+      - "Helfen, Ressourcen für den Dharma-Weg zu konsolidieren."
+  -
+    id: "buda-medicina"
+    orden: 13
+    nombre: "Medizin-Buddha"
+    subtitulo: "Heilung, Linderung des Leidens und heilsame Wünsche"
+    descripcion_corta: "Der Medizin-Buddha ist eine Figur spiritueller Heilung, die mit der Linderung von Leiden, der Heilung von Krankheiten und der Erfüllung heilsamer Wünsche verbunden ist."
+    descripcion_larga:
+      - "Der Medizin-Buddha repräsentiert die heilende Dimension des Erwachens. Seine Gelübde sind darauf ausgerichtet, das körperliche, geistige und spirituelle Leiden der Wesen zu lindern. Im Kontext der Dzongpa-Praktiken erscheint er neben anderen Schutzgottheiten und Feuerpujas, um Hindernisse zu reinigen, Verdienst zu steigern und Frieden in Körper und Geist zu bringen. Für die breite Öffentlichkeit kann er als eine Praxis integraler Heilung erklärt werden, die Mitgefühl, Weisheit und Widmung für die eigene Gesundheit und die anderer vereint."
+    beneficios:
+      - "Leiden und gesundheitsbezogene Hindernisse lindern."
+      - "Frieden in Körper und Geist fördern."
+      - "Verdienst und Weisheit steigern."
+      - "Positive Energie Kranken, Pflegenden und Menschen in Not widmen."
+  -
+    id: "dhvajagrakeyura"
+    orden: 14
+    nombre: "Dhvajagrakeyura / Dhvajagrakeyira"
+    subtitulo: "Schutz, Sieg über Hindernisse und auspizöse Umstände"
+    descripcion_corta: "Dhvajagrakeyura wird als eine Schutzpraxis präsentiert, die hilft, Konflikte, Hindernisse und widrige Bedingungen zu überwinden."
+    descripcion_larga:
+      - "Dhvajagrakeyura erscheint in den Materialien als eine Schutzpraxis, die die Schüler des Buddha in schwierigen Umständen begleitet. Er ist mit innerem und äußerem Schutz, Sieg über Feinde oder Hindernisse und der Erzeugung reiner und auspizöser Umstände verbunden. Für ein allgemeines Publikum ist es sinnvoll, diese Praxis nicht als äußere Konfrontation zu erklären, sondern als Unterstützung zur Aufrechterhaltung von Klarheit, Würde und spirituellem Schutz angesichts von Konflikten, Streitigkeiten oder Schwierigkeiten."
+    beneficios:
+      - "Gegen innere und äußere Hindernisse schützen."
+      - "Lösung von Konflikten und widrigen Umständen begünstigen."
+      - "Auspizöse Bedingungen für die Praxis erzeugen."
+      - "Vertrauen und Stabilität in schwierigen Situationen stärken."
+  -
+    id: "garuda"
+    orden: 15
+    nombre: "Garuda"
+    subtitulo: "Reinigung von Krankheiten, nicht-menschlichen Hindernissen und Harmonisierung der Elemente"
+    descripcion_corta: "Garuda ist traditionell mit der Beseitigung von Krankheiten, schädlichen Energien und Hindernissen verbunden, die mit Ungleichgewichten der Elemente zusammenhängen."
+    descripcion_larga:
+      - "Garuda ist eine kraftvolle Figur, die mit Schutz und Heilung verbunden ist. In den Dzongpa-Materialien wird seine Fähigkeit erwähnt, Epidemien, Pandemien und Krankheiten zu behandeln, die mit nicht-menschlichen Ursachen verbunden sind, sowie die fünf Elemente zu harmonisieren. In zugänglicher Sprache kann er als eine Praxis des Schutzes und des Gleichgewichts beschrieben werden, die störende Bedingungen zu befrieden, die Vitalität zu stärken und die spirituelle und energetische Gesundheit der Praktizierenden zu unterstützen sucht."
+    beneficios:
+      - "Krankheiten, Epidemien und Störungen befrieden."
+      - "Die fünf Elemente harmonisieren."
+      - "Nicht-menschliche Hindernisse oder schädliche Energien gemäß der Tradition beseitigen."
+      - "Die Praxis schützen und negatives Karma in günstige Bedingungen verwandeln."
+  -
+    id: "zambala-negro"
+    orden: 16
+    nombre: "Schwarzer Jambhala / Schwarzer Zambala"
+    subtitulo: "Reichtum, Schutz und Ressourcen im Dienst des Dharma"
+    descripcion_corta: "Schwarzer Jambhala ist eine Reichtumsgottheit, die mit der Zunahme von Ressourcen, Schutz, Glück und günstigen materiellen Bedingungen für die Praxis verbunden ist."
+    descripcion_larga:
+      - "Schwarzer Jambhala ist traditionell mit Reichtum, Großzügigkeit und Schutz vor materiellen Hindernissen verbunden. In den Materialien erscheint er neben Wasseropfern und dem Segen des Buddha Akshobhya, was auf eine Beziehung zwischen Reinigung, Wohlstand und Schutz hinweist. Für die breite Öffentlichkeit ist es sinnvoll zu erklären, dass Reichtum im Dharma nicht auf Geld reduziert wird: Er umfasst Ressourcen, Stabilität, Möglichkeiten, Gesundheit, Großzügigkeit und die Fähigkeit, heilsame Aktivitäten zu stützen."
+    beneficios:
+      - "Glück, Reichtum und Ressourcen steigern."
+      - "Gegen Hindernisse, Diebe und Angstzustände schützen."
+      - "Langlebigkeit, Glück und Erfüllung von Wünschen fördern."
+      - "Ressourcen auf Großzügigkeit und das Wohl der Wesen ausrichten."
+  -
+    id: "yogu-three-sisters"
+    orden: 17
+    nombre: "Drei Yogu-Schwestern / Drei Schwestern des Reichtums"
+    subtitulo: "Lebensunterhalt, familiäres Wohlbefinden und Gleichgewicht der Elemente"
+    descripcion_corta: "Die Drei Schwestern des Reichtums sind mit Nahrung, Kleidung, Ressourcen und körperlichem und geistigem Wohlbefinden sowie mit der Befriedigung von elementaren Ungleichgewichten verbunden."
+    descripcion_larga:
+      - "Die Drei Yogu-Schwestern, oder Drei Schwestern des Reichtums, erscheinen in den Materialien als Gottheiten, die mit dem Grundlebensunterhalt verbunden sind: Nahrung, Kleidung und Ressourcen. Ihre tiefere Bedeutung kann als die Pflege der gewöhnlichen Bedingungen erklärt werden, die es ermöglichen, mit Stabilität zu leben und den Dharma zu praktizieren. Sie sind auch mit körperlichem und geistigem Wohlbefinden und der Befriedigung von Ungleichgewichten der fünf Elemente verbunden. Für eine öffentliche Website kann ihre Beschreibung sich auf den Schutz des Hauses, der Familie, ausreichender Fülle und der Harmonie mit der Umgebung konzentrieren."
+    beneficios:
+      - "Bedingungen des Lebensunterhalts, der Nahrung und der Ressourcen sichern."
+      - "Körperliches und geistiges Wohlbefinden fördern."
+      - "Ungleichgewichte der fünf Elemente befrieden."
+      - "Familiäre Stabilität und spirituelle Praxis unterstützen."
+  -
+    id: "madre-planetas"
+    orden: 18
+    nombre: "Mutter der Planeten"
+    subtitulo: "Schutz vor planetarischen Einflüssen und widrigen Bedingungen"
+    descripcion_corta: "Die Mutter der Planeten ist eine Praxis, die auf den Schutz vor planetarischen Störungen, die Vermeidung von Unglück und die Begünstigung von Langlebigkeit, Stabilität und der Erfüllung edler Wünsche ausgerichtet ist."
+    descripcion_larga:
+      - "Die Praxis der Mutter der Planeten wird als eine Lehre präsentiert, die Vajrapani vom Buddha Shakyamuni erbat, um Wesen zu nützen, die von widrigen planetarischen Einflüssen betroffen sind. In zugänglichen Begriffen kann sie als eine Praxis des Schutzes vor schwierigen Zyklen, ungünstigen äußeren Bedingungen und Störungen erklärt werden, die das Leben, die Gesundheit, den Reichtum oder die Stabilität beeinflussen. Ihr Schwerpunkt liegt auf der Harmonisierung von Kräften, der Verlängerung des Lebens, der Vermeidung von Schaden und der Begünstigung edler Wünsche."
+    beneficios:
+      - "Vor planetarischen Störungen und Unglück schützen."
+      - "Langlebigkeit fördern und vorzeitigen Tod gemäß der Tradition vermeiden."
+      - "Armut und Verlustbedingungen beseitigen."
+      - "Edle Wünsche erfüllen und äußere Umstände harmonisieren."
+  -
+    id: "dakini-blanca-rostro-leon"
+    orden: 19
+    nombre: "Weiße Löwengesichtige Dakini"
+    subtitulo: "Reinigung subtiler Hindernisse und nicht-duale Weisheit"
+    descripcion_corta: "Die Weiße Löwengesichtige Dakini ist eine seltene Praxis innerhalb der Dreizehn Goldenen Dharmas von Sakya, die mit der Reinigung von Hindernissen und dem Aufkeimen supremer Weisheit verbunden ist."
+    descripcion_larga:
+      - "Die Weiße Löwengesichtige Dakini wird als eine seltene Praxis von großer Tiefe innerhalb der Dreizehn Goldenen Dharmas von Sakya beschrieben. Sie ist mit Vajravarahi und der Reinigung dämonischer Störungen, karmischer Hindernisse und subtiler Konditionierungen verbunden. Für ein allgemeines Publikum sollte sie mit besonderer Sorgfalt erklärt werden: Es handelt sich um eine tiefe Vajrayana-Praxis, die traditionell mit fortgeschrittenen Einweihungs- und Unterrichtsniveaus verbunden ist, aber offene Pujas ermöglichen den Empfang von Segnungen und auspizöser Verbindung. Ihre zentrale Botschaft ist die Transformation von Angst, Verwirrung und Hindernissen in klare, nicht-diskriminierende Weisheit."
+    beneficios:
+      - "Karmische Hindernisse und subtile Störungen reinigen."
+      - "Die vier altruistischen Aktivitäten unterstützen."
+      - "Das Aufkeimen supremer nicht-diskriminierender Weisheit fördern."
+      - "Auspizöse Verbindung mit tiefen Praktiken der Sakya-Tradition schaffen."
+  -
+    id: "begtse-prana-atma"
+    orden: 20
+    nombre: "Begtse / Prana Atma"
+    subtitulo: "Kraftvoller Beschützer verbunden mit Schutz, Hindernissen und Reichtum"
+    descripcion_corta: "Begtse, auch als Prana Atma erwähnt, ist ein kraftvoller Beschützer, der mit dem Schutz vor Schaden, Hindernissen und Schwierigkeiten verbunden ist, die von Menschen, Geistern oder anderen widrigen Bedingungen verursacht werden."
+    descripcion_larga:
+      - "Begtse nimmt einen prominenten Platz unter den Beschützern des Sakya-Pantheons ein und wird in den Materialien als eine Schutzgottheit beschrieben, die mit Schlachten und Reichtum verbunden ist. Er ist manchmal umgangssprachlich als Roter Mahakala bekannt. Für eine öffentliche Website kann er als Ausdruck wilder und mitfühlender Protection erklärt werden: eine Energie, die Hindernisse durchschneidet, vor Schaden schützt und Praktizierenden hilft, auf dem Weg standhaft zu bleiben. Seine Praxis ist darauf ausgerichtet, Interferenzen zu überwinden und das Vertrauen in den Dharma zu stärken."
+    beneficios:
+      - "Vor Schaden und Hindernissen schützen."
+      - "Schwierigkeiten überwinden, die von Menschen, Göttern, Geistern oder Gespenstern gemäß der Tradition verursacht werden."
+      - "Stabilität, Stärke und spirituellen Schutz fördern."
+      - "Reichtum und Ressourcen unterstützen, wenn sie auf den tugendhaften Weg ausgerichtet sind."
+  -
+    id: "manjushri-negro"
+    orden: 21
+    nombre: "Schwarzer Manjushri"
+    subtitulo: "Schützende Weisheit, Brechen von Flüchen und Transformation von Pech"
+    descripcion_corta: "Schwarzer Manjushri ist eine Praxis schützender Weisheit, die mit der Beseitigung von Hindernissen für das Verständnis, dem Brechen von Negativitäten und der Transformation widriger Bedingungen in Auspiz verbunden ist."
+    descripcion_larga:
+      - "Manjushri ist der Buddha der Weisheit, und seine schwarze Form wird in den Materialien als eine der Dreizehn Goldenen Gottheiten von Sakya präsentiert. Diese Form ist mit einer besonders schützenden Funktion verbunden: Hindernisse für die Weisheit beseitigen, Flüche, schädliche Praktiken oder Plagen brechen, durch unsichtbare Einflüsse verursachte Schäden heilen und Pech in auspizöse Bedingungen verwandeln. Für ein allgemeines Publikum kann er als eine Praxis erklärt werden, die mentale Klarheit und spirituellen Schutz vereint und auf die Zerstreuung von Verwirrung und negativen Bedingungen ausgerichtet ist."
+    beneficios:
+      - "Hindernisse für Weisheit und Verständnis beseitigen."
+      - "Negativitäten, Flüche oder schädliche Praktiken gemäß der Tradition brechen."
+      - "Pech in Auspiz verwandeln."
+      - "Den Geist schützen und tiefe Klarheit fördern."
