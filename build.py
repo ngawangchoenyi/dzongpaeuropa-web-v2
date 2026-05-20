@@ -176,6 +176,16 @@ ZH_PAGES = [
 ]
 
 
+def load_shared_content(filename):
+    """Carga datos compartidos desde content/shared/."""
+    yaml_path = os.path.join(CONTENT_DIR, 'shared', filename)
+    if not os.path.exists(yaml_path):
+        return None
+    with open(yaml_path, 'r', encoding='utf-8') as f:
+        data = yaml.safe_load(f)
+    return data or {}
+
+
 def load_yaml_content(lang, page_stem):
     """Carga el archivo YAML de contenido para una página e idioma dados."""
     yaml_path = os.path.join(CONTENT_DIR, lang, f'{page_stem}.yml')
@@ -196,6 +206,11 @@ def render_yaml_page(lang, page_stem):
         data['page'] = {}
     if 'base' not in data['page']:
         data['page']['base'] = BASE_TEMPLATE.get(lang, '_base.html')
+
+    puja_shared = load_shared_content('puja-activa.yml')
+    if puja_shared:
+        data['active_puja'] = puja_shared.get('active_puja', puja_shared)
+
     template = env.get_template(f'pages/{page_stem}.html')
     return template.render(data=data)
 

@@ -26,6 +26,36 @@
       <div class="container-prose prose">
         <p class="lead">{{ data.intro }}</p>
 
+        {% if data.active_puja is defined and data.active_puja.enabled %}
+        {% set active_puja = data.active_puja %}
+        {% set puja_text = active_puja.text[data.page.lang] if active_puja.text is defined and data.page.lang in active_puja.text else active_puja.text.es %}
+        {% set puja_name = active_puja.name[data.page.lang] if active_puja.name is defined and data.page.lang in active_puja.name else active_puja.name.es %}
+        {% set puja_date = active_puja.date[data.page.lang] if active_puja.date is defined and data.page.lang in active_puja.date else active_puja.date.es %}
+        {% set puja_time = active_puja.time[data.page.lang] if active_puja.time is defined and data.page.lang in active_puja.time else active_puja.time.es %}
+        {% set puja_donation = active_puja.donation_text[data.page.lang] if active_puja.donation_text is defined and data.page.lang in active_puja.donation_text else active_puja.donation_text.es %}
+        {% set stripe_individual = active_puja.stripe.individual[data.page.lang] if active_puja.stripe.individual is mapping and data.page.lang in active_puja.stripe.individual else active_puja.stripe.individual.es %}
+        {% set stripe_family = active_puja.stripe.family[data.page.lang] if active_puja.stripe.family is mapping and data.page.lang in active_puja.stripe.family else active_puja.stripe.family.es %}
+        {% set stripe_free = active_puja.stripe.free[data.page.lang] if active_puja.stripe.free is mapping and data.page.lang in active_puja.stripe.free else active_puja.stripe.free.es %}
+        <div class="golden-box" style="margin: 32px 0;">
+          <p style="margin:0 0 8px; color:var(--c-granate); font-weight:700; text-transform:uppercase; letter-spacing:.04em; font-size:.78rem;">{{ puja_text.badge }}</p>
+          <h2 style="margin-top:0;">{{ puja_text.title }}</h2>
+          <table style="border-collapse:collapse; width:100%; font-size:0.95rem; margin:18px 0;">
+            <tr><td style="padding:6px 12px 6px 0; font-weight:600; width:34%;">{{ puja_text.practice_label }}</td><td>{{ puja_name }}</td></tr>
+            <tr><td style="padding:6px 12px 6px 0; font-weight:600;">{{ puja_text.date_label }}</td><td>{{ puja_date }}</td></tr>
+            <tr><td style="padding:6px 12px 6px 0; font-weight:600;">{{ puja_text.time_label }}</td><td>{{ puja_time }}</td></tr>
+            <tr><td style="padding:6px 12px 6px 0; font-weight:600;">{{ puja_text.donation_label }}</td><td>{{ puja_donation }}</td></tr>
+          </table>
+          <p>{{ puja_text.description }}</p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:20px; justify-content:center;">
+            <a href="{{ active_puja.form_url }}" class="btn btn--primary" target="_blank" rel="noopener">{{ puja_text.register_btn }}</a>
+            <a href="{{ stripe_individual }}" class="btn btn--outline" target="_blank" rel="noopener">{{ puja_text.individual_btn }}</a>
+            <a href="{{ stripe_family }}" class="btn btn--outline" target="_blank" rel="noopener">{{ puja_text.family_btn }}</a>
+            <a href="{{ stripe_free }}" class="btn btn--outline" target="_blank" rel="noopener">{{ puja_text.free_btn }}</a>
+          </div>
+          <p style="margin-bottom:0; margin-top:14px; font-size:0.88rem; color:var(--c-texto-suave);">{{ puja_text.note }}</p>
+        </div>
+        {% endif %}
+
         <!-- Horario -->
         <div class="golden-box" style="margin: 32px 0;">
           <h2 style="margin-top:0;">{{ data.schedule.title }}</h2>
