@@ -1,43 +1,50 @@
 # Apps Script de pujas - Dzongpa Europa
 
-Esta carpeta guarda una copia versionada del Apps Script usado para automatizar las pujas semanales.
+Esta carpeta guarda una copia versionada y saneada del Apps Script usado para automatizar las pujas semanales.
 
-## Qué contiene
+## Que contiene
 
-- `Codigo.gs`: código principal saneado para GitHub.
+- `Codigo.gs`: codigo principal preparado para GitHub, sin valores privados reales.
 - `appsscript.json`: manifest del proyecto Apps Script.
 - `.clasp.json.example`: plantilla local para conectar esta carpeta con el proyecto real.
 
-## Qué NO debe subirse a GitHub
+## Que NO debe subirse a GitHub
 
 - `.clasp.json` real.
 - Tokens de GitHub.
-- Contraseñas de Zoom.
-- Datos privados temporales.
+- Contrasenas de Zoom.
+- Enlaces privados de Zoom.
+- IDs privados de hojas de calculo si no son necesarios para restauracion.
+- Archivos descargados directamente por `clasp pull` que contengan configuracion real.
 
-Los valores sensibles se gestionan en Apps Script mediante Propiedades de script o en las hojas privadas de Google Sheets.
+Los valores sensibles deben vivir en Apps Script como Propiedades de script o en hojas privadas de Google Sheets.
 
-## Flujo recomendado
+## Flujo de backup recomendado
 
-1. Editar el código en `apps-script-pujas` local o en esta carpeta versionada.
-2. Validar que no hay caracteres corruptos de codificación en textos operativos.
-3. Ejecutar `clasp push` para subir a Apps Script.
-4. Probar desde Google Sheets.
-5. Guardar commit en GitHub.
+1. Conectar la carpeta local con `.clasp.json` usando el `scriptId` real. Ese archivo esta ignorado por Git.
+2. Ejecutar `clasp pull` para traer la version actual desde Google.
+3. Si `clasp pull` crea un archivo como `Codigo.js` o `Codigo.gs` con valores reales, no subirlo directamente.
+4. Copiar solo los cambios de logica a `Codigo.gs` y mantener placeholders para datos sensibles.
+5. Eliminar el archivo descargado con datos reales.
+6. Ejecutar las comprobaciones rapidas.
+7. Guardar el backup con `git add`, `git commit` y `git push`.
 
-## Comprobaciones rápidas
+## Comprobaciones rapidas
 
 ```powershell
-rg -n "caracter_raro_a_buscar" ops/apps-script-pujas
+rg -n "github_pat_|ghp_|ZOOM_PASSCODE_REAL|https://zoom\.us/j/|autorizarGmailPujas" ops/apps-script-pujas/Codigo.gs ops/apps-script-pujas/appsscript.json
 git status --short
 ```
 
-## Restauración
+El primer comando no debe devolver resultados. Si devuelve algo, revisar antes de hacer commit.
 
-Si algo falla:
+## Restauracion
+
+Si el Apps Script falla:
 
 1. Abrir GitHub Desktop.
-2. Revisar el último commit funcional.
+2. Buscar el ultimo commit funcional.
 3. Restaurar `ops/apps-script-pujas/Codigo.gs`.
-4. Copiar el contenido corregido a la carpeta local de clasp.
-5. Ejecutar `clasp push`.
+4. Revisar manualmente que los placeholders se sustituyen por valores reales solo dentro de Apps Script o Propiedades de script.
+5. Ejecutar `clasp push` desde la carpeta local conectada.
+6. Probar desde Google Sheets antes de usarlo en produccion.
