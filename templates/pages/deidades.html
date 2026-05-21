@@ -14,8 +14,11 @@
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ breadcrumb_home_name }}","item":"{{ breadcrumb_home_url }}"},{"@type":"ListItem","position":2,"name":"{{ data.header.title | e }}","item":"{{ breadcrumb_url }}"}]}
 </script>
 {% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="/assets/css/deidades.css?v=20260521-mobile">
+{% endblock %}
 {% block content %}
-    <section class="page-header">
+    <section class="page-header page-header--deities">
       <div class="container">
         <h1>{{ data.header.title }}</h1>
         <p class="page-header__lede">{{ data.header.lede }}</p>
@@ -38,11 +41,13 @@
             <span class="deity-card__summary">
               <span class="deity-card__heading">
                 <span class="deity-card__title">{{ deity.nombre }}</span>
+                <br class="deity-card__fallback-break">
                 <span class="deity-card__badge">{{ deity.categoria_label }}</span>
                 {% if deity.nivel_acceso == 'restringido' and deity.categoria_label != data.labels.restringida %}
                 <span class="deity-card__badge deity-card__badge--restricted">{{ data.labels.restringida }}</span>
                 {% endif %}
               </span>
+              <br class="deity-card__fallback-break">
               <span class="deity-card__short">{{ deity.descripcion_corta }}</span>
             </span>
           </summary>
