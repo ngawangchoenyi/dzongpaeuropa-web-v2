@@ -98,6 +98,52 @@
   </url>
   <url>
     <loc>https://www.dzongpaeuropa.org/deidades</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/deidades"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/deities"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/deities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/deities"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/deities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/deidades"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/en/deities</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/deidades"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/deities"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/deities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/deities"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/deities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/deidades"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/fr/deities</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/deidades"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/deities"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/deities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/deities"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/deities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/deidades"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/de/deities</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/deidades"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/deities"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/deities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/deities"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/deities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/deidades"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.dzongpaeuropa.org/zh/deities</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dzongpaeuropa.org/deidades"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dzongpaeuropa.org/en/deities"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.dzongpaeuropa.org/fr/deities"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.dzongpaeuropa.org/de/deities"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.dzongpaeuropa.org/zh/deities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dzongpaeuropa.org/deidades"/>
     <priority>0.7</priority>
   </url>
   <url>

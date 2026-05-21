@@ -4,6 +4,7 @@ page:
   title: "Praktiken & Gottheiten · Dzongpa Europa"
   description: "Ein informativer Leitfaden zu den Praktiken und Gottheiten der Dzongpa-Linie, mit traditionellem Kontext und redaktionellen Hinweisen."
   slug: "deities"
+  es_slug: "deidades"
   active: "activities"
   robots: "index, follow"
 header:
@@ -13,6 +14,7 @@ intro: "Dieser Katalog vereint öffentliche Beschreibungen von Praktiken und Got
 nota_contexto: "Traditionelle Ausdrücke über Schutz, Hindernisse, Langlebigkeit, Reinigung oder Reichtum werden in ihrem eigenen religiösen und symbolischen Rahmen präsentiert. Sie stellen keine medizinischen, psychologischen oder finanziellen Versprechen dar und ersetzen keine professionelle Beratung."
 nota_restringidas: "Einige Praktiken erfordern Übertragung, Erlaubnis oder spezifische Anweisungen eines qualifizierten Lehrers. Wenn eine Praktik als eingeschränkt markiert ist, werden nur kontextuelle Informationen bereitgestellt."
 labels:
+  catalogo_aria: "Katalog der Praktiken und Gottheiten"
   beneficios: "Zugehörige traditionelle Nutzen"
   aliases: "Auch bekannt als"
   relacionadas: "Verwandte Praktiken"

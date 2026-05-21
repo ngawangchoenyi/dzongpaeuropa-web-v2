@@ -4,6 +4,7 @@ page:
   title: "Practices & Deities · Dzongpa Europa"
   description: "An informative guide to the practices and deities of the Dzongpa lineage, with traditional context and editorial notes."
   slug: "deities"
+  es_slug: "deidades"
   active: "activities"
   robots: "index, follow"
 header:
@@ -13,6 +14,7 @@ intro: "This catalogue brings together public descriptions of practices and deit
 nota_contexto: "Traditional expressions about protection, obstacles, longevity, purification or wealth are presented within their own religious and symbolic framework. They do not constitute medical, psychological or financial promises, nor do they replace professional guidance."
 nota_restringidas: "Some practices require transmission, permission or specific instructions from a qualified teacher. When a practice is marked as restricted, only contextual information is provided."
 labels:
+  catalogo_aria: "Catalogue of practices and deities"
   beneficios: "Associated traditional benefits"
   aliases: "Also known as"
   relacionadas: "Related practices"

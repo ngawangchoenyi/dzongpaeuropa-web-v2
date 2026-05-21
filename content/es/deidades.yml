@@ -4,10 +4,10 @@ page:
   title: "Prácticas y deidades · Dzongpa Europa"
   description: "Catálogo divulgativo de prácticas, deidades y pujas del linaje Dzongpa, con contexto tradicional y notas editoriales."
   slug: "deidades"
-  en_slug: ""
+  en_slug: "deities"
   active: "actividades"
   robots: "index, follow"
-  translations_available: false
+  translations_available: true
 header:
   title: "Prácticas y deidades del linaje Dzongpa"
   lede: "Una guía divulgativa para comprender el sentido tradicional de las prácticas y pujas habituales."
@@ -15,6 +15,7 @@ intro: "Este catálogo reúne descripciones públicas de prácticas y deidades a
 nota_contexto: "Las expresiones tradicionales sobre protección, obstáculos, longevidad, purificación o riqueza se presentan en su marco religioso y simbólico propio. No constituyen promesas médicas, psicológicas, económicas ni sustituyen atención profesional."
 nota_restringidas: "Algunas prácticas requieren transmisión, permiso o instrucciones específicas de un maestro cualificado. Cuando una ficha aparece marcada como restringida, se ofrece solo información contextual."
 labels:
+  catalogo_aria: "Catálogo de prácticas y deidades"
   beneficios: "Beneficios tradicionales asociados"
   aliases: "También conocida como"
   relacionadas: "Prácticas relacionadas"

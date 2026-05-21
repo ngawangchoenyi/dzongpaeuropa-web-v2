@@ -1,8 +1,17 @@
 {% extends data.page.base %}
 {% set page = data.page %}
 {% block jsonld %}
+{% if data.page.lang == 'es' %}
+{% set breadcrumb_url = 'https://www.dzongpaeuropa.org/' ~ data.page.slug %}
+{% set breadcrumb_home_url = 'https://www.dzongpaeuropa.org/' %}
+{% set breadcrumb_home_name = 'Inicio' %}
+{% else %}
+{% set breadcrumb_url = 'https://www.dzongpaeuropa.org/' ~ data.page.lang ~ '/' ~ data.page.slug %}
+{% set breadcrumb_home_url = 'https://www.dzongpaeuropa.org/' ~ data.page.lang %}
+{% set breadcrumb_home_name = {'en': 'Home', 'fr': 'Accueil', 'de': 'Startseite', 'zh': '首页'}[data.page.lang] %}
+{% endif %}
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.dzongpaeuropa.org/"},{"@type":"ListItem","position":2,"name":"{{ data.header.title | e }}","item":"https://www.dzongpaeuropa.org/deidades"}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ breadcrumb_home_name }}","item":"{{ breadcrumb_home_url }}"},{"@type":"ListItem","position":2,"name":"{{ data.header.title | e }}","item":"{{ breadcrumb_url }}"}]}
 </script>
 {% endblock %}
 {% block content %}
@@ -22,7 +31,7 @@
         </div>
       </div>
 
-      <div class="container deities-list" aria-label="Catálogo de prácticas y deidades">
+      <div class="container deities-list" aria-label="{{ data.labels.catalogo_aria | default(data.header.title) }}">
         {% for deity in data.deidades %}
         <details class="deity-card" id="deidad-{{ deity.id }}">
           <summary>
@@ -30,7 +39,7 @@
               <span class="deity-card__heading">
                 <span class="deity-card__title">{{ deity.nombre }}</span>
                 <span class="deity-card__badge">{{ deity.categoria_label }}</span>
-                {% if deity.nivel_acceso == 'restringido' %}
+                {% if deity.nivel_acceso == 'restringido' and deity.categoria_label != data.labels.restringida %}
                 <span class="deity-card__badge deity-card__badge--restricted">{{ data.labels.restringida }}</span>
                 {% endif %}
               </span>

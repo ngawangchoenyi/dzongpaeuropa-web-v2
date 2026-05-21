@@ -4,6 +4,7 @@ page:
   title: "修法与本尊 · 龙巴欧洲"
   description: "龙巴传承修法与本尊的介绍性指南，附传统背景与编辑说明。"
   slug: "deities"
+  es_slug: "deidades"
   active: "activities"
   robots: "index, follow"
 header:
@@ -13,6 +14,7 @@ intro: "本目录汇集了与萨迦龙巴传承相关的修法和本尊的公开
 nota_contexto: "有关护佑、障碍、长寿、净化或财富的传统表述，均在其宗教与象征框架内呈现，不构成医疗、心理或经济承诺，亦不能替代专业指导。"
 nota_restringidas: "部分修法需要具备资格的上师传授、授权或具体指导。若某修法被标注为限制性修法，则仅提供背景信息。"
 labels:
+  catalogo_aria: "修法与本尊目录"
   beneficios: "相关传统功德利益"
   aliases: "又称"
   relacionadas: "相关修法"

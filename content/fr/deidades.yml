@@ -4,6 +4,7 @@ page:
   title: "Pratiques et divinités · Dzongpa Europa"
   description: "Un guide informatif sur les pratiques et divinités du lignage Dzongpa, avec contexte traditionnel et notes éditoriales."
   slug: "deities"
+  es_slug: "deidades"
   active: "activities"
   robots: "index, follow"
 header:
@@ -13,6 +14,7 @@ intro: "Ce catalogue réunit des descriptions publiques de pratiques et divinit�
 nota_contexto: "Les expressions traditionnelles sur la protection, les obstacles, la longévité, la purification ou la richesse sont présentées dans leur propre cadre religieux et symbolique. Elles ne constituent pas des promesses médicales, psychologiques ou financières, et ne remplacent pas un accompagnement professionnel."
 nota_restringidas: "Certaines pratiques requièrent une transmission, une permission ou des instructions spécifiques d'un enseignant qualifié. Lorsqu'une pratique est indiquée comme restreinte, seules des informations contextuelles sont fournies."
 labels:
+  catalogo_aria: "Catalogue des pratiques et divinités"
   beneficios: "Bienfaits traditionnels associés"
   aliases: "Également connue sous le nom de"
   relacionadas: "Pratiques apparentées"
