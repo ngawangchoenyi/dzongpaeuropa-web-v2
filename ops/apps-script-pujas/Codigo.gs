@@ -1,4 +1,4 @@
-﻿const CONFIG = {
+const CONFIG = {
   ORG_NAME: 'Dzongpa Europa',
   ADMIN_EMAIL: 'secretaria@dzongpaeuropa.org',
   WEB_URL: 'https://www.dzongpaeuropa.org',

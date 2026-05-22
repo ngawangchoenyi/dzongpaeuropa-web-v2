@@ -21,13 +21,35 @@ Los valores sensibles deben vivir en Apps Script como Propiedades de script o en
 
 ## Flujo de backup recomendado
 
-1. Conectar la carpeta local con `.clasp.json` usando el `scriptId` real. Ese archivo esta ignorado por Git.
-2. Ejecutar `clasp pull` para traer la version actual desde Google.
-3. Si `clasp pull` crea un archivo como `Codigo.js` o `Codigo.gs` con valores reales, no subirlo directamente.
-4. Copiar solo los cambios de logica a `Codigo.gs` y mantener placeholders para datos sensibles.
-5. Eliminar el archivo descargado con datos reales.
-6. Ejecutar las comprobaciones rapidas.
-7. Guardar el backup con `git add`, `git commit` y `git push`.
+Ejecutar desde la raiz del repo:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\backup_apps_script_pujas.ps1
+```
+
+El script:
+
+1. Usa `.clasp.json` local para conectar con el Apps Script real.
+2. Hace `clasp pull` en una carpeta temporal fuera del repo.
+3. Sanea automaticamente `SHEET_ID`, `ZOOM_URL`, `ZOOM_ID` y `ZOOM_PASSCODE`.
+4. Actualiza `Codigo.gs` y `appsscript.json`.
+5. Ejecuta comprobaciones de seguridad y sintaxis.
+6. Elimina la carpeta temporal con valores reales.
+
+Despues revisar y guardar:
+
+```powershell
+git diff -- ops/apps-script-pujas scripts/backup_apps_script_pujas.ps1
+git add ops/apps-script-pujas scripts/backup_apps_script_pujas.ps1
+git commit -m "Backup Apps Script pujas"
+git push origin main
+```
+
+Modo automatico opcional:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\backup_apps_script_pujas.ps1 -Commit -Push
+```
 
 ## Reautorizar Gmail
 
