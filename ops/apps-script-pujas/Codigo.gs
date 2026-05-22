@@ -334,6 +334,20 @@ function notifyAdminError(subject, detail) {
   );
 }
 
+function autorizarPermisosPujas() {
+  GmailApp.sendEmail(
+    CONFIG.ADMIN_EMAIL,
+    'Autorizacion permisos Dzongpa Pujas',
+    'Permisos de GmailApp autorizados para la automatizacion de pujas.',
+    {
+      name: CONFIG.ORG_NAME,
+      replyTo: CONFIG.REPLY_TO
+    }
+  );
+
+  Logger.log('Autorizacion de permisos completada.');
+}
+
 function escapeHtml(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')

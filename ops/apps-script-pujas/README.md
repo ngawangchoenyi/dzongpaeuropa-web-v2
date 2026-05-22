@@ -29,6 +29,16 @@ Los valores sensibles deben vivir en Apps Script como Propiedades de script o en
 6. Ejecutar las comprobaciones rapidas.
 7. Guardar el backup con `git add`, `git commit` y `git push`.
 
+## Reautorizar Gmail
+
+Si Google envia errores de permisos en `onFormSubmit` o tras cambiar `appsscript.json`:
+
+1. Abrir el editor de Apps Script.
+2. Seleccionar la funcion `autorizarPermisosPujas`.
+3. Pulsar `Ejecutar`.
+4. Aceptar los permisos solicitados con la cuenta `secretaria@dzongpaeuropa.org`.
+5. Confirmar que llega el email `Autorizacion permisos Dzongpa Pujas`.
+
 ## Comprobaciones rapidas
 
 ```powershell
