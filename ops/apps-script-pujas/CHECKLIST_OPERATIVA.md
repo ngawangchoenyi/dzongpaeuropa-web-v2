@@ -1,0 +1,206 @@
+# Checklist operativa semanal - Pujas Dzongpa Europa
+
+Objetivo: publicar, verificar y operar la puja semanal con el minimo trabajo manual y sin exponer datos privados.
+
+## Regla principal
+
+- La web solo publica informacion publica: nombre, fecha, horario, formulario y enlaces de donativo.
+- Zoom no se publica en la web.
+- Tokens, enlaces privados, contrasenas y datos sensibles no se suben a GitHub.
+- Los cambios de codigo se guardan con backup antes o despues de tocar Apps Script.
+
+## 1. Preparar la puja activa
+
+En Google Sheets:
+
+1. Abrir la hoja de respuestas de pujas.
+2. Revisar `Pujas_Eventos`.
+3. Confirmar que solo hay una fila con estado `activo`.
+4. Revisar estos campos de la fila activa:
+   - `puja_id`
+   - `puja_key`
+   - `fecha`
+   - `hora_es`
+   - `hora_tw`
+   - `start_iso`
+   - `formulario_url`
+   - `zoom_url`
+   - `zoom_id`
+   - `zoom_passcode`
+   - `stripe_individual_url`
+   - `stripe_familia_url`
+   - `stripe_libre_url`
+5. Revisar `Catalogo_Pujas` si cambia el nombre, descripcion o textos base.
+6. Revisar `Plantillas_Mensajes` si cambia algun texto de email o WhatsApp.
+
+Criterio de OK:
+
+- La puja activa corresponde a la semana correcta.
+- La fecha no esta en el pasado.
+- Los tres enlaces Stripe son distintos.
+- El enlace del formulario abre el formulario correcto.
+- Zoom existe en Sheets, pero no aparece en la web.
+
+## 2. Control de calidad antes de publicar
+
+En Google Sheets, menu `Dzongpa Pujas`:
+
+1. Ejecutar `Actualizar panel operativo`.
+2. Ejecutar `Control de calidad puja activa`.
+3. Revisar el popup o email de resultado.
+
+No continuar si aparece algun aviso critico.
+
+Avisos criticos habituales:
+
+- Falta `GITHUB_TOKEN`: revisar Propiedades de script.
+- Falta Zoom: revisar `Pujas_Eventos`.
+- Stripe repetido: corregir enlaces.
+- Web URL incorrecta: debe apuntar a `https://www.dzongpaeuropa.org`.
+- Formulario incorrecto: revisar `formulario_url`.
+
+## 3. Publicar semana completa
+
+En Google Sheets, menu `Dzongpa Pujas`:
+
+1. Ejecutar `Publicar semana completa`.
+2. Esperar el email interno de resultado.
+3. Comprobar que todos los pasos aparecen como `OK`:
+   - Sincronizar configuracion
+   - Control de calidad
+   - Validar puja activa
+   - Preparar puja activa
+   - Publicar puja en web
+   - Generar mensaje WhatsApp
+   - Enviar panel de control
+   - Actualizar panel operativo
+
+Despues:
+
+1. Abrir GitHub Actions.
+2. Confirmar que el workflow de build termina en verde.
+3. Abrir `https://www.dzongpaeuropa.org/pujas-semanales`.
+4. Verificar en escritorio y movil:
+   - Nombre de la puja.
+   - Fecha.
+   - Horario.
+   - Boton `Registrarse`.
+   - Botones de donativo.
+   - No aparece Zoom.
+
+## 4. Prueba real de formulario
+
+Tras publicar:
+
+1. Abrir la pagina publica de pujas.
+2. Pulsar `Registrarse`.
+3. Enviar una inscripcion de prueba identificable, por ejemplo nombre `TEST Dzongpa`.
+4. Confirmar en Gmail:
+   - El usuario recibe confirmacion.
+   - Secretaria recibe aviso interno.
+5. Confirmar en Google Sheets:
+   - La fila aparece.
+   - `puja_id` coincide con la puja activa.
+   - `Estado email confirmacion` queda en `Enviado`.
+   - `Fecha email confirmacion` queda rellenada.
+
+Si la prueba fue solo tecnica, marcarla claramente como test o eliminarla manualmente solo despues de confirmar que no afecta a datos reales.
+
+## 5. Seguimiento diario
+
+Cada dia mientras la puja esta abierta:
+
+1. Revisar `Panel_Operativo`.
+2. Revisar `Logs_Automatizacion`.
+3. Revisar Gmail por avisos de:
+   - Google Apps Script failures.
+   - Errores GitHub.
+   - Errores de permisos.
+4. Revisar numero de inscripciones.
+
+Si llega aviso de permisos Gmail:
+
+1. Abrir Apps Script.
+2. Ejecutar `autorizarPermisosPujas`.
+3. Aceptar permisos.
+4. Enviar una prueba de formulario.
+
+## 6. Recordatorios automaticos
+
+La funcion `ejecutarAutomatizacionPuja` se ejecuta por trigger temporal.
+
+Debe enviar:
+
+- Recordatorio 24h cuando falten 24 horas o menos.
+- Recordatorio 2h cuando falten 2 horas o menos.
+- Email post-puja cuando la practica haya terminado.
+
+Comprobacion:
+
+1. Revisar `Panel_Operativo`.
+2. Revisar columnas:
+   - `Estado recordatorio 24h`
+   - `Estado recordatorio 2h`
+   - `Estado email post-puja`
+3. Confirmar que no se duplican envios para el mismo email.
+
+Si hace falta forzar una comprobacion:
+
+1. En Apps Script o menu, ejecutar `Ejecutar automatizacion puja`.
+2. Revisar el log.
+3. No repetir varias veces si ya aparecen estados `Enviado`.
+
+## 7. Despues de la puja
+
+1. Confirmar que el email post-puja se ha enviado.
+2. Revisar si hay respuestas o incidencias en `secretaria@dzongpaeuropa.org`.
+3. Actualizar `Pujas_Eventos` para preparar la siguiente semana.
+4. Dejar la puja antigua fuera de estado `activo`.
+
+## 8. Backup despues de cambios
+
+Ejecutar desde la raiz del repo:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\backup_apps_script_pujas.ps1
+```
+
+Despues revisar:
+
+```powershell
+git diff -- ops/apps-script-pujas scripts/backup_apps_script_pujas.ps1
+git status --short
+```
+
+Si todo esta correcto:
+
+```powershell
+git add ops/apps-script-pujas scripts/backup_apps_script_pujas.ps1
+git commit -m "Backup Apps Script pujas"
+git push origin main
+```
+
+## 9. Incidencias rapidas
+
+| Problema | Accion |
+| --- | --- |
+| No llega email de confirmacion | Revisar triggers, ejecutar `autorizarPermisosPujas`, probar formulario. |
+| Llega aviso de permisos de Google | Reautorizar con `autorizarPermisosPujas`. |
+| La web no actualiza la puja | Revisar GitHub Actions y `GITHUB_TOKEN`. |
+| Stripe apunta mal | Corregir URLs en `Pujas_Eventos` y volver a publicar semana completa. |
+| No aparece `puja_id` | Ejecutar prueba de formulario y revisar encabezados de Sheets. |
+| Recordatorio no sale | Revisar `PUJA_START_ISO`, estados de recordatorio y trigger temporal. |
+| Hay emails duplicados | Revisar columnas de estado y duplicados de email en la hoja. |
+
+## 10. Criterio final de semana lista
+
+La semana esta lista cuando:
+
+- Control de calidad devuelve OK.
+- Web publica muestra la puja correcta.
+- Formulario publica registra una fila nueva.
+- Usuario recibe confirmacion.
+- Secretaria recibe aviso interno.
+- Stripe individual, familia y libre abren enlaces correctos.
+- Panel operativo no muestra avisos criticos.
+- Backup del Apps Script esta guardado si hubo cambios de codigo.

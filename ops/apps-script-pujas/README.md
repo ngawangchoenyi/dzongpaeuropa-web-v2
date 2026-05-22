@@ -7,6 +7,7 @@ Esta carpeta guarda una copia versionada y saneada del Apps Script usado para au
 - `Codigo.gs`: codigo principal preparado para GitHub, sin valores privados reales.
 - `appsscript.json`: manifest del proyecto Apps Script.
 - `.clasp.json.example`: plantilla local para conectar esta carpeta con el proyecto real.
+- `CHECKLIST_OPERATIVA.md`: procedimiento semanal para publicar, probar y supervisar pujas.
 
 ## Que NO debe subirse a GitHub
 
