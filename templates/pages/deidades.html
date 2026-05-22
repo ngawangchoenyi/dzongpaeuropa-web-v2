@@ -15,7 +15,7 @@
 </script>
 {% endblock %}
 {% block extra_head %}
-<link rel="stylesheet" href="/assets/css/deidades.css?v=20260521-mobile">
+<link rel="stylesheet" href="/assets/css/deidades.css?v=20260522-anchor">
 {% endblock %}
 {% block content %}
     <section class="page-header page-header--deities">
@@ -86,4 +86,30 @@
         {% endfor %}
       </div>
     </section>
+{% endblock %}
+{% block extra_scripts %}
+<script>
+  (function () {
+    function openLinkedDeity() {
+      if (!window.location.hash) return;
+
+      var target = document.getElementById(window.location.hash.slice(1));
+      if (!target || !target.classList.contains('deity-card')) return;
+
+      target.open = true;
+
+      window.requestAnimationFrame(function () {
+        target.scrollIntoView({ block: 'start' });
+      });
+    }
+
+    window.addEventListener('hashchange', openLinkedDeity);
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', openLinkedDeity);
+    } else {
+      openLinkedDeity();
+    }
+  })();
+</script>
 {% endblock %}

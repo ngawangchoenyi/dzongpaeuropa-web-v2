@@ -49,6 +49,7 @@
   box-shadow: var(--shadow-sm);
   margin-bottom: 14px;
   overflow: hidden;
+  scroll-margin-top: 112px;
 }
 
 .deity-card[open] {
@@ -250,6 +251,7 @@
 
   .deity-card {
     margin-bottom: 12px;
+    scroll-margin-top: 94px;
   }
 
   .deity-card summary {
