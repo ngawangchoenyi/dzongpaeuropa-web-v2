@@ -10,7 +10,9 @@ Soporta dos modos:
 """
 
 import os
+import re
 import sys
+import unicodedata
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -245,6 +247,124 @@ def hydrate_deidades(data):
             for related_id in (item.get('practicas_relacionadas') or [])
         ]
 
+
+def deidades_page_url(lang, deity_id):
+    """Devuelve la URL publica de una ficha del catalogo de deidades."""
+    slug_by_lang = {
+        'es': 'deidades.html',
+        'en': 'en/deities.html',
+        'fr': 'fr/deities.html',
+        'de': 'de/deities.html',
+        'zh': 'zh/deities.html',
+    }
+    slug = slug_by_lang.get(lang, 'deidades.html')
+    return '/' + slug + '#deidad-' + deity_id
+
+
+def normalize_lookup_text(value):
+    """Normaliza texto para comparar nombres/aliases sin depender de acentos."""
+    text = str(value or '').lower()
+    text = unicodedata.normalize('NFKD', text)
+    text = ''.join(char for char in text if not unicodedata.combining(char))
+    return re.sub(r'[^a-z0-9]+', ' ', text).strip()
+
+
+def split_catalog_refs(value):
+    """Acepta listas o texto separado por coma, punto y coma, barra o mas."""
+    if not value:
+        return []
+    if isinstance(value, list):
+        parts = value
+    else:
+        parts = re.split(r'[,;|+]+', str(value))
+    return [str(part).strip() for part in parts if str(part).strip()]
+
+
+def infer_active_puja_refs(active_puja, catalog_items):
+    """Intenta detectar fichas del catalogo a partir del nombre publico."""
+    names = []
+    for value in (active_puja.get('name') or {}).values():
+        if value:
+            names.append(normalize_lookup_text(value))
+    search_text = ' '.join(names)
+    refs = []
+
+    for item in catalog_items:
+        candidates = [item.get('nombre'), item.get('id')]
+        candidates.extend(item.get('aliases') or [])
+
+        for candidate in candidates:
+            normalized = normalize_lookup_text(candidate)
+            if normalized and normalized in search_text:
+                refs.append(item.get('id'))
+                break
+
+    return refs
+
+
+def hydrate_active_puja(active_puja, lang):
+    """Anade fichas del catalogo de deidades a la puja activa."""
+    if not active_puja:
+        return
+
+    catalog_data = load_yaml_content(lang, 'deidades')
+    if not catalog_data:
+        return
+
+    hydrate_deidades(catalog_data)
+    catalog_items = catalog_data.get('deidades', [])
+    items_by_id = {item.get('id'): item for item in catalog_items}
+
+    refs = []
+    for key in ('catalog_refs', 'deity_ids', 'deidad_ids', 'deidades_ids', 'puja_key'):
+        refs.extend(split_catalog_refs(active_puja.get(key)))
+
+    if not refs:
+        refs = infer_active_puja_refs(active_puja, catalog_items)
+
+    seen = set()
+    catalog_matches = []
+    for ref in refs:
+        deity_id = str(ref).strip()
+        if not deity_id or deity_id in seen:
+            continue
+        seen.add(deity_id)
+        item = items_by_id.get(deity_id)
+        if not item:
+            continue
+        item = dict(item)
+        item['url'] = deidades_page_url(lang, deity_id)
+        catalog_matches.append(item)
+
+    active_puja['catalog_items'] = catalog_matches
+    active_puja['catalog_labels'] = {
+        'es': {
+            'title': 'Sobre esta práctica',
+            'benefits': 'Beneficios tradicionales',
+            'link': 'Ver ficha completa en Prácticas y deidades',
+        },
+        'en': {
+            'title': 'About this practice',
+            'benefits': 'Traditional benefits',
+            'link': 'View full entry in Practices and deities',
+        },
+        'fr': {
+            'title': 'À propos de cette pratique',
+            'benefits': 'Bienfaits traditionnels',
+            'link': 'Voir la fiche complète dans Pratiques et déités',
+        },
+        'de': {
+            'title': 'Über diese Praxis',
+            'benefits': 'Traditionelle Vorteile',
+            'link': 'Vollständigen Eintrag unter Praktiken und Gottheiten ansehen',
+        },
+        'zh': {
+            'title': '关于此修法',
+            'benefits': '传统利益',
+            'link': '在“修法与本尊”中查看完整条目',
+        },
+    }.get(lang, {}).copy()
+
 def render_yaml_page(lang, page_stem):
     """Renderiza una página usando YAML + template único en templates/pages/."""
     data = load_yaml_content(lang, page_stem)
@@ -259,6 +379,8 @@ def render_yaml_page(lang, page_stem):
     puja_shared = load_shared_content('puja-activa.yml')
     if puja_shared:
         data['active_puja'] = puja_shared.get('active_puja', puja_shared)
+        if page_stem == 'pujas-semanales':
+            hydrate_active_puja(data['active_puja'], lang)
 
     if page_stem == 'deidades':
         hydrate_deidades(data)

@@ -1,6 +1,9 @@
 active_puja:
   enabled: true
   puja_id: "2026-05-23"
+  catalog_refs:
+    - "ganapati-blanco-dzongpa"
+    - "vajradaka-fire-puja"
   form_url: "https://docs.google.com/forms/d/e/1FAIpQLSfGSGeSLLvUDO2t9Xb6vNucPppjzrWeug3ObdQ3mJNF7veK4A/viewform"
   web_url: "https://www.dzongpaeuropa.org/pujas-semanales"
   stripe:

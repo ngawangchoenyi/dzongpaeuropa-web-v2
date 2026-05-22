@@ -401,6 +401,10 @@ p:last-child { margin-bottom: 0; }
   margin: 0 auto;
 }
 
+.page-header--pujas h1 {
+  overflow-wrap: anywhere;
+}
+
 /* -- Sección de pilares -------------------------- */
 .pillars {
   display: grid;
@@ -450,6 +454,212 @@ p:last-child { margin-bottom: 0; }
 }
 .golden-box h3 { color: var(--c-granate); margin-bottom: 8px; }
 .golden-box p:last-child { margin-bottom: 0; }
+
+/* -- Puja semanal activa ------------------------- */
+.puja-active {
+  margin: 32px 0;
+  overflow-wrap: break-word;
+}
+
+.puja-active h2 {
+  margin-top: 0;
+}
+
+.puja-active__badge {
+  margin: 0 0 8px;
+  color: var(--c-granate);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+}
+
+.puja-active__meta {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0;
+  font-size: 0.95rem;
+}
+
+.puja-active__meta div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 34%) 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.puja-active__meta dt {
+  font-weight: 600;
+}
+
+.puja-active__meta dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.puja-active__description {
+  margin-bottom: 0;
+}
+
+.puja-active__catalog {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(212, 168, 55, 0.35);
+}
+
+.puja-active__catalog h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.puja-active__catalog-item {
+  padding: 14px 0;
+  border-top: 1px solid rgba(31, 59, 104, 0.14);
+  text-align: left;
+}
+
+.puja-active__catalog-item:first-of-type {
+  border-top: 0;
+}
+
+.puja-active__catalog-item h4 {
+  margin: 0 0 4px;
+  font-family: var(--f-serif);
+  color: var(--c-azul);
+  font-size: 1.15rem;
+}
+
+.puja-active__catalog-item p {
+  margin: 0 0 10px;
+}
+
+.puja-active__category {
+  color: var(--c-granate);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.puja-active__benefits-title {
+  margin: 10px 0 6px;
+  font-weight: 700;
+}
+
+.puja-active__catalog-item ul {
+  margin: 0 0 8px;
+  padding-left: 1.2em;
+}
+
+.puja-active__catalog-link {
+  color: var(--c-granate);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.puja-active__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.puja-active__note {
+  margin: 14px 0 0;
+  color: var(--c-texto-suave);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 560px) {
+  .page-header--pujas {
+    padding: 56px 0 44px;
+  }
+
+  .page-header--pujas h1 {
+    font-size: 1.78rem;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .page-header--pujas .page-header__lede {
+    font-size: 1.08rem;
+    line-height: 1.55;
+  }
+
+  .pujas-page {
+    overflow-x: hidden;
+  }
+
+  .pujas-page *,
+  .page-header--pujas * {
+    min-width: 0;
+  }
+
+  .pujas-page .container,
+  .pujas-page .container-prose {
+    max-width: 330px;
+    width: calc(100vw - 64px);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .page-header--pujas .container {
+    max-width: 330px;
+    width: calc(100vw - 64px);
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .pujas-page p,
+  .pujas-page li,
+  .pujas-page dd,
+  .pujas-page a,
+  .page-header--pujas h1,
+  .page-header--pujas .page-header__lede {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .pujas-page table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .pujas-page code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .pujas-page .golden-box {
+    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .puja-active {
+    padding: 24px 16px;
+  }
+
+  .puja-active__meta div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .puja-active__catalog-item h4 {
+    font-size: 1.08rem;
+  }
+
+  .puja-active__actions .btn {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+}
 
 /* -- Tarjetas de socio --------------------------- */
 .socio-grid {
@@ -792,10 +1002,14 @@ p:last-child { margin-bottom: 0; }
     max-width: calc(100vw - 28px);
   }
   .cookie-consent__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: stretch;
   }
   .cookie-consent__btn {
-    flex: 1;
+    min-width: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

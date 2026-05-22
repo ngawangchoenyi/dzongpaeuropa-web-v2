@@ -2339,11 +2339,27 @@ function construirYamlPujaActivaWeb_(data) {
   const stripeIndividual = pujasText_(data.stripe_individual_url) || CONFIG.STRIPE_INDIVIDUAL_URL;
   const stripeFamilia = pujasText_(data.stripe_familia_url) || CONFIG.STRIPE_FAMILIA_URL;
   const stripeLibre = pujasText_(data.stripe_libre_url) || CONFIG.STRIPE_LIBRE_URL;
+  const pujaKey = pujasText_(data.puja_key);
+  const catalogRefs = pujasCatalogRefs_(data);
 
   const lines = [
     'active_puja:',
     '  enabled: true',
-    '  puja_id: ' + pujasYamlQuote_(CONFIG.PUJA_ID),
+    '  puja_id: ' + pujasYamlQuote_(CONFIG.PUJA_ID)
+  ];
+
+  if (pujaKey) {
+    lines.push('  puja_key: ' + pujasYamlQuote_(pujaKey));
+  }
+
+  if (catalogRefs.length) {
+    lines.push('  catalog_refs:');
+    catalogRefs.forEach(function(ref) {
+      lines.push('    - ' + pujasYamlQuote_(ref));
+    });
+  }
+
+  lines.push(
     '  form_url: ' + pujasYamlQuote_(formUrl),
     '  web_url: ' + pujasYamlQuote_(webUrl),
     '  stripe:',
@@ -2390,7 +2406,7 @@ function construirYamlPujaActivaWeb_(data) {
     '    de: "8 EUR einzeln - 15 EUR Familie - freie Spende"',
     '    zh: "个人 8 欧元 - 家庭 15 欧元 - 随喜供养"',
     '  text:'
-  ];
+  );
 
   const texts = pujasWebTexts_();
   ['es', 'en', 'fr', 'de', 'zh'].forEach(function(lang) {
@@ -2401,6 +2417,28 @@ function construirYamlPujaActivaWeb_(data) {
   });
 
   return lines.join('\n') + '\n';
+}
+
+function pujasCatalogRefs_(data) {
+  const source =
+    pujasText_(data.catalog_refs) ||
+    pujasText_(data.deity_ids) ||
+    pujasText_(data.deidad_ids) ||
+    pujasText_(data.deidades_ids) ||
+    pujasText_(data.catalogo_refs) ||
+    pujasText_(data.puja_key);
+
+  if (!source) return [];
+
+  const seen = {};
+  const refs = [];
+  source.split(/[,;|+]+/).forEach(function(part) {
+    const ref = String(part || '').trim();
+    if (!ref || seen[ref]) return;
+    seen[ref] = true;
+    refs.push(ref);
+  });
+  return refs;
 }
 
 function pujasWebTexts_() {
