@@ -52,6 +52,7 @@ function crearMenuDzongpaPujas_() {
     .addSeparator()
     .addItem('Enviar resumen diario ahora', 'menuEnviarResumenDiarioInscripciones')
     .addItem('Ejecutar automatizacion ahora', 'menuEjecutarAutomatizacionPuja')
+    .addItem('Programar recordatorio 2h exacto', 'menuProgramarRecordatorio2hExacto')
     .addSeparator()
     .addItem('Instalar automatizacion completa', 'menuInstalarAutomatizacionCompleta')
     .addItem('Configurar GitHub', 'menuConfigurarPublicacionGitHubDzongpa')
@@ -98,6 +99,10 @@ function menuEnviarResumenDiarioInscripciones() {
 
 function menuEjecutarAutomatizacionPuja() {
   return ejecutarAccionMenu_('Ejecutar automatizacion puja', ejecutarAutomatizacionPuja, 'Automatizacion ejecutada.');
+}
+
+function menuProgramarRecordatorio2hExacto() {
+  return ejecutarAccionMenu_('Programar recordatorio 2h exacto', programarRecordatorio2hExacto, 'Recordatorio 2h programado.');
 }
 
 function menuInstalarAutomatizacionCompleta() {
@@ -192,7 +197,8 @@ function onFormSubmit(e) {
 
     setCellByHeader(e.range.getSheet(), e.range.getRow(), 'puja_id', CONFIG.PUJA_ID);
     markRow(e, 'Enviado', new Date(), '');
-    registrarLogAutomatizacion_('Nueva inscripcion', 'OK', 'Confirmacion enviada a ' + email, 'form');
+    const zoomTardio = enviarZoom2hSiCorresponde_(e, email, nombre);
+    registrarLogAutomatizacion_('Nueva inscripcion', 'OK', 'Confirmacion enviada a ' + email + '. ' + zoomTardio, 'form');
 
   } catch (err) {
     markRow(e, 'ERROR', '', String(err));
@@ -732,8 +738,65 @@ function normalizeSheetValue(value) {
   return String(value || '').trim();
 }
 
+function enviarZoom2hSiCorresponde_(e, email, nombre) {
+  if (!e || !e.range || !email) return 'Zoom 2h: no aplica.';
+
+  const diffHours = horasHastaPuja_();
+  if (diffHours > 2 || diffHours <= 0) {
+    return 'Zoom 2h: fuera de ventana.';
+  }
+
+  if (!zoomConfigCompleta_()) {
+    throw new Error('No se puede enviar Zoom 2h: Zoom incompleto.');
+  }
+
+  const lock = LockService.getScriptLock();
+  lock.waitLock(30000);
+
+  try {
+    const sheet = e.range.getSheet();
+    const row = e.range.getRow();
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const colPujaId = findColumn(headers, ['puja_id']);
+    const colEstado2h = findColumn(headers, ['Estado recordatorio 2h']);
+
+    const rowPujaId = colPujaId >= 0 ? normalizeSheetValue(sheet.getRange(row, colPujaId + 1).getValue()) : normalizeSheetValue(CONFIG.PUJA_ID);
+    const estadoActual = colEstado2h >= 0 ? String(sheet.getRange(row, colEstado2h + 1).getValue() || '').trim() : '';
+
+    if (rowPujaId !== normalizeSheetValue(CONFIG.PUJA_ID)) {
+      return 'Zoom 2h: puja_id distinto.';
+    }
+
+    if (estadoActual === 'Enviado') {
+      return 'Zoom 2h: ya enviado.';
+    }
+
+    const message = buildReminder2hEmail(nombre);
+    GmailApp.sendEmail(
+      email,
+      message.subject,
+      message.textBody,
+      {
+        htmlBody: message.htmlBody,
+        name: CONFIG.ORG_NAME,
+        replyTo: CONFIG.REPLY_TO
+      }
+    );
+
+    setCellByHeader(sheet, row, 'Estado recordatorio 2h', 'Enviado');
+    registrarLogAutomatizacion_('Zoom 2h inscripcion tardia', 'OK', 'Zoom enviado a ' + email, 'form');
+    return 'Zoom 2h: enviado al inscribirse dentro de la ventana.';
+  } finally {
+    lock.releaseLock();
+  }
+}
+
 function enviarRecordatorio2h() {
   sincronizarConfigDesdeSheets_();
+  const lock = LockService.getScriptLock();
+  lock.waitLock(30000);
+
+  try {
 
   const sheet = getResponsesSheet_();
   const data = sheet.getDataRange().getValues();
@@ -804,8 +867,6 @@ function enviarRecordatorio2h() {
     enviados++;
     emailsYaEnviados[email.toLowerCase()] = true;
     listaEnviados.push('Fila ' + (i + 1) + ' | ' + email);
-
-    Utilities.sleep(300);
   }
 
   GmailApp.sendEmail(
@@ -827,6 +888,9 @@ function enviarRecordatorio2h() {
   );
 
   Logger.log('Recordatorio 2h completado. Enviados: ' + enviados + ', omitidos: ' + omitidos);
+  } finally {
+    lock.releaseLock();
+  }
 }
 
 function buildReminder2hEmail(nombre) {
@@ -1154,8 +1218,13 @@ function ejecutarAutomatizacionPuja() {
     }
   }
 
-  if (diffHours <= 2 && diffHours > 0) {
+  if (diffHours <= 2 && diffHours > 1.75) {
+    Logger.log('2h: envio principal delegado al activador exacto. Sin envio por rescate todavia.');
+  }
+
+  if (diffHours <= 1.75 && diffHours > 0) {
     if (hayPendientesParaPuja_('Estado recordatorio 2h')) {
+      Logger.log('2h: envio de rescate para pendientes.');
       enviarRecordatorio2h();
     } else {
       Logger.log('2h: no hay pendientes.');
@@ -1175,6 +1244,7 @@ function instalarAutomatizacionCompleta() {
   installTrigger();
   instalarMenuGoogleSheets_();
   instalarActivadorAutomatizacionPuja_();
+  programarRecordatorio2hExacto_();
   instalarResumenDiarioInscripciones_();
   instalarPublicacionWebAutomatica_();
   actualizarReadmeOperativo();
@@ -1200,6 +1270,10 @@ function publicarSemanaCompleta() {
 
   registrarPasoPublicacionSemana_(pasos, 'Preparar puja activa', function() {
     return prepararPujaActiva();
+  });
+
+  registrarPasoPublicacionSemana_(pasos, 'Programar recordatorio 2h exacto', function() {
+    return programarRecordatorio2hExacto_();
   });
 
   registrarPasoPublicacionSemana_(pasos, 'Publicar puja en web', function() {
@@ -1571,7 +1645,119 @@ function instalarActivadorAutomatizacionPuja_() {
     .everyMinutes(30)
     .create();
 
-  Logger.log('Activador cada 30 minutos instalado para ejecutarAutomatizacionPuja.');
+  Logger.log('Activador de rescate cada 30 minutos instalado para ejecutarAutomatizacionPuja.');
+}
+
+function programarRecordatorio2hExacto() {
+  return programarRecordatorio2hExacto_();
+}
+
+function programarRecordatorio2hExacto_() {
+  sincronizarConfigDesdeSheets_();
+  validarConfigAutomatizacion_();
+  borrarActivadoresPorFuncion_('enviarRecordatorio2hProgramado');
+
+  const start = new Date(CONFIG.PUJA_START_ISO);
+  const now = new Date();
+  const runAt = new Date(start.getTime() - 2 * 60 * 60 * 1000);
+
+  let resumen = '';
+
+  if (start.getTime() <= now.getTime()) {
+    resumen =
+      'No se programa recordatorio 2h: la puja ya ha empezado o ya ha pasado.\n' +
+      'Puja: ' + CONFIG.PUJA_NOMBRE + '\n' +
+      'puja_id: ' + CONFIG.PUJA_ID + '\n' +
+      'Inicio: ' + formatearFechaHoraOperativa_(start);
+    Logger.log(resumen);
+    registrarLogAutomatizacion_('Programar recordatorio 2h exacto', 'AVISO', resumen, 'trigger');
+    return resumen;
+  }
+
+  if (runAt.getTime() <= now.getTime()) {
+    resumen =
+      'La ventana de 2h ya esta abierta. Se envian pendientes ahora.\n' +
+      'Puja: ' + CONFIG.PUJA_NOMBRE + '\n' +
+      'puja_id: ' + CONFIG.PUJA_ID + '\n' +
+      'Inicio: ' + formatearFechaHoraOperativa_(start);
+
+    if (hayPendientesParaPuja_('Estado recordatorio 2h')) {
+      enviarRecordatorio2h();
+    } else {
+      resumen += '\nPendientes: 0';
+    }
+
+    Logger.log(resumen);
+    registrarLogAutomatizacion_('Programar recordatorio 2h exacto', 'OK', resumen, 'trigger');
+    return resumen;
+  }
+
+  ScriptApp.newTrigger('enviarRecordatorio2hProgramado')
+    .timeBased()
+    .at(runAt)
+    .create();
+
+  resumen =
+    'Recordatorio 2h exacto programado.\n' +
+    'Puja: ' + CONFIG.PUJA_NOMBRE + '\n' +
+    'puja_id: ' + CONFIG.PUJA_ID + '\n' +
+    'Inicio: ' + formatearFechaHoraOperativa_(start) + '\n' +
+    'Envio Zoom: ' + formatearFechaHoraOperativa_(runAt);
+
+  Logger.log(resumen);
+  registrarLogAutomatizacion_('Programar recordatorio 2h exacto', 'OK', resumen, 'trigger');
+  return resumen;
+}
+
+function enviarRecordatorio2hProgramado() {
+  sincronizarConfigDesdeSheets_();
+  validarConfigAutomatizacion_();
+
+  let resumen = 'Recordatorio 2h programado ejecutado.\nPuja: ' + CONFIG.PUJA_NOMBRE + '\npuja_id: ' + CONFIG.PUJA_ID;
+
+  if (hayPendientesParaPuja_('Estado recordatorio 2h')) {
+    enviarRecordatorio2h();
+    resumen += '\nResultado: pendientes enviados.';
+  } else {
+    resumen += '\nResultado: no habia pendientes.';
+  }
+
+  actualizarPanelOperativo();
+  registrarLogAutomatizacion_('Recordatorio 2h programado', 'OK', resumen, 'trigger');
+  Logger.log(resumen);
+  return resumen;
+}
+
+function borrarActivadoresPorFuncion_(handlerName) {
+  ScriptApp.getProjectTriggers().forEach(function(trigger) {
+    if (trigger.getHandlerFunction() === handlerName) {
+      ScriptApp.deleteTrigger(trigger);
+    }
+  });
+}
+
+function horasHastaPuja_() {
+  const start = new Date(CONFIG.PUJA_START_ISO);
+  if (isNaN(start.getTime())) {
+    throw new Error('CONFIG.PUJA_START_ISO no es una fecha valida.');
+  }
+
+  return (start.getTime() - new Date().getTime()) / (1000 * 60 * 60);
+}
+
+function zoomConfigCompleta_() {
+  return Boolean(
+    CONFIG.ZOOM_URL &&
+    CONFIG.ZOOM_ID &&
+    CONFIG.ZOOM_PASSCODE &&
+    String(CONFIG.ZOOM_URL).indexOf('PEGA_AQUI') === -1 &&
+    String(CONFIG.ZOOM_ID).indexOf('PEGA_AQUI') === -1 &&
+    String(CONFIG.ZOOM_PASSCODE).indexOf('PEGA_AQUI') === -1
+  );
+}
+
+function formatearFechaHoraOperativa_(date) {
+  return Utilities.formatDate(date, Session.getScriptTimeZone(), 'yyyy-MM-dd HH:mm:ss');
 }
 
 function hayPendientesParaPuja_(estadoHeader) {
