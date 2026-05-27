@@ -13,6 +13,12 @@ header:
 
 intro: "These activities allow the community to regularly connect with the blessings of the lineage and support Rinpoche's activities. The specific practice is usually announced 3 to 5 days in advance and prior registration is required."
 
+pending_puja:
+  badge: "Next puja pending confirmation"
+  title: "Next puja pending confirmation"
+  text: "There is not yet a confirmed date for the next weekly puja. This page will be updated when the practice is confirmed."
+  note: "Once the next puja is published, registration and donation options will appear again."
+
 schedule:
   title: "Regular schedule"
   days: "Saturdays"

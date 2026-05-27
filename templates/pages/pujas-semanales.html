@@ -26,7 +26,9 @@
       <div class="container-prose prose">
         <p class="lead">{{ data.intro }}</p>
 
-        {% if data.active_puja is defined and data.active_puja.enabled %}
+        {% set has_active_puja = data.active_puja is defined and data.active_puja.enabled and (data.active_puja.status is not defined or data.active_puja.status == 'active') %}
+
+        {% if has_active_puja %}
         {% set active_puja = data.active_puja %}
         {% set puja_text = active_puja.text[data.page.lang] if active_puja.text is defined and data.page.lang in active_puja.text else active_puja.text.es %}
         {% set puja_name = active_puja.name[data.page.lang] if active_puja.name is defined and data.page.lang in active_puja.name else active_puja.name.es %}
@@ -92,6 +94,14 @@
           </div>
           <p class="puja-active__note">{{ puja_text.note }}</p>
         </div>
+        {% else %}
+        {% set pending = data.pending_puja %}
+        <div class="golden-box puja-active puja-active--pending">
+          <p class="puja-active__badge">{{ pending.badge }}</p>
+          <h2>{{ pending.title }}</h2>
+          <p class="puja-active__description">{{ pending.text }}</p>
+          <p class="puja-active__note">{{ pending.note }}</p>
+        </div>
         {% endif %}
 
         <!-- Horario -->
@@ -131,12 +141,15 @@
       </div>
 
       <!-- Registro -->
+      {% if has_active_puja %}
       <div class="container-prose" style="margin-top:60px; text-align:center;">
         <h2>{{ data.registration.title }}</h2>
         <p>{{ data.registration.text }}</p>
         <a href="{{ data.registration.url }}" class="btn btn--primary" target="_blank" rel="noopener">{{ data.registration.btn }}</a>
         <p style="font-size:0.88rem; color:var(--c-texto-suave); margin-top:14px;">🔒 {{ data.registration.note }}</p>
       </div>
+
+      {% endif %}
 
       <!-- Calendario -->
       <div class="container" style="margin-top:60px;">
@@ -148,6 +161,7 @@
       </div>
 
       <!-- Donativos -->
+      {% if has_active_puja %}
       <div class="container-prose prose" style="margin-top:60px;">
         <h2>{{ data.donations.title }}</h2>
         <p>{{ data.donations.intro }}</p>
@@ -183,6 +197,8 @@
           <a href="{{ data.donations.card.url_free }}" class="btn btn--outline" target="_blank" rel="noopener">{{ data.donations.card.btn_free }}</a>
         </div>
       </div>
+
+      {% endif %}
 
       <!-- Avisos email -->
       <div class="container-prose" style="margin-top:60px; padding:40px; background:var(--c-crema); border-radius:12px; text-align:center;">

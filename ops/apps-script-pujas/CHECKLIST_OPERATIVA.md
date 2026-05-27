@@ -164,6 +164,8 @@ Si hace falta forzar una comprobacion:
 2. Revisar si hay respuestas o incidencias en `secretaria@dzongpaeuropa.org`.
 3. Actualizar `Pujas_Eventos` para preparar la siguiente semana.
 4. Dejar la puja antigua fuera de estado `activo`.
+5. Si todavia no hay datos de la proxima puja, ejecutar `Dzongpa Pujas > Publicar sin proxima puja`.
+6. Comprobar que `https://www.dzongpaeuropa.org/pujas-semanales` muestra el estado pendiente y no muestra botones de registro ni donativo.
 
 ## 8. Backup despues de cambios
 
@@ -203,6 +205,7 @@ Ese comando valida, despliega, genera backup saneado, crea commit si hay cambios
 | No llega email de confirmacion | Revisar triggers, ejecutar `autorizarPermisosPujas`, probar formulario. |
 | Llega aviso de permisos de Google | Reautorizar con `autorizarPermisosPujas`. |
 | La web no actualiza la puja | Revisar GitHub Actions y `GITHUB_TOKEN`. |
+| No hay proxima puja confirmada | Ejecutar `Publicar sin proxima puja` para ocultar registro y donativos temporales. |
 | Stripe apunta mal | Corregir URLs en `Pujas_Eventos` y volver a publicar semana completa. |
 | No aparece `puja_id` | Ejecutar prueba de formulario y revisar encabezados de Sheets. |
 | Recordatorio no sale | Ejecutar `Verificar activadores`, revisar `PUJA_START_ISO`, estados de recordatorio y activador exacto 2h. |

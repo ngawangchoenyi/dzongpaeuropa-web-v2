@@ -13,6 +13,12 @@ header:
 
 intro: "Ces activités permettent à la communauté de se connecter régulièrement aux bénédictions du lignage et de soutenir les activités de Rinpoche. La pratique concrète est généralement communiquée 3 à 5 jours à l'avance et une inscription préalable est requise."
 
+pending_puja:
+  badge: "Prochaine puja en attente de confirmation"
+  title: "Prochaine puja en attente de confirmation"
+  text: "La date de la prochaine puja hebdomadaire n'est pas encore confirmée. Cette page sera mise à jour lorsque la pratique sera confirmée."
+  note: "Lorsque la prochaine puja sera publiée, l'inscription et les options de don réapparaîtront."
+
 schedule:
   title: "Horaire habituel"
   days: "Samedis"

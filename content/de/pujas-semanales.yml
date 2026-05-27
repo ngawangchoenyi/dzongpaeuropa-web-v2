@@ -13,6 +13,12 @@ header:
 
 intro: "Diese Aktivitäten ermöglichen es der Gemeinschaft, regelmäßig mit den Segnungen der Linie in Verbindung zu treten und Rinpoches Aktivitäten zu unterstützen. Die konkrete Praxis wird in der Regel 3 bis 5 Tage im Voraus bekannt gegeben, und eine vorherige Anmeldung ist erforderlich."
 
+pending_puja:
+  badge: "Nächste Puja noch nicht bestätigt"
+  title: "Nächste Puja noch nicht bestätigt"
+  text: "Für die nächste wöchentliche Puja gibt es noch kein bestätigtes Datum. Diese Seite wird aktualisiert, sobald die Praxis bestätigt ist."
+  note: "Sobald die nächste Puja veröffentlicht ist, erscheinen Anmeldung und Spendenoptionen wieder."
+
 schedule:
   title: "Regulärer Zeitplan"
   days: "Samstage"

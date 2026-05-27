@@ -70,6 +70,16 @@ Ese modo despliega, vuelve a traer una copia saneada desde produccion, crea comm
 
 El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activador cada 30 minutos queda como rescate para 24h, post-puja y posibles pendientes.
 
+## Sin proxima puja confirmada
+
+Cuando termina una puja y todavia no hay datos de la siguiente, usar en Google Sheets:
+
+```text
+Dzongpa Pujas > Publicar sin proxima puja
+```
+
+Esto actualiza `content/shared/puja-activa.yml` en GitHub con estado `pending`. La web mantiene la pagina de pujas visible, pero oculta el formulario, Stripe y los botones de registro hasta que se publique una nueva puja activa.
+
 Despues revisar y guardar:
 
 ```powershell

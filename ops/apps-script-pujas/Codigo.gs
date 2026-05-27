@@ -48,6 +48,7 @@ function crearMenuDzongpaPujas_() {
     .addItem('Validar puja activa', 'menuValidarPujaActiva')
     .addItem('Preparar puja activa', 'menuPrepararPujaActiva')
     .addItem('Publicar puja en web', 'menuPublicarPujaWeb')
+    .addItem('Publicar sin proxima puja', 'menuPublicarSinProximaPuja')
     .addItem('Generar mensaje WhatsApp', 'menuGenerarMensajeWhatsAppPuja')
     .addSeparator()
     .addItem('Enviar resumen diario ahora', 'menuEnviarResumenDiarioInscripciones')
@@ -88,6 +89,10 @@ function menuPrepararPujaActiva() {
 
 function menuPublicarPujaWeb() {
   return ejecutarAccionMenu_('Publicar puja en web', publicarYamlPujaActivaEnGitHub, 'Publicacion enviada a GitHub.');
+}
+
+function menuPublicarSinProximaPuja() {
+  return ejecutarAccionMenu_('Publicar sin proxima puja', publicarSinProximaPujaEnGitHub, 'Estado sin proxima puja publicado.');
 }
 
 function menuGenerarMensajeWhatsAppPuja() {
@@ -1416,6 +1421,7 @@ function actualizarReadmeOperativo() {
     ['Validar puja activa', 'Envía por email una validación completa de datos activos.'],
     ['Preparar puja activa', 'Limpia estados 24h/2h/post para la puja activa sin borrar confirmaciones ya enviadas.'],
     ['Publicar puja en web', 'Actualiza content/shared/puja-activa.yml en GitHub. GitHub Actions regenera la web.'],
+    ['Publicar sin proxima puja', 'Publica estado pendiente en la web y oculta registro/donativos hasta que haya nueva puja activa.'],
     ['Generar mensaje WhatsApp', 'Envía por email el texto listo para copiar/pegar en WhatsApp.'],
     ['Programar recordatorio 2h exacto', 'Crea un activador puntual para enviar el Zoom exactamente 2 horas antes de la puja.'],
     ['Verificar activadores', 'Comprueba que no faltan activadores críticos ni hay duplicados peligrosos.'],
@@ -2602,6 +2608,36 @@ function publicarYamlPujaActivaEnGitHub() {
   return result;
 }
 
+function publicarSinProximaPujaEnGitHub() {
+  const yaml = construirYamlSinProximaPujaWeb_();
+  const result = githubPublicarArchivo_(
+    pujasGithubPath_(),
+    yaml,
+    'Publica estado sin proxima puja'
+  );
+
+  const resumen =
+    'PUBLICACION WEB SIN PROXIMA PUJA\n\n' +
+    'Archivo: ' + pujasGithubPath_() + '\n' +
+    'Estado: ' + result.status + '\n' +
+    (result.url ? 'URL commit/archivo: ' + result.url + '\n' : '') +
+    (result.message ? 'Detalle: ' + result.message + '\n' : '');
+
+  Logger.log(resumen);
+
+  GmailApp.sendEmail(
+    CONFIG.ADMIN_EMAIL,
+    'Web actualizada: sin proxima puja confirmada',
+    resumen,
+    {
+      name: CONFIG.ORG_NAME,
+      replyTo: CONFIG.REPLY_TO
+    }
+  );
+
+  return result;
+}
+
 function generarYPublicarPujaActivaWeb() {
   const token = pujasGithubToken_();
 
@@ -2734,6 +2770,22 @@ function construirYamlPujaActivaWeb_(data) {
   });
 
   return lines.join('\n') + '\n';
+}
+
+function construirYamlSinProximaPujaWeb_() {
+  const today = Utilities.formatDate(
+    new Date(),
+    Session.getScriptTimeZone(),
+    'yyyy-MM-dd'
+  );
+
+  return [
+    'active_puja:',
+    '  enabled: false',
+    '  status: pending',
+    '  web_url: ' + pujasYamlQuote_('https://www.dzongpaeuropa.org/pujas-semanales'),
+    '  updated_at: ' + pujasYamlQuote_(today)
+  ].join('\n') + '\n';
 }
 
 function pujasCatalogRefs_(data) {

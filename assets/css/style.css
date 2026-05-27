@@ -572,6 +572,18 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.88rem;
 }
 
+.puja-active--pending {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.puja-active--pending .puja-active__description {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 560px) {
   .page-header--pujas {
     padding: 56px 0 44px;

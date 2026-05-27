@@ -14,6 +14,12 @@ header:
 
 intro: "Estas actividades permiten a la comunidad conectar regularmente con las bendiciones del linaje y sostener las actividades de Rinpoche. La práctica concreta suele comunicarse con 3 a 5 días de antelación y la participación requiere registro previo."
 
+pending_puja:
+  badge: "Próxima puja pendiente de confirmar"
+  title: "Próxima puja pendiente de confirmar"
+  text: "Todavía no hay fecha confirmada para la próxima puja semanal. Actualizaremos esta página cuando la práctica esté confirmada."
+  note: "Cuando se publique la próxima puja, volverán a aparecer el registro y las opciones de donativo."
+
 schedule:
   title: "Horario habitual"
   days: "Sábados"
