@@ -51,6 +51,7 @@ function crearMenuDzongpaPujas_() {
     .addItem('Publicar puja en web', 'menuPublicarPujaWeb')
     .addItem('Publicar sin proxima puja', 'menuPublicarSinProximaPuja')
     .addItem('Generar mensaje WhatsApp', 'menuGenerarMensajeWhatsAppPuja')
+    .addItem('Actualizar plantilla WhatsApp', 'menuActualizarPlantillaWhatsAppPuja')
     .addSeparator()
     .addItem('Enviar resumen diario ahora', 'menuEnviarResumenDiarioInscripciones')
     .addItem('Control diario sistema', 'menuControlDiarioSistemaPujas')
@@ -100,6 +101,10 @@ function menuPublicarSinProximaPuja() {
 
 function menuGenerarMensajeWhatsAppPuja() {
   return ejecutarAccionMenu_('Generar mensaje WhatsApp', generarMensajeWhatsAppPuja, 'Mensaje WhatsApp enviado por email.');
+}
+
+function menuActualizarPlantillaWhatsAppPuja() {
+  return ejecutarAccionMenu_('Actualizar plantilla WhatsApp', actualizarPlantillaWhatsAppPuja, 'Plantilla WhatsApp actualizada.');
 }
 
 function menuEnviarResumenDiarioInscripciones() {
@@ -734,6 +739,30 @@ function ensureColumn(sheet, headers, headerName) {
   return newCol - 1;
 }
 
+function pujasEnsureHeaders_(sheet, requiredHeaders) {
+  let lastCol = sheet.getLastColumn();
+  let headers = [];
+
+  if (lastCol > 0) {
+    headers = sheet.getRange(1, 1, 1, lastCol).getValues()[0].map(function(header) {
+      return String(header || '').trim();
+    });
+  }
+
+  if (!headers.some(function(header) { return !!header; })) {
+    sheet.getRange(1, 1, 1, requiredHeaders.length).setValues([requiredHeaders]);
+    return requiredHeaders.slice();
+  }
+
+  requiredHeaders.forEach(function(headerName) {
+    if (headers.indexOf(headerName) !== -1) return;
+    headers.push(headerName);
+    sheet.getRange(1, headers.length).setValue(headerName);
+  });
+
+  return headers;
+}
+
 function normalizeHeaderKey_(value) {
   return String(value || '')
     .trim()
@@ -1318,6 +1347,10 @@ function publicarSemanaCompleta() {
     return publicarYamlPujaActivaEnGitHub();
   });
 
+  registrarPasoPublicacionSemana_(pasos, 'Actualizar plantilla WhatsApp', function() {
+    return actualizarPlantillaWhatsAppPuja();
+  });
+
   registrarPasoPublicacionSemana_(pasos, 'Generar mensaje WhatsApp', function() {
     return generarMensajeWhatsAppPuja();
   });
@@ -1438,7 +1471,7 @@ function actualizarReadmeOperativo() {
     ['10', 'Usar el email recibido con el mensaje WhatsApp para difusión manual.'],
     ['', ''],
     ['ACCIONES DEL MENU DZONGPA PUJAS', ''],
-    ['Publicar semana completa', 'Acción principal semanal. Valida, prepara, publica web, genera WhatsApp, envía panel y actualiza Panel_Operativo.'],
+    ['Publicar semana completa', 'Acción principal semanal. Valida, prepara, publica web, actualiza la plantilla WhatsApp, genera WhatsApp, envía panel y actualiza Panel_Operativo.'],
     ['Control de calidad', 'Comprueba que no hay datos peligrosos. Si hay errores críticos, bloquea la publicación.'],
     ['Actualizar panel operativo', 'Regenera la pestaña Panel_Operativo con estado de puja, enlaces y avisos.'],
     ['Panel de control', 'Envía por email el estado de inscripciones y emails.'],
@@ -1447,6 +1480,7 @@ function actualizarReadmeOperativo() {
     ['Publicar puja en web', 'Actualiza content/shared/puja-activa.yml en GitHub. GitHub Actions regenera la web.'],
     ['Publicar sin proxima puja', 'Publica estado pendiente en la web y oculta registro/donativos hasta que haya nueva puja activa.'],
     ['Generar mensaje WhatsApp', 'Envía por email el texto listo para copiar/pegar en WhatsApp.'],
+    ['Actualizar plantilla WhatsApp', 'Reescribe la plantilla publica de WhatsApp en Plantillas_Mensajes con el formato oficial.'],
     ['Programar recordatorio 2h exacto', 'Crea un activador puntual para enviar el Zoom exactamente 2 horas antes de la puja.'],
     ['Verificar activadores', 'Comprueba que no faltan activadores críticos ni hay duplicados peligrosos.'],
     ['', ''],
@@ -2744,8 +2778,53 @@ function leerPujaActivaCompleta_() {
   return data;
 }
 
+function actualizarPlantillaWhatsAppPuja() {
+  const ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  let sheet = pujasFindSheet_(ss, [
+    'Plantillas_Mensajes',
+    'Plantillas Mensajes',
+    'Plantillas'
+  ]);
+
+  if (!sheet) {
+    sheet = ss.insertSheet('Plantillas_Mensajes');
+  }
+
+  const headers = pujasEnsureHeaders_(sheet, ['tipo', 'idioma', 'asunto', 'plantilla', 'uso']);
+  const colTipo = headers.indexOf('tipo') + 1;
+  const colIdioma = headers.indexOf('idioma') + 1;
+  const colAsunto = headers.indexOf('asunto') + 1;
+  const colPlantilla = headers.indexOf('plantilla') + 1;
+  const colUso = headers.indexOf('uso') + 1;
+  const values = sheet.getDataRange().getValues();
+  let targetRow = 0;
+
+  for (let i = 1; i < values.length; i++) {
+    const tipo = String(values[i][colTipo - 1] || '').trim();
+    const idioma = String(values[i][colIdioma - 1] || '').trim();
+    if (tipo === 'whatsapp_anuncio' && idioma === 'es') {
+      targetRow = i + 1;
+      break;
+    }
+  }
+
+  if (!targetRow) targetRow = Math.max(sheet.getLastRow() + 1, 2);
+
+  sheet.getRange(targetRow, colTipo).setValue('whatsapp_anuncio');
+  sheet.getRange(targetRow, colIdioma).setValue('es');
+  sheet.getRange(targetRow, colAsunto).setValue('Anuncio WhatsApp puja');
+  sheet.getRange(targetRow, colPlantilla).setValue(plantillaWhatsAppAnuncioEs_());
+  sheet.getRange(targetRow, colUso).setValue('Mensaje publico para WhatsApp. Se actualiza desde Apps Script.');
+  sheet.getRange(targetRow, colPlantilla).setWrap(true);
+  sheet.autoResizeColumn(colPlantilla);
+
+  Logger.log('Plantilla WhatsApp actualizada en Plantillas_Mensajes, fila ' + targetRow + '.');
+  return 'Plantilla WhatsApp actualizada en Plantillas_Mensajes, fila ' + targetRow + '.';
+}
+
 function generarMensajeWhatsAppPuja() {
   const data = sincronizarConfigDesdeSheets_();
+  pujasPrepararDatosWhatsApp_(data);
 
   let template = '';
   if (data.plantillas && data.plantillas.length) {
@@ -2756,18 +2835,7 @@ function generarMensajeWhatsAppPuja() {
     if (row) template = row.plantilla || '';
   }
 
-  if (!template) {
-    template =
-      'Puja semanal Dzongpa Europa\n\n' +
-      'Este sábado, S. Em.ª Gongkar Dorje Dhenpa Rinpoche guiará:\n\n' +
-      '{{nombre_es}}\n\n' +
-      'Horario:\n' +
-      'España: {{hora_es}}\n' +
-      'Taiwán: {{hora_tw}}\n\n' +
-      'Registro previo:\n{{formulario_url}}\n\n' +
-      'Donativo sugerido:\n8 EUR individual - 15 EUR familia - donativo libre\n\n' +
-      'Más información:\n{{web_url}}';
-  }
+  if (!template) template = plantillaWhatsAppAnuncioEs_();
 
   const message = pujasMergeTemplate_(template, data);
 
@@ -2784,6 +2852,100 @@ function generarMensajeWhatsAppPuja() {
   );
 
   return message;
+}
+
+function plantillaWhatsAppAnuncioEs_() {
+  return [
+    '\uD83D\uDE4FPuja semanal Dzongpa Europa ',
+    '{{web_pujas_url}}',
+    '',
+    '*Este s\u00E1bado, S. Em.\u00AA Gongkar Dorje Dhenpa Rinpoche, sostenedor del linaje Sakya Dzongpa, guiar\u00E1:*',
+    '',
+    '{{practicas_whatsapp_es}}',
+    '',
+    '{{descripcion_whatsapp_es}}',
+    '',
+    'Horario:',
+    '\uD83C\uDDEA\uD83C\uDDF8Espa\u00F1a: {{hora_es}}',
+    '\uD83C\uDDF9\uD83C\uDDFCTaiw\u00E1n: {{hora_tw}}',
+    '',
+    '\uD83D\uDCCD Participaci\u00F3n online previa inscripci\u00F3n.',
+    'El enlace de acceso se enviar\u00E1 a las personas registradas.',
+    '',
+    '\uD83D\uDCDD Registro previo:',
+    '{{formulario_url}}',
+    '',
+    '\uD83D\uDC9BDonativo sugerido:',
+    '{{donativo_whatsapp_es}}',
+    '',
+    '\uD83D\uDC49Puedes compartir esta informaci\u00F3n con aquellas personas que puedan estar interesadas. ',
+    '',
+    'Que esta pr\u00E1ctica sea causa de beneficio, purificaci\u00F3n y acumulaci\u00F3n de m\u00E9rito para todos los seres. \uD83D\uDE4F',
+    '',
+    '\uD83C\uDF10M\u00E1s informaci\u00F3n:',
+    '{{mas_info_deidades_url}}'
+  ].join('\n');
+}
+
+function pujasPrepararDatosWhatsApp_(data) {
+  data.web_pujas_url = pujasWebPujasUrl_();
+  data.mas_info_deidades_url = 'https://www.dzongpaeuropa.org/deidades';
+  data.practicas_whatsapp_es = pujasPracticasWhatsAppEs_(data);
+  data.descripcion_whatsapp_es = pujasDescripcionWhatsAppEs_(data);
+  data.donativo_whatsapp_es =
+    pujasText_(data.donativo_whatsapp_es) ||
+    pujasText_(data.donativo_es) ||
+    '8 \u20AC individual \u00B7 15 \u20AC familia \u00B7 donativo libre';
+}
+
+function pujasPracticasWhatsAppEs_(data) {
+  const explicit = pujasText_(data.practicas_whatsapp_es || data.lineas_whatsapp_es);
+  if (explicit) return explicit;
+
+  const nombre = pujasText_(data.nombre_es || CONFIG.PUJA_NOMBRE);
+  if (!nombre) return '';
+
+  const parts = nombre.split(/\s*\+\s*/).map(function(part) {
+    return part.trim();
+  }).filter(function(part) {
+    return !!part;
+  });
+
+  if (!parts.length) return nombre;
+
+  return parts.map(function(part) {
+    const normalized = pujasNormalizeSheetName_(part);
+    if (normalized.indexOf('ganapati') !== -1) {
+      return '\uD83D\uDC8E ' + part;
+    }
+    if (normalized.indexOf('vajradaka') !== -1) {
+      const clean = part
+        .replace(/\s*fire\s+puja\s*/ig, '')
+        .replace(/\s*puja\s+de\s+fuego\s*/ig, '')
+        .trim();
+      return '\uD83D\uDD25 Puja de fuego de ' + (clean || part);
+    }
+    return '- ' + part;
+  }).join('\n');
+}
+
+function pujasDescripcionWhatsAppEs_(data) {
+  const explicit = pujasText_(
+    data.descripcion_whatsapp_es ||
+    data.texto_descriptivo_whatsapp_es ||
+    data.descripcion_anuncio_es
+  );
+  if (explicit) return explicit;
+
+  const nombre = pujasText_(data.nombre_es || CONFIG.PUJA_NOMBRE);
+  const normalized = pujasNormalizeSheetName_(nombre);
+  if (normalized.indexOf('ganapatiblanco') !== -1 && normalized.indexOf('vajradaka') !== -1) {
+    return 'Seg\u00FAn la tradici\u00F3n, la pr\u00E1ctica de Ganapati Blanco Dzongpa est\u00E1 especialmente asociada al incremento de m\u00E9rito, prosperidad y condiciones favorables. La Puja de Fuego Vajradaka ayuda a purificar obst\u00E1culos internos y externos, karma negativo y dificultades que perturban la paz de la mente.';
+  }
+
+  return pujasText_(data.texto_whatsapp_es) ||
+    pujasText_(data.descripcion_corta_es) ||
+    pujasText_(data.beneficios_es);
 }
 
 function generarYamlPujaActivaWeb() {

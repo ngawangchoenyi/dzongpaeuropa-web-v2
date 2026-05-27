@@ -31,7 +31,7 @@ En Google Sheets:
    - `stripe_familia_url`
    - `stripe_libre_url`
 5. Revisar `Catalogo_Pujas` si cambia el nombre, descripcion o textos base.
-6. Revisar `Plantillas_Mensajes` si cambia algun texto de email o WhatsApp.
+6. Revisar `Plantillas_Mensajes` si cambia algun texto de email. La plantilla publica de WhatsApp se actualiza automaticamente desde Apps Script al publicar la semana.
 
 Criterio de OK:
 
@@ -73,6 +73,7 @@ En Google Sheets, menu `Dzongpa Pujas`:
    - Programar recordatorio 2h exacto
    - Verificar activadores
    - Publicar puja en web
+   - Actualizar plantilla WhatsApp
    - Generar mensaje WhatsApp
    - Enviar panel de control
    - Actualizar panel operativo
