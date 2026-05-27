@@ -42,7 +42,20 @@ El script:
 Tras modificar codigo:
 
 1. Probar sintaxis localmente.
-2. Subir con `clasp push` conservando la configuracion real del Apps Script.
+2. Subir con el script de despliegue seguro:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\deploy_apps_script_pujas.ps1
+```
+
+El script hace `clasp pull`, conserva el `CONFIG` real de produccion, mezcla el codigo local saneado, valida sintaxis y sube con `clasp push --force`.
+
+Para validar sin subir:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\deploy_apps_script_pujas.ps1 -NoPush
+```
+
 3. En Google Sheets, recargar la hoja.
 4. Ejecutar `Dzongpa Pujas > Verificar activadores`.
 5. Ejecutar `Dzongpa Pujas > Actualizar panel operativo`.
