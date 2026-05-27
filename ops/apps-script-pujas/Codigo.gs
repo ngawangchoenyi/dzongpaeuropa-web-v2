@@ -24,6 +24,7 @@ const CONFIG = {
 const LOG_SHEET_NAME = 'Logs_Automatizacion';
 const PANEL_SHEET_NAME = 'Panel_Operativo';
 const README_SHEET_NAME = 'README_OPERATIVO';
+const WEB_PENDING_PUBLISHED_PROP = 'WEB_PENDING_PUBLISHED_FOR_PUJA_ID';
 
 function onOpen(e) {
   try {
@@ -1247,6 +1248,8 @@ function ejecutarAutomatizacionPuja() {
     } else {
       Logger.log('Post-puja: no hay pendientes.');
     }
+
+    publicarSinProximaPujaTrasCierreSiCorresponde_();
   }
 }
 
@@ -2605,6 +2608,7 @@ function publicarYamlPujaActivaEnGitHub() {
     }
   );
 
+  PropertiesService.getScriptProperties().deleteProperty(WEB_PENDING_PUBLISHED_PROP);
   return result;
 }
 
@@ -2633,6 +2637,66 @@ function publicarSinProximaPujaEnGitHub() {
       name: CONFIG.ORG_NAME,
       replyTo: CONFIG.REPLY_TO
     }
+  );
+
+  if (CONFIG.PUJA_ID) {
+    PropertiesService.getScriptProperties().setProperty(WEB_PENDING_PUBLISHED_PROP, normalizeSheetValue(CONFIG.PUJA_ID));
+  }
+
+  return result;
+}
+
+function publicarSinProximaPujaTrasCierreSiCorresponde_() {
+  const pujaId = normalizeSheetValue(CONFIG.PUJA_ID);
+  if (!pujaId) {
+    Logger.log('Cierre web post-puja omitido: falta puja_id.');
+    return {
+      status: 'omitido',
+      message: 'Falta puja_id.'
+    };
+  }
+
+  const start = new Date(CONFIG.PUJA_START_ISO);
+  if (isNaN(start.getTime())) {
+    Logger.log('Cierre web post-puja omitido: PUJA_START_ISO invalido.');
+    return {
+      status: 'omitido',
+      message: 'PUJA_START_ISO invalido.'
+    };
+  }
+
+  const diffHours = (start.getTime() - new Date().getTime()) / (1000 * 60 * 60);
+  if (diffHours > -2 || diffHours <= -30) {
+    Logger.log('Cierre web post-puja omitido: fuera de ventana.');
+    return {
+      status: 'omitido',
+      message: 'Fuera de ventana post-puja.'
+    };
+  }
+
+  if (hayPendientesParaPuja_('Estado email post-puja')) {
+    Logger.log('Cierre web post-puja omitido: quedan emails post-puja pendientes.');
+    return {
+      status: 'omitido',
+      message: 'Quedan emails post-puja pendientes.'
+    };
+  }
+
+  const props = PropertiesService.getScriptProperties();
+  if (props.getProperty(WEB_PENDING_PUBLISHED_PROP) === pujaId) {
+    Logger.log('Cierre web post-puja omitido: ya publicado para ' + pujaId + '.');
+    return {
+      status: 'sin cambios',
+      message: 'Estado pendiente ya publicado para esta puja.'
+    };
+  }
+
+  const result = publicarSinProximaPujaEnGitHub();
+  registrarLogAutomatizacion_(
+    'Cierre web post-puja',
+    'OK',
+    'Web dejada en estado pendiente para puja_id ' + pujaId + '. Estado GitHub: ' + result.status,
+    'web'
   );
 
   return result;

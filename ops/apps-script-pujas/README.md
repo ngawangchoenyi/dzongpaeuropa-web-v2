@@ -68,11 +68,18 @@ Ese modo despliega, vuelve a traer una copia saneada desde produccion, crea comm
 4. Ejecutar `Dzongpa Pujas > Verificar activadores`.
 5. Ejecutar `Dzongpa Pujas > Actualizar panel operativo`.
 
-El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activador cada 30 minutos queda como rescate para 24h, post-puja y posibles pendientes.
+El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activador cada 30 minutos queda como rescate para 24h, post-puja, cierre web post-puja y posibles pendientes.
 
 ## Sin proxima puja confirmada
 
-Cuando termina una puja y todavia no hay datos de la siguiente, usar en Google Sheets:
+Cuando termina una puja, la automatizacion intenta dejar la web en estado pendiente automaticamente:
+
+1. Espera a que hayan pasado al menos 2 horas desde el inicio de la puja.
+2. Envia los emails post-puja pendientes.
+3. Si ya no quedan emails post-puja pendientes, publica `content/shared/puja-activa.yml` con estado `pending`.
+4. Marca la publicacion en Propiedades de script para no repetir commits cada 30 minutos.
+
+Si hace falta forzarlo manualmente, usar en Google Sheets:
 
 ```text
 Dzongpa Pujas > Publicar sin proxima puja
