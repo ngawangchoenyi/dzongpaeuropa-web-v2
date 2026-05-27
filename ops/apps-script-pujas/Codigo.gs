@@ -53,6 +53,7 @@ function crearMenuDzongpaPujas_() {
     .addItem('Enviar resumen diario ahora', 'menuEnviarResumenDiarioInscripciones')
     .addItem('Ejecutar automatizacion ahora', 'menuEjecutarAutomatizacionPuja')
     .addItem('Programar recordatorio 2h exacto', 'menuProgramarRecordatorio2hExacto')
+    .addItem('Verificar activadores', 'menuVerificarActivadoresAutomatizacion')
     .addSeparator()
     .addItem('Instalar automatizacion completa', 'menuInstalarAutomatizacionCompleta')
     .addItem('Configurar GitHub', 'menuConfigurarPublicacionGitHubDzongpa')
@@ -103,6 +104,10 @@ function menuEjecutarAutomatizacionPuja() {
 
 function menuProgramarRecordatorio2hExacto() {
   return ejecutarAccionMenu_('Programar recordatorio 2h exacto', programarRecordatorio2hExacto, 'Recordatorio 2h programado.');
+}
+
+function menuVerificarActivadoresAutomatizacion() {
+  return ejecutarAccionMenu_('Verificar activadores', verificarActivadoresAutomatizacion, 'Activadores verificados.');
 }
 
 function menuInstalarAutomatizacionCompleta() {
@@ -1276,6 +1281,10 @@ function publicarSemanaCompleta() {
     return programarRecordatorio2hExacto_();
   });
 
+  registrarPasoPublicacionSemana_(pasos, 'Verificar activadores', function() {
+    return verificarActivadoresAutomatizacion_();
+  });
+
   registrarPasoPublicacionSemana_(pasos, 'Publicar puja en web', function() {
     return publicarYamlPujaActivaEnGitHub();
   });
@@ -1393,10 +1402,11 @@ function actualizarReadmeOperativo() {
     ['3', 'Comprobar Configuracion_Pujas: Zoom, Stripe, formulario, web y datos bancarios.'],
     ['4', 'Ejecutar: Dzongpa Pujas > Publicar semana completa.'],
     ['5', 'Revisar Panel_Operativo. Estado general debe ser OK.'],
-    ['6', 'Revisar Logs_Automatizacion. Todos los pasos deben aparecer como OK.'],
-    ['7', 'Revisar GitHub Actions. El workflow Build static site debe estar en verde.'],
-    ['8', 'Comprobar la web: https://www.dzongpaeuropa.org/pujas-semanales'],
-    ['9', 'Usar el email recibido con el mensaje WhatsApp para difusión manual.'],
+    ['6', 'Confirmar que el bloque Automatizacion muestra formulario, rescate y recordatorio 2h exacto en OK.'],
+    ['7', 'Revisar Logs_Automatizacion. Todos los pasos deben aparecer como OK.'],
+    ['8', 'Revisar GitHub Actions. El workflow Build static site debe estar en verde.'],
+    ['9', 'Comprobar la web: https://www.dzongpaeuropa.org/pujas-semanales'],
+    ['10', 'Usar el email recibido con el mensaje WhatsApp para difusión manual.'],
     ['', ''],
     ['ACCIONES DEL MENU DZONGPA PUJAS', ''],
     ['Publicar semana completa', 'Acción principal semanal. Valida, prepara, publica web, genera WhatsApp, envía panel y actualiza Panel_Operativo.'],
@@ -1407,6 +1417,8 @@ function actualizarReadmeOperativo() {
     ['Preparar puja activa', 'Limpia estados 24h/2h/post para la puja activa sin borrar confirmaciones ya enviadas.'],
     ['Publicar puja en web', 'Actualiza content/shared/puja-activa.yml en GitHub. GitHub Actions regenera la web.'],
     ['Generar mensaje WhatsApp', 'Envía por email el texto listo para copiar/pegar en WhatsApp.'],
+    ['Programar recordatorio 2h exacto', 'Crea un activador puntual para enviar el Zoom exactamente 2 horas antes de la puja.'],
+    ['Verificar activadores', 'Comprueba que no faltan activadores críticos ni hay duplicados peligrosos.'],
     ['', ''],
     ['CONTROL DE CALIDAD BLOQUEA SI', ''],
     ['Formulario', 'Falta, contiene PEGA_AQUI o no parece Google Forms.'],
@@ -1526,7 +1538,24 @@ function actualizarPanelOperativo() {
     ? avisos.map(function(aviso) { return ['Aviso', aviso]; })
     : [['Estado', 'Sin avisos críticos.']], 4);
 
-  aplicarFormatoPanel_(sheet, avisos.length);
+  const estadoActivadores = obtenerEstadoActivadores_();
+  const avisosActivadores = obtenerAvisosCriticosActivadores_(estadoActivadores);
+  escribirSeccionPanel_(sheet, 23, 'Automatizacion', [
+    ['Formulario', estadoActivadores.counts.onFormSubmit ? 'OK' : 'FALTA'],
+    ['Rescate cada 30 min', estadoActivadores.counts.ejecutarAutomatizacionPuja ? 'OK' : 'FALTA'],
+    ['Recordatorio 2h exacto', estadoActivadores.exact2hRequired
+      ? (estadoActivadores.counts.enviarRecordatorio2hProgramado ? 'PROGRAMADO' : 'FALTA')
+      : 'No requerido ahora'],
+    ['Envio 2h previsto', estadoActivadores.exact2hAtText],
+    ['Resumen diario', estadoActivadores.counts.enviarResumenDiarioInscripciones ? 'OK' : 'FALTA'],
+    ['Publicacion web automatica', estadoActivadores.counts.generarYPublicarPujaActivaWeb ? 'OK' : 'FALTA']
+  ]);
+
+  escribirSeccionPanel_(sheet, 23, 'Avisos de automatizacion', avisosActivadores.length
+    ? avisosActivadores.map(function(aviso) { return ['Aviso', aviso]; })
+    : [['Estado', 'Activadores criticos OK.']], 4);
+
+  aplicarFormatoPanel_(sheet, avisos.length || avisosActivadores.length);
   Logger.log('Panel operativo actualizado.');
   return 'Panel_Operativo actualizado.';
 }
@@ -1567,6 +1596,8 @@ function aplicarFormatoPanel_(sheet, hasWarnings) {
   sheet.getRange('D4:E4').setBorder(true, true, true, true, true, true, '#d4a72c', SpreadsheetApp.BorderStyle.SOLID);
   sheet.getRange('A13:B13').setBorder(true, true, true, true, true, true, '#d4a72c', SpreadsheetApp.BorderStyle.SOLID);
   sheet.getRange('D13:E13').setBorder(true, true, true, true, true, true, '#d4a72c', SpreadsheetApp.BorderStyle.SOLID);
+  sheet.getRange('A23:B23').setBorder(true, true, true, true, true, true, '#d4a72c', SpreadsheetApp.BorderStyle.SOLID);
+  sheet.getRange('D23:E23').setBorder(true, true, true, true, true, true, '#d4a72c', SpreadsheetApp.BorderStyle.SOLID);
 
   sheet.getRange('B14:B20').setFontColor('#8b1a1a');
   sheet.getRange('E14:E30').setFontColor(hasWarnings ? '#a11b1b' : '#1b7f3a');
@@ -1758,6 +1789,106 @@ function zoomConfigCompleta_() {
 
 function formatearFechaHoraOperativa_(date) {
   return Utilities.formatDate(date, Session.getScriptTimeZone(), 'yyyy-MM-dd HH:mm:ss');
+}
+
+function verificarActivadoresAutomatizacion() {
+  return verificarActivadoresAutomatizacion_();
+}
+
+function verificarActivadoresAutomatizacion_() {
+  sincronizarConfigDesdeSheets_();
+  const estado = obtenerEstadoActivadores_();
+  const avisos = obtenerAvisosCriticosActivadores_(estado);
+  const resumen =
+    'VERIFICACION ACTIVADORES PUJA\n\n' +
+    'Puja: ' + CONFIG.PUJA_NOMBRE + '\n' +
+    'puja_id: ' + CONFIG.PUJA_ID + '\n' +
+    'Inicio puja: ' + estado.pujaStartText + '\n' +
+    'Envio 2h previsto: ' + estado.exact2hAtText + '\n\n' +
+    'ACTIVADORES\n' +
+    '- onFormSubmit: ' + estado.counts.onFormSubmit + '\n' +
+    '- ejecutarAutomatizacionPuja: ' + estado.counts.ejecutarAutomatizacionPuja + '\n' +
+    '- enviarRecordatorio2hProgramado: ' + estado.counts.enviarRecordatorio2hProgramado + '\n' +
+    '- enviarResumenDiarioInscripciones: ' + estado.counts.enviarResumenDiarioInscripciones + '\n' +
+    '- generarYPublicarPujaActivaWeb: ' + estado.counts.generarYPublicarPujaActivaWeb + '\n\n' +
+    'RESULTADO: ' + (avisos.length ? 'BLOQUEADO' : 'OK') + '\n\n' +
+    'AVISOS CRITICOS\n' +
+    (avisos.length ? avisos.map(function(aviso) { return '- ' + aviso; }).join('\n') : 'Sin avisos criticos.');
+
+  Logger.log(resumen);
+  registrarLogAutomatizacion_('Verificar activadores', avisos.length ? 'ERROR' : 'OK', resumen, 'trigger');
+
+  if (avisos.length) {
+    GmailApp.sendEmail(
+      CONFIG.ADMIN_EMAIL,
+      'Activadores BLOQUEADOS - ' + CONFIG.PUJA_NOMBRE,
+      resumen,
+      {
+        name: CONFIG.ORG_NAME,
+        replyTo: CONFIG.REPLY_TO
+      }
+    );
+    throw new Error(resumen);
+  }
+
+  return resumen;
+}
+
+function obtenerEstadoActivadores_() {
+  const triggers = ScriptApp.getProjectTriggers();
+  const counts = {
+    onFormSubmit: 0,
+    ejecutarAutomatizacionPuja: 0,
+    enviarRecordatorio2hProgramado: 0,
+    enviarResumenDiarioInscripciones: 0,
+    generarYPublicarPujaActivaWeb: 0
+  };
+
+  triggers.forEach(function(trigger) {
+    const handler = trigger.getHandlerFunction();
+    if (counts[handler] === undefined) counts[handler] = 0;
+    counts[handler]++;
+  });
+
+  const now = new Date();
+  const start = new Date(CONFIG.PUJA_START_ISO);
+  const startValid = !isNaN(start.getTime());
+  const exact2hAt = startValid ? new Date(start.getTime() - 2 * 60 * 60 * 1000) : null;
+  const exact2hRequired = Boolean(startValid && exact2hAt.getTime() > now.getTime());
+
+  return {
+    counts: counts,
+    total: triggers.length,
+    exact2hRequired: exact2hRequired,
+    pujaStartText: startValid ? formatearFechaHoraOperativa_(start) : 'Fecha invalida',
+    exact2hAtText: exact2hAt ? formatearFechaHoraOperativa_(exact2hAt) : 'No calculable'
+  };
+}
+
+function obtenerAvisosCriticosActivadores_(estado) {
+  const avisos = [];
+  const counts = estado.counts || {};
+
+  if (!counts.onFormSubmit) {
+    avisos.push('Falta activador onFormSubmit: las inscripciones no enviaran confirmacion automatica.');
+  }
+  if (counts.onFormSubmit > 1) {
+    avisos.push('Hay mas de un activador onFormSubmit: riesgo de emails duplicados.');
+  }
+  if (!counts.ejecutarAutomatizacionPuja) {
+    avisos.push('Falta activador ejecutarAutomatizacionPuja: no habra rescate 24h/2h/post-puja.');
+  }
+  if (counts.ejecutarAutomatizacionPuja > 1) {
+    avisos.push('Hay mas de un activador ejecutarAutomatizacionPuja: riesgo de ejecuciones duplicadas.');
+  }
+  if (estado.exact2hRequired && !counts.enviarRecordatorio2hProgramado) {
+    avisos.push('Falta activador exacto enviarRecordatorio2hProgramado para el envio Zoom 2h.');
+  }
+  if (counts.enviarRecordatorio2hProgramado > 1) {
+    avisos.push('Hay mas de un activador exacto de 2h: riesgo de doble ejecucion.');
+  }
+
+  return avisos;
 }
 
 function hayPendientesParaPuja_(estadoHeader) {

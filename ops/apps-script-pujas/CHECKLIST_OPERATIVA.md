@@ -70,6 +70,8 @@ En Google Sheets, menu `Dzongpa Pujas`:
    - Control de calidad
    - Validar puja activa
    - Preparar puja activa
+   - Programar recordatorio 2h exacto
+   - Verificar activadores
    - Publicar puja en web
    - Generar mensaje WhatsApp
    - Enviar panel de control
@@ -127,28 +129,34 @@ Si llega aviso de permisos Gmail:
 
 ## 6. Recordatorios automaticos
 
-La funcion `ejecutarAutomatizacionPuja` se ejecuta por trigger temporal.
+La funcion `ejecutarAutomatizacionPuja` se ejecuta por trigger temporal como mecanismo de rescate.
 
 Debe enviar:
 
 - Recordatorio 24h cuando falten 24 horas o menos.
-- Recordatorio 2h cuando falten 2 horas o menos.
+- Recordatorio 2h mediante activador exacto `enviarRecordatorio2hProgramado`, programado 2 horas antes.
+- Recordatorio 2h de rescate si el activador exacto falla o si alguien se inscribe dentro de la ventana de 2 horas.
 - Email post-puja cuando la practica haya terminado.
 
 Comprobacion:
 
 1. Revisar `Panel_Operativo`.
-2. Revisar columnas:
+2. Revisar el bloque `Automatizacion`:
+   - `Formulario`: OK.
+   - `Rescate cada 30 min`: OK.
+   - `Recordatorio 2h exacto`: PROGRAMADO si la puja esta a mas de 2 horas.
+3. Revisar columnas:
    - `Estado recordatorio 24h`
    - `Estado recordatorio 2h`
    - `Estado email post-puja`
-3. Confirmar que no se duplican envios para el mismo email.
+4. Confirmar que no se duplican envios para el mismo email.
 
 Si hace falta forzar una comprobacion:
 
-1. En Apps Script o menu, ejecutar `Ejecutar automatizacion puja`.
-2. Revisar el log.
-3. No repetir varias veces si ya aparecen estados `Enviado`.
+1. En el menu, ejecutar `Verificar activadores`.
+2. Si todo esta OK, ejecutar `Ejecutar automatizacion puja` solo si hace falta comprobar pendientes.
+3. Revisar el log.
+4. No repetir varias veces si ya aparecen estados `Enviado`.
 
 ## 7. Despues de la puja
 
@@ -189,7 +197,7 @@ git push origin main
 | La web no actualiza la puja | Revisar GitHub Actions y `GITHUB_TOKEN`. |
 | Stripe apunta mal | Corregir URLs en `Pujas_Eventos` y volver a publicar semana completa. |
 | No aparece `puja_id` | Ejecutar prueba de formulario y revisar encabezados de Sheets. |
-| Recordatorio no sale | Revisar `PUJA_START_ISO`, estados de recordatorio y trigger temporal. |
+| Recordatorio no sale | Ejecutar `Verificar activadores`, revisar `PUJA_START_ISO`, estados de recordatorio y activador exacto 2h. |
 | Hay emails duplicados | Revisar columnas de estado y duplicados de email en la hoja. |
 
 ## 10. Criterio final de semana lista
@@ -203,4 +211,5 @@ La semana esta lista cuando:
 - Secretaria recibe aviso interno.
 - Stripe individual, familia y libre abren enlaces correctos.
 - Panel operativo no muestra avisos criticos.
+- `Verificar activadores` devuelve OK.
 - Backup del Apps Script esta guardado si hubo cambios de codigo.

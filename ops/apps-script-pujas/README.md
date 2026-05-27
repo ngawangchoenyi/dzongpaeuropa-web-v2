@@ -37,6 +37,18 @@ El script:
 5. Ejecuta comprobaciones de seguridad y sintaxis.
 6. Elimina la carpeta temporal con valores reales.
 
+## Despliegue operativo recomendado
+
+Tras modificar codigo:
+
+1. Probar sintaxis localmente.
+2. Subir con `clasp push` conservando la configuracion real del Apps Script.
+3. En Google Sheets, recargar la hoja.
+4. Ejecutar `Dzongpa Pujas > Verificar activadores`.
+5. Ejecutar `Dzongpa Pujas > Actualizar panel operativo`.
+
+El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activador cada 30 minutos queda como rescate para 24h, post-puja y posibles pendientes.
+
 Despues revisar y guardar:
 
 ```powershell
