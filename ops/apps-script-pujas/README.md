@@ -70,6 +70,8 @@ Ese modo despliega, vuelve a traer una copia saneada desde produccion, crea comm
 
 El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activador cada 30 minutos queda como rescate para 24h, post-puja, cierre web post-puja y posibles pendientes.
 
+`Verificar activadores` tambien puede ejecutarse cuando no hay ninguna puja activa. En ese caso no exige recordatorio 2h exacto y solo comprueba que los activadores generales siguen instalados.
+
 ## Sin proxima puja confirmada
 
 Cuando termina una puja, la automatizacion intenta dejar la web en estado pendiente automaticamente:

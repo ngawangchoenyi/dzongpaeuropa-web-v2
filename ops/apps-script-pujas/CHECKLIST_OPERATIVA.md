@@ -146,6 +146,7 @@ Comprobacion:
    - `Formulario`: OK.
    - `Rescate cada 30 min`: OK.
    - `Recordatorio 2h exacto`: PROGRAMADO si la puja esta a mas de 2 horas.
+   - Si no hay puja activa, `Verificar activadores` debe seguir funcionando y no debe exigir recordatorio 2h exacto.
 3. Revisar columnas:
    - `Estado recordatorio 24h`
    - `Estado recordatorio 2h`
@@ -207,7 +208,7 @@ Ese comando valida, despliega, genera backup saneado, crea commit si hay cambios
 | No llega email de confirmacion | Revisar triggers, ejecutar `autorizarPermisosPujas`, probar formulario. |
 | Llega aviso de permisos de Google | Reautorizar con `autorizarPermisosPujas`. |
 | La web no actualiza la puja | Revisar GitHub Actions y `GITHUB_TOKEN`. |
-| No hay proxima puja confirmada | La automatizacion debe publicar estado pendiente tras el post-puja. Si no ocurre, ejecutar `Publicar sin proxima puja` como respaldo manual. |
+| No hay proxima puja confirmada | La automatizacion debe publicar estado pendiente tras el post-puja. `Verificar activadores` debe funcionar sin puja activa. Si la web no queda pendiente, ejecutar `Publicar sin proxima puja` como respaldo manual. |
 | Stripe apunta mal | Corregir URLs en `Pujas_Eventos` y volver a publicar semana completa. |
 | No aparece `puja_id` | Ejecutar prueba de formulario y revisar encabezados de Sheets. |
 | Recordatorio no sale | Ejecutar `Verificar activadores`, revisar `PUJA_START_ISO`, estados de recordatorio y activador exacto 2h. |

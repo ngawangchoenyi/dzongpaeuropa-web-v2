@@ -1805,15 +1805,18 @@ function verificarActivadoresAutomatizacion() {
 }
 
 function verificarActivadoresAutomatizacion_() {
-  sincronizarConfigDesdeSheets_();
-  const estado = obtenerEstadoActivadores_();
+  const sync = intentarSincronizarConfigDesdeSheets_();
+  const estado = obtenerEstadoActivadores_(sync.sinPujaActiva);
   const avisos = obtenerAvisosCriticosActivadores_(estado);
+  const pujaLineas = sync.sinPujaActiva
+    ? 'Estado puja: sin puja activa en Pujas_Eventos.\n'
+    : 'Puja: ' + CONFIG.PUJA_NOMBRE + '\n' +
+      'puja_id: ' + CONFIG.PUJA_ID + '\n' +
+      'Inicio puja: ' + estado.pujaStartText + '\n' +
+      'Envio 2h previsto: ' + estado.exact2hAtText + '\n';
   const resumen =
     'VERIFICACION ACTIVADORES PUJA\n\n' +
-    'Puja: ' + CONFIG.PUJA_NOMBRE + '\n' +
-    'puja_id: ' + CONFIG.PUJA_ID + '\n' +
-    'Inicio puja: ' + estado.pujaStartText + '\n' +
-    'Envio 2h previsto: ' + estado.exact2hAtText + '\n\n' +
+    pujaLineas + '\n' +
     'ACTIVADORES\n' +
     '- onFormSubmit: ' + estado.counts.onFormSubmit + '\n' +
     '- ejecutarAutomatizacionPuja: ' + estado.counts.ejecutarAutomatizacionPuja + '\n' +
@@ -1830,7 +1833,7 @@ function verificarActivadoresAutomatizacion_() {
   if (avisos.length) {
     GmailApp.sendEmail(
       CONFIG.ADMIN_EMAIL,
-      'Activadores BLOQUEADOS - ' + CONFIG.PUJA_NOMBRE,
+      'Activadores BLOQUEADOS - ' + (sync.sinPujaActiva ? 'sin puja activa' : CONFIG.PUJA_NOMBRE),
       resumen,
       {
         name: CONFIG.ORG_NAME,
@@ -1843,7 +1846,26 @@ function verificarActivadoresAutomatizacion_() {
   return resumen;
 }
 
-function obtenerEstadoActivadores_() {
+function intentarSincronizarConfigDesdeSheets_() {
+  try {
+    const data = sincronizarConfigDesdeSheets_();
+    return {
+      sinPujaActiva: false,
+      data: data
+    };
+  } catch (err) {
+    const message = err && err.message ? err.message : String(err);
+    if (message.indexOf('No hay ninguna fila activa en Pujas_Eventos') !== -1) {
+      return {
+        sinPujaActiva: true,
+        data: null
+      };
+    }
+    throw err;
+  }
+}
+
+function obtenerEstadoActivadores_(sinPujaActiva) {
   const triggers = ScriptApp.getProjectTriggers();
   const counts = {
     onFormSubmit: 0,
@@ -1863,14 +1885,14 @@ function obtenerEstadoActivadores_() {
   const start = new Date(CONFIG.PUJA_START_ISO);
   const startValid = !isNaN(start.getTime());
   const exact2hAt = startValid ? new Date(start.getTime() - 2 * 60 * 60 * 1000) : null;
-  const exact2hRequired = Boolean(startValid && exact2hAt.getTime() > now.getTime());
+  const exact2hRequired = Boolean(!sinPujaActiva && startValid && exact2hAt.getTime() > now.getTime());
 
   return {
     counts: counts,
     total: triggers.length,
     exact2hRequired: exact2hRequired,
-    pujaStartText: startValid ? formatearFechaHoraOperativa_(start) : 'Fecha invalida',
-    exact2hAtText: exact2hAt ? formatearFechaHoraOperativa_(exact2hAt) : 'No calculable'
+    pujaStartText: sinPujaActiva ? 'Sin puja activa' : (startValid ? formatearFechaHoraOperativa_(start) : 'Fecha invalida'),
+    exact2hAtText: sinPujaActiva ? 'No requerido' : (exact2hAt ? formatearFechaHoraOperativa_(exact2hAt) : 'No calculable')
   };
 }
 
