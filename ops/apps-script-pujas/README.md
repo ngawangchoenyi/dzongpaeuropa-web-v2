@@ -56,6 +56,14 @@ Para validar sin subir:
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\deploy_apps_script_pujas.ps1 -NoPush
 ```
 
+Para el flujo completo despues de cambiar Apps Script:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\deploy_apps_script_pujas.ps1 -BackupAfter -Commit -Push
+```
+
+Ese modo despliega, vuelve a traer una copia saneada desde produccion, crea commit si hay cambios y hace push a `main`.
+
 3. En Google Sheets, recargar la hoja.
 4. Ejecutar `Dzongpa Pujas > Verificar activadores`.
 5. Ejecutar `Dzongpa Pujas > Actualizar panel operativo`.

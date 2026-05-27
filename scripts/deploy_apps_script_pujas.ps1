@@ -1,5 +1,9 @@
 param(
-  [switch]$NoPush
+  [switch]$NoPush,
+  [switch]$BackupAfter,
+  [switch]$Commit,
+  [switch]$Push,
+  [string]$CommitMessage = "Deploy Apps Script pujas"
 )
 
 $ErrorActionPreference = "Stop"
@@ -99,6 +103,10 @@ function Assert-NoTokenLeak($Text) {
   }
 }
 
+function Run-Git($Arguments, $WorkingDirectory) {
+  Run "git" $Arguments $WorkingDirectory
+}
+
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot "..")).Path
 $appsScriptDir = Join-Path $repoRoot "ops\apps-script-pujas"
 $claspJsonPath = Join-Path $appsScriptDir ".clasp.json"
@@ -177,6 +185,27 @@ try {
 
   Write-Step "Pushing Apps Script"
   Run-Clasp $clasp @("push", "--force") $tempRoot
+
+  if ($BackupAfter) {
+    Write-Step "Running sanitized backup after deploy"
+    Run "powershell" @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "scripts\backup_apps_script_pujas.ps1") $repoRoot
+  }
+
+  if ($Commit) {
+    Write-Step "Creating git commit"
+    Run-Git @("add", "ops/apps-script-pujas/Codigo.gs", "ops/apps-script-pujas/appsscript.json", "ops/apps-script-pujas/README.md", "ops/apps-script-pujas/CHECKLIST_OPERATIVA.md", "scripts/backup_apps_script_pujas.ps1", "scripts/deploy_apps_script_pujas.ps1") $repoRoot
+    & git -C $repoRoot diff --cached --quiet
+    if ($LASTEXITCODE -eq 0) {
+      Write-Host "No staged changes. Commit skipped."
+    } else {
+      Run-Git @("commit", "-m", $CommitMessage) $repoRoot
+    }
+  }
+
+  if ($Push) {
+    Write-Step "Pushing git branch"
+    Run-Git @("push", "origin", "main") $repoRoot
+  }
 
   Write-Step "Deploy completed"
   Write-Host "Next: reload Google Sheets and run: Dzongpa Pujas > Verificar activadores"

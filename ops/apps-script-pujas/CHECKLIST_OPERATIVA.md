@@ -167,7 +167,7 @@ Si hace falta forzar una comprobacion:
 
 ## 8. Backup despues de cambios
 
-Ejecutar desde la raiz del repo:
+Si solo quieres guardar backup sin desplegar codigo nuevo, ejecutar desde la raiz del repo:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\backup_apps_script_pujas.ps1
@@ -187,6 +187,14 @@ git add ops/apps-script-pujas scripts/backup_apps_script_pujas.ps1
 git commit -m "Backup Apps Script pujas"
 git push origin main
 ```
+
+Si has cambiado codigo de Apps Script y quieres hacer el flujo completo:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\deploy_apps_script_pujas.ps1 -BackupAfter -Commit -Push
+```
+
+Ese comando valida, despliega, genera backup saneado, crea commit si hay cambios y sube a GitHub.
 
 ## 9. Incidencias rapidas
 
