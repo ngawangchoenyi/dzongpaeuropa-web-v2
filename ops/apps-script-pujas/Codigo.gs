@@ -1484,9 +1484,10 @@ function actualizarReadmeOperativo() {
 }
 
 function actualizarPanelOperativo() {
-  const data = sincronizarConfigDesdeSheets_();
-  const estado = obtenerEstadoPujaActiva_();
-  const avisos = pujasValidarDatosActivos_(data);
+  const sync = intentarSincronizarConfigDesdeSheets_();
+  const data = sync.data || {};
+  const estado = sync.sinPujaActiva ? obtenerEstadoPujaSinActiva_() : obtenerEstadoPujaActiva_();
+  const avisos = sync.sinPujaActiva ? [] : pujasValidarDatosActivos_(data);
   const ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
   let sheet = ss.getSheetByName(PANEL_SHEET_NAME);
 
@@ -1512,12 +1513,12 @@ function actualizarPanelOperativo() {
     .setHorizontalAlignment('center');
 
   escribirSeccionPanel_(sheet, 4, 'Puja activa', [
-    ['Estado general', avisos.length ? 'AVISOS' : 'OK'],
-    ['Puja', CONFIG.PUJA_NOMBRE],
-    ['Puja ID', CONFIG.PUJA_ID],
-    ['Fecha', CONFIG.PUJA_FECHA],
-    ['Horario', CONFIG.PUJA_HORA],
-    ['Inicio ISO', CONFIG.PUJA_START_ISO]
+    ['Estado general', sync.sinPujaActiva ? 'SIN PUJA ACTIVA' : (avisos.length ? 'AVISOS' : 'OK')],
+    ['Puja', sync.sinPujaActiva ? 'Pendiente de configurar' : CONFIG.PUJA_NOMBRE],
+    ['Puja ID', sync.sinPujaActiva ? '' : CONFIG.PUJA_ID],
+    ['Fecha', sync.sinPujaActiva ? '' : CONFIG.PUJA_FECHA],
+    ['Horario', sync.sinPujaActiva ? '' : CONFIG.PUJA_HORA],
+    ['Inicio ISO', sync.sinPujaActiva ? '' : CONFIG.PUJA_START_ISO]
   ]);
 
   escribirSeccionPanel_(sheet, 4, 'Inscripciones y emails', [
@@ -1535,11 +1536,11 @@ function actualizarPanelOperativo() {
 
   escribirSeccionPanel_(sheet, 13, 'Enlaces clave', [
     ['Web pujas', pujasWebPujasUrl_()],
-    ['Formulario', data.formulario_url || ''],
-    ['Zoom URL', CONFIG.ZOOM_URL],
-    ['Stripe individual', CONFIG.STRIPE_INDIVIDUAL_URL],
-    ['Stripe familia', CONFIG.STRIPE_FAMILIA_URL],
-    ['Stripe libre', CONFIG.STRIPE_LIBRE_URL],
+    ['Formulario', sync.sinPujaActiva ? '' : (data.formulario_url || '')],
+    ['Zoom URL', sync.sinPujaActiva ? '' : CONFIG.ZOOM_URL],
+    ['Stripe individual', sync.sinPujaActiva ? '' : CONFIG.STRIPE_INDIVIDUAL_URL],
+    ['Stripe familia', sync.sinPujaActiva ? '' : CONFIG.STRIPE_FAMILIA_URL],
+    ['Stripe libre', sync.sinPujaActiva ? '' : CONFIG.STRIPE_LIBRE_URL],
     ['GitHub YAML', 'https://github.com/' + pujasScriptProperty_('GITHUB_OWNER') + '/' + pujasScriptProperty_('GITHUB_REPO') + '/blob/' + pujasScriptProperty_('GITHUB_BRANCH') + '/' + pujasGithubPath_()]
   ]);
 
@@ -1547,7 +1548,7 @@ function actualizarPanelOperativo() {
     ? avisos.map(function(aviso) { return ['Aviso', aviso]; })
     : [['Estado', 'Sin avisos críticos.']], 4);
 
-  const estadoActivadores = obtenerEstadoActivadores_();
+  const estadoActivadores = obtenerEstadoActivadores_(sync.sinPujaActiva);
   const avisosActivadores = obtenerAvisosCriticosActivadores_(estadoActivadores);
   escribirSeccionPanel_(sheet, 23, 'Automatizacion', [
     ['Formulario', estadoActivadores.counts.onFormSubmit ? 'OK' : 'FALTA'],
@@ -1666,6 +1667,21 @@ function obtenerEstadoPujaActiva_() {
   }
 
   return estado;
+}
+
+function obtenerEstadoPujaSinActiva_() {
+  return {
+    total: 0,
+    sinEmail: 0,
+    confirmacionEnviada: 0,
+    confirmacionPendiente: 0,
+    rec24Enviado: 0,
+    rec24Pendiente: 0,
+    rec2Enviado: 0,
+    rec2Pendiente: 0,
+    postEnviado: 0,
+    postPendiente: 0
+  };
 }
 
 function panelEstadoEnviado_(row, col) {

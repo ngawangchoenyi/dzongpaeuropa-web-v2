@@ -72,6 +72,8 @@ El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activ
 
 `Verificar activadores` tambien puede ejecutarse cuando no hay ninguna puja activa. En ese caso no exige recordatorio 2h exacto y solo comprueba que los activadores generales siguen instalados.
 
+`Actualizar panel operativo` tambien acepta el estado sin puja activa. En ese caso muestra el panel como pendiente de configuracion y conserva la revision de activadores generales.
+
 ## Sin proxima puja confirmada
 
 Cuando termina una puja, la automatizacion intenta dejar la web en estado pendiente automaticamente:

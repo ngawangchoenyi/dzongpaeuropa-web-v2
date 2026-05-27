@@ -169,6 +169,7 @@ Si hace falta forzar una comprobacion:
 5. Normalmente no hace falta ejecutar nada: la automatizacion deja la web en estado pendiente cuando ya no quedan emails post-puja pendientes.
 6. Si todavia no hay datos de la proxima puja y la automatizacion no lo ha hecho, ejecutar `Dzongpa Pujas > Publicar sin proxima puja` como respaldo manual.
 7. Comprobar que `https://www.dzongpaeuropa.org/pujas-semanales` muestra el estado pendiente y no muestra botones de registro ni donativo.
+8. Ejecutar `Actualizar panel operativo`; debe mostrar el estado sin puja activa sin bloquear.
 
 ## 8. Backup despues de cambios
 
