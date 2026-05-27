@@ -74,6 +74,26 @@ El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activ
 
 `Actualizar panel operativo` tambien acepta el estado sin puja activa. En ese caso muestra el panel como pendiente de configuracion y conserva la revision de activadores generales.
 
+## Control diario automatico
+
+El sistema puede supervisarse solo con un control diario. La funcion `controlDiarioSistemaPujas` revisa:
+
+- Activadores instalados.
+- Estado con o sin puja activa.
+- Configuracion de GitHub.
+- Emails pendientes segun ventana temporal.
+- Errores recientes no manuales en `Logs_Automatizacion`.
+
+Si todo esta correcto, solo registra el resultado en logs. Si detecta algo que requiere intervencion, envia email a `secretaria@dzongpaeuropa.org`.
+
+Para instalar el trigger diario:
+
+```text
+Dzongpa Pujas > Instalar control diario
+```
+
+Queda programado aproximadamente a las 09:00.
+
 ## Sin proxima puja confirmada
 
 Cuando termina una puja, la automatizacion intenta dejar la web en estado pendiente automaticamente:

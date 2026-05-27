@@ -53,11 +53,13 @@ function crearMenuDzongpaPujas_() {
     .addItem('Generar mensaje WhatsApp', 'menuGenerarMensajeWhatsAppPuja')
     .addSeparator()
     .addItem('Enviar resumen diario ahora', 'menuEnviarResumenDiarioInscripciones')
+    .addItem('Control diario sistema', 'menuControlDiarioSistemaPujas')
     .addItem('Ejecutar automatizacion ahora', 'menuEjecutarAutomatizacionPuja')
     .addItem('Programar recordatorio 2h exacto', 'menuProgramarRecordatorio2hExacto')
     .addItem('Verificar activadores', 'menuVerificarActivadoresAutomatizacion')
     .addSeparator()
     .addItem('Instalar automatizacion completa', 'menuInstalarAutomatizacionCompleta')
+    .addItem('Instalar control diario', 'menuInstalarControlDiarioSistemaPujas')
     .addItem('Configurar GitHub', 'menuConfigurarPublicacionGitHubDzongpa')
     .addItem('Crear hoja de logs', 'menuCrearHojaLogsAutomatizacion')
     .addItem('Actualizar README operativo', 'menuActualizarReadmeOperativo')
@@ -104,6 +106,10 @@ function menuEnviarResumenDiarioInscripciones() {
   return ejecutarAccionMenu_('Enviar resumen diario', enviarResumenDiarioInscripciones, 'Resumen diario enviado por email.');
 }
 
+function menuControlDiarioSistemaPujas() {
+  return ejecutarAccionMenu_('Control diario sistema', controlDiarioSistemaPujas, 'Control diario ejecutado.');
+}
+
 function menuEjecutarAutomatizacionPuja() {
   return ejecutarAccionMenu_('Ejecutar automatizacion puja', ejecutarAutomatizacionPuja, 'Automatizacion ejecutada.');
 }
@@ -118,6 +124,10 @@ function menuVerificarActivadoresAutomatizacion() {
 
 function menuInstalarAutomatizacionCompleta() {
   return ejecutarAccionMenu_('Instalar automatizacion completa', instalarAutomatizacionCompleta, 'Automatizacion completa instalada.');
+}
+
+function menuInstalarControlDiarioSistemaPujas() {
+  return ejecutarAccionMenu_('Instalar control diario', instalarControlDiarioSistemaPujas, 'Control diario instalado.');
 }
 
 function menuConfigurarPublicacionGitHubDzongpa() {
@@ -1257,7 +1267,18 @@ function instalarAutomatizacionCompleta() {
   installTrigger();
   instalarMenuGoogleSheets_();
   instalarActivadorAutomatizacionPuja_();
-  programarRecordatorio2hExacto_();
+  instalarControlDiarioSistemaPujas_();
+  try {
+    programarRecordatorio2hExacto_();
+  } catch (err) {
+    if (!esErrorSinPujaActiva_(err)) throw err;
+    registrarLogAutomatizacion_(
+      'Programar recordatorio 2h exacto',
+      'AVISO',
+      'Omitido durante instalacion completa: no hay puja activa.',
+      'setup'
+    );
+  }
   instalarResumenDiarioInscripciones_();
   instalarPublicacionWebAutomatica_();
   actualizarReadmeOperativo();
@@ -1558,6 +1579,7 @@ function actualizarPanelOperativo() {
       : 'No requerido ahora'],
     ['Envio 2h previsto', estadoActivadores.exact2hAtText],
     ['Resumen diario', estadoActivadores.counts.enviarResumenDiarioInscripciones ? 'OK' : 'FALTA'],
+    ['Control diario sistema', estadoActivadores.counts.controlDiarioSistemaPujas ? 'OK' : 'FALTA'],
     ['Publicacion web automatica', estadoActivadores.counts.generarYPublicarPujaActivaWeb ? 'OK' : 'FALTA']
   ]);
 
@@ -1862,6 +1884,168 @@ function verificarActivadoresAutomatizacion_() {
   return resumen;
 }
 
+function controlDiarioSistemaPujas() {
+  return controlDiarioSistemaPujas_();
+}
+
+function controlDiarioSistemaPujas_() {
+  const sync = intentarSincronizarConfigDesdeSheets_();
+  const estadoActivadores = obtenerEstadoActivadores_(sync.sinPujaActiva);
+  const avisos = [];
+
+  obtenerAvisosCriticosActivadores_(estadoActivadores).forEach(function(aviso) {
+    avisos.push(aviso);
+  });
+
+  if (!estadoActivadores.counts.controlDiarioSistemaPujas) {
+    avisos.push('Falta activador controlDiarioSistemaPujas: no habra aviso diario automatico.');
+  }
+
+  let estadoPuja = obtenerEstadoPujaSinActiva_();
+  let estadoPujaTexto = 'Sin puja activa en Pujas_Eventos.';
+
+  if (sync.sinPujaActiva) {
+    obtenerAvisosConfigGitHub_().forEach(function(aviso) {
+      avisos.push(aviso);
+    });
+  } else {
+    const data = sync.data || {};
+    estadoPuja = obtenerEstadoPujaActiva_();
+    estadoPujaTexto =
+      'Puja: ' + CONFIG.PUJA_NOMBRE + '\n' +
+      'puja_id: ' + CONFIG.PUJA_ID + '\n' +
+      'Inicio: ' + CONFIG.PUJA_START_ISO;
+
+    pujasValidarDatosActivos_(data).forEach(function(aviso) {
+      avisos.push(aviso);
+    });
+
+    const diffHours = horasHastaPuja_();
+    if (estadoPuja.confirmacionPendiente > 0) {
+      avisos.push('Hay confirmaciones pendientes: ' + estadoPuja.confirmacionPendiente + '.');
+    }
+    if (diffHours <= 24 && diffHours > 0 && estadoPuja.rec24Pendiente > 0) {
+      avisos.push('Hay recordatorios 24h pendientes dentro de ventana: ' + estadoPuja.rec24Pendiente + '.');
+    }
+    if (diffHours <= 2 && diffHours > 0 && estadoPuja.rec2Pendiente > 0) {
+      avisos.push('Hay recordatorios 2h pendientes dentro de ventana: ' + estadoPuja.rec2Pendiente + '.');
+    }
+    if (diffHours <= -2 && diffHours > -30 && estadoPuja.postPendiente > 0) {
+      avisos.push('Hay emails post-puja pendientes: ' + estadoPuja.postPendiente + '.');
+    }
+  }
+
+  obtenerErroresRecientesAutomatizacion_(24).forEach(function(errorLine) {
+    avisos.push('Error reciente en logs: ' + errorLine);
+  });
+
+  const resumen =
+    'CONTROL DIARIO SISTEMA PUJAS\n\n' +
+    'Fecha: ' + formatearFechaHoraOperativa_(new Date()) + '\n\n' +
+    estadoPujaTexto + '\n\n' +
+    'ACTIVADORES\n' +
+    '- onFormSubmit: ' + estadoActivadores.counts.onFormSubmit + '\n' +
+    '- rescate 30 min: ' + estadoActivadores.counts.ejecutarAutomatizacionPuja + '\n' +
+    '- recordatorio 2h exacto: ' + estadoActivadores.counts.enviarRecordatorio2hProgramado + '\n' +
+    '- resumen diario: ' + estadoActivadores.counts.enviarResumenDiarioInscripciones + '\n' +
+    '- control diario: ' + estadoActivadores.counts.controlDiarioSistemaPujas + '\n' +
+    '- publicacion web diaria: ' + estadoActivadores.counts.generarYPublicarPujaActivaWeb + '\n\n' +
+    'INSCRIPCIONES Y EMAILS\n' +
+    '- inscripciones: ' + estadoPuja.total + '\n' +
+    '- sin email: ' + estadoPuja.sinEmail + '\n' +
+    '- confirmaciones pendientes: ' + estadoPuja.confirmacionPendiente + '\n' +
+    '- recordatorio 24h pendiente: ' + estadoPuja.rec24Pendiente + '\n' +
+    '- recordatorio 2h pendiente: ' + estadoPuja.rec2Pendiente + '\n' +
+    '- post-puja pendiente: ' + estadoPuja.postPendiente + '\n\n' +
+    'RESULTADO: ' + (avisos.length ? 'REVISION' : 'OK') + '\n\n' +
+    'AVISOS\n' +
+    (avisos.length ? avisos.map(function(aviso) { return '- ' + aviso; }).join('\n') : 'Sin avisos. No requiere intervencion.');
+
+  Logger.log(resumen);
+  registrarLogAutomatizacion_('Control diario sistema', avisos.length ? 'AVISO' : 'OK', resumen, 'health');
+
+  if (avisos.length) {
+    GmailApp.sendEmail(
+      CONFIG.ADMIN_EMAIL,
+      'Control diario pujas - REVISION',
+      resumen,
+      {
+        name: CONFIG.ORG_NAME,
+        replyTo: CONFIG.REPLY_TO
+      }
+    );
+  }
+
+  return resumen;
+}
+
+function instalarControlDiarioSistemaPujas() {
+  instalarControlDiarioSistemaPujas_();
+}
+
+function instalarControlDiarioSistemaPujas_() {
+  borrarActivadoresPorFuncion_('controlDiarioSistemaPujas');
+
+  ScriptApp.newTrigger('controlDiarioSistemaPujas')
+    .timeBased()
+    .everyDays(1)
+    .atHour(9)
+    .create();
+
+  registrarLogAutomatizacion_(
+    'Instalar control diario',
+    'OK',
+    'Activador diario instalado para controlDiarioSistemaPujas a las 09:00 aprox.',
+    'setup'
+  );
+  Logger.log('Activador diario instalado para controlDiarioSistemaPujas a las 09:00 aprox.');
+}
+
+function obtenerAvisosConfigGitHub_() {
+  const avisos = [];
+  if (!pujasGithubToken_()) avisos.push('Falta GITHUB_TOKEN en Propiedades de script.');
+  if (!pujasScriptProperty_('GITHUB_OWNER')) avisos.push('Falta GITHUB_OWNER.');
+  if (!pujasScriptProperty_('GITHUB_REPO')) avisos.push('Falta GITHUB_REPO.');
+  if (!pujasScriptProperty_('GITHUB_BRANCH')) avisos.push('Falta GITHUB_BRANCH.');
+  if (!pujasGithubPath_()) avisos.push('Falta GITHUB_WEB_PUJA_PATH.');
+  return avisos;
+}
+
+function obtenerErroresRecientesAutomatizacion_(hours) {
+  const ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  const sheet = ss.getSheetByName(LOG_SHEET_NAME);
+  if (!sheet || sheet.getLastRow() < 2) return [];
+
+  const data = sheet.getDataRange().getValues();
+  const headers = data[0] || [];
+  const colFecha = findColumn(headers, ['Marca temporal']);
+  const colAccion = findColumn(headers, ['Accion']);
+  const colEstado = findColumn(headers, ['Estado']);
+  const colDetalle = findColumn(headers, ['Detalle']);
+  const colOrigen = findColumn(headers, ['Origen']);
+
+  if (colFecha === -1 || colEstado === -1) return [];
+
+  const cutoff = new Date(new Date().getTime() - (hours || 24) * 60 * 60 * 1000);
+  const errores = [];
+
+  for (let i = data.length - 1; i >= 1 && errores.length < 5; i--) {
+    const row = data[i];
+    const fecha = row[colFecha] instanceof Date ? row[colFecha] : new Date(row[colFecha]);
+    if (isNaN(fecha.getTime()) || fecha.getTime() < cutoff.getTime()) continue;
+
+    const estado = String(row[colEstado] || '').trim();
+    const origen = colOrigen >= 0 ? String(row[colOrigen] || '').trim() : '';
+    if (estado !== 'ERROR' || origen === 'menu') continue;
+
+    const accion = colAccion >= 0 ? String(row[colAccion] || '').trim() : 'sin accion';
+    const detalle = colDetalle >= 0 ? pujasLogText_(row[colDetalle]).replace(/\s+/g, ' ').slice(0, 180) : '';
+    errores.push(formatearFechaHoraOperativa_(fecha) + ' | ' + accion + ' | ' + detalle);
+  }
+
+  return errores;
+}
+
 function intentarSincronizarConfigDesdeSheets_() {
   try {
     const data = sincronizarConfigDesdeSheets_();
@@ -1870,8 +2054,7 @@ function intentarSincronizarConfigDesdeSheets_() {
       data: data
     };
   } catch (err) {
-    const message = err && err.message ? err.message : String(err);
-    if (message.indexOf('No hay ninguna fila activa en Pujas_Eventos') !== -1) {
+    if (esErrorSinPujaActiva_(err)) {
       return {
         sinPujaActiva: true,
         data: null
@@ -1881,6 +2064,11 @@ function intentarSincronizarConfigDesdeSheets_() {
   }
 }
 
+function esErrorSinPujaActiva_(err) {
+  const message = err && err.message ? err.message : String(err);
+  return message.indexOf('No hay ninguna fila activa en Pujas_Eventos') !== -1;
+}
+
 function obtenerEstadoActivadores_(sinPujaActiva) {
   const triggers = ScriptApp.getProjectTriggers();
   const counts = {
@@ -1888,6 +2076,7 @@ function obtenerEstadoActivadores_(sinPujaActiva) {
     ejecutarAutomatizacionPuja: 0,
     enviarRecordatorio2hProgramado: 0,
     enviarResumenDiarioInscripciones: 0,
+    controlDiarioSistemaPujas: 0,
     generarYPublicarPujaActivaWeb: 0
   };
 

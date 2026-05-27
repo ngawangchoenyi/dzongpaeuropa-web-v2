@@ -116,6 +116,7 @@ Cada dia mientras la puja esta abierta:
 2. Revisar `Logs_Automatizacion`.
 3. Revisar Gmail por avisos de:
    - Google Apps Script failures.
+   - Control diario pujas - REVISION.
    - Errores GitHub.
    - Errores de permisos.
 4. Revisar numero de inscripciones.
@@ -138,6 +139,7 @@ Debe enviar:
 - Recordatorio 2h de rescate si el activador exacto falla o si alguien se inscribe dentro de la ventana de 2 horas.
 - Email post-puja cuando la practica haya terminado.
 - Cierre web post-puja: si no quedan emails post-puja pendientes, deja la web en estado pendiente una sola vez por `puja_id`.
+- Control diario sistema: una revision diaria a las 09:00 que solo envia email si detecta incidencias.
 
 Comprobacion:
 
@@ -146,6 +148,7 @@ Comprobacion:
    - `Formulario`: OK.
    - `Rescate cada 30 min`: OK.
    - `Recordatorio 2h exacto`: PROGRAMADO si la puja esta a mas de 2 horas.
+   - `Control diario sistema`: OK.
    - Si no hay puja activa, `Verificar activadores` debe seguir funcionando y no debe exigir recordatorio 2h exacto.
 3. Revisar columnas:
    - `Estado recordatorio 24h`
@@ -214,6 +217,7 @@ Ese comando valida, despliega, genera backup saneado, crea commit si hay cambios
 | No aparece `puja_id` | Ejecutar prueba de formulario y revisar encabezados de Sheets. |
 | Recordatorio no sale | Ejecutar `Verificar activadores`, revisar `PUJA_START_ISO`, estados de recordatorio y activador exacto 2h. |
 | Hay emails duplicados | Revisar columnas de estado y duplicados de email en la hoja. |
+| No llega control diario | Ejecutar `Instalar control diario` y despues `Actualizar panel operativo`. |
 
 ## 10. Criterio final de semana lista
 
@@ -227,5 +231,6 @@ La semana esta lista cuando:
 - Stripe individual, familia y libre abren enlaces correctos.
 - Panel operativo no muestra avisos criticos.
 - `Verificar activadores` devuelve OK.
+- `Control diario sistema` aparece como OK en el panel operativo.
 - Tras cerrar la puja, la web queda en estado pendiente automaticamente si no hay proxima puja.
 - Backup del Apps Script esta guardado si hubo cambios de codigo.
