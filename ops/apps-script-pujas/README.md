@@ -84,6 +84,24 @@ El mensaje publico de WhatsApp se controla desde `Catalogo_Pujas` con estos camp
 
 Si faltan estas columnas, el menu `Dzongpa Pujas > Preparar campos WhatsApp catalogo` las crea. Puede ejecutarse aunque no haya puja activa; en ese caso solo crea las columnas y las notas. Si hay una fila activa, rellena una propuesta automatica sin sobrescribir textos ya escritos manualmente.
 
+## Crear proxima puja desde catalogo
+
+Para reducir trabajo manual semanal, usar:
+
+```text
+Dzongpa Pujas > Crear proxima puja desde catalogo
+```
+
+La accion:
+
+1. Pide `puja_key` o parte del nombre de una fila existente en `Catalogo_Pujas`.
+2. Pide fecha `YYYY-MM-DD` y hora de Espana.
+3. Crea una nueva fila en `Pujas_Eventos` con `estado = borrador`.
+4. Rellena `puja_id`, fecha, horario, formulario, web y enlaces Stripe base.
+5. Deja Zoom vacio para evitar reutilizar enlaces antiguos por error.
+
+Despues hay que revisar la fila nueva, completar Zoom y cambiar `estado` a `activa` solo cuando la puja este confirmada. A partir de ahi, usar `Publicar semana completa`.
+
 ## Control diario automatico
 
 El sistema puede supervisarse solo con un control diario. La funcion `controlDiarioSistemaPujas` revisa:

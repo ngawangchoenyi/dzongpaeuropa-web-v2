@@ -14,9 +14,13 @@ Objetivo: publicar, verificar y operar la puja semanal con el minimo trabajo man
 En Google Sheets:
 
 1. Abrir la hoja de respuestas de pujas.
-2. Revisar `Pujas_Eventos`.
-3. Confirmar que solo hay una fila con estado `activo`.
-4. Revisar estos campos de la fila activa:
+2. Si la nueva puja ya esta en `Catalogo_Pujas`, ejecutar `Dzongpa Pujas > Crear proxima puja desde catalogo`.
+3. Escribir el `puja_key` o parte del nombre, la fecha `YYYY-MM-DD` y la hora de Espana.
+4. Revisar la fila borrador creada en `Pujas_Eventos`.
+5. Completar Zoom y cualquier campo especifico que falte.
+6. Cambiar `estado` a `activa` solo cuando este confirmada.
+7. Confirmar que solo hay una fila con estado `activa`.
+8. Revisar estos campos de la fila activa:
    - `puja_id`
    - `puja_key`
    - `fecha`
@@ -30,9 +34,9 @@ En Google Sheets:
    - `stripe_individual_url`
    - `stripe_familia_url`
    - `stripe_libre_url`
-5. Revisar `Catalogo_Pujas` si cambia el nombre, descripcion o textos base.
-6. Revisar o completar en `Catalogo_Pujas` los campos `practicas_whatsapp_es`, `descripcion_whatsapp_es` y `donativo_whatsapp_es` si se quiere controlar el mensaje de WhatsApp con texto propio.
-7. Revisar `Plantillas_Mensajes` si cambia algun texto de email. La plantilla publica de WhatsApp se actualiza automaticamente desde Apps Script al publicar la semana.
+9. Revisar `Catalogo_Pujas` si cambia el nombre, descripcion o textos base.
+10. Revisar o completar en `Catalogo_Pujas` los campos `practicas_whatsapp_es`, `descripcion_whatsapp_es` y `donativo_whatsapp_es` si se quiere controlar el mensaje de WhatsApp con texto propio.
+11. Revisar `Plantillas_Mensajes` si cambia algun texto de email. La plantilla publica de WhatsApp se actualiza automaticamente desde Apps Script al publicar la semana.
 
 Criterio de OK:
 

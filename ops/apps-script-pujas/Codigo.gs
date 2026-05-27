@@ -46,6 +46,7 @@ function crearMenuDzongpaPujas_() {
     .addItem('Actualizar panel operativo', 'menuActualizarPanelOperativo')
     .addItem('Control de calidad', 'menuControlCalidadPujaActiva')
     .addItem('Panel de control', 'menuPanelControlPuja')
+    .addItem('Crear proxima puja desde catalogo', 'menuCrearProximaPujaDesdeCatalogo')
     .addItem('Validar puja activa', 'menuValidarPujaActiva')
     .addItem('Preparar puja activa', 'menuPrepararPujaActiva')
     .addItem('Publicar puja en web', 'menuPublicarPujaWeb')
@@ -82,6 +83,10 @@ function menuControlCalidadPujaActiva() {
 
 function menuPanelControlPuja() {
   return ejecutarAccionMenu_('Panel de control', panelControlPuja, 'Panel enviado por email.');
+}
+
+function menuCrearProximaPujaDesdeCatalogo() {
+  return ejecutarAccionMenu_('Crear proxima puja desde catalogo', crearProximaPujaDesdeCatalogo);
 }
 
 function menuValidarPujaActiva() {
@@ -468,7 +473,7 @@ function crearHojaLogsAutomatizacion() {
 function ejecutarAccionMenu_(accion, handler, successMessage) {
   try {
     const result = handler();
-    const detail = successMessage || 'OK';
+    const detail = successMessage || (typeof result === 'string' ? result : 'OK');
     registrarLogAutomatizacion_(accion, 'OK', detail, 'menu');
     mostrarAlertaMenu_(accion, detail);
     return result;
@@ -1482,22 +1487,25 @@ function actualizarReadmeOperativo() {
     ['Objetivo', 'Gestionar cada semana la puja activa desde Google Sheets con el menor número posible de pasos manuales.'],
     ['', ''],
     ['FLUJO SEMANAL RECOMENDADO', ''],
-    ['1', 'Actualizar la fila activa en Pujas_Eventos. Solo debe haber una puja con estado activo.'],
-    ['2', 'Revisar Catalogo_Pujas si la puja, descripción o datos base han cambiado.'],
-    ['3', 'Comprobar Configuracion_Pujas: Zoom, Stripe, formulario, web y datos bancarios.'],
-    ['4', 'Ejecutar: Dzongpa Pujas > Publicar semana completa.'],
-    ['5', 'Revisar Panel_Operativo. Estado general debe ser OK.'],
-    ['6', 'Confirmar que el bloque Automatizacion muestra formulario, rescate y recordatorio 2h exacto en OK.'],
-    ['7', 'Revisar Logs_Automatizacion. Todos los pasos deben aparecer como OK.'],
-    ['8', 'Revisar GitHub Actions. El workflow Build static site debe estar en verde.'],
-    ['9', 'Comprobar la web: https://www.dzongpaeuropa.org/pujas-semanales'],
-    ['10', 'Usar el email recibido con el mensaje WhatsApp para difusión manual.'],
+    ['1', 'Ejecutar: Dzongpa Pujas > Crear proxima puja desde catalogo para crear una fila borrador en Pujas_Eventos.'],
+    ['2', 'Completar la fila borrador: fecha, Zoom si falta, enlaces y textos especificos.'],
+    ['3', 'Cambiar estado a activa solo cuando la puja este confirmada. Solo debe haber una fila activa.'],
+    ['4', 'Revisar Catalogo_Pujas si la puja, descripcion o datos base han cambiado.'],
+    ['5', 'Comprobar Configuracion_Pujas: Stripe, formulario, web y datos bancarios.'],
+    ['6', 'Ejecutar: Dzongpa Pujas > Publicar semana completa.'],
+    ['7', 'Revisar Panel_Operativo. Estado general debe ser OK.'],
+    ['8', 'Confirmar que el bloque Automatizacion muestra formulario, rescate y recordatorio 2h exacto en OK.'],
+    ['9', 'Revisar Logs_Automatizacion. Todos los pasos deben aparecer como OK.'],
+    ['10', 'Revisar GitHub Actions. El workflow Build static site debe estar en verde.'],
+    ['11', 'Comprobar la web: https://www.dzongpaeuropa.org/pujas-semanales'],
+    ['12', 'Usar el email recibido con el mensaje WhatsApp para difusion manual.'],
     ['', ''],
     ['ACCIONES DEL MENU DZONGPA PUJAS', ''],
     ['Publicar semana completa', 'Acción principal semanal. Valida, prepara, publica web, prepara los campos WhatsApp, actualiza la plantilla WhatsApp, genera WhatsApp, envía panel y actualiza Panel_Operativo.'],
     ['Control de calidad', 'Comprueba que no hay datos peligrosos. Si hay errores críticos, bloquea la publicación.'],
     ['Actualizar panel operativo', 'Regenera la pestaña Panel_Operativo con estado de puja, enlaces y avisos.'],
     ['Panel de control', 'Envía por email el estado de inscripciones y emails.'],
+    ['Crear proxima puja desde catalogo', 'Crea una fila borrador en Pujas_Eventos desde Catalogo_Pujas, rellena fecha/hora/enlaces base y deja Zoom pendiente.'],
     ['Validar puja activa', 'Envía por email una validación completa de datos activos.'],
     ['Preparar puja activa', 'Limpia estados 24h/2h/post para la puja activa sin borrar confirmaciones ya enviadas.'],
     ['Publicar puja en web', 'Actualiza content/shared/puja-activa.yml en GitHub. GitHub Actions regenera la web.'],
@@ -2800,6 +2808,330 @@ function leerPujaActivaCompleta_() {
   data.plantillas = plantillas;
   pujasEnrichHorario_(data);
   return data;
+}
+
+function crearProximaPujaDesdeCatalogo() {
+  const ui = SpreadsheetApp.getUi();
+  const ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  const eventosSheet = pujasFindOrCreateSheet_(ss, [
+    'Pujas_Eventos',
+    'Pujas Eventos',
+    'Eventos_Pujas',
+    'Eventos Pujas'
+  ], 'Pujas_Eventos');
+  const catalogoSheet = pujasFindSheet_(ss, [
+    'Catalogo_Pujas',
+    'Catalogo Pujas',
+    'Catalogo',
+    'Catálogo_Pujas',
+    'Catálogo Pujas',
+    'Catálogo'
+  ]);
+  const configSheet = pujasFindSheet_(ss, [
+    'Configuracion_Pujas',
+    'Configuracion Pujas',
+    'Configuración_Pujas',
+    'Configuración Pujas'
+  ]);
+
+  if (!catalogoSheet) {
+    throw new Error('No existe la hoja Catalogo_Pujas. Hojas disponibles: ' + pujasListSheetNames_(ss));
+  }
+
+  const catalogo = pujasGetSheetObjects_(catalogoSheet);
+  const catalogoConKey = catalogo.filter(function(row) {
+    return pujasText_(row.puja_key);
+  });
+
+  if (!catalogoConKey.length) {
+    throw new Error('Catalogo_Pujas no tiene filas con puja_key.');
+  }
+
+  const keys = catalogoConKey.map(function(row) {
+    const nombre = pujasText_(row.nombre_es) || pujasText_(row.nombre) || '';
+    return pujasText_(row.puja_key) + (nombre ? ' - ' + nombre : '');
+  }).slice(0, 40).join('\n');
+
+  const pujaInput = pujasPromptText_(
+    ui,
+    'Crear proxima puja desde catalogo',
+    'Escribe el puja_key exacto o parte del nombre.\n\nDisponibles:\n' + keys
+  );
+  if (pujaInput.cancelled) return 'Cancelado: no se creo ningun borrador.';
+
+  const ficha = pujasFindCatalogoByInput_(catalogoConKey, pujaInput.value);
+  if (!ficha) {
+    throw new Error('No encuentro esa puja en Catalogo_Pujas: ' + pujaInput.value);
+  }
+
+  const fechaInput = pujasPromptText_(
+    ui,
+    'Fecha de la proxima puja',
+    'Escribe la fecha en formato YYYY-MM-DD.\n\nPuedes dejarlo en blanco si todavia no tienes fecha.'
+  );
+  if (fechaInput.cancelled) return 'Cancelado: no se creo ningun borrador.';
+
+  const fechaIso = pujasValidarFechaIsoOpcional_(fechaInput.value);
+  const horaInput = pujasPromptText_(
+    ui,
+    'Hora de Espana',
+    'Escribe la hora de Espana en formato HH:MM.\n\nSi lo dejas en blanco se usara 09:00.'
+  );
+  if (horaInput.cancelled) return 'Cancelado: no se creo ningun borrador.';
+
+  const horaEs = pujasNormalizarHoraInput_(horaInput.value, '09:00');
+  const horaTw = pujasSumarHorasHora_(horaEs, 6);
+  const pujaId = fechaIso || '';
+  const fechaTextoEs = fechaIso ? pujasFormatFechaSpanish_(fechaIso) : '';
+  const startIso = fechaIso ? pujasBuildStartIsoMadrid_(fechaIso, horaEs) : '';
+  const config = configSheet ? pujasGetConfigMap_(configSheet) : {};
+  const headers = pujasEnsureHeaders_(eventosSheet, [
+    'estado',
+    'puja_key',
+    'puja_id',
+    'fecha',
+    'fecha_texto_es',
+    'hora_es',
+    'hora_tw',
+    'start_iso',
+    'formulario_url',
+    'web_url',
+    'stripe_individual_url',
+    'stripe_familia_url',
+    'stripe_libre_url',
+    'zoom_url',
+    'zoom_id',
+    'zoom_passcode',
+    'notas_internas'
+  ]);
+
+  if (pujaId && pujasEventoPujaIdExiste_(eventosSheet, headers, pujaId)) {
+    throw new Error('Ya existe una fila en Pujas_Eventos con puja_id: ' + pujaId);
+  }
+
+  const row = Math.max(eventosSheet.getLastRow() + 1, 2);
+  const pujaKey = pujasText_(ficha.puja_key);
+  const nombre = pujasText_(ficha.nombre_es) || pujasText_(ficha.nombre) || pujaKey;
+  const formularioUrl = pujasFirstText_([
+    ficha.formulario_url,
+    config.formulario_url,
+    config.FORMULARIO_URL
+  ]);
+  const webUrl = pujasFirstText_([
+    ficha.web_url,
+    config.web_url,
+    config.WEB_URL,
+    CONFIG.WEB_URL + '/pujas-semanales'
+  ]);
+  const stripeIndividual = pujasFirstText_([
+    ficha.stripe_individual_url,
+    config.stripe_individual_url,
+    config.STRIPE_INDIVIDUAL_URL,
+    CONFIG.STRIPE_INDIVIDUAL_URL
+  ]);
+  const stripeFamilia = pujasFirstText_([
+    ficha.stripe_familia_url,
+    config.stripe_familia_url,
+    config.STRIPE_FAMILIA_URL,
+    CONFIG.STRIPE_FAMILIA_URL
+  ]);
+  const stripeLibre = pujasFirstText_([
+    ficha.stripe_libre_url,
+    config.stripe_libre_url,
+    config.STRIPE_LIBRE_URL,
+    CONFIG.STRIPE_LIBRE_URL
+  ]);
+
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['estado'], 'estado', 'borrador');
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['puja_key'], 'puja_key', pujaKey);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['puja_id'], 'puja_id', pujaId);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['fecha'], 'fecha', fechaIso);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['fecha_texto_es'], 'fecha_texto_es', fechaTextoEs);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['hora_es'], 'hora_es', horaEs);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['hora_tw'], 'hora_tw', horaTw);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['start_iso'], 'start_iso', startIso);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['formulario_url'], 'formulario_url', formularioUrl);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['web_url'], 'web_url', webUrl);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['stripe_individual_url'], 'stripe_individual_url', stripeIndividual);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['stripe_familia_url'], 'stripe_familia_url', stripeFamilia);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['stripe_libre_url'], 'stripe_libre_url', stripeLibre);
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['zoom_url'], 'zoom_url', '');
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['zoom_id'], 'zoom_id', '');
+  pujasSetCellByAliases_(eventosSheet, row, headers, ['zoom_passcode'], 'zoom_passcode', '');
+  pujasSetCellByAliases_(
+    eventosSheet,
+    row,
+    headers,
+    ['notas_internas', 'Notas internas'],
+    'notas_internas',
+    'Borrador creado desde Catalogo_Pujas. Revisar Zoom y cambiar estado a activa solo cuando este listo para publicar.'
+  );
+
+  eventosSheet.setFrozenRows(1);
+  eventosSheet.getRange(row, 1, 1, Math.max(eventosSheet.getLastColumn(), 1)).setBackground('#fff7e6');
+  ss.setActiveSheet(eventosSheet);
+  eventosSheet.getRange(row, 1, 1, Math.max(eventosSheet.getLastColumn(), 1)).activate();
+
+  const faltantes = [];
+  if (!fechaIso) faltantes.push('fecha');
+  if (!formularioUrl) faltantes.push('formulario_url');
+  if (!stripeIndividual || !stripeFamilia || !stripeLibre) faltantes.push('Stripe');
+  faltantes.push('Zoom');
+
+  const resumen =
+    'Borrador creado en Pujas_Eventos.\n\n' +
+    'Fila: ' + row + '\n' +
+    'Estado: borrador\n' +
+    'Puja: ' + nombre + '\n' +
+    'puja_key: ' + pujaKey + '\n' +
+    'puja_id: ' + (pujaId || 'pendiente') + '\n' +
+    'Fecha: ' + (fechaTextoEs || 'pendiente') + '\n' +
+    'Hora: ' + horaEs + ' Espana - ' + horaTw + ' Taiwan\n\n' +
+    'Antes de publicar:\n' +
+    '- Completar Zoom.\n' +
+    '- Revisar textos y enlaces.\n' +
+    '- Cambiar estado a activa cuando este confirmado.\n' +
+    '- Ejecutar Publicar semana completa.\n\n' +
+    'Campos pendientes o a revisar: ' + faltantes.join(', ');
+
+  Logger.log(resumen);
+  return resumen;
+}
+
+function pujasFindOrCreateSheet_(ss, names, defaultName) {
+  const sheet = pujasFindSheet_(ss, names);
+  if (sheet) return sheet;
+
+  return ss.insertSheet(defaultName);
+}
+
+function pujasPromptText_(ui, title, message) {
+  const response = ui.prompt(title, message, ui.ButtonSet.OK_CANCEL);
+  const selected = response.getSelectedButton();
+  if (selected !== ui.Button.OK) {
+    return { cancelled: true, value: '' };
+  }
+
+  return { cancelled: false, value: pujasText_(response.getResponseText()) };
+}
+
+function pujasFindCatalogoByInput_(rows, input) {
+  const query = pujasNormalizeSheetName_(input);
+  if (!query) return null;
+
+  let found = rows.find(function(row) {
+    return pujasNormalizeSheetName_(row.puja_key) === query;
+  });
+  if (found) return found;
+
+  found = rows.find(function(row) {
+    return pujasNormalizeSheetName_(row.nombre_es).indexOf(query) !== -1 ||
+      pujasNormalizeSheetName_(row.nombre).indexOf(query) !== -1;
+  });
+
+  return found || null;
+}
+
+function pujasValidarFechaIsoOpcional_(value) {
+  const text = pujasText_(value);
+  if (!text) return '';
+
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    throw new Error('Fecha invalida. Usa formato YYYY-MM-DD.');
+  }
+
+  const parts = text.split('-').map(function(part) {
+    return parseInt(part, 10);
+  });
+  const date = new Date(parts[0], parts[1] - 1, parts[2]);
+  if (
+    date.getFullYear() !== parts[0] ||
+    date.getMonth() !== parts[1] - 1 ||
+    date.getDate() !== parts[2]
+  ) {
+    throw new Error('Fecha invalida: ' + text);
+  }
+
+  return text;
+}
+
+function pujasNormalizarHoraInput_(value, fallback) {
+  const text = pujasText_(value) || fallback;
+  const match = text.match(/^(\d{1,2}):(\d{2})$/);
+  if (!match) {
+    throw new Error('Hora invalida. Usa formato HH:MM.');
+  }
+
+  const hour = parseInt(match[1], 10);
+  const minute = parseInt(match[2], 10);
+  if (hour < 0 || hour > 23 || minute < 0 || minute > 59) {
+    throw new Error('Hora invalida: ' + text);
+  }
+
+  return String(hour).padStart(2, '0') + ':' + String(minute).padStart(2, '0');
+}
+
+function pujasSumarHorasHora_(hora, hours) {
+  const match = pujasNormalizarHoraInput_(hora, '09:00').match(/^(\d{2}):(\d{2})$/);
+  const total = (parseInt(match[1], 10) * 60 + parseInt(match[2], 10) + hours * 60 + 24 * 60) % (24 * 60);
+  return String(Math.floor(total / 60)).padStart(2, '0') + ':' + String(total % 60).padStart(2, '0');
+}
+
+function pujasBuildStartIsoMadrid_(fechaIso, horaEs) {
+  const hora = pujasNormalizarHoraInput_(horaEs, '09:00');
+  return fechaIso + 'T' + hora + ':00' + pujasMadridOffsetForDate_(fechaIso);
+}
+
+function pujasMadridOffsetForDate_(fechaIso) {
+  const parts = fechaIso.split('-').map(function(part) {
+    return parseInt(part, 10);
+  });
+  const year = parts[0];
+  const month = parts[1];
+  const day = parts[2];
+  const dstStart = pujasLastSundayOfMonth_(year, 3);
+  const dstEnd = pujasLastSundayOfMonth_(year, 10);
+  const isSummer =
+    (month > 3 && month < 10) ||
+    (month === 3 && day >= dstStart) ||
+    (month === 10 && day < dstEnd);
+
+  return isSummer ? '+02:00' : '+01:00';
+}
+
+function pujasLastSundayOfMonth_(year, month) {
+  const lastDay = new Date(Date.UTC(year, month, 0));
+  return lastDay.getUTCDate() - lastDay.getUTCDay();
+}
+
+function pujasEventoPujaIdExiste_(sheet, headers, pujaId) {
+  const colPujaId = pujasFindHeaderIndex_(headers, ['puja_id', 'Puja ID']);
+  if (colPujaId === -1 || sheet.getLastRow() < 2) return false;
+
+  const values = sheet.getRange(2, colPujaId + 1, sheet.getLastRow() - 1, 1).getValues();
+  return values.some(function(row) {
+    return normalizeSheetValue(row[0]) === normalizeSheetValue(pujaId);
+  });
+}
+
+function pujasFirstText_(values) {
+  for (let i = 0; i < values.length; i++) {
+    const text = pujasText_(values[i]);
+    if (text) return text;
+  }
+
+  return '';
+}
+
+function pujasSetCellByAliases_(sheet, row, headers, aliases, defaultHeader, value) {
+  let colIndex = pujasFindHeaderIndex_(headers, aliases);
+  if (colIndex === -1) {
+    colIndex = headers.length;
+    headers.push(defaultHeader);
+    sheet.getRange(1, colIndex + 1).setValue(defaultHeader);
+  }
+
+  sheet.getRange(row, colIndex + 1).setValue(value);
 }
 
 function prepararCamposWhatsAppCatalogoPujas() {
