@@ -52,6 +52,7 @@ function crearMenuDzongpaPujas_() {
     .addItem('Publicar sin proxima puja', 'menuPublicarSinProximaPuja')
     .addItem('Generar mensaje WhatsApp', 'menuGenerarMensajeWhatsAppPuja')
     .addItem('Actualizar plantilla WhatsApp', 'menuActualizarPlantillaWhatsAppPuja')
+    .addItem('Preparar campos WhatsApp catalogo', 'menuPrepararCamposWhatsAppCatalogoPujas')
     .addSeparator()
     .addItem('Enviar resumen diario ahora', 'menuEnviarResumenDiarioInscripciones')
     .addItem('Control diario sistema', 'menuControlDiarioSistemaPujas')
@@ -105,6 +106,10 @@ function menuGenerarMensajeWhatsAppPuja() {
 
 function menuActualizarPlantillaWhatsAppPuja() {
   return ejecutarAccionMenu_('Actualizar plantilla WhatsApp', actualizarPlantillaWhatsAppPuja, 'Plantilla WhatsApp actualizada.');
+}
+
+function menuPrepararCamposWhatsAppCatalogoPujas() {
+  return ejecutarAccionMenu_('Preparar campos WhatsApp catalogo', prepararCamposWhatsAppCatalogoPujas, 'Campos WhatsApp preparados.');
 }
 
 function menuEnviarResumenDiarioInscripciones() {
@@ -763,6 +768,20 @@ function pujasEnsureHeaders_(sheet, requiredHeaders) {
   return headers;
 }
 
+function pujasFindHeaderIndex_(headers, names) {
+  const normalizedNames = names.map(function(name) {
+    return normalizeHeaderKey_(name);
+  });
+
+  for (let i = 0; i < headers.length; i++) {
+    if (normalizedNames.indexOf(normalizeHeaderKey_(headers[i])) !== -1) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
 function normalizeHeaderKey_(value) {
   return String(value || '')
     .trim()
@@ -1347,6 +1366,10 @@ function publicarSemanaCompleta() {
     return publicarYamlPujaActivaEnGitHub();
   });
 
+  registrarPasoPublicacionSemana_(pasos, 'Preparar campos WhatsApp catalogo', function() {
+    return prepararCamposWhatsAppCatalogoPujas();
+  });
+
   registrarPasoPublicacionSemana_(pasos, 'Actualizar plantilla WhatsApp', function() {
     return actualizarPlantillaWhatsAppPuja();
   });
@@ -1471,7 +1494,7 @@ function actualizarReadmeOperativo() {
     ['10', 'Usar el email recibido con el mensaje WhatsApp para difusión manual.'],
     ['', ''],
     ['ACCIONES DEL MENU DZONGPA PUJAS', ''],
-    ['Publicar semana completa', 'Acción principal semanal. Valida, prepara, publica web, actualiza la plantilla WhatsApp, genera WhatsApp, envía panel y actualiza Panel_Operativo.'],
+    ['Publicar semana completa', 'Acción principal semanal. Valida, prepara, publica web, prepara los campos WhatsApp, actualiza la plantilla WhatsApp, genera WhatsApp, envía panel y actualiza Panel_Operativo.'],
     ['Control de calidad', 'Comprueba que no hay datos peligrosos. Si hay errores críticos, bloquea la publicación.'],
     ['Actualizar panel operativo', 'Regenera la pestaña Panel_Operativo con estado de puja, enlaces y avisos.'],
     ['Panel de control', 'Envía por email el estado de inscripciones y emails.'],
@@ -1481,6 +1504,7 @@ function actualizarReadmeOperativo() {
     ['Publicar sin proxima puja', 'Publica estado pendiente en la web y oculta registro/donativos hasta que haya nueva puja activa.'],
     ['Generar mensaje WhatsApp', 'Envía por email el texto listo para copiar/pegar en WhatsApp.'],
     ['Actualizar plantilla WhatsApp', 'Reescribe la plantilla publica de WhatsApp en Plantillas_Mensajes con el formato oficial.'],
+    ['Preparar campos WhatsApp catalogo', 'Crea practicas_whatsapp_es, descripcion_whatsapp_es y donativo_whatsapp_es en Catalogo_Pujas y rellena la fila activa si esta vacia.'],
     ['Programar recordatorio 2h exacto', 'Crea un activador puntual para enviar el Zoom exactamente 2 horas antes de la puja.'],
     ['Verificar activadores', 'Comprueba que no faltan activadores críticos ni hay duplicados peligrosos.'],
     ['', ''],
@@ -2776,6 +2800,89 @@ function leerPujaActivaCompleta_() {
   data.plantillas = plantillas;
   pujasEnrichHorario_(data);
   return data;
+}
+
+function prepararCamposWhatsAppCatalogoPujas() {
+  const ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  const catalogoSheet = pujasFindSheet_(ss, [
+    'Catalogo_Pujas',
+    'Catálogo_Pujas',
+    'Catalogo Pujas',
+    'Catálogo Pujas',
+    'Catalogo',
+    'Catálogo'
+  ]);
+
+  if (!catalogoSheet) {
+    throw new Error('No existe la hoja Catalogo_Pujas. Hojas disponibles: ' + pujasListSheetNames_(ss));
+  }
+
+  const headers = pujasEnsureHeaders_(catalogoSheet, [
+    'practicas_whatsapp_es',
+    'descripcion_whatsapp_es',
+    'donativo_whatsapp_es'
+  ]);
+  const colPujaKey = pujasFindHeaderIndex_(headers, ['puja_key']);
+  const colPracticas = pujasFindHeaderIndex_(headers, ['practicas_whatsapp_es']);
+  const colDescripcion = pujasFindHeaderIndex_(headers, ['descripcion_whatsapp_es']);
+  const colDonativo = pujasFindHeaderIndex_(headers, ['donativo_whatsapp_es']);
+
+  if (colPujaKey === -1) {
+    throw new Error('No encuentro la columna puja_key en Catalogo_Pujas.');
+  }
+
+  catalogoSheet.getRange(1, colPracticas + 1).setNote('Lineas publicas para WhatsApp. Ejemplo: 💎 Nombre de practica\\n🔥 Otra practica. Si queda vacio, Apps Script lo deduce desde nombre_es.');
+  catalogoSheet.getRange(1, colDescripcion + 1).setNote('Parrafo publico para WhatsApp. Si queda vacio, Apps Script usa una descripcion deducida o los textos existentes.');
+  catalogoSheet.getRange(1, colDonativo + 1).setNote('Linea de donativo para WhatsApp. Si queda vacio: 8 € individual · 15 € familia · donativo libre.');
+
+  const data = leerPujaActivaCompleta_();
+  const pujaKey = pujasText_(data.puja_key);
+  const values = catalogoSheet.getDataRange().getValues();
+  let targetRow = 0;
+
+  for (let i = 1; i < values.length; i++) {
+    if (pujasText_(values[i][colPujaKey]) === pujaKey) {
+      targetRow = i + 1;
+      break;
+    }
+  }
+
+  if (!targetRow) {
+    throw new Error('No encuentro la fila activa en Catalogo_Pujas: ' + pujaKey);
+  }
+
+  const currentPracticas = pujasText_(catalogoSheet.getRange(targetRow, colPracticas + 1).getValue());
+  const currentDescripcion = pujasText_(catalogoSheet.getRange(targetRow, colDescripcion + 1).getValue());
+  const currentDonativo = pujasText_(catalogoSheet.getRange(targetRow, colDonativo + 1).getValue());
+  let updated = 0;
+
+  if (!currentPracticas) {
+    catalogoSheet.getRange(targetRow, colPracticas + 1).setValue(pujasPracticasWhatsAppEs_(data));
+    updated++;
+  }
+
+  if (!currentDescripcion) {
+    catalogoSheet.getRange(targetRow, colDescripcion + 1).setValue(pujasDescripcionWhatsAppEs_(data));
+    updated++;
+  }
+
+  if (!currentDonativo) {
+    catalogoSheet.getRange(targetRow, colDonativo + 1).setValue('8 \u20AC individual \u00B7 15 \u20AC familia \u00B7 donativo libre');
+    updated++;
+  }
+
+  catalogoSheet.getRange(targetRow, colPracticas + 1).setWrap(true);
+  catalogoSheet.getRange(targetRow, colDescripcion + 1).setWrap(true);
+  catalogoSheet.getRange(targetRow, colDonativo + 1).setWrap(true);
+
+  const resumen =
+    'Campos WhatsApp preparados en Catalogo_Pujas.\n' +
+    'puja_key: ' + pujaKey + '\n' +
+    'Fila: ' + targetRow + '\n' +
+    'Celdas actualizadas: ' + updated;
+
+  Logger.log(resumen);
+  return resumen;
 }
 
 function actualizarPlantillaWhatsAppPuja() {

@@ -74,6 +74,16 @@ El recordatorio de Zoom 2h se gestiona con un activador puntual exacto. El activ
 
 `Actualizar panel operativo` tambien acepta el estado sin puja activa. En ese caso muestra el panel como pendiente de configuracion y conserva la revision de activadores generales.
 
+## Campos WhatsApp por puja
+
+El mensaje publico de WhatsApp se controla desde `Catalogo_Pujas` con estos campos opcionales:
+
+- `practicas_whatsapp_es`: lineas de practicas con iconos o bullets.
+- `descripcion_whatsapp_es`: parrafo divulgativo especifico de la puja.
+- `donativo_whatsapp_es`: linea de donativo mostrada en WhatsApp.
+
+Si faltan estas columnas, el menu `Dzongpa Pujas > Preparar campos WhatsApp catalogo` las crea. Si la fila activa esta vacia, rellena una propuesta automatica sin sobrescribir textos ya escritos manualmente.
+
 ## Control diario automatico
 
 El sistema puede supervisarse solo con un control diario. La funcion `controlDiarioSistemaPujas` revisa:
