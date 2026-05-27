@@ -2835,7 +2835,19 @@ function prepararCamposWhatsAppCatalogoPujas() {
   catalogoSheet.getRange(1, colDescripcion + 1).setNote('Parrafo publico para WhatsApp. Si queda vacio, Apps Script usa una descripcion deducida o los textos existentes.');
   catalogoSheet.getRange(1, colDonativo + 1).setNote('Linea de donativo para WhatsApp. Si queda vacio: 8 € individual · 15 € familia · donativo libre.');
 
-  const data = leerPujaActivaCompleta_();
+  let data;
+  try {
+    data = leerPujaActivaCompleta_();
+  } catch (err) {
+    if (!esErrorSinPujaActiva_(err)) throw err;
+    const resumenSinActiva =
+      'Campos WhatsApp creados en Catalogo_Pujas.\n' +
+      'No hay fila activa en Pujas_Eventos, por lo que no se rellena ninguna propuesta semanal.\n' +
+      'Cuando exista una puja activa, vuelve a ejecutar esta accion o usa Publicar semana completa.';
+    Logger.log(resumenSinActiva);
+    return resumenSinActiva;
+  }
+
   const pujaKey = pujasText_(data.puja_key);
   const values = catalogoSheet.getDataRange().getValues();
   let targetRow = 0;

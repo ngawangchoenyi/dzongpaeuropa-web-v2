@@ -82,7 +82,7 @@ El mensaje publico de WhatsApp se controla desde `Catalogo_Pujas` con estos camp
 - `descripcion_whatsapp_es`: parrafo divulgativo especifico de la puja.
 - `donativo_whatsapp_es`: linea de donativo mostrada en WhatsApp.
 
-Si faltan estas columnas, el menu `Dzongpa Pujas > Preparar campos WhatsApp catalogo` las crea. Si la fila activa esta vacia, rellena una propuesta automatica sin sobrescribir textos ya escritos manualmente.
+Si faltan estas columnas, el menu `Dzongpa Pujas > Preparar campos WhatsApp catalogo` las crea. Puede ejecutarse aunque no haya puja activa; en ese caso solo crea las columnas y las notas. Si hay una fila activa, rellena una propuesta automatica sin sobrescribir textos ya escritos manualmente.
 
 ## Control diario automatico
 
